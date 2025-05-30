@@ -1,0 +1,531 @@
+{% extends "base.html" %}
+{% load lang_tags %}
+{% load static %}
+
+{% block extra_head %}
+<link rel="stylesheet" href="{% static 'css/base/bologna.css' %}">
+{% endblock %}
+
+{% block content %}
+<!-- Хлебные крошки -->
+<div class="breadcrumbs">
+    <div class="container">
+        <ul class="breadcrumbs-list">
+            <li class="breadcrumbs-item">
+                <a href="{% url 'home' %}" class="breadcrumbs-link">{% tr "Главная" %}</a>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon">
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+            </li>
+            <li class="breadcrumbs-item">
+                <span class="breadcrumbs-current">{% tr "Болонский процесс" %}</span>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<!-- Заголовок страницы -->
+<section class="page-header">
+    <div class="container">
+        <h1 class="page-title">{% tr "Болонский процесс" %}</h1>
+        <p class="page-subtitle">{% tr "Участие Республики Казахстан в Европейском пространстве высшего образования (ЕПВО)" %}</p>
+    </div>
+</section>
+
+<!-- История Болонского процесса -->
+<section class="history-section">
+    <div class="container">
+        <div class="history-grid">
+            <div class="history-content">
+                <h2 class="section-title left-aligned">{% tr "История Болонского процесса" %}</h2>
+                <div class="history-text">
+                    <p>{% tr "Болонский процесс — это процесс сближения и гармонизации систем высшего образования стран Европы с целью создания единого Европейского пространства высшего образования (ЕПВО)." %}</p>
+                    <p>{% tr "Начало процессу было положено подписанием Великой хартии университетов (Magna Charta Universitatum) в 1988 году в Болонье. Этот документ определил фундаментальные принципы, которыми должны руководствоваться университеты в своей деятельности." %}</p>
+                    <p>{% tr "В 1998 году министры образования Франции, Германии, Италии и Великобритании подписали Сорбонскую декларацию, которая призвала к гармонизации архитектуры европейской системы высшего образования." %}</p>
+                    <p>{% tr "Официальной датой начала процесса принято считать 19 июня 1999 года, когда была подписана Болонская декларация, в которой были сформулированы основные цели, ведущие к достижению сопоставимости и гармонизации национальных образовательных систем высшего образования в странах Европы." %}</p>
+                    <p>{% tr "Республика Казахстан присоединилась к Болонскому процессу в 2010 году, став первым центральноазиатским государством-участником ЕПВО." %}</p>
+                </div>
+            </div>
+            <div class="history-image">
+                <img src="https://enic-kazakhstan.edu.kz/img/bolona.png" alt="{% tr 'ENIC Kazakhstan' %}" style="max-width: 100%; height: auto;">
+            </div>
+        </div>
+
+        <!-- Таймлайн -->
+        <div class="timeline-container">
+            <h3 class="timeline-title">{% tr "Ключевые вехи Болонского процесса" %}</h3>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">1988</div>
+                    <div class="timeline-content">
+                        <h4>{% tr "Великая хартия университетов" %}</h4>
+                        <p>{% tr "Подписание Magna Charta Universitatum в Болонье" %}</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">1998</div>
+                    <div class="timeline-content">
+                        <h4>{% tr "Сорбонская декларация" %}</h4>
+                        <p>{% tr "Подписание декларации о гармонизации архитектуры европейской системы высшего образования" %}</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">1999</div>
+                    <div class="timeline-content">
+                        <h4>{% tr "Болонская декларация" %}</h4>
+                        <p>{% tr "Официальное начало Болонского процесса" %}</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">2001</div>
+                    <div class="timeline-content">
+                        <h4>{% tr "Пражское коммюнике" %}</h4>
+                        <p>{% tr "Расширение целей Болонского процесса" %}</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">2003</div>
+                    <div class="timeline-content">
+                        <h4>{% tr "Берлинское коммюнике" %}</h4>
+                        <p>{% tr "Включение докторских программ как третьего цикла" %}</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">2005</div>
+                    <div class="timeline-content">
+                        <h4>{% tr "Бергенское коммюнике" %}</h4>
+                        <p>{% tr "Принятие Рамки квалификаций ЕПВО" %}</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">2007</div>
+                    <div class="timeline-content">
+                        <h4>{% tr "Лондонское коммюнике" %}</h4>
+                        <p>{% tr "Создание первого правового основания для ЕПВО" %}</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">2010</div>
+                    <div class="timeline-content">
+                        <h4>{% tr "Будапештско-Венская декларация" %}</h4>
+                        <p>{% tr "Официальное создание ЕПВО. Казахстан присоединяется к Болонскому процессу" %}</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">2015</div>
+                    <div class="timeline-content">
+                        <h4>{% tr "Ереванское коммюнике" %}</h4>
+                        <p>{% tr "Принятие пересмотренных Стандартов и рекомендаций по обеспечению качества" %}</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">2018</div>
+                    <div class="timeline-content">
+                        <h4>{% tr "Парижское коммюнике" %}</h4>
+                        <p>{% tr "Принятие структурированного подхода к поддержке реализации ключевых обязательств Болонского процесса" %}</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">2020</div>
+                    <div class="timeline-content">
+                        <h4>{% tr "Римское коммюнике" %}</h4>
+                        <p>{% tr "Принятие новых принципов и обязательств для развития ЕПВО до 2030 года" %}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Параметры Болонского процесса -->
+<section class="parameters-section">
+    <div class="container">
+        <h2 class="section-title">{% tr "Параметры Болонского процесса" %}</h2>
+
+        <!-- Обязательные параметры -->
+        <div class="parameters-block">
+            <h3 class="parameters-subtitle">{% tr "Обязательные параметры" %}</h3>
+            <div class="parameters-grid">
+                <div class="parameter-card mandatory">
+                    <div class="parameter-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                        </svg>
+                    </div>
+                    <h4 class="parameter-title">{% tr "Трехуровневая система высшего образования" %}</h4>
+                    <p class="parameter-description">{% tr "Бакалавриат, магистратура, докторантура (PhD)" %}</p>
+                </div>
+                <div class="parameter-card mandatory">
+                    <div class="parameter-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                        </svg>
+                    </div>
+                    <h4 class="parameter-title">{% tr "Академические кредиты ECTS" %}</h4>
+                    <p class="parameter-description">{% tr "Европейская система перевода и накопления кредитов" %}</p>
+                </div>
+                <div class="parameter-card mandatory">
+                    <div class="parameter-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                        </svg>
+                    </div>
+                    <h4 class="parameter-title">{% tr "Приложение к диплому европейского образца" %}</h4>
+                    <p class="parameter-description">{% tr "Документ, сопровождающий диплом о высшем образовании" %}</p>
+                </div>
+                <div class="parameter-card mandatory">
+                    <div class="parameter-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                        </svg>
+                    </div>
+                    <h4 class="parameter-title">{% tr "Обеспечение качества высшего образования" %}</h4>
+                    <p class="parameter-description">{% tr "Соответствие стандартам и рекомендациям ЕПВО" %}</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Рекомендательные параметры -->
+        <div class="parameters-block">
+            <h3 class="parameters-subtitle">{% tr "Рекомендательные параметры" %}</h3>
+            <div class="parameters-grid">
+                <div class="parameter-card recommended">
+                    <div class="parameter-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon">
+                            <polyline points="9 11 12 14 22 4"></polyline>
+                            <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
+                        </svg>
+                    </div>
+                    <h4 class="parameter-title">{% tr "Национальная рамка квалификаций" %}</h4>
+                    <p class="parameter-description">{% tr "Совместимая с Рамкой квалификаций ЕПВО" %}</p>
+                </div>
+                <div class="parameter-card recommended">
+                    <div class="parameter-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon">
+                            <polyline points="9 11 12 14 22 4"></polyline>
+                            <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
+                        </svg>
+                    </div>
+                    <h4 class="parameter-title">{% tr "Академическая мобильность" %}</h4>
+                    <p class="parameter-description">{% tr "Студентов, преподавателей и административного персонала" %}</p>
+                </div>
+                <div class="parameter-card recommended">
+                    <div class="parameter-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon">
+                            <polyline points="9 11 12 14 22 4"></polyline>
+                            <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
+                        </svg>
+                    </div>
+                    <h4 class="parameter-title">{% tr "Совместные образовательные программы" %}</h4>
+                    <p class="parameter-description">{% tr "Разработка и реализация совместных программ с вузами ЕПВО" %}</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Факультативные параметры -->
+        <div class="parameters-block">
+            <h3 class="parameters-subtitle">{% tr "Факультативные параметры" %}</h3>
+            <div class="parameters-grid">
+                <div class="parameter-card optional">
+                    <div class="parameter-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <polyline points="12 6 12 12 16 14"></polyline>
+                        </svg>
+                    </div>
+                    <h4 class="parameter-title">{% tr "Обучение в течение всей жизни" %}</h4>
+                    <p class="parameter-description">{% tr "Развитие системы непрерывного образования" %}</p>
+                </div>
+                <div class="parameter-card optional">
+                    <div class="parameter-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <polyline points="12 6 12 12 16 14"></polyline>
+                        </svg>
+                    </div>
+                    <h4 class="parameter-title">{% tr "Студентоцентрированное обучение" %}</h4>
+                    <p class="parameter-description">{% tr "Активное участие студентов в образовательном процессе" %}</p>
+                </div>
+                <div class="parameter-card optional">
+                    <div class="parameter-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <polyline points="12 6 12 12 16 14"></polyline>
+                        </svg>
+                    </div>
+                    <h4 class="parameter-title">{% tr "Социальное измерение высшего образования" %}</h4>
+                    <p class="parameter-description">{% tr "Равный доступ к высшему образованию" %}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Участие Казахстана в BFUG -->
+<section class="kazakhstan-section">
+    <div class="container">
+        <h2 class="section-title">{% tr "Участие Казахстана в BFUG" %}</h2>
+        <div class="kazakhstan-content">
+            <div class="kazakhstan-text">
+                <p>{% tr "Республика Казахстан является полноправным участником Болонского процесса с 2010 года, когда на Будапештско-Венской конференции министров образования стран-участниц Болонского процесса Казахстан был принят в качестве 47-го полноправного члена Европейского пространства высшего образования (ЕПВО)." %}</p>
+                <p>{% tr "Казахстан регулярно участвует в конференциях министров образования стран-участниц Болонского процесса, которые проводятся каждые 2–3 года. Представители Казахстана принимали участие в Бухарестской конференции (2012), Ереванской конференции (2015), Парижской конференции (2018) и онлайн-встрече министров (2020)." %}</p>
+                <p>{% tr "В рамках участия в Болонском процессе Казахстан активно внедряет его основные принципы и инструменты в национальную систему высшего образования, включая трехуровневую систему высшего образования, кредитную технологию обучения, академическую мобильность и обеспечение качества высшего образования." %}</p>
+                <p>{% tr "Казахстан также является членом Наблюдательной группы Болонского процесса (BFUG), которая является основным рабочим органом между конференциями министров. Представители Казахстана принимают участие в заседаниях BFUG и её рабочих групп." %}</p>
+            </div>
+            <div class="kazakhstan-image">
+                <img src="https://img.inform.kz/kazinform-photobank/media/2023-09-15/c0df5c87-cf54-4a25-a157-cc6e446f883d.jpeg"
+                     alt="{% tr "Участие Казахстана в BFUG" %}"
+                     class="kz-image">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Структура BFUG -->
+<section class="structure-section">
+    <div class="container">
+        <h2 class="section-title">{% tr "Структура BFUG" %}</h2>
+        <div class="structure-content">
+            <div class="structure-diagram">
+                <img src="https://enic-kazakhstan.edu.kz/files/1661150360/struktura-bfug-russkiy-yazyk.png"
+                     alt="{% tr "Структура BFUG" %}"
+                     class="structure-image">
+            </div>
+
+            <div class="structure-details">
+                <div class="structure-tabs">
+                    <div class="tabs-header">
+                        <button class="tab-button active" data-tab="members">{% tr "Члены BFUG" %}</button>
+                        <button class="tab-button" data-tab="workgroups">{% tr "Рабочие структуры" %}</button>
+                    </div>
+
+                    <div class="tab-content active" id="members-tab">
+                        <div class="members-grid">
+                            <div class="member-category">
+                                <h4 class="member-category-title">{% tr "Полноправные члены" %}</h4>
+                                <ul class="member-list">
+                                    <li>{% tr "49 стран-участниц ЕПВО" %}</li>
+                                    <li>{% tr "Европейская комиссия" %}</li>
+                                </ul>
+                            </div>
+
+                            <div class="member-category">
+                                <h4 class="member-category-title">{% tr "Консультативные члены" %}</h4>
+                                <ul class="member-list">
+                                    <li>{% tr "Совет Европы" %}</li>
+                                    <li>{% tr "UNESCO" %}</li>
+                                    <li>{% tr "European University Association (EUA)" %}</li>
+                                    <li>{% tr "European Association of Institutions in Higher Education (EURASHE)" %}</li>
+                                    <li>{% tr "European Students’ Union (ESU)" %}</li>
+                                    <li>{% tr "European Association for Quality Assurance in Higher Education (ENQA)" %}</li>
+                                    <li>{% tr "Education International (EI)" %}</li>
+                                    <li>{% tr "BUSINESSEUROPE" %}</li>
+                                </ul>
+                            </div>
+
+                            <div class="member-category">
+                                <h4 class="member-category-title">{% tr "Партнеры" %}</h4>
+                                <ul class="member-list">
+                                    <li>{% tr "European Quality Assurance Register for Higher Education (EQAR)" %}</li>
+                                    <li>{% tr "EURYDICE" %}</li>
+                                    <li>{% tr "European Higher Education Area and Bologna Process (EHEA)" %}</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-content" id="workgroups-tab">
+                        <div class="workgroups-grid">
+                            <div class="workgroup-category">
+                                <h4 class="workgroup-category-title">{% tr "Экспертные группы" %}</h4>
+                                <ul class="workgroup-list">
+                                    <li>{% tr "ЭГ 1: Социальное измерение" %}</li>
+                                    <li>{% tr "ЭГ 2: Обучение и преподавание" %}</li>
+                                    <li>{% tr "ЭГ 3: Цифровизация и инновации" %}</li>
+                                </ul>
+                            </div>
+
+                            <div class="workgroup-category">
+                                <h4 class="workgroup-category-title">{% tr "Рабочие группы" %}</h4>
+                                <ul class="workgroup-list">
+                                    <li>{% tr "РГ 1: Мониторинг имплементации" %}</li>
+                                    <li>{% tr "РГ 2: Рамки квалификаций" %}</li>
+                                    <li>{% tr "РГ 3: Обеспечение качества и признание" %}</li>
+                                </ul>
+                            </div>
+
+                            <div class="workgroup-category">
+                                <h4 class="workgroup-category-title">{% tr "Другие структуры" %}</h4>
+                                <ul class="workgroup-list">
+                                    <li>{% tr "Координационная группа" %}</li>
+                                    <li>{% tr "Сеть корреспондентов" %}</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% load static %}
+{% load lang_tags %}
+
+<!-- Секретариат, Совет и Председательство BFUG -->
+<section class="governance-section">
+    <div class="container">
+        <h2 class="section-title">{% tr "Секретариат, Совет и Председательство BFUG" %}</h2>
+        <div class="governance-grid">
+            <!-- Секретариат BFUG -->
+            <div class="governance-card">
+                <div class="governance-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon">
+                        <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                        <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                    </svg>
+                </div>
+                <h3 class="governance-title">{% tr "Секретариат BFUG" %}</h3>
+                <div class="governance-content">
+                    <p>{% tr "Секретариат BFUG на период 2021-2024 гг. обеспечивается Албанией." %}</p>
+                    <p>{% tr "Секретариат оказывает административную и оперативную поддержку всем структурам BFUG, организует встречи, ведет документацию и обеспечивает коммуникацию между всеми участниками процесса." %}</p>
+                    <p>{% tr "Секретариат также поддерживает официальный веб-сайт ЕПВО и архив документов Болонского процесса." %}</p>
+                </div>
+            </div>
+
+            <!-- Совет BFUG -->
+            <div class="governance-card">
+                <div class="governance-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon">
+                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="9" cy="7" r="4"></circle>
+                        <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                        <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                    </svg>
+                </div>
+                <h3 class="governance-title">{% tr "Совет BFUG" %}</h3>
+                <div class="governance-content">
+                    <p>{% tr "Совет BFUG является надзорным органом для процесса между встречами BFUG." %}</p>
+                    <p>{% tr "В состав Совета входят:" %}</p>
+                    <ul class="governance-list">
+                        <li>{% tr "Представители стран, председательствующих в ЕС (текущее, предыдущее и следующее председательство)" %}</li>
+                        <li>{% tr "Представитель страны, принимающей следующую Конференцию министров" %}</li>
+                        <li>{% tr "Европейская комиссия" %}</li>
+                        <li>{% tr "Четыре консультативных члена (Совет Европы, EUA, ESU, EURASHE)" %}</li>
+                    </ul>
+                    <p>{% tr "Совет готовит повестку дня для заседаний BFUG и контролирует выполнение решений BFUG." %}</p>
+                </div>
+            </div>
+
+            <!-- Председательство BFUG -->
+            <div class="governance-card">
+                <div class="governance-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon">
+                        <path d="M12 20h9"></path>
+                        <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path>
+                    </svg>
+                </div>
+                <h3 class="governance-title">{% tr "Председательство BFUG" %}</h3>
+                <div class="governance-content">
+                    <p>{% tr "Председательство в BFUG осуществляется страной, председательствующей в Совете Европейского Союза, и страной, не являющейся членом ЕС, на ротационной основе." %}</p>
+                    <p><strong>{% tr "Текущее председательство (2023):" %}</strong></p>
+                    <ul class="governance-list">
+                        <li>{% tr "Швеция (январь–июнь 2023)" %}</li>
+                        <li>{% tr "Испания (июль–декабрь 2023)" %}</li>
+                        <li>{% tr "Казахстан (сопредседатель, не член ЕС)" %}</li>
+                    </ul>
+                    <p><strong>{% tr "Предыдущее председательство (2022):" %}</strong></p>
+                    <ul class="governance-list">
+                        <li>{% tr "Франция (январь–июнь 2022)" %}</li>
+                        <li>{% tr "Чехия (июль–декабрь 2022)" %}</li>
+                        <li>{% tr "Азербайджан (сопредседатель, не член ЕС)" %}</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Документы и ссылки -->
+<section class="documents-section">
+    <div class="container">
+        <h2 class="section-title">{% tr "Документы и ссылки" %}</h2>
+        <div class="documents-grid">
+            <a href="https://ehea.info/Upload/BFUG_PT_AD_76_5_Work_Plan_and_TORs_Annex_I.pdf" target="_blank" class="document-card">
+                <div class="document-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                        <polyline points="14 2 14 8 20 8"></polyline>
+                        <line x1="16" y1="13" x2="8" y2="13"></line>
+                        <line x1="16" y1="17" x2="8" y2="17"></line>
+                        <polyline points="10 9 9 9 8 9"></polyline>
+                    </svg>
+                </div>
+                <h3 class="document-title">{% tr "BFUG work plan 2021–2024" %}</h3>
+                <p class="document-description">{% tr "План работы Наблюдательной группы Болонского процесса на 2021–2024 годы" %}</p>
+                <span class="document-link">{% tr "Скачать PDF" %}</span>
+            </a>
+
+            <a href="https://enic-kazakhstan.edu.kz/files/1661151313/bolonskiy-process-glazami-studentov---2020.pdf" target="_blank" class="document-card">
+                <div class="document-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon">
+                        <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                        <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+                    </svg>
+                </div>
+                <h3 class="document-title">{% tr "Болонский процесс глазами студентов — 2020" %}</h3>
+                <p class="document-description">{% tr "Отчет Европейского студенческого союза о реализации Болонского процесса" %}</p>
+                <span class="document-link">{% tr "Скачать PDF" %}</span>
+            </a>
+
+            <a href="https://www.iqaa.org/images/doc/%D0%9A%D0%BE%D0%BC%D0%BC%D1%8E%D0%BD%D0%B8%D0%BA%D0%B5%20%D0%9C%D0%B8%D0%BD%D0%B8%D1%81%D1%82%D1%80%D0%BE%D0%B2%20(%D0%A0%D0%B8%D0%BC,%202020).pdf" target="_blank" class="document-card">
+                <div class="document-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                        <polyline points="14 2 14 8 20 8"></polyline>
+                        <line x1="16" y1="13" x2="8" y2="13"></line>
+                        <line x1="16" y1="17" x2="8" y2="17"></line>
+                        <polyline points="10 9 9 9 8 9"></polyline>
+                    </svg>
+                </div>
+                <h3 class="document-title">{% tr "Римское коммюнике 2020" %}</h3>
+                <p class="document-description">{% tr "Коммюнике Конференции министров, ответственных за высшее образование" %}</p>
+                <span class="document-link">{% tr "Скачать PDF" %}</span>
+            </a>
+
+            <a href="https://epvo.kz/" target="_blank" class="document-card">
+                <div class="document-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <line x1="2" y1="12" x2="22" y2="12"></line>
+                        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                    </svg>
+                </div>
+                <h3 class="document-title">{% tr "Официальный сайт ЕПВО" %}</h3>
+                <p class="document-description">{% tr "Европейское пространство высшего образования и Болонский процесс" %}</p>
+                <span class="document-link">{% tr "Перейти на сайт" %}</span>
+            </a>
+        </div>
+    </div>
+</section>
+
+{% endblock content %}
+
+{% block extra_js %}
+<script src="{% static 'js/base/bologna.js' %}"></script>
+{% endblock %}

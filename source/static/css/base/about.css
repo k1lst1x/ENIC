@@ -1,0 +1,325 @@
+/* Стили для страницы "О Центре" */
+
+/* Хлебные крошки */
+.breadcrumbs {
+  padding: 1rem 0;
+  background-color: var(--white);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.breadcrumbs-list {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.breadcrumbs-item {
+  display: flex;
+  align-items: center;
+  font-size: 0.875rem;
+  color: var(--text-lighter);
+}
+
+.breadcrumbs-link {
+  color: var(--text-light);
+  transition: var(--transition);
+}
+
+.breadcrumbs-link:hover {
+  color: var(--primary-color);
+}
+
+.breadcrumbs-item .icon {
+  margin: 0 0.5rem;
+}
+
+.breadcrumbs-current {
+  color: var(--text-color);
+  font-weight: 500;
+}
+
+/* Заголовок страницы */
+.page-header {
+  padding: 2rem 0;
+  background-color: var(--secondary-color);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.page-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--text-color);
+  margin-bottom: 0.5rem;
+}
+
+.page-subtitle {
+  font-size: 1.25rem;
+  color: var(--text-light);
+}
+
+/* Общие стили для секций */
+.about-section,
+.principles-section,
+.strategy-mission-section,
+.leadership-section {
+  padding: 3rem 0;
+}
+
+.principles-section,
+.leadership-section {
+  background-color: var(--secondary-color);
+}
+
+.section-title.left-aligned {
+  text-align: left;
+  margin-bottom: 1.5rem;
+}
+
+/* История Центра */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+.about-text {
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+.about-text p {
+  margin-bottom: 1rem;
+  text-align: justify;
+}
+
+.about-text p:last-child {
+  margin-bottom: 0;
+}
+
+.about-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.history-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 160px;
+  height: 160px;
+  color: var(--primary-color);
+  background-color: rgba(0, 102, 204, 0.1);
+  border-radius: 50%;
+}
+
+/* Основные принципы */
+.principles-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+.principle-card {
+  padding: 1.5rem;
+  background-color: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+}
+
+.principle-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.principle-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  margin-bottom: 1rem;
+  color: var(--primary-color);
+  background-color: rgba(0, 102, 204, 0.1);
+  border-radius: 50%;
+}
+
+.principle-title {
+  margin-bottom: 0.75rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+.principle-description {
+  color: var(--text-light);
+  line-height: 1.5;
+}
+
+/* Стратегия и миссия */
+.strategy-mission-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+.strategy-block,
+.mission-block {
+  padding: 2rem;
+  background-color: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.strategy-content,
+.mission-content {
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+.strategy-content p,
+.mission-content p {
+  margin-bottom: 1rem;
+}
+
+.strategy-list {
+  margin: 1rem 0 1.5rem 1.25rem;
+  list-style-type: disc;
+}
+
+.strategy-list li {
+  margin-bottom: 0.5rem;
+}
+
+.download-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.mission-quote {
+  position: relative;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  background-color: rgba(0, 102, 204, 0.05);
+  border-left: 4px solid var(--primary-color);
+  border-radius: 0 var(--radius) var(--radius) 0;
+}
+
+.quote-icon {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  color: rgba(0, 102, 204, 0.2);
+}
+
+.mission-text {
+  padding-left: 2.5rem;
+  font-size: 1.125rem;
+  font-style: italic;
+  font-weight: 500;
+}
+
+/* Руководящий состав */
+.leadership-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+.leader-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  background-color: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+  text-align: center;
+}
+
+.leader-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.leader-photo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 120px;
+  height: 120px;
+  margin-bottom: 1.5rem;
+  color: var(--primary-color);
+  background-color: rgba(0, 102, 204, 0.1);
+  border-radius: 50%;
+}
+
+.leader-name {
+  margin-bottom: 0.5rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+.leader-position {
+  margin-bottom: 1rem;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  letter-spacing: 0.05em;
+}
+
+.leader-contact {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  color: var(--text-light);
+}
+
+/* Активная ссылка в навигации */
+.nav-link.active,
+.mobile-nav-link.active {
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+/* Медиа-запросы */
+@media (min-width: 640px) {
+  .principles-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 768px) {
+  .page-title {
+    font-size: 3rem;
+  }
+
+  .about-grid {
+    grid-template-columns: 2fr 1fr;
+    align-items: center;
+  }
+
+  .strategy-mission-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .leadership-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .principles-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .leadership-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

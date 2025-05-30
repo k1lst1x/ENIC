@@ -1,0 +1,646 @@
+/* Стили для страницы "Болонский процесс" */
+
+/* Хлебные крошки */
+.breadcrumbs {
+  padding: 1rem 0;
+  background-color: var(--white);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.breadcrumbs-list {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.breadcrumbs-item {
+  display: flex;
+  align-items: center;
+  font-size: 0.875rem;
+  color: var(--text-lighter);
+}
+
+.breadcrumbs-link {
+  color: var(--text-light);
+  transition: var(--transition);
+}
+
+.breadcrumbs-link:hover {
+  color: var(--primary-color);
+}
+
+.breadcrumbs-item .icon {
+  margin: 0 0.5rem;
+}
+
+.breadcrumbs-current {
+  color: var(--text-color);
+  font-weight: 500;
+}
+
+/* Заголовок страницы */
+.page-header {
+  padding: 2rem 0;
+  background-color: var(--secondary-color);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.page-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--text-color);
+  margin-bottom: 0.5rem;
+}
+
+.page-subtitle {
+  font-size: 1.25rem;
+  color: var(--text-light);
+}
+
+/* Общие стили для секций */
+.history-section,
+.parameters-section,
+.kazakhstan-section,
+.structure-section,
+.governance-section,
+.documents-section {
+  padding: 3rem 0;
+}
+
+.parameters-section,
+.structure-section,
+.documents-section {
+  background-color: var(--secondary-color);
+}
+
+.section-title.left-aligned {
+  text-align: left;
+  margin-bottom: 1.5rem;
+}
+
+/* История Болонского процесса */
+.history-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.history-text {
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+.history-text p {
+  margin-bottom: 1rem;
+  text-align: justify;
+}
+
+.history-text p:last-child {
+  margin-bottom: 0;
+}
+
+.history-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bologna-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 160px;
+  height: 160px;
+  color: var(--primary-color);
+  background-color: rgba(0, 102, 204, 0.1);
+  border-radius: 50%;
+}
+
+/* Таймлайн */
+.timeline-container {
+  margin-top: 3rem;
+}
+
+.timeline-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--text-color);
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.timeline {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.timeline::after {
+  content: "";
+  position: absolute;
+  width: 6px;
+  background-color: var(--primary-color);
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -3px;
+  border-radius: 3px;
+}
+
+.timeline-item {
+  padding: 10px 40px;
+  position: relative;
+  width: 50%;
+  box-sizing: border-box;
+}
+
+.timeline-item:nth-child(odd) {
+  left: 0;
+}
+
+.timeline-item:nth-child(even) {
+  left: 50%;
+}
+
+.timeline-dot {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  right: -10px;
+  background-color: var(--white);
+  border: 4px solid var(--primary-color);
+  top: 15px;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.timeline-item:nth-child(even) .timeline-dot {
+  left: -10px;
+}
+
+.timeline-date {
+  position: absolute;
+  width: 100px;
+  padding: 5px 10px;
+  background-color: var(--primary-color);
+  color: var(--white);
+  text-align: center;
+  border-radius: 5px;
+  font-weight: 600;
+  top: 12px;
+  right: -120px;
+}
+
+.timeline-item:nth-child(even) .timeline-date {
+  left: -120px;
+  right: auto;
+}
+
+.timeline-content {
+  padding: 20px 30px;
+  background-color: var(--white);
+  position: relative;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.timeline-content h4 {
+  margin-bottom: 0.5rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+.timeline-content p {
+  margin: 0;
+  font-size: 0.875rem;
+  color: var(--text-light);
+}
+
+/* Параметры Болонского процесса */
+.parameters-block {
+  margin-bottom: 3rem;
+}
+
+.parameters-block:last-child {
+  margin-bottom: 0;
+}
+
+.parameters-subtitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-color);
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.parameters-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+.parameter-card {
+  padding: 1.5rem;
+  background-color: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+}
+
+.parameter-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.parameter-card.mandatory {
+  border-left: 4px solid var(--primary-color);
+}
+
+.parameter-card.recommended {
+  border-left: 4px solid #4caf50;
+}
+
+.parameter-card.optional {
+  border-left: 4px solid #ff9800;
+}
+
+.parameter-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  margin-bottom: 1rem;
+  border-radius: 50%;
+}
+
+.parameter-card.mandatory .parameter-icon {
+  color: var(--primary-color);
+  background-color: rgba(0, 102, 204, 0.1);
+}
+
+.parameter-card.recommended .parameter-icon {
+  color: #4caf50;
+  background-color: rgba(76, 175, 80, 0.1);
+}
+
+.parameter-card.optional .parameter-icon {
+  color: #ff9800;
+  background-color: rgba(255, 152, 0, 0.1);
+}
+
+.parameter-title {
+  margin-bottom: 0.5rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+.parameter-description {
+  color: var(--text-light);
+  line-height: 1.5;
+}
+
+/* Участие Казахстана в BFUG */
+.kazakhstan-content {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+.kazakhstan-text {
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+.kazakhstan-text p {
+  margin-bottom: 1rem;
+  text-align: justify;
+}
+
+.kazakhstan-text p:last-child {
+  margin-bottom: 0;
+}
+
+.kazakhstan-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.kz-image {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+/* Структура BFUG */
+.structure-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.structure-diagram {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.structure-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.structure-tabs {
+  background-color: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+.tabs-header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-bottom: 1rem;
+}
+
+.tab-button {
+  padding: 0.75rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-light);
+  background-color: transparent;
+  border-bottom: 2px solid transparent;
+  transition: var(--transition);
+}
+
+.tab-button.active {
+  color: var(--primary-color);
+  border-bottom-color: var(--primary-color);
+}
+
+.tab-content {
+  display: none;
+  padding: 0 1rem 1rem;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+.members-grid,
+.workgroups-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+.member-category,
+.workgroup-category {
+  margin-bottom: 1.5rem;
+}
+
+.member-category-title,
+.workgroup-category-title {
+  margin-bottom: 0.75rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--text-color);
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.member-list,
+.workgroup-list {
+  list-style-type: disc;
+  margin-left: 1.5rem;
+}
+
+.member-list li,
+.workgroup-list li {
+  margin-bottom: 0.5rem;
+  color: var(--text-light);
+}
+
+/* Секретариат, Совет и Председательство BFUG */
+.governance-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+.governance-card {
+  padding: 2rem;
+  background-color: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.governance-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 70px;
+  height: 70px;
+  margin-bottom: 1.5rem;
+  color: var(--primary-color);
+  background-color: rgba(0, 102, 204, 0.1);
+  border-radius: 50%;
+}
+
+.governance-title {
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+.governance-content {
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+.governance-content p {
+  margin-bottom: 1rem;
+}
+
+.governance-list {
+  margin: 0 0 1rem 1.5rem;
+  list-style-type: disc;
+}
+
+.governance-list li {
+  margin-bottom: 0.5rem;
+}
+
+/* Документы и ссылки */
+.documents-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+.document-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  background-color: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+  text-align: center;
+}
+
+.document-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.document-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  margin-bottom: 1.5rem;
+  color: var(--primary-color);
+  background-color: rgba(0, 102, 204, 0.1);
+  border-radius: 50%;
+}
+
+.document-title {
+  margin-bottom: 0.75rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+.document-description {
+  margin-bottom: 1rem;
+  color: var(--text-light);
+}
+
+.document-link {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--primary-color);
+  background-color: rgba(0, 102, 204, 0.1);
+  border-radius: var(--radius);
+  transition: var(--transition);
+}
+
+.document-card:hover .document-link {
+  background-color: var(--primary-color);
+  color: var(--white);
+}
+
+/* Активная ссылка в навигации */
+.nav-link.active,
+.mobile-nav-link.active {
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+/* Медиа-запросы */
+@media (min-width: 640px) {
+  .parameters-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .documents-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 768px) {
+  .page-title {
+    font-size: 3rem;
+  }
+
+  .history-grid {
+    grid-template-columns: 2fr 1fr;
+    align-items: center;
+  }
+
+  .kazakhstan-content {
+    grid-template-columns: 3fr 2fr;
+    align-items: center;
+  }
+
+  .governance-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .members-grid,
+  .workgroups-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .parameters-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .governance-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .documents-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .members-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Мобильная версия таймлайна */
+@media screen and (max-width: 767px) {
+  .timeline::after {
+    left: 31px;
+  }
+
+  .timeline-item {
+    width: 100%;
+    padding-left: 70px;
+    padding-right: 25px;
+  }
+
+  .timeline-item:nth-child(even) {
+    left: 0;
+  }
+
+  .timeline-dot {
+    left: 21px;
+    right: auto;
+  }
+
+  .timeline-item:nth-child(even) .timeline-dot {
+    left: 21px;
+  }
+
+  .timeline-date {
+    width: auto;
+    position: relative;
+    right: auto;
+    left: auto;
+    top: auto;
+    margin-bottom: 10px;
+    display: inline-block;
+  }
+
+  .timeline-item:nth-child(even) .timeline-date {
+    left: auto;
+    right: auto;
+  }
+}

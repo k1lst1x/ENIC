@@ -1,0 +1,220 @@
+{% extends "base.html" %}
+{% load lang_tags %}
+{% load static %}
+
+{% block extra_head %}
+<link rel="stylesheet" href="{% static 'css/base/about.css' %}">
+{% endblock %}
+
+{% block content %}
+<!-- Хлебные крошки -->
+<div class="breadcrumbs">
+    <div class="container">
+        <ul class="breadcrumbs-list">
+            <li class="breadcrumbs-item">
+                <a href="{% url 'home' %}" class="breadcrumbs-link">{% tr "Главная" %}</a>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon">
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+            </li>
+            <li class="breadcrumbs-item">
+                <span class="breadcrumbs-current">{% tr "О Центре" %}</span>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<!-- Заголовок страницы -->
+<section class="page-header">
+    <div class="container">
+        <h1 class="page-title">{% tr "О Центре" %}</h1>
+        <p class="page-subtitle">{% tr "Национальный центр развития высшего образования" %}</p>
+    </div>
+</section>
+
+<!-- История Центра -->
+<section class="about-section">
+    <div class="container">
+        <div class="about-grid">
+            <div class="about-content">
+                <h2 class="section-title left-aligned">{% tr "История Центра" %}</h2>
+                <div class="about-text">
+                    <p>{% tr "Национальный центр развития высшего образования (ENIC-KAZAKHSTAN) является подведомственной организацией Министерства науки и высшего образования Республики Казахстан, созданной для научно-методического и информационно-аналитического сопровождения реформ в сфере высшего образования." %}</p>
+                    <p>{% tr "Центр был создан <strong>31 августа 2012 года</strong> в соответствии с Указом Президента Республики Казахстан №1118 от 7 декабря 2010 года «О Государственной программе развития образования Республики Казахстан на 2011-2020 годы»." %}</p>
+                    <p>{% tr "Создание Центра было обусловлено вступлением Казахстана в Болонский процесс в 2010 году и необходимостью интеграции казахстанской системы высшего образования в европейское образовательное пространство." %}</p>
+                    <p>{% tr "За годы своего существования Центр стал ключевым звеном в реализации государственной политики в области высшего образования, обеспечивая научно-методическую поддержку вузов и содействуя повышению качества образовательных услуг." %}</p>
+                </div>
+            </div>
+            <div class="about-image">
+                <!-- <div class="history-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <polyline points="12 6 12 12 16 14"></polyline>
+                    </svg>
+                </div> -->
+				<img src="https://enic-kazakhstan.edu.kz/img/logos/ru.png" alt="ENIC Kazakhstan" style="max-width: 100%; height: auto;">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Основные принципы деятельности -->
+<section class="principles-section">
+    <div class="container">
+        <h2 class="section-title">{% tr "Основные принципы деятельности" %}</h2>
+        <div class="principles-grid">
+            <!-- Принцип 1 -->
+            <div class="principle-card">
+                <div class="principle-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon">
+                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="9" cy="7" r="4"></circle>
+                        <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                        <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                    </svg>
+                </div>
+                <h3 class="principle-title">{% tr "Открытость и взаимодействие с вузами" %}</h3>
+                <p class="principle-description">{% tr "Центр активно сотрудничает с высшими учебными заведениями, обеспечивая обмен опытом и лучшими практиками в области высшего образования." %}</p>
+            </div>
+
+            <!-- Принцип 2 -->
+            <div class="principle-card">
+                <div class="principle-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon">
+                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                        <circle cx="12" cy="12" r="3"></circle>
+                    </svg>
+                </div>
+                <h3 class="principle-title">{% tr "Доступность информации" %}</h3>
+                <p class="principle-description">{% tr "Обеспечение открытого доступа к информации о системе высшего образования, образовательных программах и возможностях для студентов и преподавателей." %}</p>
+            </div>
+
+            <!-- Принцип 3 -->
+            <div class="principle-card">
+                <div class="principle-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon">
+                        <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                        <line x1="3" y1="9" x2="21" y2="9"></line>
+                        <line x1="9" y1="21" x2="9" y2="9"></line>
+                    </svg>
+                </div>
+                <h3 class="principle-title">{% tr "Коллегиальность в управлении" %}</h3>
+                <p class="principle-description">{% tr "Принятие решений на основе коллегиального обсуждения с привлечением экспертов в области высшего образования и представителей академического сообщества." %}</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Стратегия и миссия -->
+<section class="strategy-mission-section">
+    <div class="container">
+        <div class="strategy-mission-grid">
+            <!-- Стратегия -->
+            <div class="strategy-block">
+                <h2 class="section-title left-aligned">{% tr "Стратегия" %}</h2>
+                <div class="strategy-content">
+                    <p>{% tr "Стратегия развития Национального центра развития высшего образования направлена на содействие интеграции казахстанской системы высшего образования в мировое образовательное пространство и повышение конкурентоспособности казахстанских вузов." %}</p>
+                    <p>{% tr "Ключевые направления стратегии включают:" %}</p>
+                    <ul class="strategy-list">
+                        <li>{% tr "Содействие внедрению параметров Болонского процесса" %}</li>
+                        <li>{% tr "Развитие академической мобильности" %}</li>
+                        <li>{% tr "Повышение качества образовательных программ" %}</li>
+                        <li>{% tr "Развитие системы квалификаций" %}</li>
+                    </ul>
+                    <a href="https://enic-kazakhstan.edu.kz/files/1553764097/strategy_cbp_am_2020.pdf" target="_blank" class="button primary-button download-button">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                            <polyline points="7 10 12 15 17 10"></polyline>
+                            <line x1="12" y1="15" x2="12" y2="3"></line>
+                        </svg>
+                        {% tr "Скачать стратегию (PDF)" %}
+                    </a>
+                </div>
+            </div>
+
+            <!-- Миссия -->
+            <div class="mission-block">
+                <h2 class="section-title left-aligned">{% tr "Миссия" %}</h2>
+                <div class="mission-content">
+                    <div class="mission-quote">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="quote-icon">
+                            <path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"></path>
+                            <path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z"></path>
+                        </svg>
+                        <p class="mission-text">{% tr "Научно-методическое и информационно-аналитическое сопровождение внедрения параметров Болонского процесса и повышения качества высшего образования в Республике Казахстан." %}</p>
+                    </div>
+                    <p>{% tr "Центр стремится стать ведущей организацией в области развития высшего образования, обеспечивая научно-методическую поддержку вузов и содействуя интеграции казахстанской системы высшего образования в мировое образовательное пространство." %}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Руководящий состав -->
+<section class="leadership-section">
+    <div class="container">
+        <h2 class="section-title">{% tr "Руководство Центра" %}</h2>
+        <div class="leadership-grid">
+            <!-- Директор -->
+            <div class="leader-card">
+                <div class="leader-photo">
+                    <!-- <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="12" cy="7" r="4"></circle>
+                    </svg> -->
+					<img src="https://enic-kazakhstan.edu.kz/uploads/about_managements/15/image.png" alt="Куанганов Фархад Шаймуратович" style="width: 100%; height: auto; border-radius: 100px;">
+                </div>
+                <h3 class="leader-name">Куанганов Фархад Шаймуратович</h3>
+                <p class="leader-position">{% tr "ДИРЕКТОР" %}</p>
+                <p class="leader-contact">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                        <polyline points="22,6 12,13 2,6"></polyline>
+                    </svg>
+                    f.kuanganov@n-k.kz
+                </p>
+            </div>
+
+            <!-- Заместитель директора 1 -->
+            <div class="leader-card">
+                <div class="leader-photo">
+                    <!-- <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="12" cy="7" r="4"></circle>
+                    </svg> -->
+					<img src="https://enic-kazakhstan.edu.kz/uploads/about_managements/8/image.png" alt="Куанганов Фархад Шаймуратович" style="width: 100%; height: auto; border-radius: 100px;">
+                </div>
+                <h3 class="leader-name">Иргебаев Ержан Турсынханович</h3>
+                <p class="leader-position">{% tr "ЗАМЕСТИТЕЛЬ ДИРЕКТОРА" %}</p>
+                <p class="leader-contact">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                        <polyline points="22,6 12,13 2,6"></polyline>
+                    </svg>
+                    y.irgebayev@n-k.kz
+                </p>
+            </div>
+
+            <!-- Заместитель директора 2 -->
+            <div class="leader-card">
+                <div class="leader-photo">
+                    <!-- <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="12" cy="7" r="4"></circle>
+                    </svg> -->
+					<img src="https://enic-kazakhstan.edu.kz/uploads/about_managements/13/image.png" alt="Куанганов Фархад Шаймуратович" style="width: 100%; height: auto; border-radius: 100px;">
+                </div>
+                <h3 class="leader-name">Мадибеков Алибек Сергазиевич</h3>
+                <p class="leader-position">{% tr "ЗАМЕСТИТЕЛЬ ДИРЕКТОРА" %}</p>
+                <p class="leader-contact">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                        <polyline points="22,6 12,13 2,6"></polyline>
+                    </svg>
+                    a.madibekov@n-k.kz
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock content %}

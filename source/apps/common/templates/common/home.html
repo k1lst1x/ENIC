@@ -1,0 +1,560 @@
+{% extends "base.html" %}
+{% load lang_tags %}
+{% load static %}
+
+{% block content %}
+
+<section class="hero-slider">
+  <div class="slider-container">
+    <div class="slider-track" id="sliderTrack">
+
+      <!-- === Slide 1 === -->
+      <div class="slide active">
+        <img src="https://videos.openai.com/vg-assets/assets%2Ftask_01jvr34ft0ec48xj89x0x99dm9%2F1747786620_img_0.webp?st=2025-05-20T22%3A33%3A11Z&se=2025-05-26T23%3A33%3A11Z&sks=b&skt=2025-05-20T22%3A33%3A11Z&ske=2025-05-26T23%3A33%3A11Z&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skoid=3d249c53-07fa-4ba4-9b65-0bf8eb4ea46a&skv=2019-02-02&sv=2018-11-09&sr=b&sp=r&spr=https%2Chttp&sig=DsAp53Wpf99Au%2BysIjpRJwe3Fiam5WLEdJqEjJRVD1o%3D&az=oaivgprodscus"
+             alt="{% tr 'Сопредседательство Казахстана в Болонском процессе' %}"
+             class="slide-image">
+        <div class="slide-overlay"></div>
+        <div class="slide-content">
+          <div class="container">
+            <h2 class="slide-title">{% tr "Сопредседательство Казахстана в Болонском процессе" %}</h2>
+            <p class="slide-description">{% tr "Казахстан стал сопредседателем Болонского процесса на 2023-2024 годы" %}</p>
+            <a href="#" class="button primary-button">{% tr "Подробнее" %}</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- === Slide 2 === -->
+      <div class="slide">
+        <img src="https://videos.openai.com/vg-assets/assets%2Ftask_01jvr3a74zemnvwd47t7zyq6ak%2F1747786814_img_0.webp?st=2025-05-20T23%3A27%3A38Z&se=2025-05-27T00%3A27%3A38Z&sks=b&skt=2025-05-20T23%3A27%3A38Z&ske=2025-05-27T00%3A27%3A38Z&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skoid=3d249c53-07fa-4ba4-9b65-0bf8eb4ea46a&skv=2019-02-02&sv=2018-11-09&sr=b&sp=r&spr=https%2Chttp&sig=wExJzc7d4DP6q4hcZ5cWCNc3ggrrEu0M8lnnjKyYg74%3D&az=oaivgprodscus"
+             alt="{% tr 'Международная конференция по высшему образованию' %}"
+             class="slide-image">
+        <div class="slide-overlay"></div>
+        <div class="slide-content">
+          <div class="container">
+            <h2 class="slide-title">{% tr "Международная конференция по высшему образованию" %}</h2>
+            <p class="slide-description">{% tr "Приглашаем принять участие в международной конференции по вопросам развития высшего образования" %}</p>
+            <a href="#" class="button primary-button">{% tr "Подробнее" %}</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- === Slide 3 === -->
+      <div class="slide">
+        <img src="https://videos.openai.com/vg-assets/assets%2Ftask_01jvr4ttm5fns9pgh2n6tdss9t%2F1747788406_img_1.webp?st=2025-05-20T23%3A08%3A31Z&se=2025-05-27T00%3A08%3A31Z&sks=b&skt=2025-05-20T23%3A08%3A31Z&ske=2025-05-27T00%3A08%3A31Z&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skoid=3d249c53-07fa-4ba4-9b65-0bf8eb4ea46a&skv=2019-02-02&sv=2018-11-09&sr=b&sp=r&spr=https%2Chttp&sig=q04Dyyfji8oExOjrBAFLS2XoWJ%2Fym66baQslrBbo4A4%3D&az=oaivgprodscus"
+             alt="{% tr 'Новые образовательные программы' %}"
+             class="slide-image">
+        <div class="slide-overlay"></div>
+        <div class="slide-content">
+          <div class="container">
+            <h2 class="slide-title">{% tr "Новые образовательные программы" %}</h2>
+            <p class="slide-description">{% tr "Утверждены новые образовательные программы для вузов Казахстана" %}</p>
+            <a href="#" class="button primary-button">{% tr "Подробнее" %}</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- === Slider Navigation === -->
+    <button class="slider-nav prev" aria-label="{% tr 'Предыдущий слайд' %}">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+           stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon">
+        <polyline points="15 18 9 12 15 6"></polyline>
+      </svg>
+    </button>
+    <button class="slider-nav next" aria-label="{% tr 'Следующий слайд' %}">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+           stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon">
+        <polyline points="9 18 15 12 9 6"></polyline>
+      </svg>
+    </button>
+
+    <!-- === Indicators === -->
+    <div class="slider-indicators">
+      <button class="indicator active" data-slide="0" aria-label="{% tr 'Слайд 1' %}"></button>
+      <button class="indicator" data-slide="1" aria-label="{% tr 'Слайд 2' %}"></button>
+      <button class="indicator" data-slide="2" aria-label="{% tr 'Слайд 3' %}"></button>
+    </div>
+  </div>
+</section>
+
+<!-- === Services Grid === -->
+<section class="services-grid">
+  <div class="container">
+    <h2 class="section-title">{% tr "Основные сервисы" %}</h2>
+    <div class="services-container">
+
+      <!-- Service 1 -->
+      <a href="#" class="service-card">
+        <div class="service-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+               stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon">
+            <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+            <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+          </svg>
+        </div>
+        <h3 class="service-title">{% tr "30 ОП ПО" %}</h3>
+        <p class="service-description">{% tr "Образовательные программы профессионального обучения" %}</p>
+      </a>
+
+      <!-- Service 2 -->
+      <a href="#" class="service-card">
+        <div class="service-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+               stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon">
+            <circle cx="12" cy="12" r="10"></circle>
+            <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+            <line x1="12" y1="17" x2="12.01" y2="17"></line>
+          </svg>
+        </div>
+        <h3 class="service-title">{% tr "Часто задаваемые вопросы" %}</h3>
+        <p class="service-description">{% tr "Ответы на популярные вопросы" %}</p>
+      </a>
+
+      <!-- Service 3 -->
+      <a href="#" class="service-card">
+        <div class="service-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+               stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon">
+            <circle cx="12" cy="8" r="7"></circle>
+            <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+          </svg>
+        </div>
+        <h3 class="service-title">{% tr "Система внутреннего обеспечения качества" %}</h3>
+        <p class="service-description">{% tr "Стандарты и процедуры обеспечения качества" %}</p>
+      </a>
+
+      <!-- Service 4 -->
+      <a href="#" class="service-card">
+        <div class="service-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+               stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon">
+            <path d="M9 11l3 3L22 4"></path>
+            <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
+          </svg>
+        </div>
+        <h3 class="service-title">{% tr "Академическая честность" %}</h3>
+        <p class="service-description">{% tr "Принципы и политика академической честности" %}</p>
+      </a>
+
+      <!-- Service 5 -->
+      <a href="#" class="service-card">
+        <div class="service-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+               stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="2" y1="12" x2="22" y2="12"></line>
+            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+          </svg>
+        </div>
+        <h3 class="service-title">{% tr "Сопредседательство Казахстана в Болонском процессе" %}</h3>
+        <p class="service-description">{% tr "Информация о сопредседательстве" %}</p>
+      </a>
+
+      <!-- Service 6 -->
+      <a href="#" class="service-card">
+        <div class="service-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+               stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon">
+            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+          </svg>
+        </div>
+        <h3 class="service-title">{% tr "Научные исследования" %}</h3>
+        <p class="service-description">{% tr "Исследовательская деятельность центра" %}</p>
+      </a>
+
+      <!-- Service 7 -->
+      <a href="#" class="service-card">
+        <div class="service-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+               stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+          </svg>
+        </div>
+        <h3 class="service-title">{% tr "Отзывы" %}</h3>
+        <p class="service-description">{% tr "Отзывы о работе центра" %}</p>
+      </a>
+
+      <!-- Service 8 -->
+      <a href="#" class="service-card">
+        <div class="service-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+               stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon">
+            <polyline points="9 11 12 14 22 4"></polyline>
+            <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
+          </svg>
+        </div>
+        <h3 class="service-title">{% tr "Аккредитация" %}</h3>
+        <p class="service-description">{% tr "Информация об аккредитации" %}</p>
+      </a>
+
+      <!-- Service 9 -->
+      <a href="#" class="service-card">
+        <div class="service-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+               stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+          </svg>
+        </div>
+        <h3 class="service-title">{% tr "Корпоративная этика и противодействие коррупционным рискам" %}</h3>
+        <p class="service-description">{% tr "Политика и меры противодействия коррупции" %}</p>
+      </a>
+
+      <!-- Service 10 -->
+      <a href="#" class="service-card">
+        <div class="service-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+               stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon">
+            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+            <line x1="8" y1="21" x2="16" y2="21"></line>
+            <line x1="12" y1="17" x2="12" y2="21"></line>
+          </svg>
+        </div>
+        <h3 class="service-title">{% tr "Лучшая практика дистанционного обучения" %}</h3>
+        <p class="service-description">{% tr "Рекомендации по дистанционному обучению" %}</p>
+      </a>
+
+      <!-- Service 11 -->
+      <a href="#" class="service-card">
+        <div class="service-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+               stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+            <circle cx="9" cy="7" r="4"></circle>
+            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+          </svg>
+        </div>
+        <h3 class="service-title">{% tr "Международные проекты" %}</h3>
+        <p class="service-description">{% tr "Международное сотрудничество и проекты" %}</p>
+      </a>
+
+      <!-- Service 12 -->
+      <a href="#" class="service-card">
+        <div class="service-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+               stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon">
+            <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+            <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
+          </svg>
+        </div>
+        <h3 class="service-title">{% tr "Национальная система квалификаций" %}</h3>
+        <p class="service-description">{% tr "Информация о системе квалификаций" %}</p>
+      </a>
+
+      <!-- Service 13 -->
+      <a href="#" class="service-card">
+        <div class="service-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+               stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon">
+            <circle cx="12" cy="12" r="10"></circle>
+            <circle cx="12" cy="10" r="3"></circle>
+            <path d="M7 20.662V19a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v1.662"></path>
+          </svg>
+        </div>
+        <h3 class="service-title">{% tr "Открытый доступ к высшему образованию" %}</h3>
+        <p class="service-description">{% tr "Инициативы по обеспечению доступности образования" %}</p>
+      </a>
+
+      <!-- Service 14 -->
+      <a href="#" class="service-card">
+        <div class="service-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+               stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon">
+            <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+            <circle cx="8.5" cy="7" r="4"></circle>
+            <line x1="20" y1="8" x2="20" y2="14"></line>
+            <line x1="23" y1="11" x2="17" y2="11"></line>
+          </svg>
+        </div>
+        <h3 class="service-title">{% tr "Привлечение зарубежных специалистов" %}</h3>
+        <p class="service-description">{% tr "Программы привлечения зарубежных экспертов" %}</p>
+      </a>
+
+      <!-- Service 15 -->
+      <a href="#" class="service-card">
+        <div class="service-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+               stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+          </svg>
+        </div>
+        <h3 class="service-title">{% tr "Расширение автономии вузов" %}</h3>
+        <p class="service-description">{% tr "Инициативы по расширению автономии вузов" %}</p>
+      </a>
+
+      <!-- Service 16 -->
+      <a href="#" class="service-card">
+        <div class="service-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+               stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon">
+            <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+            <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
+            <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
+          </svg>
+        </div>
+        <h3 class="service-title">{% tr "Реестр образовательных программ" %}</h3>
+        <p class="service-description">{% tr "База данных образовательных программ" %}</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- Новости и события -->
+<section class="news-events">
+  <div class="container">
+    <h2 class="section-title">{% tr "Новости и события" %}</h2>
+
+    <div class="news-events-grid">
+      <!-- Новости -->
+      <div class="news-section">
+        <h3 class="subsection-title">{% tr "Последние новости" %}</h3>
+        <div class="news-grid">
+          <!-- Новость 1 -->
+          <article class="news-card">
+            <div class="news-image">
+              <img src="https://videos.openai.com/vg-assets/assets%2Ftask_01jvr23t3mfkfs3fhwcsc1abq5%2F1747785549_img_1.webp?st=2025-05-20T23%3A08%3A31Z&se=2025-05-27T00%3A08%3A31Z&sks=b&skt=2025-05-20T23%3A08%3A31Z&ske=2025-05-27T00%3A08%3A31Z&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skoid=3d249c53-07fa-4ba4-9b65-0bf8eb4ea46a&skv=2019-02-02&sv=2018-11-09&sr=b&sp=r&spr=https%2Chttp&sig=dEkL%2F%2F52rdK8AVb6USU6Xnodn%2FQAPcEQysEZLsMclQI%3D&az=oaivgprodscus"
+                   alt="{% tr 'Подписан меморандум о сотрудничестве с ведущими университетами Европы' %}">
+            </div>
+            <div class="news-content">
+              <p class="news-date">15.05.2023</p>
+              <h4 class="news-title">{% tr "Подписан меморандум о сотрудничестве с ведущими университетами Европы" %}</h4>
+              <p class="news-excerpt">{% tr "В рамках развития международного сотрудничества подписан меморандум с ведущими университетами Европы." %}</p>
+              <a href="#" class="button outline-button">{% tr "Подробнее" %}</a>
+            </div>
+          </article>
+
+          <!-- Новость 2 -->
+          <article class="news-card">
+            <div class="news-image">
+              <img src="https://videos.openai.com/vg-assets/assets%2Ftask_01jvr5ve44far9760yrh99gq21%2F1747789469_img_1.webp?st=2025-05-21T00%3A03%3A31Z&se=2025-05-27T01%3A03%3A31Z&sks=b&skt=2025-05-21T00%3A03%3A31Z&ske=2025-05-27T01%3A03%3A31Z&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skoid=3d249c53-07fa-4ba4-9b65-0bf8eb4ea46a&skv=2019-02-02&sv=2018-11-09&sr=b&sp=r&spr=https%2Chttp&sig=Irg4QRqdpTKDuox24S2n7mLZ9pNNc5%2F%2FtCOdIJUnoD0%3D&az=oaivgprodscus"
+                   alt="{% tr 'Новые стандарты качества высшего образования' %}">
+            </div>
+            <div class="news-content">
+              <p class="news-date">10.05.2023</p>
+              <h4 class="news-title">{% tr "Новые стандарты качества высшего образования" %}</h4>
+              <p class="news-excerpt">{% tr "Утверждены новые стандарты качества высшего образования в соответствии с международными требованиями." %}</p>
+              <a href="#" class="button outline-button">{% tr "Подробнее" %}</a>
+            </div>
+          </article>
+
+          <!-- Новость 3 -->
+          <article class="news-card">
+            <div class="news-image">
+              <img src="https://videos.openai.com/vg-assets/assets%2Ftask_01jvr6tmkgfnqv6s3n80w1cdyn%2F1747790497_img_0.webp?st=2025-05-20T23%3A30%3A29Z&se=2025-05-27T00%3A30%3A29Z&sks=b&skt=2025-05-20T23%3A30%3A29Z&ske=2025-05-27T00%3A30%3A29Z&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skoid=3d249c53-07fa-4ba4-9b65-0bf8eb4ea46a&skv=2019-02-02&sv=2018-11-09&sr=b&sp=r&spr=https%2Chttp&sig=KHK0v3yjA57GKru74Mlx7siL9waUdaAl8MzdHLccE%2B8%3D&az=oaivgprodscus"
+                   alt="{% tr 'Конференция по цифровизации образования' %}">
+            </div>
+            <div class="news-content">
+              <p class="news-date">05.05.2023</p>
+              <h4 class="news-title">{% tr "Конференция по цифровизации образования" %}</h4>
+              <p class="news-excerpt">{% tr "Состоялась международная конференция по вопросам цифровизации высшего образования." %}</p>
+              <a href="#" class="button outline-button">{% tr "Подробнее" %}</a>
+            </div>
+          </article>
+        </div>
+        <div class="view-all">
+          <a href="#" class="button outline-button">{% tr "Все новости" %}</a>
+        </div>
+      </div>
+
+      <!-- События -->
+      <div class="events-section">
+        <h3 class="subsection-title">{% tr "События" %}</h3>
+        <div class="events-tabs">
+          <div class="tabs-header">
+            <button class="tab-button active" data-tab="list">{% tr "Список" %}</button>
+            <button class="tab-button" data-tab="calendar">{% tr "Календарь" %}</button>
+          </div>
+
+          <div class="tab-content active" id="list-tab">
+            <div class="events-list">
+              <!-- Событие 1 -->
+              <div class="event-card">
+                <p class="event-date">25.05.2023, 14:00</p>
+                <h4 class="event-title">{% tr "Семинар по академической мобильности" %}</h4>
+                <p class="event-location">{% tr "Онлайн" %}</p>
+                <a href="#" class="event-link">{% tr "Подробнее" %}</a>
+              </div>
+
+              <!-- Событие 2 -->
+              <div class="event-card">
+                <p class="event-date">28.05.2023, 11:00</p>
+                <h4 class="event-title">{% tr "Круглый стол с работодателями" %}</h4>
+                <p class="event-location">{% tr "Нур-Султан, ул. Достык, 13" %}</p>
+                <a href="#" class="event-link">{% tr "Подробнее" %}</a>
+              </div>
+
+              <!-- Событие 3 -->
+              <div class="event-card">
+                <p class="event-date">30.05.2023, 15:30</p>
+                <h4 class="event-title">{% tr "Вебинар по аккредитации образовательных программ" %}</h4>
+                <p class="event-location">{% tr "Онлайн" %}</p>
+                <a href="#" class="event-link">{% tr "Подробнее" %}</a>
+              </div>
+
+              <!-- Событие 4 -->
+              <div class="event-card">
+                <p class="event-date">05.06.2023, 10:00</p>
+                <h4 class="event-title">{% tr "Форум ректоров вузов Казахстана" %}</h4>
+                <p class="event-location">{% tr "Алматы, пр. Аль-Фараби, 71" %}</p>
+                <a href="#" class="event-link">{% tr "Подробнее" %}</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="tab-content" id="calendar-tab">
+            <div class="calendar">
+              <div class="calendar-header">
+                <h4 class="calendar-title">{% tr "Май 2023" %}</h4>
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon">
+                  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                  <line x1="16" y1="2" x2="16" y2="6"></line>
+                  <line x1="8" y1="2" x2="8" y2="6"></line>
+                  <line x1="3" y1="10" x2="21" y2="10"></line>
+                </svg>
+              </div>
+
+              <div class="calendar-grid">
+                <div class="calendar-day-names">
+                  <div class="day-name">{% tr "Пн" %}</div>
+                  <div class="day-name">{% tr "Вт" %}</div>
+                  <div class="day-name">{% tr "Ср" %}</div>
+                  <div class="day-name">{% tr "Чт" %}</div>
+                  <div class="day-name">{% tr "Пт" %}</div>
+                  <div class="day-name">{% tr "Сб" %}</div>
+                  <div class="day-name">{% tr "Вс" %}</div>
+                </div>
+                <div class="calendar-days">
+                  <button class="calendar-day empty"></button>
+                  <button class="calendar-day">1</button>
+                  <button class="calendar-day">2</button>
+                  <button class="calendar-day">3</button>
+                  <button class="calendar-day">4</button>
+                  <button class="calendar-day has-event">5</button>
+                  <button class="calendar-day">6</button>
+                  <button class="calendar-day">7</button>
+                  <button class="calendar-day">8</button>
+                  <button class="calendar-day">9</button>
+                  <button class="calendar-day">10</button>
+                  <button class="calendar-day">11</button>
+                  <button class="calendar-day">12</button>
+                  <button class="calendar-day">13</button>
+                  <button class="calendar-day">14</button>
+                  <button class="calendar-day today">15</button>
+                  <button class="calendar-day">16</button>
+                  <button class="calendar-day">17</button>
+                  <button class="calendar-day">18</button>
+                  <button class="calendar-day">19</button>
+                  <button class="calendar-day">20</button>
+                  <button class="calendar-day">21</button>
+                  <button class="calendar-day">22</button>
+                  <button class="calendar-day">23</button>
+                  <button class="calendar-day">24</button>
+                  <button class="calendar-day has-event">25</button>
+                  <button class="calendar-day">26</button>
+                  <button class="calendar-day">27</button>
+                  <button class="calendar-day has-event">28</button>
+                  <button class="calendar-day">29</button>
+                  <button class="calendar-day has-event">30</button>
+                  <button class="calendar-day">31</button>
+                </div>
+              </div>
+
+              <div class="selected-date-events" id="selectedDateEvents">
+                <!-- Здесь будут отображаться события выбранной даты -->
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="view-all">
+          <a href="#" class="button outline-button">{% tr "Все события" %}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Партнеры -->
+<section class="partners">
+  <div class="container">
+    <h2 class="section-title">{% tr "Наши партнёры" %}</h2>
+
+    <div class="partners-slider-container">
+      <!-- <button class="partner-nav prev" aria-label="{% tr 'Предыдущие партнеры' %}">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon">
+          <polyline points="15 18 9 12 15 6"></polyline>
+        </svg>
+      </button> -->
+
+      <div class="partners-slider" id="partnersSlider">
+        <div class="partner-item">
+          <img src="https://enic-kazakhstan.edu.kz/uploads/partners/14/logo.png"
+               alt="{% tr 'Болонский процесс' %}" class="partner-logo">
+          <p class="partner-name">{% tr "Болонский процесс" %}</p>
+        </div>
+        <div class="partner-item">
+          <img src="https://enic-kazakhstan.edu.kz/uploads/partners/13/logo.png"
+               alt="{% tr 'ENIC-NARIC' %}" class="partner-logo">
+          <p class="partner-name">{% tr "ENIC-NARIC" %}</p>
+        </div>
+        <div class="partner-item">
+          <img src="https://enic-kazakhstan.edu.kz/uploads/partners/12/logo.png"
+               alt="{% tr 'European Students” Union' %}" class="partner-logo">
+          <p class="partner-name">{% tr "European Students’ Union" %}</p>
+        </div>
+        <div class="partner-item">
+          <img src="https://enic-kazakhstan.edu.kz/uploads/partners/11/logo.png"
+               alt="{% tr 'EQAR' %}" class="partner-logo">
+          <p class="partner-name">{% tr "EQAR" %}</p>
+        </div>
+        <div class="partner-item">
+          <img src="https://enic-kazakhstan.edu.kz/uploads/partners/10/logo.png"
+               alt="{% tr 'European Association for Quality Assurance' %}" class="partner-logo">
+          <p class="partner-name">{% tr "European Association for Quality Assurance" %}</p>
+        </div>
+        <div class="partner-item">
+          <img src="https://enic-kazakhstan.edu.kz/uploads/partners/9/logo.png"
+               alt="{% tr 'EURASHE' %}" class="partner-logo">
+          <p class="partner-name">{% tr "EURASHE" %}</p>
+        </div>
+        <div class="partner-item">
+          <img src="https://enic-kazakhstan.edu.kz/uploads/partners/8/logo.png"
+               alt="{% tr 'European University Association' %}" class="partner-logo">
+          <p class="partner-name">{% tr "European University Association" %}</p>
+        </div>
+        <div class="partner-item">
+          <img src="https://enic-kazakhstan.edu.kz/uploads/partners/7/logo.png"
+               alt="{% tr 'European Higher Education Area' %}" class="partner-logo">
+          <p class="partner-name">{% tr "European Higher Education Area" %}</p>
+        </div>
+        <div class="partner-item">
+          <img src="https://enic-kazakhstan.edu.kz/uploads/partners/6/logo.png"
+               alt="{% tr 'Национальный информационный центр' %}" class="partner-logo">
+          <p class="partner-name">{% tr "Национальный информационный центр" %}</p>
+        </div>
+        <div class="partner-item">
+          <img src="https://enic-kazakhstan.edu.kz/uploads/partners/5/logo.png"
+               alt="{% tr 'Независимое агентство по обеспечению качества в образовании' %}" class="partner-logo">
+          <p class="partner-name">{% tr "Независимое агентство по обеспечению качества в образовании" %}</p>
+        </div>
+        <div class="partner-item">
+          <img src="https://enic-kazakhstan.edu.kz/uploads/partners/4/logo.png"
+               alt="{% tr 'INDEPENDENT AGENCY FOR ACCREDITATION AND RATING' %}" class="partner-logo">
+          <p class="partner-name">{% tr "INDEPENDENT AGENCY FOR ACCREDITATION AND RATING" %}</p>
+        </div>
+      </div>
+
+      <!-- <button class="partner-nav next" aria-label="{% tr 'Следующие партнеры' %}">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon">
+          <polyline points="9 18 15 12 9 6"></polyline>
+        </svg>
+      </button> -->
+    </div>
+  </div>
+</section>
+
+{% endblock content %}
