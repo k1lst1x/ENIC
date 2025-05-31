@@ -12,3 +12,4 @@ tzdata==2025.2
 django-ckeditor-5==0.2.18
 psycopg2-binary==2.9.9
 djangorestframework==3.16.0
+gunicorn
