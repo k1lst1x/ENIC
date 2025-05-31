@@ -1,0 +1,316 @@
+/* Стили для страницы "Периодические издания" */
+
+/* Хлебные крошки */
+.breadcrumbs {
+  padding: 1rem 0;
+  background-color: var(--white);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.breadcrumbs-list {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.breadcrumbs-item {
+  display: flex;
+  align-items: center;
+  font-size: 0.875rem;
+  color: var(--text-lighter);
+}
+
+.breadcrumbs-link {
+  color: var(--text-light);
+  transition: var(--transition);
+}
+
+.breadcrumbs-link:hover {
+  color: var(--primary-color);
+}
+
+.breadcrumbs-item .icon {
+  margin: 0 0.5rem;
+}
+
+.breadcrumbs-current {
+  color: var(--text-color);
+  font-weight: 500;
+}
+
+/* Заголовок страницы */
+.page-header {
+  padding: 2rem 0;
+  background-color: var(--secondary-color);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.page-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--text-color);
+  margin-bottom: 0.5rem;
+}
+
+.page-subtitle {
+  font-size: 1.25rem;
+  color: var(--text-light);
+}
+
+/* Общие стили для секций */
+.journal-section,
+.digests-section {
+  padding: 3rem 0;
+}
+
+.digests-section {
+  background-color: var(--secondary-color);
+}
+
+.section-title.left-aligned {
+  text-align: left;
+  margin-bottom: 1.5rem;
+}
+
+/* Журнал "Высшая школа Казахстана" */
+.journal-content {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+.journal-description {
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+.journal-description p {
+  margin-bottom: 1rem;
+  text-align: justify;
+}
+
+.journal-topics {
+  margin: 1rem 0 1.5rem 1.5rem;
+  list-style-type: disc;
+}
+
+.journal-topics li {
+  margin-bottom: 0.5rem;
+  color: var(--text-light);
+}
+
+.journal-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.journal-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.journal-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 200px;
+  height: 200px;
+  color: var(--primary-color);
+  background-color: rgba(0, 102, 204, 0.1);
+  border-radius: 50%;
+}
+
+/* Фильтр по годам */
+.year-filter {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.year-button {
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-light);
+  background-color: var(--white);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  transition: var(--transition);
+  cursor: pointer;
+}
+
+.year-button:hover {
+  background-color: var(--secondary-color);
+  border-color: var(--primary-color);
+}
+
+.year-button.active {
+  background-color: var(--primary-color);
+  color: var(--white);
+  border-color: var(--primary-color);
+}
+
+/* Секции по годам */
+.year-section {
+  margin-bottom: 3rem;
+}
+
+.year-section:last-child {
+  margin-bottom: 0;
+}
+
+.year-section.hidden {
+  display: none;
+}
+
+.year-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--text-color);
+  margin-bottom: 1.5rem;
+  text-align: center;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--primary-color);
+}
+
+/* Сетка дайджестов */
+.digests-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+.digest-card {
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+  background-color: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+}
+
+.digest-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.digest-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 100px;
+  margin: 0 auto 1rem;
+  color: var(--primary-color);
+  background-color: rgba(0, 102, 204, 0.1);
+  border-radius: 50%;
+}
+
+.digest-content {
+  text-align: center;
+}
+
+.digest-title {
+  margin-bottom: 0.5rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+.digest-description {
+  margin-bottom: 1.5rem;
+  color: var(--text-light);
+  line-height: 1.5;
+}
+
+.digest-actions {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.digest-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  border-radius: var(--radius);
+  transition: var(--transition);
+  text-decoration: none;
+}
+
+.view-button {
+  color: var(--primary-color);
+  background-color: rgba(0, 102, 204, 0.1);
+  border: 1px solid var(--primary-color);
+}
+
+.view-button:hover {
+  background-color: var(--primary-color);
+  color: var(--white);
+}
+
+.download-button {
+  color: #4caf50;
+  background-color: rgba(76, 175, 80, 0.1);
+  border: 1px solid #4caf50;
+}
+
+.download-button:hover {
+  background-color: #4caf50;
+  color: var(--white);
+}
+
+/* Активная ссылка в навигации */
+.nav-link.active,
+.mobile-nav-link.active {
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+/* Медиа-запросы */
+@media (min-width: 640px) {
+  .digests-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .digest-actions {
+    flex-direction: row;
+  }
+}
+
+@media (min-width: 768px) {
+  .page-title {
+    font-size: 3rem;
+  }
+
+  .journal-content {
+    grid-template-columns: 2fr 1fr;
+    align-items: center;
+  }
+
+  .year-filter {
+    justify-content: flex-start;
+  }
+}
+
+@media (min-width: 1024px) {
+  .digests-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1200px) {
+  .digests-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

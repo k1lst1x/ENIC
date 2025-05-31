@@ -1,0 +1,675 @@
+{% extends "base.html" %}
+{% load lang_tags %}
+{% load static %}
+
+{% block extra_head %}
+<link rel="stylesheet" href="{% static 'css/base/publications.css' %}">
+{% endblock %}
+
+{% block content %}
+<!-- Хлебные крошки -->
+<div class="breadcrumbs">
+	<div class="container">
+		<ul class="breadcrumbs-list">
+			<li class="breadcrumbs-item">
+				<a href="{% url 'home' %}" class="breadcrumbs-link">Главная</a>
+				<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon">
+					<polyline points="9 18 15 12 9 6"></polyline>
+				</svg>
+			</li>
+			<li class="breadcrumbs-item">
+				<span class="breadcrumbs-current">Периодические издания</span>
+			</li>
+		</ul>
+	</div>
+</div>
+
+<!-- Заголовок страницы -->
+<section class="page-header">
+	<div class="container">
+		<h1 class="page-title">Периодические издания</h1>
+		<p class="page-subtitle">Информационно-аналитические материалы и научные публикации Центра</p>
+	</div>
+</section>
+
+<!-- Журнал "Высшая школа Казахстана" -->
+<section class="journal-section">
+	<div class="container">
+		<div class="journal-content">
+			<div class="journal-info">
+				<h2 class="section-title left-aligned">Журнал «Высшая школа Казахстана»</h2>
+				<div class="journal-description">
+					<p>Научно-методический журнал «Высшая школа Казахстана» является ведущим изданием в области высшего образования Республики Казахстан. Журнал освещает актуальные вопросы развития высшего образования, научные исследования, методические разработки и лучшие практики казахстанских и зарубежных вузов.</p>
+					<p>Издание предназначено для руководителей и сотрудников организаций высшего образования, научных работников, преподавателей, докторантов, магистрантов и всех, кто интересуется проблемами развития высшего образования.</p>
+					<p>Журнал выходит ежеквартально и включает статьи по следующим направлениям:</p>
+					<ul class="journal-topics">
+						<li>Государственная политика в сфере высшего образования</li>
+						<li>Болонский процесс и интеграция в мировое образовательное пространство</li>
+						<li>Обеспечение качества высшего образования</li>
+						<li>Инновационные технологии в образовании</li>
+						<li>Академическая мобильность</li>
+						<li>Научные исследования в области образования</li>
+					</ul>
+				</div>
+				<a href="https://highedujournal.kz/index.php/1/index" class="button primary-button journal-button">
+					<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon">
+						<path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+						<polyline points="15 3 21 3 21 9"></polyline>
+						<line x1="10" y1="14" x2="21" y2="3"></line>
+					</svg>
+					Перейти на сайт журнала
+				</a>
+			</div>
+			<div class="journal-image">
+				<div class="journal-icon">
+					<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon">
+						<path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+						<path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+					</svg>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<!-- Информационные дайджесты -->
+<section class="digests-section">
+	<div class="container">
+		<h2 class="section-title">Информационные дайджесты</h2>
+
+		<!-- Фильтр по годам -->
+		<div class="year-filter">
+			<button class="year-button active" data-year="all">Все годы</button>
+			<button class="year-button" data-year="2023">2023 год</button>
+			<button class="year-button" data-year="2019">2019 год</button>
+		</div>
+
+		<!-- Дайджесты 2023 года -->
+		<div class="year-section" data-year="2023">
+			<h3 class="year-title">2023 год</h3>
+			<div class="digests-grid">
+				<!-- Дайджест №5, 2023 -->
+				<div class="digest-card">
+					<div class="digest-image">
+						<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon">
+							<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+							<polyline points="14 2 14 8 20 8"></polyline>
+							<line x1="16" y1="13" x2="8" y2="13"></line>
+							<line x1="16" y1="17" x2="8" y2="17"></line>
+							<polyline points="10 9 9 9 8 9"></polyline>
+						</svg>
+					</div>
+					<div class="digest-content">
+						<h4 class="digest-title">Информационный дайджест №5, 2023 г.</h4>
+						<p class="digest-description">Актуальные вопросы развития высшего образования в Казахстане и мире</p>
+						<div class="digest-actions">
+							<a href="https://enic-kazakhstan.edu.kz/uploads/additional_files_items/173/file/daydzhest-5.pdf" class="digest-button view-button">
+								<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon">
+									<path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+									<circle cx="12" cy="12" r="3"></circle>
+								</svg>
+								Посмотреть
+							</a>
+							<!-- <a href="#" class="digest-button download-button">
+								<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon">
+									<path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+									<polyline points="7 10 12 15 17 10"></polyline>
+									<line x1="12" y1="15" x2="12" y2="3"></line>
+								</svg>
+								Скачать
+							</a> -->
+						</div>
+					</div>
+				</div>
+
+				<!-- Дайджест №4, 2023 -->
+				<div class="digest-card">
+					<div class="digest-image">
+						<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon">
+							<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+							<polyline points="14 2 14 8 20 8"></polyline>
+							<line x1="16" y1="13" x2="8" y2="13"></line>
+							<line x1="16" y1="17" x2="8" y2="17"></line>
+							<polyline points="10 9 9 9 8 9"></polyline>
+						</svg>
+					</div>
+					<div class="digest-content">
+						<h4 class="digest-title">Информационный дайджест №4, 2023 г.</h4>
+						<p class="digest-description">Цифровизация высшего образования: тенденции и перспективы</p>
+						<div class="digest-actions">
+							<a href="https://enic-kazakhstan.edu.kz/uploads/additional_files_items/163/file/daydzhest-4.pdf" class="digest-button view-button">
+								<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon">
+									<path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+									<circle cx="12" cy="12" r="3"></circle>
+								</svg>
+								Посмотреть
+							</a>
+							<!-- <a href="#" class="digest-button download-button">
+								<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon">
+									<path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+									<polyline points="7 10 12 15 17 10"></polyline>
+									<line x1="12" y1="15" x2="12" y2="3"></line>
+								</svg>
+								Скачать
+							</a> -->
+						</div>
+					</div>
+				</div>
+
+				<!-- Дайджест №3, 2023 -->
+				<div class="digest-card">
+					<div class="digest-image">
+						<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon">
+							<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+							<polyline points="14 2 14 8 20 8"></polyline>
+							<line x1="16" y1="13" x2="8" y2="13"></line>
+							<line x1="16" y1="17" x2="8" y2="17"></line>
+							<polyline points="10 9 9 9 8 9"></polyline>
+						</svg>
+					</div>
+					<div class="digest-content">
+						<h4 class="digest-title">Информационный дайджест №3, 2023 г.</h4>
+						<p class="digest-description">Академическая мобильность в условиях глобализации образования</p>
+						<div class="digest-actions">
+							<a href="https://enic-kazakhstan.edu.kz/uploads/additional_files_items/162/file/daydzhest-3.pdf" class="digest-button view-button">
+								<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon">
+									<path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+									<circle cx="12" cy="12" r="3"></circle>
+								</svg>
+								Посмотреть
+							</a>
+							<!-- <a href="#" class="digest-button download-button">
+								<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon">
+									<path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+									<polyline points="7 10 12 15 17 10"></polyline>
+									<line x1="12" y1="15" x2="12" y2="3"></line>
+								</svg>
+								Скачать
+							</a> -->
+						</div>
+					</div>
+				</div>
+
+				<!-- Дайджест №2, 2023 -->
+				<div class="digest-card">
+					<div class="digest-image">
+						<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon">
+							<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+							<polyline points="14 2 14 8 20 8"></polyline>
+							<line x1="16" y1="13" x2="8" y2="13"></line>
+							<line x1="16" y1="17" x2="8" y2="17"></line>
+							<polyline points="10 9 9 9 8 9"></polyline>
+						</svg>
+					</div>
+					<div class="digest-content">
+						<h4 class="digest-title">Информационный дайджест №2, 2023 г.</h4>
+						<p class="digest-description">Обеспечение качества высшего образования: международный опыт</p>
+						<div class="digest-actions">
+							<a href="https://enic-kazakhstan.edu.kz/uploads/additional_files_items/160/file/daydzhest-2---24-03-2023.pdf" class="digest-button view-button">
+								<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon">
+									<path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+									<circle cx="12" cy="12" r="3"></circle>
+								</svg>
+								Посмотреть
+							</a>
+							<!-- <a href="#" class="digest-button download-button">
+								<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon">
+									<path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+									<polyline points="7 10 12 15 17 10"></polyline>
+									<line x1="12" y1="15" x2="12" y2="3"></line>
+								</svg>
+								Скачать
+							</a> -->
+						</div>
+					</div>
+				</div>
+
+				<!-- Дайджест №1, 2023 -->
+				<div class="digest-card">
+					<div class="digest-image">
+						<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon">
+							<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+							<polyline points="14 2 14 8 20 8"></polyline>
+							<line x1="16" y1="13" x2="8" y2="13"></line>
+							<line x1="16" y1="17" x2="8" y2="17"></line>
+							<polyline points="10 9 9 9 8 9"></polyline>
+						</svg>
+					</div>
+					<div class="digest-content">
+						<h4 class="digest-title">Информационный дайджест №1, 2023 г.</h4>
+						<p class="digest-description">Инновации в высшем образовании: новые подходы и технологии</p>
+						<div class="digest-actions">
+							<a href="https://enic-kazakhstan.edu.kz/uploads/additional_files_items/161/file/daydzhest-vo-1.pdf" class="digest-button view-button">
+								<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon">
+									<path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+									<circle cx="12" cy="12" r="3"></circle>
+								</svg>
+								Посмотреть
+							</a>
+							<!-- <a href="#" class="digest-button download-button">
+								<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon">
+									<path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+									<polyline points="7 10 12 15 17 10"></polyline>
+									<line x1="12" y1="15" x2="12" y2="3"></line>
+								</svg>
+								Скачать
+							</a> -->
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Дайджесты 2019 года -->
+		<div class="year-section" data-year="2019">
+			<h3 class="year-title">2019 год</h3>
+			<div class="digests-grid">
+				<!-- Дайджест №12, 2019 -->
+				<div class="digest-card">
+					<div class="digest-image">
+						<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon">
+							<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+							<polyline points="14 2 14 8 20 8"></polyline>
+							<line x1="16" y1="13" x2="8" y2="13"></line>
+							<line x1="16" y1="17" x2="8" y2="17"></line>
+							<polyline points="10 9 9 9 8 9"></polyline>
+						</svg>
+					</div>
+					<div class="digest-content">
+						<h4 class="digest-title">Информационный дайджест №12, 2019 г.</h4>
+						<p class="digest-description">Итоги года: достижения и перспективы развития высшего образования</p>
+						<div class="digest-actions">
+							<a href="https://enic-kazakhstan.edu.kz/uploads/additional_files_items/54/file/digest-december-2019.pdf" class="digest-button view-button">
+								<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon">
+									<path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+									<circle cx="12" cy="12" r="3"></circle>
+								</svg>
+								Посмотреть
+							</a>
+							<!-- <a href="#" class="digest-button download-button">
+								<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon">
+									<path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+									<polyline points="7 10 12 15 17 10"></polyline>
+									<line x1="12" y1="15" x2="12" y2="3"></line>
+								</svg>
+								Скачать
+							</a> -->
+						</div>
+					</div>
+				</div>
+
+				<!-- Дайджест №11, 2019 -->
+				<div class="digest-card">
+					<div class="digest-image">
+						<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon">
+							<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+							<polyline points="14 2 14 8 20 8"></polyline>
+							<line x1="16" y1="13" x2="8" y2="13"></line>
+							<line x1="16" y1="17" x2="8" y2="17"></line>
+							<polyline points="10 9 9 9 8 9"></polyline>
+						</svg>
+					</div>
+					<div class="digest-content">
+						<h4 class="digest-title">Информационный дайджест №11, 2019 г.</h4>
+						<p class="digest-description">Международное сотрудничество в сфере высшего образования</p>
+						<div class="digest-actions">
+							<a href="https://enic-kazakhstan.edu.kz/uploads/additional_files_items/50/file/digest-november-2019.pdf" class="digest-button view-button">
+								<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon">
+									<path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+									<circle cx="12" cy="12" r="3"></circle>
+								</svg>
+								Посмотреть
+							</a>
+							<!-- <a href="#" class="digest-button download-button">
+								<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon">
+									<path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+									<polyline points="7 10 12 15 17 10"></polyline>
+									<line x1="12" y1="15" x2="12" y2="3"></line>
+								</svg>
+								Скачать
+							</a> -->
+						</div>
+					</div>
+				</div>
+
+				<!-- Дайджест №10, 2019 -->
+				<div class="digest-card">
+					<div class="digest-image">
+						<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon">
+							<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+							<polyline points="14 2 14 8 20 8"></polyline>
+							<line x1="16" y1="13" x2="8" y2="13"></line>
+							<line x1="16" y1="17" x2="8" y2="17"></line>
+							<polyline points="10 9 9 9 8 9"></polyline>
+						</svg>
+					</div>
+					<div class="digest-content">
+						<h4 class="digest-title">Информационный дайджест №10, 2019 г.</h4>
+						<p class="digest-description">Развитие научно-исследовательской деятельности в вузах</p>
+						<div class="digest-actions">
+							<a href="https://enic-kazakhstan.edu.kz/uploads/additional_files_items/49/file/informacionnyy-daydzhest-10-october--2019-g.pdf" class="digest-button view-button">
+								<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon">
+									<path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+									<circle cx="12" cy="12" r="3"></circle>
+								</svg>
+								Посмотреть
+							</a>
+							<!-- <a href="#" class="digest-button download-button">
+								<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon">
+									<path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+									<polyline points="7 10 12 15 17 10"></polyline>
+									<line x1="12" y1="15" x2="12" y2="3"></line>
+								</svg>
+								Скачать
+							</a> -->
+						</div>
+					</div>
+				</div>
+
+				<!-- Остальные дайджесты 2019 года (сокращенно для экономии места) -->
+				<div class="digest-card">
+					<div class="digest-image">
+						<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon">
+							<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+							<polyline points="14 2 14 8 20 8"></polyline>
+							<line x1="16" y1="13" x2="8" y2="13"></line>
+							<line x1="16" y1="17" x2="8" y2="17"></line>
+							<polyline points="10 9 9 9 8 9"></polyline>
+						</svg>
+					</div>
+					<div class="digest-content">
+						<h4 class="digest-title">Информационный дайджест №9, 2019 г.</h4>
+						<p class="digest-description">Студентоцентрированное обучение: теория и практика</p>
+						<div class="digest-actions">
+							<a href="https://enic-kazakhstan.edu.kz/uploads/additional_files_items/48/file/informacionnyy-daydzhest-9-2019-g.pdf" class="digest-button view-button">
+								<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon">
+									<path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+									<circle cx="12" cy="12" r="3"></circle>
+								</svg>
+								Посмотреть
+							</a>
+							<!-- <a href="#" class="digest-button download-button">
+								<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon">
+									<path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+									<polyline points="7 10 12 15 17 10"></polyline>
+									<line x1="12" y1="15" x2="12" y2="3"></line>
+								</svg>
+								Скачать
+							</a> -->
+						</div>
+					</div>
+				</div>
+
+				<!-- Добавить остальные дайджесты №8-№1 аналогично -->
+				<div class="digest-card">
+					<div class="digest-image">
+						<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon">
+							<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+							<polyline points="14 2 14 8 20 8"></polyline>
+							<line x1="16" y1="13" x2="8" y2="13"></line>
+							<line x1="16" y1="17" x2="8" y2="17"></line>
+							<polyline points="10 9 9 9 8 9"></polyline>
+						</svg>
+					</div>
+					<div class="digest-content">
+						<h4 class="digest-title">Информационный дайджест №8, 2019 г.</h4>
+						<p class="digest-description">Трансформация высшего образования в цифровую эпоху</p>
+						<div class="digest-actions">
+							<a href="https://enic-kazakhstan.edu.kz/uploads/additional_files_items/47/file/digest-august-2019.pdf" class="digest-button view-button">
+								<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon">
+									<path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+									<circle cx="12" cy="12" r="3"></circle>
+								</svg>
+								Посмотреть
+							</a>
+							<!-- <a href="#" class="digest-button download-button">
+								<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon">
+									<path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+									<polyline points="7 10 12 15 17 10"></polyline>
+									<line x1="12" y1="15" x2="12" y2="3"></line>
+								</svg>
+								Скачать
+							</a> -->
+						</div>
+					</div>
+				</div>
+
+				<div class="digest-card">
+					<div class="digest-image">
+						<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon">
+							<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+							<polyline points="14 2 14 8 20 8"></polyline>
+							<line x1="16" y1="13" x2="8" y2="13"></line>
+							<line x1="16" y1="17" x2="8" y2="17"></line>
+							<polyline points="10 9 9 9 8 9"></polyline>
+						</svg>
+					</div>
+					<div class="digest-content">
+						<h4 class="digest-title">Информационный дайджест №7, 2019 г.</h4>
+						<p class="digest-description">Компетентностный подход в высшем образовании</p>
+						<div class="digest-actions">
+							<a href="https://enic-kazakhstan.edu.kz/uploads/additional_files_items/46/file/digest---july-2019.pdf" class="digest-button view-button">
+								<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon">
+									<path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+									<circle cx="12" cy="12" r="3"></circle>
+								</svg>
+								Посмотреть
+							</a>
+							<!-- <a href="#" class="digest-button download-button">
+								<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon">
+									<path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+									<polyline points="7 10 12 15 17 10"></polyline>
+									<line x1="12" y1="15" x2="12" y2="3"></line>
+								</svg>
+								Скачать
+							</a> -->
+						</div>
+					</div>
+				</div>
+
+				<div class="digest-card">
+					<div class="digest-image">
+						<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon">
+							<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+							<polyline points="14 2 14 8 20 8"></polyline>
+							<line x1="16" y1="13" x2="8" y2="13"></line>
+							<line x1="16" y1="17" x2="8" y2="17"></line>
+							<polyline points="10 9 9 9 8 9"></polyline>
+						</svg>
+					</div>
+					<div class="digest-content">
+						<h4 class="digest-title">Информационный дайджест №6, 2019 г.</h4>
+						<p class="digest-description">Инклюзивное образование в высшей школе</p>
+						<div class="digest-actions">
+							<a href="https://enic-kazakhstan.edu.kz/uploads/additional_files_items/41/file/daydzhest-iyun.pdf" class="digest-button view-button">
+								<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon">
+									<path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+									<circle cx="12" cy="12" r="3"></circle>
+								</svg>
+								Посмотреть
+							</a>
+							<!-- <a href="#" class="digest-button download-button">
+								<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon">
+									<path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+									<polyline points="7 10 12 15 17 10"></polyline>
+									<line x1="12" y1="15" x2="12" y2="3"></line>
+								</svg>
+								Скачать
+							</a> -->
+						</div>
+					</div>
+				</div>
+
+				<div class="digest-card">
+					<div class="digest-image">
+						<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon">
+							<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+							<polyline points="14 2 14 8 20 8"></polyline>
+							<line x1="16" y1="13" x2="8" y2="13"></line>
+							<line x1="16" y1="17" x2="8" y2="17"></line>
+							<polyline points="10 9 9 9 8 9"></polyline>
+						</svg>
+					</div>
+					<div class="digest-content">
+						<h4 class="digest-title">Информационный дайджест №5, 2019 г.</h4>
+						<p class="digest-description">Предпринимательские университеты: мировые тенденции</p>
+						<div class="digest-actions">
+							<a href="https://enic-kazakhstan.edu.kz/uploads/additional_files_items/40/file/daydzhest-may.pdf" class="digest-button view-button">
+								<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon">
+									<path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+									<circle cx="12" cy="12" r="3"></circle>
+								</svg>
+								Посмотреть
+							</a>
+							<!-- <a href="#" class="digest-button download-button">
+								<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon">
+									<path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+									<polyline points="7 10 12 15 17 10"></polyline>
+									<line x1="12" y1="15" x2="12" y2="3"></line>
+								</svg>
+								Скачать
+							</a> -->
+						</div>
+					</div>
+				</div>
+
+				<div class="digest-card">
+					<div class="digest-image">
+						<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon">
+							<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+							<polyline points="14 2 14 8 20 8"></polyline>
+							<line x1="16" y1="13" x2="8" y2="13"></line>
+							<line x1="16" y1="17" x2="8" y2="17"></line>
+							<polyline points="10 9 9 9 8 9"></polyline>
+						</svg>
+					</div>
+					<div class="digest-content">
+						<h4 class="digest-title">Информационный дайджест №4, 2019 г.</h4>
+						<p class="digest-description">Развитие критического мышления в высшем образовании</p>
+						<div class="digest-actions">
+							<a href="https://enic-kazakhstan.edu.kz/uploads/additional_files_items/35/file/daydzhest-aprel.pdf" class="digest-button view-button">
+								<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon">
+									<path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+									<circle cx="12" cy="12" r="3"></circle>
+								</svg>
+								Посмотреть
+							</a>
+							<!-- <a href="#" class="digest-button download-button">
+								<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon">
+									<path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+									<polyline points="7 10 12 15 17 10"></polyline>
+									<line x1="12" y1="15" x2="12" y2="3"></line>
+								</svg>
+								Скачать
+							</a> -->
+						</div>
+					</div>
+				</div>
+
+				<div class="digest-card">
+					<div class="digest-image">
+						<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon">
+							<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+							<polyline points="14 2 14 8 20 8"></polyline>
+							<line x1="16" y1="13" x2="8" y2="13"></line>
+							<line x1="16" y1="17" x2="8" y2="17"></line>
+							<polyline points="10 9 9 9 8 9"></polyline>
+						</svg>
+					</div>
+					<div class="digest-content">
+						<h4 class="digest-title">Информационный дайджест №3, 2019 г.</h4>
+						<p class="digest-description">Междисциплинарность в современном образовании</p>
+						<div class="digest-actions">
+							<a href="https://enic-kazakhstan.edu.kz/uploads/additional_files_items/38/file/daydzhest-mart.pdf" class="digest-button view-button">
+								<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon">
+									<path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+									<circle cx="12" cy="12" r="3"></circle>
+								</svg>
+								Посмотреть
+							</a>
+							<!-- <a href="#" class="digest-button download-button">
+								<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon">
+									<path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+									<polyline points="7 10 12 15 17 10"></polyline>
+									<line x1="12" y1="15" x2="12" y2="3"></line>
+								</svg>
+								Скачать
+							</a> -->
+						</div>
+					</div>
+				</div>
+
+				<div class="digest-card">
+					<div class="digest-image">
+						<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon">
+							<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+							<polyline points="14 2 14 8 20 8"></polyline>
+							<line x1="16" y1="13" x2="8" y2="13"></line>
+							<line x1="16" y1="17" x2="8" y2="17"></line>
+							<polyline points="10 9 9 9 8 9"></polyline>
+						</svg>
+					</div>
+					<div class="digest-content">
+						<h4 class="digest-title">Информационный дайджест №2, 2019 г.</h4>
+						<p class="digest-description">Устойчивое развитие и высшее образование</p>
+						<div class="digest-actions">
+							<a href="https://enic-kazakhstan.edu.kz/uploads/additional_files_items/36/file/daydzhest-fevral.pdf" class="digest-button view-button">
+								<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon">
+									<path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+									<circle cx="12" cy="12" r="3"></circle>
+								</svg>
+								Посмотреть
+							</a>
+							<!-- <a href="#" class="digest-button download-button">
+								<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon">
+									<path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+									<polyline points="7 10 12 15 17 10"></polyline>
+									<line x1="12" y1="15" x2="12" y2="3"></line>
+								</svg>
+								Скачать
+							</a> -->
+						</div>
+					</div>
+				</div>
+
+				<div class="digest-card">
+					<div class="digest-image">
+						<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon">
+							<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+							<polyline points="14 2 14 8 20 8"></polyline>
+							<line x1="16" y1="13" x2="8" y2="13"></line>
+							<line x1="16" y1="17" x2="8" y2="17"></line>
+							<polyline points="10 9 9 9 8 9"></polyline>
+						</svg>
+					</div>
+					<div class="digest-content">
+						<h4 class="digest-title">Информационный дайджест №1, 2019 г.</h4>
+						<p class="digest-description">Новые вызовы и возможности в высшем образовании</p>
+						<div class="digest-actions">
+							<a href="https://enic-kazakhstan.edu.kz/uploads/additional_files_items/34/file/daydzhest-yanvar.pdf" class="digest-button view-button">
+								<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon">
+									<path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+									<circle cx="12" cy="12" r="3"></circle>
+								</svg>
+								Посмотреть
+							</a>
+							<!-- <a href="#" class="digest-button download-button">
+								<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon">
+									<path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+									<polyline points="7 10 12 15 17 10"></polyline>
+									<line x1="12" y1="15" x2="12" y2="3"></line>
+								</svg>
+								Скачать
+							</a> -->
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+{% endblock content %}
+
+{% block extra_js %}
+<script src="{% static 'js/base/publications.js' %}"></script>
+{% endblock %}
