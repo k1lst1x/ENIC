@@ -30,7 +30,7 @@
                     </div>
                     <div class="meta-content">
                         <h4>{% tr 'Дата проведения' %}</h4>
-                        <p>15 июня 2025</p>
+                        <span>{{ event.datetime|tr_date }}</span>
                     </div>
                 </div>
 
@@ -90,7 +90,7 @@
                     {% for related in related_events %}
                         <div class="related-event-card" style="margin-bottom: 15px;">
                             <p class="related-event-date">
-                                {{ related.datetime|date:"d E Y" }}, {{ related.datetime|time:"H:i" }}
+                                {{ related.datetime|tr_date }}, {{ related.datetime|time:"H:i" }}
                             </p>
                             <h3 class="related-event-title">
                                 {% if current_lang_code == "kk" %}
@@ -127,7 +127,7 @@
             <div class="view-all">
                 <a href="/events" class="button primary-button">
                     <i class="fas fa-arrow-left"></i>
-                    Вернуться ко всем событиям
+                    {% tr 'Все события' %}
                 </a>
             </div>
         </div>
