@@ -7,9 +7,11 @@ RUN apt-get update && apt-get install -y gcc
 
 WORKDIR /usr/src/app
 
-COPY req.txt /usr/src/app/req.txt
+COPY req.txt ./req.txt
+RUN pip install --upgrade pip && pip install -r req.txt
 
-RUN pip install --upgrade pip && \
-    pip install -r req.txt
+# Копируем только source внутрь
+COPY source/ ./source/
 
-COPY . /usr/src/app/
+# Меняем рабочую директорию на source (там manage.py)
+WORKDIR /usr/src/app/source
