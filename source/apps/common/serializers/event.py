@@ -3,6 +3,7 @@ from django.utils.translation import get_language
 
 
 class EventDaySerializer(serializers.Serializer):
+    id = serializers.IntegerField()  # 👈 Добавить это поле
     title = serializers.SerializerMethodField()
     location = serializers.SerializerMethodField()
     time = serializers.SerializerMethodField()

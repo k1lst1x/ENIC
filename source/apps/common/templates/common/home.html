@@ -544,7 +544,7 @@
                           <p class="event-date">${e.time}</p>
                           <h4 class="event-title">${e.title}</h4>
                           <p class="event-location">${e.location}</p>
-                          <a href="#" class="event-link">{% tr "Подробнее" %}</a>
+                          <a href="/events/${e.id}/" class="event-link">{% tr "Подробнее" %}</a>
                         </div>
                       `).join('');
                         });
