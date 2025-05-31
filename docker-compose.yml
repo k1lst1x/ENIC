@@ -6,7 +6,7 @@ networks:
 services:
   db:
     image: postgres:13
-    container_name: postgress
+    container_name: enic-db
     volumes:
       - postgres_data:/var/lib/postgresql/data
     environment:
@@ -20,7 +20,7 @@ services:
 
   web:
     build: .
-    command: /bin/bash -c "python manage.py makemigrations && python manage.py migrate && python manage.py collectstatic --noinput && gunicorn core.wsgi:application --bind 0.0.0.0:8222"
+    command: /bin/bash -c "python manage.py makemigrations && python manage.py migrate && python manage.py collectstatic --noinput && gunicorn enic_project.wsgi:application --bind 0.0.0.0:8222"
     volumes:
       - .:/usr/src/app
       - ./staticfiles:/usr/src/app/staticfiles
