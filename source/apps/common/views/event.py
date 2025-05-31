@@ -43,8 +43,21 @@ class EventDetailView(DetailView):
     context_object_name = 'event'
 
     def get_queryset(self):
-        # Показывать только активные события
         return Event.objects.filter(is_active=True)
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        current_event = self.object
+
+        related = (
+            Event.objects
+            .filter(is_active=True)
+            .exclude(id=current_event.id)
+            .order_by('-datetime')[:3]
+        )
+        context['related_events'] = related
+
+        return context
 
 
 class EventListView(ListView):
