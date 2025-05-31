@@ -1,0 +1,1479 @@
+{% extends "base.html" %}
+{% load lang_tags %}
+{% load static %}
+
+{% block extra_head %}
+<link rel="stylesheet" href="{% static 'css/base/activities.css' %}">
+{% endblock %}
+
+{% block content %}
+    <!-- Хлебные крошки -->
+    <div class="breadcrumbs">
+        <div class="container">
+            <ul class="breadcrumbs-list">
+                <li class="breadcrumbs-item">
+                    <a href="/" class="breadcrumbs-link">Главная</a>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                         class="icon">
+                        <polyline points="9 18 15 12 9 6"></polyline>
+                    </svg>
+                </li>
+                <li class="breadcrumbs-item">
+                    <span class="breadcrumbs-current">Деятельность</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Заголовок страницы -->
+    <section class="activities-hero">
+        <div class="container">
+            <h1 class="activities-title">Деятельность</h1>
+            <p class="activities-subtitle">
+                Ключевые направления, проекты и инициативы Центра
+            </p>
+        </div>
+    </section>
+
+    <!-- Навигация по якорям -->
+    <div class="anchor-navigation">
+        <div>
+            <div class="anchor-container">
+                <a href="#national-report" class="anchor-link">Национальный доклад</a>
+                <a href="#educational-programs" class="anchor-link">Содержание ОП</a>
+                <a href="#academic-mobility" class="anchor-link">Академическая мобильность</a>
+                <a href="#document-recognition" class="anchor-link">Признание документов</a>
+                <a href="#research" class="anchor-link">Научные исследования</a>
+                <a href="#project-office" class="anchor-link">Проектный офис</a>
+                <a href="#international" class="anchor-link">Международное сотрудничество</a>
+                <a href="#program" class="anchor-link">Мамандығым-болашағым</a>
+                <a href="#atlases" class="anchor-link">Атласы</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Раздел: Национальный доклад -->
+    <section class="section-container" id="national-report">
+        <div class="container">
+            <h2 class="section-title">Национальный доклад</h2>
+            <p class="section-subtitle">
+                Ежегодный аналитический обзор состояния и развития системы высшего образования Республики Казахстан
+            </p>
+            
+            <div class="document-grid">
+                <div class="document-card">
+                    <div class="document-preview">
+                        <img src="{% static 'images/educational_banner.png' %}" alt="Национальный доклад (Постранично)">
+                    </div>
+                    <div class="document-content">
+                        <h3 class="document-title">Национальный доклад о состоянии и развитии системы образования РК (Постранично)</h3>
+                        <p class="document-description">
+                            Полный текст национального доклада в постраничном формате для удобного просмотра онлайн
+                        </p>
+                        <div class="document-actions">
+                            <a href="https://enic-kazakhstan.edu.kz/uploads/additional_files_items/303/file/doklad-mnvo-rus-17-04-2025-postranichno.pdf" target="_blank" class="document-button primary">
+                                <i class="fas fa-eye"></i>
+                                Посмотреть
+                            </a>
+                            <!-- <a href="#" class="document-button secondary">
+                                <i class="fas fa-download"></i>
+                                Скачать
+                            </a>
+                            <a href="#" class="document-button accent">
+                                <i class="fas fa-info-circle"></i>
+                                Подробнее
+                            </a> -->
+                        </div>
+                    </div>
+                </div>
+
+                <div class="document-card">
+                    <div class="document-preview">
+                        <img src="{% static 'images/educational_banner.png' %}" alt="Национальный доклад (Разворот)">
+                    </div>
+                    <div class="document-content">
+                        <h3 class="document-title">Национальный доклад о состоянии и развитии системы образования РК (Разворот)</h3>
+                        <p class="document-description">
+                            Версия национального доклада в формате разворота для печати и презентаций
+                        </p>
+                        <div class="document-actions">
+                            <a href="https://enic-kazakhstan.edu.kz/uploads/additional_files_items/302/file/doklad-mnvo-rus-04-04-2025-razvorot.pdf" target="_blank" class="document-button primary">
+                                <i class="fas fa-eye"></i>
+                                Посмотреть
+                            </a>
+                            <!-- <a href="#" class="document-button secondary">
+                                <i class="fas fa-download"></i>
+                                Скачать
+                            </a>
+                            <a href="#" class="document-button accent">
+                                <i class="fas fa-info-circle"></i>
+                                Подробнее
+                            </a> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Раздел: Содержание образовательных программ -->
+    <section class="section-container" id="educational-programs">
+        <div class="container">
+            <h2 class="section-title">Содержание образовательных программ</h2>
+            <p class="section-subtitle">
+                Аналитические материалы по содержанию и качеству образовательных программ
+            </p>
+            
+            <div class="document-grid">
+                <!-- <div class="document-card">
+                    <div class="document-preview">
+                        <i class="fas fa-file-alt document-icon"></i>
+                    </div>
+                    <div class="document-content">
+                        <h3 class="document-title">Анализ ОП по государственному и местному управлению</h3>
+                        <p class="document-description">
+                            Комплексный анализ образовательных программ в сфере государственного и местного управления
+                        </p>
+                        <div class="document-actions">
+                            <a href="#" class="document-button primary">
+                                <i class="fas fa-eye"></i>
+                                Посмотреть
+                            </a>
+                            <a href="#" class="document-button secondary">
+                                <i class="fas fa-download"></i>
+                                Скачать
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="document-card">
+                    <div class="document-preview">
+                        <i class="fas fa-chart-bar document-icon"></i>
+                    </div>
+                    <div class="document-content">
+                        <h3 class="document-title">Отчёт по включению в Реестр ОП</h3>
+                        <p class="document-description">
+                            Статистический и аналитический отчет о включении образовательных программ в Реестр ОП
+                        </p>
+                        <div class="document-actions">
+                            <a href="#" class="document-button primary">
+                                <i class="fas fa-eye"></i>
+                                Посмотреть
+                            </a>
+                            <a href="#" class="document-button secondary">
+                                <i class="fas fa-download"></i>
+                                Скачать
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="document-card">
+                    <div class="document-preview">
+                        <i class="fas fa-book document-icon"></i>
+                    </div>
+                    <div class="document-content">
+                        <h3 class="document-title">Методические рекомендации по разработке ОП</h3>
+                        <p class="document-description">
+                            Руководство для вузов по разработке качественных образовательных программ
+                        </p>
+                        <div class="document-actions">
+                            <a href="#" class="document-button primary">
+                                <i class="fas fa-eye"></i>
+                                Посмотреть
+                            </a>
+                            <a href="#" class="document-button secondary">
+                                <i class="fas fa-download"></i>
+                                Скачать
+                            </a>
+                        </div>
+                    </div>
+                </div> -->
+                <div class="document-card">
+                    <div class="document-preview">
+                        <i class="fas fa-file-alt document-icon"></i>
+                    </div>
+                    <div class="document-content">
+                        <h3 class="document-title">Анализ программ по госуправлению</h3>
+                        <p class="document-description">
+                            Сравнительный анализ и оценка образовательных программ вузов Казахстана по направлению "Государственное и местное управление".
+                        </p>
+                        <div class="document-actions">
+                            <a href="https://enic-kazakhstan.edu.kz/uploads/additional_files_items/166/file/yessimova.pdf" target="_blank" class="document-button primary">
+                                <i class="fas fa-eye"></i>
+                                Посмотреть
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="document-card">
+                    <div class="document-preview">
+                        <i class="fas fa-chart-bar document-icon"></i>
+                    </div>
+                    <div class="document-content">
+                        <h3 class="document-title">Отчет о повышении качества программ — 2022</h3>
+                        <p class="document-description">
+                            Доклад о работе по экспертизе и включению образовательных программ в Реестр ОП ВО и ПВО за 2022 год.
+                        </p>
+                        <div class="document-actions">
+                            <a href="https://enic-kazakhstan.edu.kz/uploads/additional_files_items/152/file/analiticheskaya-spravka-po-povysheniyu-kachestva-obrazovatelnyh-programm-pu.pdf" target="_blank" class="document-button primary">
+                                <i class="fas fa-eye"></i>
+                                Посмотреть
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Разделы с аккордеонами -->
+    <section class="section-container" id="academic-mobility">
+        <div class="container">
+            <h2 class="section-title">Академическая мобильность</h2>
+            
+            <div class="accordion-container">
+                <div class="accordion-item">
+                    <div class="accordion-header" onclick="toggleActivitiesAccordion(this)">
+                        <h3 class="accordion-title">Программы академической мобильности</h3>
+                        <div class="accordion-toggle">
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                    </div>
+                    <div class="accordion-content">
+                        <p class="accordion-text">
+                            Центр координирует программы академической мобильности для студентов и преподавателей казахстанских вузов. 
+                            Программы направлены на повышение качества образования, развитие международного сотрудничества и 
+                            интеграцию в мировое образовательное пространство.
+                        </p>
+                        <p class="accordion-text">
+                            Основные направления деятельности:
+                        </p>
+                        <ul class="accordion-list">
+                            <li>Координация программ внешней и внутренней академической мобильности</li>
+                            <li>Разработка методических рекомендаций по организации академической мобильности</li>
+                            <li>Мониторинг и анализ результатов программ академической мобильности</li>
+                            <li>Содействие в признании периодов обучения за рубежом</li>
+                        </ul>
+                        <a href="https://enic-kazakhstan.edu.kz/academic_mobility/documents" target="_blank" class="document-button primary" style="display: inline-flex; margin-top: 1rem;">
+                            <i class="fas fa-info-circle"></i>
+                            Подробнее о программах
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-container" id="document-recognition">
+        <div class="container">
+            <h2 class="section-title">Признание документов об образовании</h2>
+            
+            <div class="accordion-container">
+                <div class="accordion-item">
+                    <div class="accordion-header" onclick="toggleActivitiesAccordion(this)">
+                        <h3 class="accordion-title">Процедура признания иностранных документов об образовании</h3>
+                        <div class="accordion-toggle">
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                    </div>
+                    <div class="accordion-content">
+                        <p class="accordion-text">
+                            Центр осуществляет процедуру признания и нострификации документов об образовании, выданных зарубежными 
+                            учебными заведениями. Данная процедура необходима для подтверждения уровня образования и квалификации 
+                            обладателей иностранных документов об образовании на территории Республики Казахстан.
+                        </p>
+                        <p class="accordion-text">
+                            Основные функции Центра в области признания документов:
+                        </p>
+                        <ul class="accordion-list">
+                            <li>Экспертиза иностранных документов об образовании</li>
+                            <li>Выдача свидетельств о признании и нострификации</li>
+                            <li>Консультирование по вопросам признания иностранных квалификаций</li>
+                            <li>Участие в международных сетях по признанию квалификаций (ENIC-NARIC)</li>
+                        </ul>
+                        <a href="https://enic-kazakhstan.edu.kz/recognition_of_education_certificates/normativnye-dokumenty" target="_blank" class="document-button primary" style="display: inline-flex; margin-top: 1rem;">
+                            <i class="fas fa-info-circle"></i>
+                            Подробнее о процедуре
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-container" id="research">
+        <div class="container">
+            <h2 class="section-title">Научные исследования</h2>
+            
+            <div class="accordion-container">
+                <div class="accordion-item">
+                    <div class="accordion-header" onclick="toggleActivitiesAccordion(this)">
+                        <h3 class="accordion-title">Исследовательская деятельность Центра</h3>
+                        <div class="accordion-toggle">
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                    </div>
+                    <div class="accordion-content">
+                        <p class="accordion-text">
+                            Центр проводит научные исследования по актуальным вопросам развития высшего образования в Казахстане 
+                            и мире. Результаты исследований используются для разработки рекомендаций по совершенствованию 
+                            образовательной политики и практики.
+                        </p>
+                        <p class="accordion-text">
+                            Основные направления исследований:
+                        </p>
+                        <ul class="accordion-list">
+                            <li>Качество высшего образования и механизмы его обеспечения</li>
+                            <li>Интернационализация высшего образования</li>
+                            <li>Инновационные методы обучения и оценки результатов обучения</li>
+                            <li>Взаимодействие вузов с рынком труда и работодателями</li>
+                            <li>Цифровизация образования и дистанционные технологии обучения</li>
+                        </ul>
+                        <a href="https://enic-kazakhstan.edu.kz/nauchnye-issledovaniya/naimenovanie-temy-nauchnoy-programmy" target="_blank" class="document-button primary" style="display: inline-flex; margin-top: 1rem;">
+                            <i class="fas fa-info-circle"></i>
+                            Публикации и отчеты
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Раздел: Проектный офис -->
+    <section class="section-container" id="project-office">
+        <div class="container">
+            <h2 class="section-title">Проектный офис</h2>
+            <p class="section-subtitle">
+                Координация и реализация стратегических проектов в сфере высшего образования
+            </p>
+            
+            <div class="project-office-tasks">
+                <h3 style="margin-bottom: 1.5rem; color: var(--text-color);">Основные задачи Проектного офиса:</h3>
+                <ol class="task-list">
+                    <li class="task-item">Координация реализации проектов в сфере высшего образования</li>
+                    <li class="task-item">Мониторинг исполнения проектов и достижения целевых индикаторов</li>
+                    <li class="task-item">Методологическая поддержка проектных команд</li>
+                    <li class="task-item">Анализ эффективности реализации проектов</li>
+                    <li class="task-item">Разработка рекомендаций по совершенствованию проектной деятельности</li>
+                    <li class="task-item">Внедрение лучших практик проектного управления</li>
+                    <li class="task-item">Обеспечение взаимодействия с заинтересованными сторонами</li>
+                    <li class="task-item">Формирование отчетности о ходе реализации проектов</li>
+                    <li class="task-item">Координация межведомственного взаимодействия</li>
+                    <li class="task-item">Организация обучения проектных команд</li>
+                    <li class="task-item">Управление рисками проектов</li>
+                    <li class="task-item">Контроль качества проектных решений</li>
+                    <li class="task-item">Обеспечение информационной поддержки проектов</li>
+                    <li class="task-item">Координация ресурсного обеспечения проектов</li>
+                    <li class="task-item">Подготовка аналитических материалов по проектной деятельности</li>
+                </ol>
+            </div>
+
+            <!-- Проект "Создание ЦАП" -->
+            <div class="project-card highlight">
+                <h3 class="project-title">
+                    <i class="fas fa-building-columns"></i>
+                    Проект "Создание Центров академического превосходства"
+                </h3>
+                <p class="project-description">
+                    Проект направлен на создание и развитие Центров академического превосходства (ЦАП) на базе ведущих 
+                    университетов Казахстана. ЦАП призваны стать точками роста для развития приоритетных научных направлений, 
+                    подготовки высококвалифицированных кадров и трансфера технологий.
+                </p>
+                <div class="project-infographic">
+                    <img src="{% static 'images/innovative_banner.png' %}" alt="Инфографика ЦАП" style="max-width: 100%; border-radius: var(--radius);">
+                </div>
+                <p class="project-description">
+                    Основные цели создания ЦАП:
+                </p>
+                <ul class="accordion-list">
+                    <li>Повышение качества образования и научных исследований</li>
+                    <li>Развитие международного сотрудничества</li>
+                    <li>Интеграция образования, науки и производства</li>
+                    <li>Коммерциализация результатов научных исследований</li>
+                </ul>
+                <a href="https://enic-kazakhstan.edu.kz/deyatelnost/proektnyy-ofis-1" target="_blank" class="document-button primary" style="display: inline-flex;">
+                    <i class="fas fa-info-circle"></i>
+                    Подробнее о проекте
+                </a>
+            </div>
+
+            <!-- Проект "Национальный рейтинг ОВПО" -->
+            <div class="project-card">
+                <h3 class="project-title">
+                    <i class="fas fa-chart-line"></i>
+                    Проект "Национальный рейтинг ОВПО"
+                </h3>
+                <p class="project-description">
+                    Национальный рейтинг организаций высшего и послевузовского образования (ОВПО) представляет собой 
+                    систему оценки деятельности вузов Казахстана по ключевым показателям. Рейтинг способствует повышению 
+                    конкурентоспособности казахстанских вузов и качества образовательных услуг.
+                </p>
+                <div class="timeline-container">
+                    <h4 class="timeline-title">Этапы формирования рейтинга</h4>
+                    <div class="timeline">
+                        <div class="timeline-step">
+                            <div class="timeline-step-number">1</div>
+                            <p class="timeline-step-text">Сбор данных</p>
+                        </div>
+                        <div class="timeline-step">
+                            <div class="timeline-step-number">2</div>
+                            <p class="timeline-step-text">Верификация</p>
+                        </div>
+                        <div class="timeline-step">
+                            <div class="timeline-step-number">3</div>
+                            <p class="timeline-step-text">Расчет показателей</p>
+                        </div>
+                        <div class="timeline-step">
+                            <div class="timeline-step-number">4</div>
+                            <p class="timeline-step-text">Публикация</p>
+                        </div>
+                    </div>
+                </div>
+                <a href="https://enic-kazakhstan.edu.kz/post/239" target="_blank" class="document-button primary" style="display: inline-flex;">
+                    <i class="fas fa-info-circle"></i>
+                    Подробнее о рейтинге
+                </a>
+            </div>
+
+            <!-- Проект "Эндаумент-фонды" -->
+            <div class="project-card">
+                <h3 class="project-title">
+                    <i class="fas fa-hand-holding-dollar"></i>
+                    Проект "Эндаумент-фонды"
+                </h3>
+                <p class="project-description">
+                    Проект направлен на развитие системы эндаумент-фондов в казахстанских вузах как устойчивого источника 
+                    финансирования образовательной и научной деятельности. Эндаумент-фонды позволяют университетам 
+                    обеспечивать долгосрочное развитие и финансовую стабильность.
+                </p>
+                
+                <h4 style="margin: 1.5rem 0 1rem; color: var(--text-color);">Ключевые принципы и преимущества эндаумент-фондов:</h4>
+                <div class="benefits-grid">
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="fas fa-chart-pie"></i>
+                        </div>
+                        <div class="benefit-content">
+                            <h4>Диверсификация источников финансирования</h4>
+                            <p>Снижение зависимости от государственного финансирования и платных образовательных услуг</p>
+                        </div>
+                    </div>
+                    
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="benefit-content">
+                            <h4>Долгосрочная финансовая устойчивость</h4>
+                            <p>Обеспечение стабильного дохода для реализации стратегических целей университета</p>
+                        </div>
+                    </div>
+                    
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="benefit-content">
+                            <h4>Вовлечение выпускников и партнеров</h4>
+                            <p>Укрепление связей с выпускниками и бизнес-сообществом</p>
+                        </div>
+                    </div>
+                    
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <div class="benefit-content">
+                            <h4>Поддержка инноваций</h4>
+                            <p>Финансирование инновационных образовательных и научных проектов</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <a href="https://enic-kazakhstan.edu.kz/post/259" target="_blank" class="document-button primary" style="display: inline-flex; margin-top: 1.5rem;">
+                    <i class="fas fa-info-circle"></i>
+                    Подробнее о проекте
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Раздел: Международное сотрудничество -->
+    <section class="section-container" id="international">
+        <div class="container">
+            <h2 class="section-title">Международное сотрудничество</h2>
+            <p class="section-subtitle">
+                Партнерские отношения с зарубежными организациями и участие в международных проектах
+            </p>
+            
+            <div class="cooperation-grid">
+                <!-- <div class="cooperation-card">
+                    <div class="cooperation-flag">
+                        <i class="fas fa-flag"></i>
+                    </div>
+                    <div class="cooperation-content">
+                        <h3 class="cooperation-title">Казахстан и Южная Корея</h3>
+                        <div class="cooperation-actions">
+                            <a href="#" class="document-button primary">
+                                <i class="fas fa-eye"></i>
+                                Посмотреть
+                            </a>
+                            <a href="#" class="document-button secondary">
+                                <i class="fas fa-download"></i>
+                                Скачать
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cooperation-card">
+                    <div class="cooperation-flag">
+                        <i class="fas fa-flag"></i>
+                    </div>
+                    <div class="cooperation-content">
+                        <h3 class="cooperation-title">Казахстан и Германия</h3>
+                        <div class="cooperation-actions">
+                            <a href="#" class="document-button primary">
+                                <i class="fas fa-eye"></i>
+                                Посмотреть
+                            </a>
+                            <a href="#" class="document-button secondary">
+                                <i class="fas fa-download"></i>
+                                Скачать
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cooperation-card">
+                    <div class="cooperation-flag">
+                        <i class="fas fa-flag"></i>
+                    </div>
+                    <div class="cooperation-content">
+                        <h3 class="cooperation-title">Казахстан и Франция</h3>
+                        <div class="cooperation-actions">
+                            <a href="#" class="document-button primary">
+                                <i class="fas fa-eye"></i>
+                                Посмотреть
+                            </a>
+                            <a href="#" class="document-button secondary">
+                                <i class="fas fa-download"></i>
+                                Скачать
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cooperation-card">
+                    <div class="cooperation-flag">
+                        <i class="fas fa-flag"></i>
+                    </div>
+                    <div class="cooperation-content">
+                        <h3 class="cooperation-title">Казахстан и Великобритания</h3>
+                        <div class="cooperation-actions">
+                            <a href="#" class="document-button primary">
+                                <i class="fas fa-eye"></i>
+                                Посмотреть
+                            </a>
+                            <a href="#" class="document-button secondary">
+                                <i class="fas fa-download"></i>
+                                Скачать
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cooperation-card">
+                    <div class="cooperation-flag">
+                        <i class="fas fa-flag"></i>
+                    </div>
+                    <div class="cooperation-content">
+                        <h3 class="cooperation-title">Казахстан и США</h3>
+                        <div class="cooperation-actions">
+                            <a href="#" class="document-button primary">
+                                <i class="fas fa-eye"></i>
+                                Посмотреть
+                            </a>
+                            <a href="#" class="document-button secondary">
+                                <i class="fas fa-download"></i>
+                                Скачать
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cooperation-card">
+                    <div class="cooperation-flag">
+                        <i class="fas fa-flag"></i>
+                    </div>
+                    <div class="cooperation-content">
+                        <h3 class="cooperation-title">Казахстан и Китай</h3>
+                        <div class="cooperation-actions">
+                            <a href="#" class="document-button primary">
+                                <i class="fas fa-eye"></i>
+                                Посмотреть
+                            </a>
+                            <a href="#" class="document-button secondary">
+                                <i class="fas fa-download"></i>
+                                Скачать
+                            </a>
+                        </div>
+                    </div>
+                </div> -->
+                <div class="cooperation-card">
+                    <div class="cooperation-flag">
+                        <i class="fas fa-flag"></i>
+                    </div>
+                    <div class="cooperation-content">
+                        <h3 class="cooperation-title">Казахстан и Южная Корея</h3>
+                        <div class="cooperation-actions">
+                            <a href="https://enic-kazakhstan.edu.kz/uploads/additional_files_items/199/file/ms_yuzhnaya-koreya.pdf" target="_blank" class="document-button primary">
+                                <i class="fas fa-eye"></i>
+                                Посмотреть
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="cooperation-card">
+                    <div class="cooperation-flag">
+                        <i class="fas fa-flag"></i>
+                    </div>
+                    <div class="cooperation-content">
+                        <h3 class="cooperation-title">Казахстан и Пакистан</h3>
+                        <div class="cooperation-actions">
+                            <a href="https://enic-kazakhstan.edu.kz/uploads/additional_files_items/197/file/pakistan.pdf" target="_blank" class="document-button primary">
+                                <i class="fas fa-eye"></i>
+                                Посмотреть
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="cooperation-card">
+                    <div class="cooperation-flag">
+                        <i class="fas fa-flag"></i>
+                    </div>
+                    <div class="cooperation-content">
+                        <h3 class="cooperation-title">Казахстан и Сингапур</h3>
+                        <div class="cooperation-actions">
+                            <a href="https://enic-kazakhstan.edu.kz/uploads/additional_files_items/196/file/singapur.pdf" target="_blank" class="document-button primary">
+                                <i class="fas fa-eye"></i>
+                                Посмотреть
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="cooperation-card">
+                    <div class="cooperation-flag">
+                        <i class="fas fa-flag"></i>
+                    </div>
+                    <div class="cooperation-content">
+                        <h3 class="cooperation-title">Казахстан и Гонконг</h3>
+                        <div class="cooperation-actions">
+                            <a href="https://enic-kazakhstan.edu.kz/uploads/additional_files_items/195/file/gonkong.pdf" target="_blank" class="document-button primary">
+                                <i class="fas fa-eye"></i>
+                                Посмотреть
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="cooperation-card">
+                    <div class="cooperation-flag">
+                        <i class="fas fa-flag"></i>
+                    </div>
+                    <div class="cooperation-content">
+                        <h3 class="cooperation-title">Казахстан и Туркменистан</h3>
+                        <div class="cooperation-actions">
+                            <a href="https://enic-kazakhstan.edu.kz/uploads/additional_files_items/194/file/turkmenistan.pdf" target="_blank" class="document-button primary">
+                                <i class="fas fa-eye"></i>
+                                Посмотреть
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="cooperation-card">
+                    <div class="cooperation-flag">
+                        <i class="fas fa-flag"></i>
+                    </div>
+                    <div class="cooperation-content">
+                        <h3 class="cooperation-title">Казахстан и Таджикистан</h3>
+                        <div class="cooperation-actions">
+                            <a href="https://enic-kazakhstan.edu.kz/uploads/additional_files_items/193/file/tadzhikistan.pdf" target="_blank" class="document-button primary">
+                                <i class="fas fa-eye"></i>
+                                Посмотреть
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="cooperation-card">
+                    <div class="cooperation-flag">
+                        <i class="fas fa-flag"></i>
+                    </div>
+                    <div class="cooperation-content">
+                        <h3 class="cooperation-title">Казахстан и Кыргызская Республика</h3>
+                        <div class="cooperation-actions">
+                            <a href="https://enic-kazakhstan.edu.kz/uploads/additional_files_items/192/file/kyrgyzskaya-respublika.pdf" target="_blank" class="document-button primary">
+                                <i class="fas fa-eye"></i>
+                                Посмотреть
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="cooperation-card">
+                    <div class="cooperation-flag">
+                        <i class="fas fa-flag"></i>
+                    </div>
+                    <div class="cooperation-content">
+                        <h3 class="cooperation-title">Казахстан и США</h3>
+                        <div class="cooperation-actions">
+                            <a href="https://enic-kazakhstan.edu.kz/uploads/additional_files_items/177/file/ssha-2023-final.pdf" target="_blank" class="document-button primary">
+                                <i class="fas fa-eye"></i>
+                                Посмотреть
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="cooperation-card">
+                    <div class="cooperation-flag">
+                        <i class="fas fa-flag"></i>
+                    </div>
+                    <div class="cooperation-content">
+                        <h3 class="cooperation-title">Казахстан и Саудовская Аравия</h3>
+                        <div class="cooperation-actions">
+                            <a href="https://enic-kazakhstan.edu.kz/uploads/additional_files_items/175/file/ms-saudovskaya-araviya.pdf" target="_blank" class="document-button primary">
+                                <i class="fas fa-eye"></i>
+                                Посмотреть
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="cooperation-card">
+                    <div class="cooperation-flag">
+                        <i class="fas fa-flag"></i>
+                    </div>
+                    <div class="cooperation-content">
+                        <h3 class="cooperation-title">Казахстан и Испания</h3>
+                        <div class="cooperation-actions">
+                            <a href="https://enic-kazakhstan.edu.kz/uploads/additional_files_items/176/file/ms-ispaniya-russkiy-yazyk.pdf" target="_blank" class="document-button primary">
+                                <i class="fas fa-eye"></i>
+                                Посмотреть
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="cooperation-card">
+                    <div class="cooperation-flag">
+                        <i class="fas fa-flag"></i>
+                    </div>
+                    <div class="cooperation-content">
+                        <h3 class="cooperation-title">Казахстан и Франция</h3>
+                        <div class="cooperation-actions">
+                            <a href="https://enic-kazakhstan.edu.kz/uploads/additional_files_items/171/file/franciya.pdf" target="_blank" class="document-button primary">
+                                <i class="fas fa-eye"></i>
+                                Посмотреть
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="cooperation-card">
+                    <div class="cooperation-flag">
+                        <i class="fas fa-flag"></i>
+                    </div>
+                    <div class="cooperation-content">
+                        <h3 class="cooperation-title">Казахстан и Египет</h3>
+                        <div class="cooperation-actions">
+                            <a href="https://enic-kazakhstan.edu.kz/uploads/additional_files_items/158/file/egipet.pdf" target="_blank" class="document-button primary">
+                                <i class="fas fa-eye"></i>
+                                Посмотреть
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="cooperation-card">
+                    <div class="cooperation-flag">
+                        <i class="fas fa-flag"></i>
+                    </div>
+                    <div class="cooperation-content">
+                        <h3 class="cooperation-title">Казахстан и Венгрия</h3>
+                        <div class="cooperation-actions">
+                            <a href="https://enic-kazakhstan.edu.kz/uploads/additional_files_items/157/file/vengriya.pdf" target="_blank" class="document-button primary">
+                                <i class="fas fa-eye"></i>
+                                Посмотреть
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="cooperation-card">
+                    <div class="cooperation-flag">
+                        <i class="fas fa-flag"></i>
+                    </div>
+                    <div class="cooperation-content">
+                        <h3 class="cooperation-title">Международное сотрудничество СНГ</h3>
+                        <div class="cooperation-actions">
+                            <a href="https://enic-kazakhstan.edu.kz/uploads/additional_files_items/156/file/mezhdunarodnoe-sotrudnichestvo-sng.pdf" target="_blank" class="document-button primary">
+                                <i class="fas fa-eye"></i>
+                                Посмотреть
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="cooperation-card">
+                    <div class="cooperation-flag">
+                        <i class="fas fa-flag"></i>
+                    </div>
+                    <div class="cooperation-content">
+                        <h3 class="cooperation-title">Казахстан и Греция</h3>
+                        <div class="cooperation-actions">
+                            <a href="https://enic-kazakhstan.edu.kz/uploads/additional_files_items/155/file/greciya_rus.pdf" target="_blank" class="document-button primary">
+                                <i class="fas fa-eye"></i>
+                                Посмотреть
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="cooperation-card">
+                    <div class="cooperation-flag">
+                        <i class="fas fa-flag"></i>
+                    </div>
+                    <div class="cooperation-content">
+                        <h3 class="cooperation-title">Казахстан и ОАЭ</h3>
+                        <div class="cooperation-actions">
+                            <a href="https://enic-kazakhstan.edu.kz/uploads/additional_files_items/151/file/spravka-po-oae.pdf" target="_blank" class="document-button primary">
+                                <i class="fas fa-eye"></i>
+                                Посмотреть
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="cooperation-card">
+                    <div class="cooperation-flag">
+                        <i class="fas fa-flag"></i>
+                    </div>
+                    <div class="cooperation-content">
+                        <h3 class="cooperation-title">Казахстан и Азербайджан</h3>
+                        <div class="cooperation-actions">
+                            <a href="https://enic-kazakhstan.edu.kz/uploads/additional_files_items/141/file/azerbaydzhan.pdf" target="_blank" class="document-button primary">
+                                <i class="fas fa-eye"></i>
+                                Посмотреть
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="cooperation-card">
+                    <div class="cooperation-flag">
+                        <i class="fas fa-flag"></i>
+                    </div>
+                    <div class="cooperation-content">
+                        <h3 class="cooperation-title">Казахстан и Армения</h3>
+                        <div class="cooperation-actions">
+                            <a href="https://enic-kazakhstan.edu.kz/uploads/additional_files_items/142/file/mezhdunarodnoe-sotrudnichestvo-kazahstana-i-armenii-v-sfere-vysshego-obrazo.pdf" target="_blank" class="document-button primary">
+                                <i class="fas fa-eye"></i>
+                                Посмотреть
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="cooperation-card">
+                    <div class="cooperation-flag">
+                        <i class="fas fa-flag"></i>
+                    </div>
+                    <div class="cooperation-content">
+                        <h3 class="cooperation-title">Казахстан и Беларусь</h3>
+                        <div class="cooperation-actions">
+                            <a href="https://enic-kazakhstan.edu.kz/uploads/additional_files_items/143/file/mezhdunarodnoe-sotrudnichestvo-s-respublikoy-belarus-akademicheskaya-mobiln.pdf" target="_blank" class="document-button primary">
+                                <i class="fas fa-eye"></i>
+                                Посмотреть
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="cooperation-card">
+                    <div class="cooperation-flag">
+                        <i class="fas fa-flag"></i>
+                    </div>
+                    <div class="cooperation-content">
+                        <h3 class="cooperation-title">Казахстан и Кыргызстан (академическая мобильность)</h3>
+                        <div class="cooperation-actions">
+                            <a href="https://enic-kazakhstan.edu.kz/uploads/additional_files_items/144/file/kyrgyzskaya-respublika.pdf" target="_blank" class="document-button primary">
+                                <i class="fas fa-eye"></i>
+                                Посмотреть
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="cooperation-card">
+                    <div class="cooperation-flag">
+                        <i class="fas fa-flag"></i>
+                    </div>
+                    <div class="cooperation-content">
+                        <h3 class="cooperation-title">Казахстан и Молдова</h3>
+                        <div class="cooperation-actions">
+                            <a href="https://enic-kazakhstan.edu.kz/uploads/additional_files_items/145/file/moldova.pdf" target="_blank" class="document-button primary">
+                                <i class="fas fa-eye"></i>
+                                Посмотреть
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="cooperation-card">
+                    <div class="cooperation-flag">
+                        <i class="fas fa-flag"></i>
+                    </div>
+                    <div class="cooperation-content">
+                        <h3 class="cooperation-title">Казахстан и Россия (академическая мобильность)</h3>
+                        <div class="cooperation-actions">
+                            <a href="https://enic-kazakhstan.edu.kz/uploads/additional_files_items/146/file/rossiya.pdf" target="_blank" class="document-button primary">
+                                <i class="fas fa-eye"></i>
+                                Посмотреть
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="cooperation-card">
+                    <div class="cooperation-flag">
+                        <i class="fas fa-flag"></i>
+                    </div>
+                    <div class="cooperation-content">
+                        <h3 class="cooperation-title">Казахстан и Таджикистан (академическая мобильность)</h3>
+                        <div class="cooperation-actions">
+                            <a href="https://enic-kazakhstan.edu.kz/uploads/additional_files_items/147/file/tadzhikistan.pdf" target="_blank" class="document-button primary">
+                                <i class="fas fa-eye"></i>
+                                Посмотреть
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="cooperation-card">
+                    <div class="cooperation-flag">
+                        <i class="fas fa-flag"></i>
+                    </div>
+                    <div class="cooperation-content">
+                        <h3 class="cooperation-title">Казахстан и Туркменистан (академическая мобильность)</h3>
+                        <div class="cooperation-actions">
+                            <a href="https://enic-kazakhstan.edu.kz/uploads/additional_files_items/148/file/turkmenistan.pdf" target="_blank" class="document-button primary">
+                                <i class="fas fa-eye"></i>
+                                Посмотреть
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="cooperation-card">
+                    <div class="cooperation-flag">
+                        <i class="fas fa-flag"></i>
+                    </div>
+                    <div class="cooperation-content">
+                        <h3 class="cooperation-title">Казахстан и Узбекистан (академическая мобильность)</h3>
+                        <div class="cooperation-actions">
+                            <a href="https://enic-kazakhstan.edu.kz/uploads/additional_files_items/149/file/uzbekistan.pdf" target="_blank" class="document-button primary">
+                                <i class="fas fa-eye"></i>
+                                Посмотреть
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="cooperation-card">
+                    <div class="cooperation-flag">
+                        <i class="fas fa-flag"></i>
+                    </div>
+                    <div class="cooperation-content">
+                        <h3 class="cooperation-title">Казахстан и Украина (академическая мобильность)</h3>
+                        <div class="cooperation-actions">
+                            <a href="https://enic-kazakhstan.edu.kz/uploads/additional_files_items/150/file/mezhdunarodnoe-sotrudnichestvo-ukrainy-s-respublikoy-kazahstan-v-sfere-vyss.pdf" target="_blank" class="document-button primary">
+                                <i class="fas fa-eye"></i>
+                                Посмотреть
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="cooperation-card">
+                    <div class="cooperation-flag">
+                        <i class="fas fa-flag"></i>
+                    </div>
+                    <div class="cooperation-content">
+                        <h3 class="cooperation-title">Международный опыт содействия трудоустройству</h3>
+                        <div class="cooperation-actions">
+                            <a href="https://enic-kazakhstan.edu.kz/uploads/additional_files_items/30/file/sodeystvie-trudoustroysvtu_mezhd-opyt.pdf" target="_blank" class="document-button primary">
+                                <i class="fas fa-eye"></i>
+                                Посмотреть
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="cooperation-card">
+                    <div class="cooperation-flag">
+                        <i class="fas fa-flag"></i>
+                    </div>
+                    <div class="cooperation-content">
+                        <h3 class="cooperation-title">Постдокторские программы</h3>
+                        <div class="cooperation-actions">
+                            <a href="https://enic-kazakhstan.edu.kz/uploads/additional_files_items/42/file/postdoktorskie-programmy.pdf" target="_blank" class="document-button primary">
+                                <i class="fas fa-eye"></i>
+                                Посмотреть
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Раздел: Программа «Мамандығым-болашағым» -->
+    <section class="section-container" id="program">
+        <div class="container">
+            <h2 class="section-title">Программа «Мамандығым-болашағым»</h2>
+            <p class="section-subtitle">
+                Профориентационная программа для молодежи Казахстана
+            </p>
+            
+            <div class="program-section">
+                <div class="program-content">
+                    <p>
+                        Программа «Мамандығым-болашағым» (Моя профессия – мое будущее) направлена на профессиональную 
+                        ориентацию молодежи и помощь в выборе образовательной траектории. Программа реализуется в 
+                        сотрудничестве с организациями образования, работодателями и государственными органами.
+                    </p>
+                    <p>
+                        Основные цели программы:
+                    </p>
+                    <ul class="accordion-list">
+                        <li>Информирование молодежи о востребованных профессиях и перспективных направлениях подготовки</li>
+                        <li>Развитие навыков профессионального самоопределения</li>
+                        <li>Содействие осознанному выбору образовательной траектории</li>
+                        <li>Повышение престижа технических и инженерных специальностей</li>
+                    </ul>
+                    <a href="https://enic-kazakhstan.edu.kz/deyatelnost/podrobnee-o-proekte-1" target="_blank" class="document-button primary" style="display: inline-flex; margin-top: 1.5rem;">
+                        <i class="fas fa-info-circle"></i>
+                        Подробнее о программе
+                    </a>
+                </div>
+                
+                <div class="video-container" style="max-width: 560px; width:100%;">
+                    <iframe
+                        width="100%"
+                        height="315"
+                        src="https://www.youtube.com/embed/8h6zXqzHKEI"
+                        title="YouTube video player"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen
+                        style="border-radius: 14px; width:100%;"
+                    ></iframe>
+                </div>
+            </div>
+        </div>
+    </section>    
+
+    <!-- Раздел: Атласы -->
+    <section class="section-container" id="atlases">
+        <div class="container">
+            <h2 class="section-title">Атласы</h2>
+            <p class="section-subtitle">
+                Региональные и отраслевые атласы профессий и компетенций
+            </p>
+            
+            <div class="atlas-grid">
+                <!-- <div class="atlas-card">
+                    <div class="atlas-preview">
+                        <i class="fas fa-map"></i>
+                    </div>
+                    <div class="atlas-content">
+                        <h3 class="atlas-title">Атлас Алматы</h3>
+                        <div class="atlas-actions">
+                            <a href="#" class="document-button primary">
+                                <i class="fas fa-eye"></i>
+                                Посмотреть
+                            </a>
+                            <a href="#" class="document-button secondary">
+                                <i class="fas fa-download"></i>
+                                Скачать
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="atlas-card">
+                    <div class="atlas-preview">
+                        <i class="fas fa-map"></i>
+                    </div>
+                    <div class="atlas-content">
+                        <h3 class="atlas-title">Атлас Акмолинской области</h3>
+                        <div class="atlas-actions">
+                            <a href="#" class="document-button primary">
+                                <i class="fas fa-eye"></i>
+                                Посмотреть
+                            </a>
+                            <a href="#" class="document-button secondary">
+                                <i class="fas fa-download"></i>
+                                Скачать
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="atlas-card">
+                    <div class="atlas-preview">
+                        <i class="fas fa-map"></i>
+                    </div>
+                    <div class="atlas-content">
+                        <h3 class="atlas-title">Атлас Карагандинской области</h3>
+                        <div class="atlas-actions">
+                            <a href="#" class="document-button primary">
+                                <i class="fas fa-eye"></i>
+                                Посмотреть
+                            </a>
+                            <a href="#" class="document-button secondary">
+                                <i class="fas fa-download"></i>
+                                Скачать
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="atlas-card">
+                    <div class="atlas-preview">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <div class="atlas-content">
+                        <h3 class="atlas-title">Карта креативных индустрий</h3>
+                        <div class="atlas-actions">
+                            <a href="#" class="document-button primary">
+                                <i class="fas fa-eye"></i>
+                                Посмотреть
+                            </a>
+                            <a href="#" class="document-button secondary">
+                                <i class="fas fa-download"></i>
+                                Скачать
+                            </a>
+                        </div>
+                    </div>
+                </div> -->
+                <div class="atlas-card">
+                    <div class="atlas-preview">
+                        <i class="fas fa-map"></i>
+                    </div>
+                    <div class="atlas-content">
+                        <h3 class="atlas-title">Атлас Акмолинская область</h3>
+                        <div class="atlas-actions">
+                            <a href="https://enic-kazakhstan.edu.kz/uploads/additional_files_items/298/file/atlas-akmolinskaya-oblast.pdf" target="_blank" class="document-button primary">
+                                <i class="fas fa-eye"></i>
+                                Посмотреть
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="atlas-card">
+                    <div class="atlas-preview">
+                        <i class="fas fa-map"></i>
+                    </div>
+                    <div class="atlas-content">
+                        <h3 class="atlas-title">Атлас Актюбинская область</h3>
+                        <div class="atlas-actions">
+                            <a href="https://enic-kazakhstan.edu.kz/uploads/additional_files_items/297/file/atlas-aktyubinskaya-oblast.pdf?cache=1739164198" target="_blank" class="document-button primary">
+                                <i class="fas fa-eye"></i>
+                                Посмотреть
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="atlas-card">
+                    <div class="atlas-preview">
+                        <i class="fas fa-map"></i>
+                    </div>
+                    <div class="atlas-content">
+                        <h3 class="atlas-title">Атлас области Жетісу</h3>
+                        <div class="atlas-actions">
+                            <a href="https://enic-kazakhstan.edu.kz/uploads/additional_files_items/299/file/atlas-oblasti-zhet-su.pdf?cache=1739164277" target="_blank" class="document-button primary">
+                                <i class="fas fa-eye"></i>
+                                Посмотреть
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="atlas-card">
+                    <div class="atlas-preview">
+                        <i class="fas fa-map"></i>
+                    </div>
+                    <div class="atlas-content">
+                        <h3 class="atlas-title">Атлас Павлодарская область</h3>
+                        <div class="atlas-actions">
+                            <a href="https://enic-kazakhstan.edu.kz/uploads/additional_files_items/292/file/atlas-pavlodarskaya-oblast.pdf?cache=1739163952" target="_blank" class="document-button primary">
+                                <i class="fas fa-eye"></i>
+                                Посмотреть
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="atlas-card">
+                    <div class="atlas-preview">
+                        <i class="fas fa-map"></i>
+                    </div>
+                    <div class="atlas-content">
+                        <h3 class="atlas-title">Атлас Мангистауская область</h3>
+                        <div class="atlas-actions">
+                            <a href="https://enic-kazakhstan.edu.kz/uploads/additional_files_items/293/file/atlas-mangistauskaya-oblast.pdf?cache=1739163998" target="_blank" class="document-button primary">
+                                <i class="fas fa-eye"></i>
+                                Посмотреть
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="atlas-card">
+                    <div class="atlas-preview">
+                        <i class="fas fa-map"></i>
+                    </div>
+                    <div class="atlas-content">
+                        <h3 class="atlas-title">Атлас Карагандинская область</h3>
+                        <div class="atlas-actions">
+                            <a href="https://enic-kazakhstan.edu.kz/uploads/additional_files_items/294/file/atlas-karagandinskaya-oblast.pdf?cache=1739164044" target="_blank" class="document-button primary">
+                                <i class="fas fa-eye"></i>
+                                Посмотреть
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="atlas-card">
+                    <div class="atlas-preview">
+                        <i class="fas fa-map"></i>
+                    </div>
+                    <div class="atlas-content">
+                        <h3 class="atlas-title">Атлас города Алматы</h3>
+                        <div class="atlas-actions">
+                            <a href="https://enic-kazakhstan.edu.kz/uploads/additional_files_items/295/file/atlas-goroda-almaty.pdf?cache=1739164077" target="_blank" class="document-button primary">
+                                <i class="fas fa-eye"></i>
+                                Посмотреть
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="atlas-card">
+                    <div class="atlas-preview">
+                        <i class="fas fa-map"></i>
+                    </div>
+                    <div class="atlas-content">
+                        <h3 class="atlas-title">Атлас города Астана</h3>
+                        <div class="atlas-actions">
+                            <a href="https://enic-kazakhstan.edu.kz/uploads/additional_files_items/296/file/atlas-goroda-astana.pdf?cache=1739164124" target="_blank" class="document-button primary">
+                                <i class="fas fa-eye"></i>
+                                Посмотреть
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="atlas-card">
+                    <div class="atlas-preview">
+                        <i class="fas fa-map"></i>
+                    </div>
+                    <div class="atlas-content">
+                        <h3 class="atlas-title">Атлас Донской ГОК</h3>
+                        <div class="atlas-actions">
+                            <a href="https://enic-kazakhstan.edu.kz/uploads/additional_files_items/300/file/atlas-donskoy-gok.pdf?cache=1739164309" target="_blank" class="document-button primary">
+                                <i class="fas fa-eye"></i>
+                                Посмотреть
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="atlas-card">
+                    <div class="atlas-preview">
+                        <i class="fas fa-map"></i>
+                    </div>
+                    <div class="atlas-content">
+                        <h3 class="atlas-title">Карта креативных индустрий</h3>
+                        <div class="atlas-actions">
+                            <a href="https://enic-kazakhstan.edu.kz/uploads/additional_files_items/301/file/karta-kreativnyh-industriy.pdf?cache=1739164334" target="_blank" class="document-button primary">
+                                <i class="fas fa-eye"></i>
+                                Посмотреть
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="industry-atlas-section">
+                <h3 class="industry-atlas-title">Отраслевые Атласы новых профессий и компетенций</h3>
+                
+                <div class="atlas-grid">
+                    <div class="atlas-card">
+                        <div class="atlas-preview">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <div class="atlas-content">
+                            <h3 class="atlas-title">Атлас новых профессий и компетенций Республики Казахстан</h3>
+                            <div class="atlas-actions">
+                                <a href="https://atlasbt.enbek.kz/" target="_blank" class="document-button primary">
+                                    <i class="fas fa-eye"></i>
+                                    Посмотреть
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="atlas-card">
+                        <div class="atlas-preview">
+                            <i class="fas fa-wheelchair"></i>
+                        </div>
+                        <div class="atlas-content">
+                            <h3 class="atlas-title">Атлас рекомендуемых профессий и занятий для лиц с инвалидностью</h3>
+                            <div class="atlas-actions">
+                                <a href="https://enbek.kz/ru/atlases-professions/disabilities-professions" target="_blank" class="document-button primary">
+                                    <i class="fas fa-eye"></i>
+                                    Посмотреть
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Завершающий блок -->
+    <!-- <section class="contact-section">
+        <div class="container">
+            <h2 class="contact-title">Свяжитесь с нами</h2>
+            <p class="contact-text">
+                Для получения дополнительной информации о деятельности Национального центра развития высшего образования 
+                или по вопросам сотрудничества, пожалуйста, свяжитесь с нами.
+            </p>
+            <a href="/contacts" class="contact-button">
+                <i class="fas fa-envelope"></i>
+                Контактная информация
+            </a>
+        </div>
+    </section> -->
+
+    <script>
+        // Активация якорных ссылок для страницы Деятельность
+        document.addEventListener('DOMContentLoaded', function() {
+            const activitiesAnchorLinks = document.querySelectorAll('.anchor-link');
+            
+            // Функция для определения активного раздела при прокрутке
+            function setActivitiesActiveSection() {
+                const sections = document.querySelectorAll('.section-container');
+                let currentSection = '';
+                
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.clientHeight;
+                    
+                    if (window.pageYOffset >= sectionTop - 200 && 
+                        window.pageYOffset < sectionTop + sectionHeight - 200) {
+                        currentSection = section.getAttribute('id');
+                    }
+                });
+                
+                activitiesAnchorLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === '#' + currentSection) {
+                        link.classList.add('active');
+                    }
+                });
+            }
+            
+            // Плавная прокрутка для якорных ссылок
+            activitiesAnchorLinks.forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 100,
+                            behavior: 'smooth'
+                        });
+                        
+                        // Обновление URL без перезагрузки страницы
+                        history.pushState(null, null, targetId);
+                        
+                        // Обновление активной ссылки
+                        activitiesAnchorLinks.forEach(link => link.classList.remove('active'));
+                        this.classList.add('active');
+                    }
+                });
+            });
+            
+            // Отслеживание прокрутки для обновления активной ссылки
+            window.addEventListener('scroll', setActivitiesActiveSection);
+            
+            // Инициализация активной ссылки при загрузке страницы
+            setActivitiesActiveSection();
+        });
+
+        // Переключение аккордеонов для страницы Деятельность
+        function toggleActivitiesAccordion(header) {
+            const content = header.nextElementSibling;
+            const toggle = header.querySelector('.accordion-toggle i');
+            
+            if (content.classList.contains('active')) {
+                content.classList.remove('active');
+                toggle.style.transform = 'rotate(0deg)';
+            } else {
+                // Закрываем все остальные аккордеоны
+                document.querySelectorAll('.accordion-content.active').forEach(item => {
+                    item.classList.remove('active');
+                });
+                document.querySelectorAll('.accordion-toggle i').forEach(icon => {
+                    icon.style.transform = 'rotate(0deg)';
+                });
+                
+                // Открываем выбранный аккордеон
+                content.classList.add('active');
+                toggle.style.transform = 'rotate(180deg)';
+            }
+        }
+
+        // Функция для воспроизведения видео программы
+        function playProgramVideo() {
+            // Здесь можно добавить логику для открытия видео в модальном окне
+            // или перенаправления на YouTube
+            alert('Открытие видео о программе «Мамандығым-болашағым»');
+        }
+
+        // Плавная прокрутка для всех якорных ссылок на странице Деятельность
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Обработка внешних ссылок
+        document.querySelectorAll('a[target="_blank"]').forEach(link => {
+            link.addEventListener('click', function(e) {
+                // Можно добавить аналитику или предупреждения о переходе на внешний сайт
+                console.log('Переход на внешний ресурс:', this.href);
+            });
+        });
+
+        // Анимация появления элементов при прокрутке
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Применяем анимацию к карточкам
+        document.querySelectorAll('.document-card, .cooperation-card, .atlas-card, .project-card').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(card);
+        });
+    </script>
+{% endblock content %}
