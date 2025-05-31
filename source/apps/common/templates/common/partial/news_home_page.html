@@ -19,6 +19,21 @@
                                 </div>
                                 <div class="news-content">
                                     <p class="news-date">{{ news_item.created_at|tr_date }}</p>
+                                    {% if news_item.tags.all %}
+                                        <div class="card-tags">
+                                            {% for tag in news_item.tags.all|slice:":2" %}
+                                                <span class="card-tag">
+                                                    {% if current_lang == "kz" and tag.name_kz %}
+                                                        {{ tag.name_kz }}
+                                                    {% elif current_lang == "eng" and tag.name_en %}
+                                                        {{ tag.name_en }}
+                                                    {% else %}
+                                                        {{ tag.name_ru }}
+                                                    {% endif %}
+                                                </span>
+                                            {% endfor %}
+                                        </div>
+                                    {% endif %}
                                     <h4 class="news-title">
                                         {% if current_lang == "kz" and news_item.title_kz %}
                                             {{ news_item.title_kz }}
@@ -39,14 +54,15 @@
                                             {% endif %}
                                         {% endif %}
                                     </p>
-                                    <a href="{% url 'news_detail' news_item.pk %}" class="button outline-button">{% tr "Подробнее" %}</a>
+                                    <a href="{% url 'news_detail' news_item.pk %}"
+                                       class="button outline-button">{% tr "Подробнее" %}</a>
                                 </div>
                             </article>
                         {% endfor %}
 
                     </div>
                     <div class="view-all">
-                        <a href="#" class="button outline-button">{% tr "Все новости" %}</a>
+                        <a href="{% url 'news_list' %}" class="button outline-button">{% tr "Все новости" %}</a>
                     </div>
                 </div>
 

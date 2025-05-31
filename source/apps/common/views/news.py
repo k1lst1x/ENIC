@@ -8,10 +8,11 @@ from bs4 import BeautifulSoup
 from django.views.generic import DetailView
 from django.utils import translation
 
-from apps.common.models import News
+from apps.common.models import News, Tag
+
 
 class NewsListView(ListView):
-    template_name = 'news_list.html'
+    template_name = 'news/news_list.html'
     context_object_name = 'news'
     model = News
 

@@ -1,10 +1,78 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends "base.html" %}
+{% load lang_tags %}
 
-</body>
-</html>
+{% block content %}
+    <section class="news-events">
+        <div class="container">
+            <h1 class="section-title">{% tr "Все новости" %}</h1>
+
+            <div class="news-grid">
+                {% for news_item in news %}
+                    <article class="news-card">
+                        <div class="news-image">
+                            <img src="{{ news_item.image.url }}" alt="{{ news_item.title_ru }}">
+                        </div>
+                        <div class="news-content">
+                            <p class="news-date">{{ news_item.created_at|tr_date }}</p>
+
+                            {% if news_item.tags.all %}
+                                <div class="card-tags">
+                                    {% for tag in news_item.tags.all|slice:":2" %}
+                                        <span class="card-tag">
+                    {% if current_lang == "kz" and tag.name_kz %}
+                        {{ tag.name_kz }}
+                    {% elif current_lang == "eng" and tag.name_en %}
+                        {{ tag.name_en }}
+                    {% else %}
+                        {{ tag.name_ru }}
+                    {% endif %}
+                  </span>
+                                    {% endfor %}
+                                </div>
+                            {% endif %}
+
+                            <h2 class="news-title">
+                                {% if current_lang == "kz" and news_item.title_kz %}
+                                    {{ news_item.title_kz }}
+                                {% elif current_lang == "eng" and news_item.title_en %}
+                                    {{ news_item.title_en }}
+                                {% else %}
+                                    {{ news_item.title_ru }}
+                                {% endif %}
+                            </h2>
+
+                            <p class="news-excerpt">
+                                {% if news_item.small_description_kz or news_item.small_description_en or news_item.small_description_ru %}
+                                    {% if current_lang == "kz" and news_item.small_description_kz %}
+                                        {{ news_item.small_description_kz }}
+                                    {% elif current_lang == "eng" and news_item.small_description_en %}
+                                        {{ news_item.small_description_en }}
+                                    {% else %}
+                                        {{ news_item.small_description_ru }}
+                                    {% endif %}
+                                {% endif %}
+                            </p>
+
+                            <a href="{% url 'news_detail' news_item.pk %}" class="button outline-button">
+                                {% tr "Подробнее" %}
+                            </a>
+                        </div>
+                    </article>
+                {% endfor %}
+            </div>
+
+            <div class="view-all">
+                {% if is_paginated %}
+                    {% if page_obj.has_previous %}
+                        <a href="?page={{ page_obj.previous_page_number }}"
+                           class="button outline-button">← {% tr "Назад" %}</a>
+                    {% endif %}
+                    {% if page_obj.has_next %}
+                        <a href="?page={{ page_obj.next_page_number }}" class="button outline-button">{% tr "Далее" %}
+                            →</a>
+                    {% endif %}
+                {% endif %}
+            </div>
+        </div>
+    </section>
+{% endblock content %}
