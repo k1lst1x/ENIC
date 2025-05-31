@@ -7,9 +7,9 @@ RUN apt-get update && apt-get install -y gcc
 
 WORKDIR /usr/src/app
 
-COPY requirements.txt /usr/src/app/requirements.txt
+COPY req.txt /usr/src/app/req.txt
 
 RUN pip install --upgrade pip && \
-    pip install -r requirements.txt
+    pip install -r req.txt
 
 COPY . /usr/src/app/
