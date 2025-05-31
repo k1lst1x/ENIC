@@ -53,7 +53,7 @@
                         Год:
                     </label>
                     <select id="yearFilter" class="filter-select">
-                        <option value="all" selected>Все годы</option>
+                        <option value="all" selected>{% tr 'Все годы' %}</option>
                         <option value="2025">2025</option>
                         <option value="2024">2024</option>
                         <option value="2023">2023</option>
@@ -74,24 +74,24 @@
                         Месяц:
                     </label>
                     <select id="monthFilter" class="filter-select">
-                        <option value="all">Все месяцы</option>
-                        <option value="1">Январь</option>
-                        <option value="2">Февраль</option>
-                        <option value="3">Март</option>
-                        <option value="4">Апрель</option>
-                        <option value="5">Май</option>
-                        <option value="6">Июнь</option>
-                        <option value="7">Июль</option>
-                        <option value="8">Август</option>
-                        <option value="9">Сентябрь</option>
-                        <option value="10">Октябрь</option>
-                        <option value="11">Ноябрь</option>
-                        <option value="12">Декабрь</option>
+                        <option value="all">{% tr 'Все месяцы' %}</option>
+                        <option value="1">{% tr 'Январь' %}</option>
+                        <option value="2">{% tr 'Февраль' %}</option>
+                        <option value="3">{% tr 'Март' %}</option>
+                        <option value="4">{% tr 'Апрель' %}</option>
+                        <option value="5">{% tr 'Май' %}</option>
+                        <option value="6">{% tr 'Июнь' %}</option>
+                        <option value="7">{% tr 'Июль' %}</option>
+                        <option value="8">{% tr 'Август' %}</option>
+                        <option value="9">{% tr 'Сентябрь' %}</option>
+                        <option value="10">{% tr 'Октябрь' %}</option>
+                        <option value="11">{% tr 'Ноябрь' %}</option>
+                        <option value="12">{% tr 'Декабрь' %}</option>
                     </select>
                 </div>
 
                 <div class="events-count">
-                    <span id="eventsCount">Найдено событий: 12</span>
+                    <span id="eventsCount">{% tr 'Найдено событий:' %} 12</span>
                 </div>
             </div>
         </div>
@@ -132,24 +132,14 @@
                                     <div class="event-location"><i
                                             class="fas fa-map-marker-alt"></i> {{ event.location }}</div>
                                 </div>
-                                <button
-                                        class="event-details-btn"
-                                        data-title="
-                                                {% if current_lang_code == 'kk' %}{{ event.title_kz }}{% elif current_lang_code == 'en' %}{{ event.title_en }}{% else %}{{ event.title_ru }}{% endif %}"
-                                        data-date="{{ event.datetime|date:'d.m.Y' }}"
-                                        data-time="{{ event.datetime|date:'H:i' }}"
-                                        data-location="{{ event.location }}"
-                                        data-views="{{ event.views }}"
-                                        data-description="{{ event.description }}"
-                                        data-details="{{ event.details|default_if_none:''|escape }}"
-                                >
+                                <button class="event-details-btn" data-id="{{ event.id }}">
                                     {% tr 'Подробнее' %}
                                 </button>
                             </div>
                         </div>
                     </div>
                     {% empty %}
-                    <p>Нет доступных событий.</p>
+                    <p>{% tr 'Нет доступных событий.' %}</p>
                 {% endfor %}
             </div>
         </div>
@@ -159,7 +149,7 @@
     <div class="modal-overlay" id="eventModal">
         <div class="modal-content">
             <div class="modal-header">
-                <h3 class="modal-title" id="modalTitle">Заголовок события</h3>
+                <h3 class="modal-title" id="modalTitle">{% tr 'Заголовок события' %}</h3>
                 <button class="modal-close" id="modalClose">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -181,7 +171,7 @@
                                 <line x1="8" y1="2" x2="8" y2="6"></line>
                                 <line x1="3" y1="10" x2="21" y2="10"></line>
                             </svg>
-                            <span id="modalDate">Дата</span>
+                            <span id="modalDate">{% tr 'Дата' %}</span>
                         </div>
                         <div class="modal-time">
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
@@ -190,7 +180,7 @@
                                 <circle cx="12" cy="12" r="10"></circle>
                                 <polyline points="12 6 12 12 16 14"></polyline>
                             </svg>
-                            <span id="modalTime">Время</span>
+                            <span id="modalTime">{% tr 'Время' %}</span>
                         </div>
                         <div class="modal-location">
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
@@ -199,25 +189,25 @@
                                 <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
                                 <circle cx="12" cy="10" r="3"></circle>
                             </svg>
-                            <span id="modalLocation">Место проведения</span>
+                            <span id="modalLocation">{% tr 'Место проведения' %}</span>
                         </div>
                         <div class="modal-views">
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
                                  fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                                  stroke-linejoin="round" class="icon">
-                                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
-                                <circle cx="12" cy="12" r="3"></circle>
+{#                                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>#}
+{#                                <circle cx="12" cy="12" r="3"></circle>#}
                             </svg>
-                            <span id="modalViews">Просмотров</span>
+                            <span id="modalViews" style="display: none !important;">{% tr 'Просмотров' %}</span>
                         </div>
                     </div>
                     <div class="modal-description">
-                        <p id="modalDescription">Описание события</p>
+                        <div id="modalDescription">{% tr 'Заголовок события' %}{% tr 'Описание события' %}</div>
                     </div>
                     <div class="modal-details">
-                        <h4>Дополнительная информация</h4>
+                        <h4>{% tr 'Дополнительная информация' %}</h4>
                         <div id="modalDetailsContent">
-                            <p>Подробная информация о событии будет добавлена здесь.</p>
+                            <p>{% tr 'Подробная информация о событии будет добавлена здесь' %}.</p>
                         </div>
                     </div>
                 </div>
@@ -225,9 +215,15 @@
         </div>
     </div>
 
+    <script id="eventsJson" type="application/json">
+        {{ events_json|safe }}
+    </script>
 
     <script>
         document.addEventListener("DOMContentLoaded", () => {
+            // Парсим events_json из шаблона
+            const eventsData = JSON.parse(document.getElementById("eventsJson").textContent)
+
             // Элементы фильтров
             const yearFilter = document.getElementById("yearFilter")
             const monthFilter = document.getElementById("monthFilter")
@@ -246,256 +242,7 @@
             const modalClose = document.getElementById("modalClose")
             const detailButtons = document.querySelectorAll(".event-details-btn")
 
-            // Данные событий для модального окна
-            const eventsData = {
-                1: {
-                    title: "Международная конференция «Будущее высшего образования»",
-                    date: "15 декабря 2023",
-                    time: "10:00 - 17:00",
-                    location: "Астана, Назарбаев Университет",
-                    views: "2,847",
-                    description:
-                        "Международная конференция, посвященная инновациям в высшем образовании и цифровой трансформации университетов",
-                    details: `
-        <p>Конференция объединит ведущих экспертов в области высшего образования, представителей университетов, государственных органов и международных организаций для обсуждения актуальных вопросов развития высшего образования.</p>
-        <h5>Основные темы:</h5>
-        <ul>
-          <li>Цифровая трансформация университетов</li>
-          <li>Инновационные методы обучения</li>
-          <li>Международное сотрудничество в образовании</li>
-          <li>Качество высшего образования</li>
-          <li>Устойчивое развитие университетов</li>
-        </ul>
-        <h5>Участники:</h5>
-        <p>Ожидается участие более 200 представителей из 15 стран мира, включая ректоров ведущих университетов, экспертов в области образования и представителей международных организаций.</p>
-      `,
-                },
-                2: {
-                    title: "Семинар по академической мобильности",
-                    date: "28 ноября 2023",
-                    time: "14:00 - 18:00",
-                    location: "Онлайн",
-                    views: "1,523",
-                    description: "Практический семинар для координаторов программ академической мобильности казахстанских вузов",
-                    details: `
-        <p>Семинар направлен на повышение квалификации координаторов программ академической мобильности и обмен лучшими практиками.</p>
-        <h5>Программа семинара:</h5>
-        <ul>
-          <li>Нормативно-правовая база академической мобильности</li>
-          <li>Процедуры организации академической мобильности</li>
-          <li>Зачет результатов обучения</li>
-          <li>Финансирование программ мобильности</li>
-          <li>Работа с международными партнерами</li>
-        </ul>
-        <p>По итогам семинара участники получат сертификаты о повышении квалификации.</p>
-      `,
-                },
-                3: {
-                    title: "Упрощённое признание зарубежных дипломов PhD и докторов",
-                    date: "30 октября 2023",
-                    time: "15:00 - 16:30",
-                    location: "Астана, ENIC-KAZAKHSTAN",
-                    views: "3,215",
-                    description: "Информационная сессия о новых процедурах признания зарубежных научных степеней",
-                    details: `
-        <p>Информационная сессия посвящена новым упрощенным процедурам признания зарубежных дипломов PhD и докторских степеней в Казахстане.</p>
-        <h5>Основные вопросы:</h5>
-        <ul>
-          <li>Новые требования к документам</li>
-          <li>Упрощенные процедуры подачи заявлений</li>
-          <li>Сроки рассмотрения заявлений</li>
-          <li>Список признаваемых зарубежных университетов</li>
-          <li>Особенности признания по различным специальностям</li>
-        </ul>
-        <p>Мероприятие будет полезно для обладателей зарубежных научных степеней, планирующих работать в Казахстане.</p>
-      `,
-                },
-                4: {
-                    title: "Круглый стол «Качество высшего образования»",
-                    date: "22 сентября 2023",
-                    time: "11:00 - 15:00",
-                    location: "Алматы, КазНУ им. аль-Фараби",
-                    views: "987",
-                    description: "Обсуждение современных подходов к обеспечению качества высшего образования в Казахстане",
-                    details: `
-        <p>Круглый стол объединил представителей вузов, агентств по обеспечению качества образования и экспертов для обсуждения актуальных вопросов качества высшего образования.</p>
-        <h5>Обсуждаемые темы:</h5>
-        <ul>
-          <li>Внутренние системы обеспечения качества</li>
-          <li>Внешняя оценка качества образования</li>
-          <li>Международные стандарты качества</li>
-          <li>Роль студентов в обеспечении качества</li>
-          <li>Цифровые инструменты оценки качества</li>
-        </ul>
-        <p>По итогам мероприятия были выработаны рекомендации по совершенствованию системы обеспечения качества высшего образования в Казахстане.</p>
-      `,
-                },
-                5: {
-                    title: "Летняя школа для молодых исследователей",
-                    date: "18 августа 2023",
-                    time: "09:00 - 18:00",
-                    location: "Шымкент, ЮКУ им. М. Ауэзова",
-                    views: "1,456",
-                    description: "Интенсивная программа для молодых ученых по методологии научных исследований",
-                    details: `
-        <p>Летняя школа предназначена для молодых исследователей, докторантов и магистрантов, желающих углубить свои знания в области методологии научных исследований.</p>
-        <h5>Программа школы:</h5>
-        <ul>
-          <li>Основы научной методологии</li>
-          <li>Планирование и проведение исследований</li>
-          <li>Статистические методы анализа данных</li>
-          <li>Академическое письмо и публикации</li>
-          <li>Этика научных исследований</li>
-          <li>Презентация результатов исследований</li>
-        </ul>
-        <p>Участники получили сертификаты об успешном завершении программы и возможность публикации своих работ в специальном сборнике.</p>
-      `,
-                },
-                6: {
-                    title: "Форум ректоров университетов Центральной Азии",
-                    date: "14 июня 2023",
-                    time: "09:30 - 17:30",
-                    location: "Астана, Rixos President Hotel",
-                    views: "2,134",
-                    description: "Региональный форум по вопросам сотрудничества в сфере высшего образования",
-                    details: `
-        <p>Форум объединил ректоров ведущих университетов стран Центральной Азии для обсуждения перспектив регионального сотрудничества в сфере высшего образования.</p>
-        <h5>Основные направления обсуждения:</h5>
-        <ul>
-          <li>Создание единого образовательного пространства Центральной Азии</li>
-          <li>Совместные образовательные программы</li>
-          <li>Академическая мобильность в регионе</li>
-          <li>Научное сотрудничество</li>
-          <li>Цифровизация образования</li>
-        </ul>
-        <p>По итогам форума была принята декларация о развитии сотрудничества университетов Центральной Азии.</p>
-      `,
-                },
-                7: {
-                    title: "Вебинар «Опыт реализации совместных и двудипломных программ»",
-                    date: "12 мая 2023",
-                    time: "16:00 - 17:30",
-                    location: "Онлайн",
-                    views: "1,969",
-                    description: "Обмен опытом реализации совместных образовательных программ с зарубежными партнерами",
-                    details: `
-        <p>Вебинар был посвящен обмену опытом казахстанских вузов в области реализации совместных и двудипломных образовательных программ с зарубежными университетами.</p>
-        <h5>Рассматриваемые вопросы:</h5>
-        <ul>
-          <li>Правовые основы совместных программ</li>
-          <li>Процедуры разработки и утверждения программ</li>
-          <li>Организация учебного процесса</li>
-          <li>Финансовые аспекты реализации программ</li>
-          <li>Контроль качества образования</li>
-          <li>Выдача дипломов и их признание</li>
-        </ul>
-        <p>В вебинаре приняли участие представители более 50 казахстанских вузов.</p>
-      `,
-                },
-                8: {
-                    title: "Презентация отчета «Состояние высшего образования в Казахстане»",
-                    date: "25 апреля 2023",
-                    time: "14:30 - 16:00",
-                    location: "Астана, МОН РК",
-                    views: "3,567",
-                    description: "Презентация ежегодного аналитического отчета о состоянии системы высшего образования",
-                    details: `
-        <p>Презентация ежегодного аналитического отчета о состоянии системы высшего образования в Республике Казахстан за 2022 год.</p>
-        <h5>Основные разделы отчета:</h5>
-        <ul>
-          <li>Статистика высшего образования</li>
-          <li>Качество образовательных программ</li>
-          <li>Трудоустройство выпускников</li>
-          <li>Международное сотрудничество</li>
-          <li>Научная деятельность вузов</li>
-          <li>Финансирование высшего образования</li>
-        </ul>
-        <p>Отчет содержит рекомендации по дальнейшему развитию системы высшего образования в стране.</p>
-      `,
-                },
-                9: {
-                    title: "Мастер-класс «Цифровые компетенции преподавателя»",
-                    date: "8 марта 2023",
-                    time: "13:00 - 17:00",
-                    location: "Онлайн",
-                    views: "892",
-                    description: "Практический мастер-класс по развитию цифровых навыков преподавателей высшей школы",
-                    details: `
-        <p>Мастер-класс направлен на развитие цифровых компетенций преподавателей высших учебных заведений в условиях цифровой трансформации образования.</p>
-        <h5>Программа мастер-класса:</h5>
-        <ul>
-          <li>Цифровые инструменты для онлайн-обучения</li>
-          <li>Создание интерактивного контента</li>
-          <li>Оценивание в цифровой среде</li>
-          <li>Использование LMS-систем</li>
-          <li>Мобильные технологии в образовании</li>
-        </ul>
-        <p>Участники получили практические навыки работы с современными цифровыми инструментами для образования.</p>
-      `,
-                },
-                10: {
-                    title: "Конференция «Инклюзивное образование в высшей школе»",
-                    date: "16 февраля 2023",
-                    time: "10:00 - 16:00",
-                    location: "Алматы, КазНПУ им. Абая",
-                    views: "1,678",
-                    description: "Международная конференция по вопросам развития инклюзивного образования",
-                    details: `
-        <p>Международная конференция была посвящена вопросам развития инклюзивного образования в высших учебных заведениях и созданию равных возможностей для всех студентов.</p>
-        <h5>Основные темы конференции:</h5>
-        <ul>
-          <li>Принципы инклюзивного образования</li>
-          <li>Адаптация образовательных программ</li>
-          <li>Технические средства поддержки</li>
-          <li>Подготовка преподавателей</li>
-          <li>Социальная интеграция студентов</li>
-        </ul>
-        <p>В конференции приняли участие эксперты из 8 стран и представители более 30 казахстанских вузов.</p>
-      `,
-                },
-                11: {
-                    title: "Рабочая встреча с представителями BFUG",
-                    date: "24 января 2023",
-                    time: "11:00 - 13:00",
-                    location: "Онлайн",
-                    views: "756",
-                    description: "Рабочая встреча по вопросам сопредседательства Казахстана в Болонском процессе",
-                    details: `
-        <p>Рабочая встреча была посвящена обсуждению планов и приоритетов сопредседательства Казахстана в Наблюдательной группе Болонского процесса (BFUG).</p>
-        <h5>Обсуждаемые вопросы:</h5>
-        <ul>
-          <li>План работы BFUG на 2023 год</li>
-          <li>Приоритеты казахстанского сопредседательства</li>
-          <li>Организация мероприятий BFUG</li>
-          <li>Взаимодействие с рабочими группами</li>
-          <li>Подготовка к конференции министров</li>
-        </ul>
-        <p>Встреча способствовала координации усилий по реализации целей Болонского процесса.</p>
-      `,
-                },
-                12: {
-                    title: "Планерное совещание по итогам 2022 года",
-                    date: "10 января 2023",
-                    time: "15:00 - 17:00",
-                    location: "Астана, ENIC-KAZAKHSTAN",
-                    views: "234",
-                    description: "Подведение итогов работы Центра за 2022 год и планирование деятельности на 2023 год",
-                    details: `
-        <p>Планерное совещание сотрудников Центра было посвящено подведению итогов работы за 2022 год и планированию основных направлений деятельности на 2023 год.</p>
-        <h5>Основные вопросы повестки:</h5>
-        <ul>
-          <li>Анализ выполнения плана работы за 2022 год</li>
-          <li>Основные достижения и результаты</li>
-          <li>Выявленные проблемы и пути их решения</li>
-          <li>Приоритеты работы на 2023 год</li>
-          <li>Планирование мероприятий и проектов</li>
-        </ul>
-        <p>По итогам совещания был утвержден план работы Центра на 2023 год.</p>
-      `,
-                },
-            }
-
-            // Функция фильтрации событий
+            // Фильтрация событий
             function filterEvents() {
                 const selectedYear = yearFilter.value
                 const selectedMonth = monthFilter.value
@@ -507,12 +254,10 @@
 
                     let showItem = true
 
-                    // Фильтр по году
                     if (selectedYear !== "all" && itemYear !== selectedYear) {
                         showItem = false
                     }
 
-                    // Фильтр по месяцу
                     if (selectedMonth !== "all" && itemMonth !== selectedMonth) {
                         showItem = false
                     }
@@ -525,62 +270,60 @@
                     }
                 })
 
-                // Обновление счетчика
                 eventsCount.textContent = `Найдено событий: ${visibleCount}`
             }
 
-            // Обработчики событий для фильтров
-            yearFilter.addEventListener("change", filterEvents)
-            monthFilter.addEventListener("change", filterEvents)
+            // Показ модального окна
+            function openModal(button) {
+                const eventId = parseInt(button.dataset.id)
+                const eventData = eventsData.find(event => event.id === eventId)
 
-            // Функция открытия модального окна
-            function openModal(eventId) {
-                const eventData = eventsData[eventId]
                 if (!eventData) return
 
                 modalTitle.textContent = eventData.title
-                modalDate.textContent = eventData.date
+                modalDate.textContent = eventData.datetime
                 modalTime.textContent = eventData.time
                 modalLocation.textContent = eventData.location
-                modalViews.textContent = eventData.views
-                modalDescription.textContent = eventData.description
-                modalDetailsContent.innerHTML = eventData.details
+                modalViews.textContent = eventData.views || 0
+                modalDescription.innerHTML = eventData.description || "Нет описания"
+                modalDetailsContent.innerHTML = eventData.details || "Подробности скоро появятся"
 
                 modal.classList.add("active")
                 document.body.style.overflow = "hidden"
             }
 
-            // Функция закрытия модального окна
+            // Закрытие модального окна
             function closeModal() {
                 modal.classList.remove("active")
                 document.body.style.overflow = ""
             }
 
-            // Обработчики событий для кнопок "Подробнее"
+            // Навесить обработчики на кнопки
             detailButtons.forEach((button) => {
                 button.addEventListener("click", (e) => {
                     e.preventDefault()
-                    const eventId = button.getAttribute("data-event")
-                    openModal(eventId)
+                    openModal(button)
                 })
             })
 
-            // Обработчики для закрытия модального окна
+            // Закрытие по крестику
             modalClose.addEventListener("click", closeModal)
+
+            // Закрытие по клику вне контента
             modal.addEventListener("click", (e) => {
                 if (e.target === modal) {
                     closeModal()
                 }
             })
 
-            // Закрытие модального окна по Escape
+            // Закрытие по Escape
             document.addEventListener("keydown", (e) => {
                 if (e.key === "Escape" && modal.classList.contains("active")) {
                     closeModal()
                 }
             })
 
-            // Анимация появления элементов при прокрутке
+            // Анимация
             function checkItemsInView() {
                 timelineItems.forEach((item) => {
                     if (item.classList.contains("hidden")) return
@@ -594,12 +337,13 @@
                 })
             }
 
-            // Проверяем при загрузке и при прокрутке
+            filterEvents()
             checkItemsInView()
             window.addEventListener("scroll", checkItemsInView)
-
-            // Инициализация фильтров
-            filterEvents()
+            yearFilter.addEventListener("change", filterEvents)
+            monthFilter.addEventListener("change", filterEvents)
         })
     </script>
+
+
 {% endblock %}
