@@ -6,6 +6,7 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('apps.common.urls')),  # 🔗 Подключение URL-ов из common
+    path("ckeditor5/", include('django_ckeditor_5.urls')),
 ]
 
 if settings.DEBUG:

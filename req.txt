@@ -9,3 +9,6 @@ pillow==11.2.1
 python-dotenv==1.1.0
 sqlparse==0.5.3
 tzdata==2025.2
+django-ckeditor-5==0.2.18
+beautifulsoup4==4.12.3
+psycopg2-binary==2.9.9
