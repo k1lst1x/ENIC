@@ -16,4 +16,7 @@ urlpatterns = [
     path('api/events-by-month/', view.EventsByMonthAPIView.as_view(), name='events_by_month'),
     path('events/<int:pk>/', view.EventDetailView.as_view(), name='event_detail'),
     path('events/', view.EventListView.as_view(), name='event_list'),
+
+    # Search
+    path('search/', view.SearchView.as_view(), name='search'),
 ]

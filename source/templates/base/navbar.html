@@ -68,7 +68,10 @@
     <div class="search-bar" id="searchBar">
         <div class="container">
             <div class="search-container">
-                <input type="search" placeholder="{% tr 'Поиск по сайту…' %}" class="search-input">
+                <form method="get" action="{% url 'search' %}" class="search-container">
+                    <input type="search" name="q" placeholder="{% tr 'Поиск по сайту…' %}" class="search-input"
+                           value="{{ request.GET.q }}">
+                </form>
                 <button class="search-close" aria-label="{% tr 'Закрыть' %}">
                     <!-- icon -->
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
@@ -88,7 +91,8 @@
                 <ul class="mobile-nav-list">
                     <li><a href="{% url 'about' %}" class="mobile-nav-link">{% tr "О Центре" %}</a></li>
                     <li><a href="{% url 'bologna' %}" class="mobile-nav-link">{% tr "Болонский процесс" %}</a></li>
-                    <li><a href="{% url 'publications' %}" class="mobile-nav-link">{% tr "Периодические издания" %}</a></li>
+                    <li><a href="{% url 'publications' %}" class="mobile-nav-link">{% tr "Периодические издания" %}</a>
+                    </li>
                     <li><a href="#" class="mobile-nav-link">{% tr "Справочная информация" %}</a></li>
                     <li><a href="#" class="mobile-nav-link">{% tr "Реестр ОП" %}</a></li>
                     <li><a href="#" class="mobile-nav-link">{% tr "Деятельность" %}</a></li>
