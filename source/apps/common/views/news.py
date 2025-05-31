@@ -7,6 +7,7 @@ import hashlib
 from bs4 import BeautifulSoup
 from django.views.generic import DetailView
 from django.utils import translation
+from django.utils.translation import get_language
 
 from apps.common.models import News, Tag
 
@@ -71,8 +72,8 @@ class NewsListView(ListView):
             except EmptyPage:
                 page_obj = paginator.page(paginator.num_pages)
 
-            news_html = render_to_string('partial/news_cards.html', {'news': page_obj.object_list, 'current_lang': get_language()})
-            pagination_html = render_to_string('pagination.html', {'page_obj': page_obj, 'page_number': page_obj.number,
+            news_html = render_to_string('news/partial/news_cards.html', {'news': page_obj.object_list, 'current_lang': get_language()})
+            pagination_html = render_to_string('news/partial/pagination.html', {'page_obj': page_obj, 'page_number': page_obj.number,
                                                                    'request': request})
 
             response_data = {

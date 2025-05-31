@@ -1,0 +1,143 @@
+/* CSS для плавного исчезновения */
+.fade-out {
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+
+/* CSS для плавного появления */
+.fade-in {
+    opacity: 1;
+    transition: opacity 1s ease;
+}
+
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+  justify-content: center;
+}
+
+.tag-link {
+  display: inline-block;
+  padding: 0.4rem 0.9rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+  border-radius: 999px;
+  background-color: transparent;
+  transition: var(--transition);
+  text-decoration: none;
+}
+
+.tag-link:hover {
+  background-color: var(--primary-color);
+  color: var(--white);
+}
+
+.tag-link.selected {
+  background-color: var(--primary-color);
+  color: var(--white);
+  pointer-events: none;
+}
+
+.search-form {
+  margin: 1.5rem 0;
+  display: flex;
+  justify-content: center;
+}
+
+.search-input {
+  width: 100%;
+  max-width: 500px;
+  padding: 0.6rem 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  font-size: 0.875rem;
+  color: var(--text-color);
+  transition: var(--transition);
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 2px rgba(0, 102, 204, 0.15);
+}
+
+.news-detail {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  background-color: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.news-detail-image {
+  margin-bottom: 2rem;
+}
+
+.news-detail-image img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius);
+  object-fit: cover;
+}
+
+.news-body {
+  font-size: 1rem;
+  line-height: 1.75;
+  color: var(--text-color);
+  margin-top: 1.5rem;
+}
+
+.news-body h2, .news-body h3 {
+  margin-top: 1.5rem;
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+.news-body p {
+  margin-bottom: 1rem;
+}
+
+.news-detail-card {
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: var(--white);
+  padding: 2rem 1.5rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.news-detail-image {
+  margin: 1.5rem 0;
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.news-detail-image img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: var(--radius);
+}
+
+.news-body {
+  font-size: 1rem;
+  line-height: 1.75;
+  color: var(--text-color);
+}
+
+.news-body h2,
+.news-body h3 {
+  margin-top: 2rem;
+  color: var(--text-color);
+}
+
+.news-body p {
+  margin-bottom: 1rem;
+}
+
+

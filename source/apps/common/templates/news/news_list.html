@@ -1,78 +1,61 @@
 {% extends "base.html" %}
 {% load lang_tags %}
+{% load static %}
+
+{% block extra_head %}
+    <link rel="stylesheet" href="{% static 'css/base/news.css' %}">
+{% endblock %}
 
 {% block content %}
     <section class="news-events">
-        <div class="container">
+        <div class="container" id="news-start">
             <h1 class="section-title">{% tr "Все новости" %}</h1>
 
-            <div class="news-grid">
-                {% for news_item in news %}
-                    <article class="news-card">
-                        <div class="news-image">
-                            <img src="{{ news_item.image.url }}" alt="{{ news_item.title_ru }}">
-                        </div>
-                        <div class="news-content">
-                            <p class="news-date">{{ news_item.created_at|tr_date }}</p>
+            <!-- Поиск -->
+            <form id="searchFormNews" class="search-form" method="get">
+                <input type="text" id="searchNews" name="search_query" placeholder="{% tr 'Поиск по новостям' %}"
+                       value="{{ search_query }}" class="search-input">
+            </form>
 
-                            {% if news_item.tags.all %}
-                                <div class="card-tags">
-                                    {% for tag in news_item.tags.all|slice:":2" %}
-                                        <span class="card-tag">
-                    {% if current_lang == "kz" and tag.name_kz %}
-                        {{ tag.name_kz }}
-                    {% elif current_lang == "eng" and tag.name_en %}
-                        {{ tag.name_en }}
+            <!-- Теги -->
+            <div id="tag-container" class="tag-list" style="margin-top: 1rem;">
+                <a href="javascript:void(0);"
+                   class="tag-link {% if not selected_tag %}selected{% endif %}"
+                   data-tag="">
+                    {% if current_lang == "kz" %}
+                        Барлығы
+                    {% elif current_lang == "eng" %}
+                        All
                     {% else %}
-                        {{ tag.name_ru }}
+                        Все
                     {% endif %}
-                  </span>
-                                    {% endfor %}
-                                </div>
-                            {% endif %}
+                </a>
 
-                            <h2 class="news-title">
-                                {% if current_lang == "kz" and news_item.title_kz %}
-                                    {{ news_item.title_kz }}
-                                {% elif current_lang == "eng" and news_item.title_en %}
-                                    {{ news_item.title_en }}
-                                {% else %}
-                                    {{ news_item.title_ru }}
-                                {% endif %}
-                            </h2>
-
-                            <p class="news-excerpt">
-                                {% if news_item.small_description_kz or news_item.small_description_en or news_item.small_description_ru %}
-                                    {% if current_lang == "kz" and news_item.small_description_kz %}
-                                        {{ news_item.small_description_kz }}
-                                    {% elif current_lang == "eng" and news_item.small_description_en %}
-                                        {{ news_item.small_description_en }}
-                                    {% else %}
-                                        {{ news_item.small_description_ru }}
-                                    {% endif %}
-                                {% endif %}
-                            </p>
-
-                            <a href="{% url 'news_detail' news_item.pk %}" class="button outline-button">
-                                {% tr "Подробнее" %}
-                            </a>
-                        </div>
-                    </article>
+                {% for tag in tags %}
+                    <a href="#" data-tag="{{ tag.slug }}"
+                       class="tag-link{% if tag.slug == selected_tag %} selected{% endif %}">
+                        {% if current_lang == "kz" %}{{ tag.name_kz }}
+                            {% elif current_lang == "eng" %}{{ tag.name_en }}
+                            {% else %}{{ tag.name_ru }}
+                        {% endif %}
+                    </a>
                 {% endfor %}
             </div>
 
-            <div class="view-all">
-                {% if is_paginated %}
-                    {% if page_obj.has_previous %}
-                        <a href="?page={{ page_obj.previous_page_number }}"
-                           class="button outline-button">← {% tr "Назад" %}</a>
-                    {% endif %}
-                    {% if page_obj.has_next %}
-                        <a href="?page={{ page_obj.next_page_number }}" class="button outline-button">{% tr "Далее" %}
-                            →</a>
-                    {% endif %}
-                {% endif %}
+
+            <!-- Контейнер с новостями -->
+            <div></div>
+            <div id="news-container" class="news-grid" data-news-url="{% url 'news_list' %}">
+                {% include "news/partial/news_cards.html" with news=news %}
+            </div>
+
+            <!-- Пагинация -->
+            <div id="pagination-container" class="view-all">
+                {% include "news/partial/pagination.html" %}
             </div>
         </div>
     </section>
+
+    <script src="{% static 'js/base/news/ajax_search_and_filters.js' %}"></script>
 {% endblock content %}
+
