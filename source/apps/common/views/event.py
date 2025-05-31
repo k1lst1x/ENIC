@@ -2,6 +2,9 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from apps.common.models import Event
 from django.views.generic import DetailView, ListView
+from django.utils.timezone import localtime
+from django.utils.translation import get_language
+import json
 
 from apps.common.serializers import EventDaySerializer
 
@@ -52,3 +55,31 @@ class EventListView(ListView):
 
     def get_queryset(self):
         return Event.objects.filter(is_active=True)
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        events = self.get_queryset()
+
+        # Язык пользователя
+        lang = get_language()
+
+        def get_field(obj, field_base):
+            return getattr(obj, f'{field_base}_{lang}', '') or getattr(obj, f'{field_base}_ru', '')
+
+        context['events_json'] = json.dumps([
+            {
+                "id": event.id,
+                "title": get_field(event, 'title'),
+                "location": get_field(event, 'location'),
+                "description": get_field(event, 'description'),
+                "datetime": localtime(event.datetime).strftime('%d.%m.%Y'),
+                "day": localtime(event.datetime).day,
+                "month": localtime(event.datetime).month,
+                "month_name": localtime(event.datetime).strftime('%B'),
+                "year": localtime(event.datetime).year,
+                "time": localtime(event.datetime).strftime('%H:%M'),
+                "views": 0,  # можно заменить на event.views если есть поле
+            }
+            for event in events
+        ])
+        return context

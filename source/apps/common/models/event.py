@@ -1,5 +1,6 @@
 from django.db import models
 from django_ckeditor_5.fields import CKEditor5Field
+from django.utils.timezone import localtime
 
 
 class Event(models.Model):
@@ -66,6 +67,14 @@ class Event(models.Model):
     created_at = models.DateTimeField(
         auto_now_add=True,
     )
+
+    @property
+    def year(self):
+        return localtime(self.datetime).year
+
+    @property
+    def month(self):
+        return localtime(self.datetime).month
 
     class Meta:
         verbose_name = "Событие"
