@@ -6,6 +6,7 @@ urlpatterns = [
     path('about/', view.about_view, name='about'),
     path('bologna/', view.bologna_view, name='bologna'),
     path('publications/', view.publications_view, name='publications'),
+    path('reference/', view.reference_view, name='reference'),
     path('test/', view.HomeView.as_view(), name='test'),
 
     # News
