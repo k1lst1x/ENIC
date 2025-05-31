@@ -18,13 +18,7 @@ services:
 
   web:
     build: .
-    command: >
-      bash -c "
-        cd source &&
-        python manage.py makemigrations &&
-        python manage.py migrate &&
-        python manage.py collectstatic --noinput &&
-        gunicorn enic_project.wsgi:application --bind 0.0.0.0:8222"
+    command: /bin/bash -c "python manage.py makemigrations && python manage.py migrate && python manage.py collectstatic --noinput && gunicorn enic_project.wsgi:application --bind 0.0.0.0:8222"
     volumes:
       - .:/usr/src/app
       - ./staticfiles:/usr/src/app/staticfiles
