@@ -1,0 +1,38 @@
+version: '3.8'
+
+networks:
+  dev:
+
+services:
+  db:
+    image: postgres:13
+    container_name: postgress
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_DB: enic
+      POSTGRES_USER: enic_user_1
+      POSTGRES_PASSWORD: enic_password
+    networks:
+      - dev
+    ports:
+      - "5482:5432"
+
+  web:
+    build: .
+    command: /bin/bash -c "python manage.py makemigrations && python manage.py migrate && python manage.py collectstatic --noinput && gunicorn core.wsgi:application --bind 0.0.0.0:8222"
+    volumes:
+      - .:/usr/src/app
+      - ./staticfiles:/usr/src/app/staticfiles
+      - /home/ubuntu/site/source/staticfiles:/usr/src/app/staticfiles  # 👈 добавь это
+    ports:
+      - "8222:8222"
+    environment:
+      - DATABASE_URL=postgres://postgres:postgres@db:5432/enic
+    depends_on:
+      - db
+    networks:
+      - dev
+
+volumes:
+  postgres_data:
