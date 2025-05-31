@@ -1,5 +1,5 @@
 from django.views.generic import TemplateView
-from apps.common.models import News
+from apps.common.models import News, Event
 
 
 class HomeView(TemplateView):
@@ -12,5 +12,7 @@ class HomeView(TemplateView):
 
         context['news'] = news[:4]
         context['slides'] = news.exclude(show_banner=False)
+        context['week_days'] = ["Пн", "Вт", "Ср", "Чт", "Пт", "Сб", "Вс"]
+        context['events'] = Event.objects.filter(is_active=True).order_by('-datetime')[:10]
 
         return context

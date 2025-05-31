@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% load static %}
+{% load lang_tags %}
+
+{% block content %}
+<section class="news-detail">
+    <div class="container">
+        <h1 class="section-title">
+            {% if current_lang_code == "kk" and event.title_kz %}
+                {{ event.title_kz }}
+            {% elif current_lang_code == "en" and event.title_en %}
+                {{ event.title_en }}
+            {% else %}
+                {{ event.title_ru }}
+            {% endif %}
+        </h1>
+        <p class="event-date">{{ event.datetime|date:"d.m.Y, H:i" }}</p>
+        <p class="event-location">
+            {% if current_lang_code == "kk" and event.location_kz %}
+                {{ event.location_kz }}
+            {% elif current_lang_code == "en" and event.location_en %}
+                {{ event.location_en }}
+            {% else %}
+                {{ event.location_ru }}
+            {% endif %}
+        </p>
+
+        <div class="news-body">
+            {% if current_lang_code == "kk" and event.description_kz %}
+                {{ event.description_kz|safe }}
+            {% elif current_lang_code == "en" and event.description_en %}
+                {{ event.description_en|safe }}
+            {% else %}
+                {{ event.description_ru|safe }}
+            {% endif %}
+        </div>
+
+        <div class="view-all">
+            <a href="{% url 'event_list' %}" class="button outline-button">{% tr "Вернуться ко всем событиям" %}</a>
+        </div>
+    </div>
+</section>
+{% endblock %}

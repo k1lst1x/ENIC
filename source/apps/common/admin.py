@@ -40,3 +40,20 @@ class CustomAdminClass(admin.ModelAdmin):
         'created_at',
         'updated_at',
     )
+
+
+@admin.register(Event)
+class EventAdmin(admin.ModelAdmin):
+    list_display = (
+        'title_ru',
+        'datetime',
+        'is_active',
+    )
+    list_filter = (
+        'is_active',
+        'datetime',
+    )
+    search_fields = (
+        'title_ru', 'title_kz', 'title_en',
+        'location_ru', 'location_kz', 'location_en',
+    )
