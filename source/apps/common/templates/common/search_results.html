@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 
+{% load clean_text %}
 {% load lang_tags %}
 {% load static %}
 
@@ -8,93 +9,95 @@
 {% endblock %}
 
 {% block content %}
-<section class="search-results-header">
-    <div class="container">
-        <h1 class="search-query">Результаты поиска: "{{ query }}"</h1>
-        <p class="search-info">Найдено {{ total_results }} результат(ов) по запросу "{{ query }}"</p>
+    <section class="search-results-header">
+        <div class="container">
+            <h1 class="search-query">{% tr 'Результаты поиска:' %} "{{ query }}"</h1>
+            <p class="search-info">{% tr 'Найдено' %} {{ total_results }} {% tr 'результат(ов) по запросу' %} "{{ query }}"</p>
 
-        <!-- Форма поиска -->
-        <div class="search-form">
-            <form action="{% url 'search' %}" method="get">
-                <div class="search-input-group">
-                    <input
-                        type="text"
-                        name="q"
-                        value="{{ request.GET.q }}"
-                        placeholder="Введите поисковый запрос..."
-                        class="search-input-main"
-                        required>
-                    <button type="submit" class="search-button-page">
-                        <i class="fas fa-search"></i>
-                        Найти
-                    </button>
-                </div>
-            </form>
+            <!-- Форма поиска -->
+            <div class="search-form">
+                <form action="{% url 'search' %}" method="get">
+                    <div class="search-input-group">
+                        <input
+                                type="text"
+                                name="q"
+                                value="{{ request.GET.q }}"
+                                placeholder="Введите поисковый запрос..."
+                                class="search-input-main"
+                                required>
+                        <button type="submit" class="search-button-page">
+                            <i class="fas fa-search"></i>
+                            {% tr 'Найти' %}
+                        </button>
+                    </div>
+                </form>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<section class="results-section">
-    <div class="container">
-        {% if news_results or event_results %}
-            <div class="results-header">
-                <h2 class="results-title">Результаты поиска</h2>
-               <span class="results-count">Показано {{ total_results }} результат(ов)</span>
-            </div>
+    <section class="results-section">
+        <div class="container">
+            {% if news_results or event_results %}
+                <div class="results-header">
+                    <h2 class="results-title">
+                        {% tr 'Результаты поиска' %}
+                    </h2>
+                    <span class="results-count">{% tr 'Показано' %} {{ total_results }} {% tr 'результат(ов)' %}</span>
+                </div>
 
-            <div class="results-grid">
-                {% for news in news_results %}
-                    <article class="result-item">
-                        <span class="result-type news">Новость</span>
-                        <h3 class="result-title">
-                            <a href="{{ news.get_absolute_url }}">{{ news.title_ru }}</a>
-                        </h3>
-                        <div class="result-meta">
-                            <div class="result-meta-item">
-                                <i class="fas fa-calendar-alt"></i>
-                                <span>{{ news.created_at|date:"d E Y" }}</span>
+                <div class="results-grid">
+                    {% for news in news_results %}
+                        <article class="result-item">
+                            <span class="result-type news">{% tr 'Новость' %}</span>
+                            <h3 class="result-title">
+                                <a href="{{ news.get_absolute_url }}">{{ news.title_ru }}</a>
+                            </h3>
+                            <div class="result-meta">
+                                <div class="result-meta-item">
+                                    <i class="fas fa-calendar-alt"></i>
+                                    <span>{{ news.created_at|date:"d E Y" }}</span>
+                                </div>
                             </div>
-                        </div>
-                        <p class="result-excerpt">
-                            {{ news.small_description_ru }}
-                        </p>
-                        <div class="result-tags">
-                            {% for tag in news.tags.all %}
-                                <span class="result-tag">{{ tag.name }}</span>
-                            {% endfor %}
-                        </div>
-                    </article>
-                {% endfor %}
+                            <p class="result-excerpt">
+                                {{ news.small_description_ru }}
+                            </p>
+                            <div class="result-tags">
+                                {% for tag in news.tags.all %}
+                                    <span class="result-tag">{{ tag.name }}</span>
+                                {% endfor %}
+                            </div>
+                        </article>
+                    {% endfor %}
 
-                {% for event in event_results %}
-                    <article class="result-item">
-                        <span class="result-type event">Событие</span>
-                        <h3 class="result-title">
-                            <a href="{% url 'event_detail' event.pk %}">{{ event.title_ru }}</a>
-                        </h3>
-                        <div class="result-meta">
-                            <div class="result-meta-item">
-                                <i class="fas fa-calendar-alt"></i>
-                                <span>{{ event.datetime|date:"d E Y" }}</span>
+                    {% for event in event_results %}
+                        <article class="result-item">
+                            <span class="result-type event">{% tr 'Событие' %}</span>
+                            <h3 class="result-title">
+                                <a href="{% url 'event_detail' event.pk %}">{{ event.title_ru }}</a>
+                            </h3>
+                            <div class="result-meta">
+                                <div class="result-meta-item">
+                                    <i class="fas fa-calendar-alt"></i>
+                                    <span>{{ event.datetime|date:"d E Y" }}</span>
+                                </div>
+                                <div class="result-meta-item">
+                                    <i class="fas fa-clock"></i>
+                                    <span>{{ event.datetime|time:"H:i" }}</span>
+                                </div>
+                                <div class="result-meta-item">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <span>{{ event.location_ru }}</span>
+                                </div>
                             </div>
-                            <div class="result-meta-item">
-                                <i class="fas fa-clock"></i>
-                                <span>{{ event.datetime|time:"H:i" }}</span>
-                            </div>
-                            <div class="result-meta-item">
-                                <i class="fas fa-map-marker-alt"></i>
-                                <span>{{ event.location_ru }}</span>
-                            </div>
-                        </div>
-                        <p class="result-excerpt">
-                            {{ event.description_ru|truncatewords:30|safe }}
-                        </p>
-                    </article>
-                {% endfor %}
-            </div>
-        {% else %}
-            <p style="text-align: center">По запросу ничего не найдено.</p>
-        {% endif %}
-    </div>
-</section>
+                            <p class="result-excerpt" style="white-space: normal; line-height: 1.6;">
+                                {{ event.description_ru|striptags|truncatewords:30|safe }}
+                            </p>
+                        </article>
+                    {% endfor %}
+                </div>
+            {% else %}
+                <p style="text-align: center">{% tr 'По запросу ничего не найдено.' %}</p>
+            {% endif %}
+        </div>
+    </section>
 {% endblock %}
