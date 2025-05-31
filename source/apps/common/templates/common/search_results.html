@@ -12,7 +12,8 @@
     <section class="search-results-header">
         <div class="container">
             <h1 class="search-query">{% tr 'Результаты поиска:' %} "{{ query }}"</h1>
-            <p class="search-info">{% tr 'Найдено' %} {{ total_results }} {% tr 'результат(ов) по запросу' %} "{{ query }}"</p>
+            <p class="search-info">{% tr 'Найдено' %} {{ total_results }} {% tr 'результат(ов) по запросу' %}
+                "{{ query }}"</p>
 
             <!-- Форма поиска -->
             <div class="search-form">
@@ -50,16 +51,30 @@
                         <article class="result-item">
                             <span class="result-type news">{% tr 'Новость' %}</span>
                             <h3 class="result-title">
-                                <a href="{{ news.get_absolute_url }}">{{ news.title_ru }}</a>
+                                <a href="{{ news.get_absolute_url }}">
+                                    {% if current_lang_code == "kk" and news.title_kz %}
+                                        {{ news.title_kz }}
+                                    {% elif current_lang_code == "en" and news.title_en %}
+                                        {{ news.title_en }}
+                                    {% else %}
+                                        {{ news.title_ru }}
+                                    {% endif %}
+                                </a>
                             </h3>
                             <div class="result-meta">
                                 <div class="result-meta-item">
                                     <i class="fas fa-calendar-alt"></i>
-                                    <span>{{ news.created_at|date:"d E Y" }}</span>
+                                    <span>{{ news.created_at|tr_date }}</span>
                                 </div>
                             </div>
                             <p class="result-excerpt">
-                                {{ news.small_description_ru }}
+                                {% if current_lang_code == "kk" and news.title_kz %}
+                                    {{ news.small_description_kz }}
+                                {% elif current_lang_code == "en" and news.small_description_en %}
+                                    {{ news.small_description_en }}
+                                {% else %}
+                                    {{ news.small_description_ru }}
+                                {% endif %}
                             </p>
                             <div class="result-tags">
                                 {% for tag in news.tags.all %}
@@ -73,12 +88,20 @@
                         <article class="result-item">
                             <span class="result-type event">{% tr 'Событие' %}</span>
                             <h3 class="result-title">
-                                <a href="{% url 'event_detail' event.pk %}">{{ event.title_ru }}</a>
+                                <a href="{% url 'event_detail' event.pk %}">
+                                    {% if current_lang_code == "kk" and event.title_kz %}
+                                        {{ event.title_kz }}
+                                    {% elif current_lang_code == "en" and event.title_en %}
+                                        {{ event.title_en }}
+                                    {% else %}
+                                        {{ event.title_ru }}
+                                    {% endif %}
+                                </a>
                             </h3>
                             <div class="result-meta">
                                 <div class="result-meta-item">
                                     <i class="fas fa-calendar-alt"></i>
-                                    <span>{{ event.datetime|date:"d E Y" }}</span>
+                                    <span>{{ event.created_at|tr_date }}</span>
                                 </div>
                                 <div class="result-meta-item">
                                     <i class="fas fa-clock"></i>
@@ -90,7 +113,13 @@
                                 </div>
                             </div>
                             <p class="result-excerpt" style="white-space: normal; line-height: 1.6;">
-                                {{ event.description_ru|striptags|truncatewords:30|safe }}
+                                {% if current_lang_code == "kk" and event.description_kz %}
+                                    {{ event.description_kz|striptags|truncatewords:30|safe }}
+                                {% elif current_lang_code == "en" and event.description_en %}
+                                    {{ event.description_en|striptags|truncatewords:30|safe }}
+                                {% else %}
+                                    {{ event.description_ru|striptags|truncatewords:30|safe }}
+                                {% endif %}
                             </p>
                         </article>
                     {% endfor %}

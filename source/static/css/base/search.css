@@ -159,9 +159,10 @@
 }
 
 .result-type.news {
-  background-color: rgba(34, 197, 94, 0.1);
-  color: #16a34a;
+  background-color: rgba(251, 146, 60, 0.1); /* светлый оранжевый фон */
+  color: #f97316; /* насыщенный оранжевый текст */
 }
+
 
 .result-type.event {
   background-color: rgba(59, 130, 246, 0.1);
