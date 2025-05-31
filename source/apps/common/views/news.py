@@ -3,10 +3,7 @@ from django.http import JsonResponse
 from django.template.loader import render_to_string
 from django.views.generic import ListView
 from django.db.models import Q
-import hashlib
-from bs4 import BeautifulSoup
 from django.views.generic import DetailView
-from django.utils import translation
 from django.utils.translation import get_language
 
 from apps.common.models import News, Tag
