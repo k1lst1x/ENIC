@@ -8,6 +8,9 @@ class HomeView(TemplateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
 
-        context['news'] = News.objects.exclude(is_active=False).order_by('-created_at')[:4]
+        news = News.objects.exclude(is_active=False).order_by('-created_at')
+
+        context['news'] = news[:4]
+        context['slides'] = news.exclude(show_banner=False)
 
         return context

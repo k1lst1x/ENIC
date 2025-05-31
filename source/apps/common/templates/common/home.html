@@ -8,50 +8,44 @@
         <div class="slider-container">
             <div class="slider-track" id="sliderTrack">
 
-                <!-- === Slide 1 === -->
-                <div class="slide active">
-                    <img src="https://videos.openai.com/vg-assets/assets%2Ftask_01jvr34ft0ec48xj89x0x99dm9%2F1747786620_img_0.webp?st=2025-05-20T22%3A33%3A11Z&se=2025-05-26T23%3A33%3A11Z&sks=b&skt=2025-05-20T22%3A33%3A11Z&ske=2025-05-26T23%3A33%3A11Z&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skoid=3d249c53-07fa-4ba4-9b65-0bf8eb4ea46a&skv=2019-02-02&sv=2018-11-09&sr=b&sp=r&spr=https%2Chttp&sig=DsAp53Wpf99Au%2BysIjpRJwe3Fiam5WLEdJqEjJRVD1o%3D&az=oaivgprodscus"
-                         alt="{% tr 'Сопредседательство Казахстана в Болонском процессе' %}"
-                         class="slide-image">
-                    <div class="slide-overlay"></div>
-                    <div class="slide-content">
-                        <div class="container">
-                            <h2 class="slide-title">{% tr "Сопредседательство Казахстана в Болонском процессе" %}</h2>
-                            <p class="slide-description">{% tr "Казахстан стал сопредседателем Болонского процесса на 2023-2024 годы" %}</p>
-                            <a href="#" class="button primary-button">{% tr "Подробнее" %}</a>
+                {% for slide in slides %}
+                    <div class="slide {% if forloop.first %}active{% endif %}">
+                        <img src="{{ slide.banner_image.url }}"
+                             alt="
+                                {% if current_lang_code == "kk" and slide.title_kz %}
+                                    {{ slide.title_kz }}current_lang_code
+                                {% elif current_lang_code == "en" and slide.title_en %}
+                                    {{ slide.title_en }}
+                                {% else %}
+                                    {{ slide.title_ru }}
+                                {% endif %}"
+                             class="slide-image">
+                        <div class="slide-overlay"></div>
+                        <div class="slide-content">
+                            <div class="container">
+                                <h2 class="slide-title">
+                                    {% if current_lang_code == "kk" and slide.title_kz %}
+                                        {{ slide.title_kz }}
+                                    {% elif current_lang_code == "en" and slide.title_en %}
+                                        {{ slide.title_en }}
+                                    {% else %}
+                                        {{ slide.title_ru }}
+                                    {% endif %}
+                                </h2>
+                                <p class="slide-description">
+                                    {% if current_lang_code == "kk" and slide.small_description_kz %}
+                                        {{ slide.small_description_kz }}
+                                    {% elif current_lang_code == "en" and slide.small_description_en %}
+                                        {{ slide.small_description_en }}
+                                    {% else %}
+                                        {{ slide.small_description_ru }}
+                                    {% endif %}
+                                </p>
+                                <a href="{% url 'news_detail' slide.pk %}" class="button primary-button">{% tr "Подробнее" %}</a>
+                            </div>
                         </div>
                     </div>
-                </div>
-
-                <!-- === Slide 2 === -->
-                <div class="slide">
-                    <img src="https://videos.openai.com/vg-assets/assets%2Ftask_01jvr3a74zemnvwd47t7zyq6ak%2F1747786814_img_0.webp?st=2025-05-20T23%3A27%3A38Z&se=2025-05-27T00%3A27%3A38Z&sks=b&skt=2025-05-20T23%3A27%3A38Z&ske=2025-05-27T00%3A27%3A38Z&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skoid=3d249c53-07fa-4ba4-9b65-0bf8eb4ea46a&skv=2019-02-02&sv=2018-11-09&sr=b&sp=r&spr=https%2Chttp&sig=wExJzc7d4DP6q4hcZ5cWCNc3ggrrEu0M8lnnjKyYg74%3D&az=oaivgprodscus"
-                         alt="{% tr 'Международная конференция по высшему образованию' %}"
-                         class="slide-image">
-                    <div class="slide-overlay"></div>
-                    <div class="slide-content">
-                        <div class="container">
-                            <h2 class="slide-title">{% tr "Международная конференция по высшему образованию" %}</h2>
-                            <p class="slide-description">{% tr "Приглашаем принять участие в международной конференции по вопросам развития высшего образования" %}</p>
-                            <a href="#" class="button primary-button">{% tr "Подробнее" %}</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- === Slide 3 === -->
-                <div class="slide">
-                    <img src="https://videos.openai.com/vg-assets/assets%2Ftask_01jvr4ttm5fns9pgh2n6tdss9t%2F1747788406_img_1.webp?st=2025-05-20T23%3A08%3A31Z&se=2025-05-27T00%3A08%3A31Z&sks=b&skt=2025-05-20T23%3A08%3A31Z&ske=2025-05-27T00%3A08%3A31Z&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skoid=3d249c53-07fa-4ba4-9b65-0bf8eb4ea46a&skv=2019-02-02&sv=2018-11-09&sr=b&sp=r&spr=https%2Chttp&sig=q04Dyyfji8oExOjrBAFLS2XoWJ%2Fym66baQslrBbo4A4%3D&az=oaivgprodscus"
-                         alt="{% tr 'Новые образовательные программы' %}"
-                         class="slide-image">
-                    <div class="slide-overlay"></div>
-                    <div class="slide-content">
-                        <div class="container">
-                            <h2 class="slide-title">{% tr "Новые образовательные программы" %}</h2>
-                            <p class="slide-description">{% tr "Утверждены новые образовательные программы для вузов Казахстана" %}</p>
-                            <a href="#" class="button primary-button">{% tr "Подробнее" %}</a>
-                        </div>
-                    </div>
-                </div>
+                {% endfor %}
             </div>
 
             <!-- === Slider Navigation === -->
@@ -70,9 +64,12 @@
 
             <!-- === Indicators === -->
             <div class="slider-indicators">
-                <button class="indicator active" data-slide="0" aria-label="{% tr 'Слайд 1' %}"></button>
-                <button class="indicator" data-slide="1" aria-label="{% tr 'Слайд 2' %}"></button>
-                <button class="indicator" data-slide="2" aria-label="{% tr 'Слайд 3' %}"></button>
+                {% for slide in slides %}
+                    <button class="indicator {% if forloop.first %}active{% endif %}"
+                            data-slide="{{ forloop.counter0 }}" aria-label="Slide {{ forloop.counter }}"></button>
+                {% endfor %}
+                {#                <button class="indicator" data-slide="1" aria-label="{% tr 'Слайд 2' %}"></button>#}
+                {#                <button class="indicator" data-slide="2" aria-label="{% tr 'Слайд 3' %}"></button>#}
             </div>
         </div>
     </section>

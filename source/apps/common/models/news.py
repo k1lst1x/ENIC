@@ -79,6 +79,20 @@ class News(models.Model):
         verbose_name="Показать?"
     )
 
+    show_banner = models.BooleanField(
+        null=False,
+        blank=False,
+        default=False,
+        verbose_name="Показывать на главной в баннерах",
+    )
+    banner_image = models.FileField(
+        null=True,
+        blank=True,
+        upload_to='news/pictures/',
+        verbose_name="Картинка баннера",
+    )
+
+
     created_at = models.DateField(
         default=now,
         verbose_name="Дата публикаций"
@@ -94,6 +108,9 @@ class News(models.Model):
         if self.image:
             self.image = self.generate_image_version(self.image, 1.83, 'news_detail_image.jpg')  # 560:583
             super().save(*args, **kwargs)
+
+        if self.banner_image:
+            self.banner_image = self.generate_image_version(self.banner_image, 3.18, 'news_banner_image.jpg')  # 560:583
 
     def crop_center(self, img, aspect_ratio):
         # Получаем текущие размеры изображения

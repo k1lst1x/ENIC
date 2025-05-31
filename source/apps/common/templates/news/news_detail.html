@@ -16,9 +16,9 @@
                     <div class="card-tags">
                         {% for tag in object.tags.all|slice:":2" %}
                             <span class="card-tag">
-                              {% if current_lang == "kz" and tag.name_kz %}
+                              {% if current_lang == "kk" and tag.name_kz %}
                                   {{ tag.name_kz }}
-                              {% elif current_lang == "eng" and tag.name_en %}
+                              {% elif current_lang == "en" and tag.name_en %}
                                   {{ tag.name_en }}
                               {% else %}
                                   {{ tag.name_ru }}
@@ -33,9 +33,9 @@
 
                 <!-- Заголовок -->
                 <h1 class="news-title" style="font-size: 1.875rem;">
-                    {% if current_lang == "kz" and object.title_kz %}
+                    {% if current_lang == "kk" and object.title_kz %}
                         {{ object.title_kz }}
-                    {% elif current_lang == "eng" and object.title_en %}
+                    {% elif current_lang == "en" and object.title_en %}
                         {{ object.title_en }}
                     {% else %}
                         {{ object.title_ru }}
@@ -51,9 +51,9 @@
 
                 <!-- Контент -->
                 <div class="news-body">
-                    {% if current_lang == "kz" and object.content_kz %}
+                    {% if current_lang == "kk" and object.content_kz %}
                         {{ object.content_kz|safe }}
-                    {% elif current_lang == "eng" and object.content_en %}
+                    {% elif current_lang == "en" and object.content_en %}
                         {{ object.content_en|safe }}
                     {% else %}
                         {{ object.content_ru|safe }}

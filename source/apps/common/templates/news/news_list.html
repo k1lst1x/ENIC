@@ -22,9 +22,9 @@
                 <a href="javascript:void(0);"
                    class="tag-link {% if not selected_tag %}selected{% endif %}"
                    data-tag="">
-                    {% if current_lang == "kz" %}
+                    {% if current_lang_code == "kk" %}
                         Барлығы
-                    {% elif current_lang == "eng" %}
+                    {% elif current_lang_code == "en" %}
                         All
                     {% else %}
                         Все
@@ -34,8 +34,8 @@
                 {% for tag in tags %}
                     <a href="#" data-tag="{{ tag.slug }}"
                        class="tag-link{% if tag.slug == selected_tag %} selected{% endif %}">
-                        {% if current_lang == "kz" %}{{ tag.name_kz }}
-                            {% elif current_lang == "eng" %}{{ tag.name_en }}
+                        {% if current_lang_code == "kk" %}{{ tag.name_kz }}
+                            {% elif current_lang_code == "en" %}{{ tag.name_en }}
                             {% else %}{{ tag.name_ru }}
                         {% endif %}
                     </a>
