@@ -1,28 +1,22 @@
 {% load lang_tags %}
-
+<!-- Новости -->
 {% if news %}
-    <section class="news-events">
-        <div class="container">
-            <h2 class="section-title">{% tr "Новости и события" %}</h2>
+    <div class="news-section">
+        <h3 class="subsection-title">{% tr "Последние новости" %}</h3>
+        <div class="news-grid">
 
-            <div class="news-events-grid">
-                <!-- Новости -->
-                <div class="news-section">
-                    <h3 class="subsection-title">{% tr "Последние новости" %}</h3>
-                    <div class="news-grid">
-
-                        {% for news_item in news %}
-                            <article class="news-card">
-                                <div class="news-image">
-                                    <img src="{{ news_item.image.url }}"
-                                         alt="{{ news_item.title_ru }}">
-                                </div>
-                                <div class="news-content">
-                                    <p class="news-date">{{ news_item.created_at|tr_date }}</p>
-                                    {% if news_item.tags.all %}
-                                        <div class="card-tags">
-                                            {% for tag in news_item.tags.all|slice:":2" %}
-                                                <span class="card-tag">
+            {% for news_item in news %}
+                <article class="news-card">
+                    <div class="news-image">
+                        <img src="{{ news_item.image.url }}"
+                             alt="{{ news_item.title_ru }}">
+                    </div>
+                    <div class="news-content">
+                        <p class="news-date">{{ news_item.created_at|tr_date }}</p>
+                        {% if news_item.tags.all %}
+                            <div class="card-tags">
+                                {% for tag in news_item.tags.all|slice:":2" %}
+                                    <span class="card-tag">
                                                     {% if current_lang == "kz" and tag.name_kz %}
                                                         {{ tag.name_kz }}
                                                     {% elif current_lang == "eng" and tag.name_en %}
@@ -31,157 +25,38 @@
                                                         {{ tag.name_ru }}
                                                     {% endif %}
                                                 </span>
-                                            {% endfor %}
-                                        </div>
-                                    {% endif %}
-                                    <h4 class="news-title">
-                                        {% if current_lang == "kz" and news_item.title_kz %}
-                                            {{ news_item.title_kz }}
-                                        {% elif current_lang == "eng" and news_item.title_en %}
-                                            {{ news_item.title_en }}
-                                        {% else %}
-                                            {{ news_item.title_ru }}
-                                        {% endif %}
-                                    </h4>
-                                    <p class="news-excerpt">
-                                        {% if news_item.small_description_kz or news_item.small_description_en or news_item.small_description_ru %}
-                                            {% if current_lang == "kz" and news_item.small_description_kz %}
-                                                {{ news_item.small_description_kz }}
-                                            {% elif current_lang == "eng" and news_item.small_description_en %}
-                                                {{ news_item.small_description_en }}
-                                            {% else %}
-                                                {{ news_item.small_description_ru }}
-                                            {% endif %}
-                                        {% endif %}
-                                    </p>
-                                    <a href="{% url 'news_detail' news_item.pk %}"
-                                       class="button outline-button">{% tr "Подробнее" %}</a>
-                                </div>
-                            </article>
-                        {% endfor %}
-
-                    </div>
-                    <div class="view-all">
-                        <a href="{% url 'news_list' %}" class="button outline-button">{% tr "Все новости" %}</a>
-                    </div>
-                </div>
-
-                <!-- События -->
-                <div class="events-section">
-                    <h3 class="subsection-title">{% tr "События" %}</h3>
-                    <div class="events-tabs">
-                        <div class="tabs-header">
-                            <button class="tab-button active" data-tab="list">{% tr "Список" %}</button>
-                            <button class="tab-button" data-tab="calendar">{% tr "Календарь" %}</button>
-                        </div>
-
-                        <div class="tab-content active" id="list-tab">
-                            <div class="events-list">
-                                <!-- Событие 1 -->
-                                <div class="event-card">
-                                    <p class="event-date">25.05.2023, 14:00</p>
-                                    <h4 class="event-title">{% tr "Семинар по академической мобильности" %}</h4>
-                                    <p class="event-location">{% tr "Онлайн" %}</p>
-                                    <a href="#" class="event-link">{% tr "Подробнее" %}</a>
-                                </div>
-
-                                <!-- Событие 2 -->
-                                <div class="event-card">
-                                    <p class="event-date">28.05.2023, 11:00</p>
-                                    <h4 class="event-title">{% tr "Круглый стол с работодателями" %}</h4>
-                                    <p class="event-location">{% tr "Нур-Султан, ул. Достык, 13" %}</p>
-                                    <a href="#" class="event-link">{% tr "Подробнее" %}</a>
-                                </div>
-
-                                <!-- Событие 3 -->
-                                <div class="event-card">
-                                    <p class="event-date">30.05.2023, 15:30</p>
-                                    <h4 class="event-title">{% tr "Вебинар по аккредитации образовательных программ" %}</h4>
-                                    <p class="event-location">{% tr "Онлайн" %}</p>
-                                    <a href="#" class="event-link">{% tr "Подробнее" %}</a>
-                                </div>
-
-                                <!-- Событие 4 -->
-                                <div class="event-card">
-                                    <p class="event-date">05.06.2023, 10:00</p>
-                                    <h4 class="event-title">{% tr "Форум ректоров вузов Казахстана" %}</h4>
-                                    <p class="event-location">{% tr "Алматы, пр. Аль-Фараби, 71" %}</p>
-                                    <a href="#" class="event-link">{% tr "Подробнее" %}</a>
-                                </div>
+                                {% endfor %}
                             </div>
-                        </div>
-
-                        <div class="tab-content" id="calendar-tab">
-                            <div class="calendar">
-                                <div class="calendar-header">
-                                    <h4 class="calendar-title">{% tr "Май 2023" %}</h4>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-                                         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                         stroke-linejoin="round" class="icon">
-                                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-                                        <line x1="16" y1="2" x2="16" y2="6"></line>
-                                        <line x1="8" y1="2" x2="8" y2="6"></line>
-                                        <line x1="3" y1="10" x2="21" y2="10"></line>
-                                    </svg>
-                                </div>
-
-                                <div class="calendar-grid">
-                                    <div class="calendar-day-names">
-                                        <div class="day-name">{% tr "Пн" %}</div>
-                                        <div class="day-name">{% tr "Вт" %}</div>
-                                        <div class="day-name">{% tr "Ср" %}</div>
-                                        <div class="day-name">{% tr "Чт" %}</div>
-                                        <div class="day-name">{% tr "Пт" %}</div>
-                                        <div class="day-name">{% tr "Сб" %}</div>
-                                        <div class="day-name">{% tr "Вс" %}</div>
-                                    </div>
-                                    <div class="calendar-days">
-                                        <button class="calendar-day empty"></button>
-                                        <button class="calendar-day">1</button>
-                                        <button class="calendar-day">2</button>
-                                        <button class="calendar-day">3</button>
-                                        <button class="calendar-day">4</button>
-                                        <button class="calendar-day has-event">5</button>
-                                        <button class="calendar-day">6</button>
-                                        <button class="calendar-day">7</button>
-                                        <button class="calendar-day">8</button>
-                                        <button class="calendar-day">9</button>
-                                        <button class="calendar-day">10</button>
-                                        <button class="calendar-day">11</button>
-                                        <button class="calendar-day">12</button>
-                                        <button class="calendar-day">13</button>
-                                        <button class="calendar-day">14</button>
-                                        <button class="calendar-day today">15</button>
-                                        <button class="calendar-day">16</button>
-                                        <button class="calendar-day">17</button>
-                                        <button class="calendar-day">18</button>
-                                        <button class="calendar-day">19</button>
-                                        <button class="calendar-day">20</button>
-                                        <button class="calendar-day">21</button>
-                                        <button class="calendar-day">22</button>
-                                        <button class="calendar-day">23</button>
-                                        <button class="calendar-day">24</button>
-                                        <button class="calendar-day has-event">25</button>
-                                        <button class="calendar-day">26</button>
-                                        <button class="calendar-day">27</button>
-                                        <button class="calendar-day has-event">28</button>
-                                        <button class="calendar-day">29</button>
-                                        <button class="calendar-day has-event">30</button>
-                                        <button class="calendar-day">31</button>
-                                    </div>
-                                </div>
-
-                                <div class="selected-date-events" id="selectedDateEvents">
-                                    <!-- Здесь будут отображаться события выбранной даты -->
-                                </div>
-                            </div>
-                        </div>
+                        {% endif %}
+                        <h4 class="news-title">
+                            {% if current_lang == "kz" and news_item.title_kz %}
+                                {{ news_item.title_kz }}
+                            {% elif current_lang == "eng" and news_item.title_en %}
+                                {{ news_item.title_en }}
+                            {% else %}
+                                {{ news_item.title_ru }}
+                            {% endif %}
+                        </h4>
+                        <p class="news-excerpt">
+                            {% if news_item.small_description_kz or news_item.small_description_en or news_item.small_description_ru %}
+                                {% if current_lang == "kz" and news_item.small_description_kz %}
+                                    {{ news_item.small_description_kz }}
+                                {% elif current_lang == "eng" and news_item.small_description_en %}
+                                    {{ news_item.small_description_en }}
+                                {% else %}
+                                    {{ news_item.small_description_ru }}
+                                {% endif %}
+                            {% endif %}
+                        </p>
+                        <a href="{% url 'news_detail' news_item.pk %}"
+                           class="button outline-button">{% tr "Подробнее" %}</a>
                     </div>
-                    <div class="view-all">
-                        <a href="#" class="button outline-button">{% tr "Все события" %}</a>
-                    </div>
-                </div>
-            </div>
+                </article>
+            {% endfor %}
+
         </div>
-    </section>
+        <div class="view-all">
+            <a href="{% url 'news_list' %}" class="button outline-button">{% tr "Все новости" %}</a>
+        </div>
+    </div>
 {% endif %}

@@ -94,46 +94,4 @@ class NewsListView(ListView):
 class NewsDetailView(DetailView):
     model = News
     template_name = 'news/news_detail.html'
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-
-        # Определяем текущий язык
-        current_lang = translation.get_language()
-
-        # Получаем контент в зависимости от языка
-
-        lang_field_map = {
-            "kz": "content_kz",
-            "eng": "content_en",
-            "ru": "content_ru",
-        }
-        content = getattr(self.object, lang_field_map.get(current_lang, "content_ru"))
-
-        # Извлекаем заголовки и добавляем их в контекст
-        context['headings'], context['content'] = self.process_content(content)
-
-        # Получаем последние 10 новостей с такими же тегами, как у текущей новости
-        similar_news = News.objects.filter(
-            is_active=True
-        ).exclude(id=self.object.id).distinct().exclude(is_active=False).order_by('-created_at')[:10]
-
-        context['similar_news'] = similar_news
-
-        return context
-
-    def process_content(self, content):
-        soup = BeautifulSoup(content, 'html.parser')
-        headings = []
-        for tag in ['h1', 'h2', 'h3']:  # можно добавить другие уровни заголовков, если необходимо
-            for header in soup.find_all(tag):
-                if not header.has_attr('id'):
-                    # Генерация уникального id на основе текста заголовка
-                    header_id = hashlib.md5(header.text.encode('utf-8')).hexdigest()[:8]
-                    header['id'] = header_id
-                headings.append((header.text, header['id']))
-
-        # Обновленный контент с добавленными id
-        updated_content = str(soup)
-
-        return headings, updated_content
+    context_object_name = "object"
