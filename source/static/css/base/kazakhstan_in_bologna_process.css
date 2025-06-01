@@ -1,0 +1,582 @@
+/* Стили для страницы "Сопредседательство Казахстана в Болонском процессе" */
+
+/* Хлебные крошки */
+.breadcrumbs {
+    padding: 1rem 0;
+    background-color: var(--white);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.breadcrumbs-list {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.breadcrumbs-item {
+    display: flex;
+    align-items: center;
+    font-size: 0.875rem;
+    color: var(--text-lighter);
+}
+
+.breadcrumbs-link {
+    color: var(--text-light);
+    transition: var(--transition);
+}
+
+.breadcrumbs-link:hover {
+    color: var(--primary-color);
+}
+
+.breadcrumbs-item .icon {
+    margin: 0 0.5rem;
+}
+
+.breadcrumbs-current {
+    color: var(--text-color);
+    font-weight: 500;
+}
+
+/* Заголовок страницы */
+.page-header {
+    padding: 3rem 0;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-hover) 100%);
+    color: var(--white);
+    text-align: center;
+}
+
+.header-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.header-icon {
+    margin-bottom: 1.5rem;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.page-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+.page-subtitle {
+    font-size: 1.25rem;
+    opacity: 0.9;
+    margin-bottom: 2rem;
+    line-height: 1.5;
+}
+
+.header-badges {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.badge {
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius);
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+.badge.primary {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: var(--white);
+}
+
+.badge.secondary {
+    background-color: var(--accent-color);
+    color: var(--text-color);
+}
+
+/* Общие стили для секций */
+.achievements,
+.current-presidency,
+.ca-initiative,
+.documents,
+.significance {
+    padding: 3rem 0;
+}
+
+.current-presidency,
+.documents {
+    background-color: var(--secondary-color);
+}
+
+.section-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text-color);
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.section-subtitle {
+    font-size: 1.125rem;
+    color: var(--text-light);
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+/* Временная шкала достижений */
+.timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.timeline::before {
+    content: "";
+    position: absolute;
+    left: 30px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background-color: var(--primary-color);
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 2rem;
+    padding-left: 80px;
+}
+
+.timeline-item.active .timeline-marker {
+    background-color: var(--accent-color);
+    box-shadow: 0 0 0 3px var(--accent-color);
+}
+
+.timeline-marker {
+    position: absolute;
+    left: 20px;
+    top: 0;
+    width: 20px;
+    height: 20px;
+    background-color: var(--primary-color);
+    border: 3px solid var(--white);
+    border-radius: 50%;
+    box-shadow: 0 0 0 3px var(--primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+}
+
+.timeline-content {
+    background-color: var(--white);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+.timeline-item:hover .timeline-content {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.timeline-date {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.timeline-content h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--text-color);
+    margin-bottom: 0.75rem;
+}
+
+.timeline-content p {
+    color: var(--text-light);
+    line-height: 1.5;
+}
+
+/* Текущее сопредседательство */
+.presidency-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.presidency-info .section-title {
+    text-align: left;
+    margin-bottom: 2rem;
+}
+
+.info-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.info-card {
+    background-color: var(--white);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+.info-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.info-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    margin: 0 auto 1rem;
+    background-color: rgba(0, 102, 204, 0.1);
+    border-radius: 50%;
+    color: var(--primary-color);
+}
+
+.info-card h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-color);
+    margin-bottom: 0.5rem;
+}
+
+.info-card p {
+    color: var(--text-light);
+    font-size: 0.875rem;
+}
+
+.priorities-card {
+    background: linear-gradient(135deg, rgba(0, 102, 204, 0.05) 0%, rgba(0, 102, 204, 0.1) 100%);
+    border-radius: var(--radius);
+    padding: 2rem;
+    border-left: 4px solid var(--primary-color);
+}
+
+.priorities-card h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text-color);
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.priorities-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.priority-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem;
+    background-color: var(--white);
+    border-radius: var(--radius);
+    transition: var(--transition);
+}
+
+.priority-item:hover {
+    transform: translateX(5px);
+    box-shadow: var(--shadow);
+}
+
+.priority-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    color: var(--white);
+    flex-shrink: 0;
+}
+
+.priority-item span {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+/* Центрально-азиатская инициатива */
+.initiative-card {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    background: linear-gradient(135deg, rgba(255, 193, 7, 0.1) 0%, rgba(255, 193, 7, 0.05) 100%);
+    border-radius: var(--radius);
+    padding: 2rem;
+    border-left: 4px solid var(--accent-color);
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.initiative-icon {
+    color: var(--accent-color);
+    flex-shrink: 0;
+}
+
+.initiative-content .section-title {
+    text-align: left;
+    margin-bottom: 1rem;
+}
+
+.initiative-content h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--text-color);
+    margin-bottom: 1rem;
+}
+
+.initiative-content p {
+    color: var(--text-light);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.initiative-goals {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.goal-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: var(--text-color);
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+.goal-item .icon {
+    color: var(--accent-color);
+}
+
+/* Документы */
+.documents-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1.5rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.document-card {
+    background-color: var(--white);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    transition: var(--transition);
+}
+
+.document-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.document-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 1.5rem;
+    background-color: rgba(0, 102, 204, 0.05);
+}
+
+.document-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: var(--white);
+    border-radius: 50%;
+    color: var(--primary-color);
+}
+
+.document-type {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    background-color: var(--white);
+    padding: 0.25rem 0.5rem;
+    border-radius: var(--radius);
+}
+
+.document-content {
+    padding: 1.5rem;
+}
+
+.document-content h3 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--text-color);
+    margin-bottom: 0.75rem;
+    line-height: 1.3;
+}
+
+.document-content p {
+    color: var(--text-light);
+    font-size: 0.875rem;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+}
+
+.document-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--white);
+    background-color: var(--primary-color);
+    border-radius: var(--radius);
+    transition: var(--transition);
+}
+
+.document-link:hover {
+    background-color: var(--primary-hover);
+    transform: translateY(-2px);
+}
+
+/* Значение для Казахстана */
+.significance-card {
+    background-color: var(--white);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 2rem;
+    text-align: center;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.significance-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 80px;
+    background-color: rgba(76, 175, 80, 0.1);
+    border-radius: 50%;
+    color: #4caf50;
+    margin-bottom: 1.5rem;
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.benefit-item {
+    padding: 1.5rem;
+    background-color: var(--secondary-color);
+    border-radius: var(--radius);
+    text-align: center;
+}
+
+.benefit-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    background-color: var(--white);
+    border-radius: 50%;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.benefit-item h4 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--text-color);
+    margin-bottom: 0.75rem;
+}
+
+.benefit-item p {
+    color: var(--text-light);
+    line-height: 1.5;
+}
+
+/* Медиа-запросы */
+@media (min-width: 768px) {
+    .page-title {
+        font-size: 3rem;
+    }
+
+    .presidency-grid {
+        grid-template-columns: 2fr 1fr;
+        align-items: start;
+    }
+
+    .timeline::before {
+        left: 50%;
+        margin-left: -1px;
+    }
+
+    .timeline-item {
+        width: 50%;
+        padding-left: 0;
+        padding-right: 40px;
+    }
+
+    .timeline-item:nth-child(even) {
+        left: 50%;
+        padding-left: 40px;
+        padding-right: 0;
+    }
+
+    .timeline-marker {
+        left: 50%;
+        margin-left: -10px;
+    }
+}
+
+@media (max-width: 767px) {
+    .page-title {
+        font-size: 2rem;
+    }
+
+    .header-badges {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .initiative-card {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .info-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .priorities-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .documents-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .benefits-grid {
+        grid-template-columns: 1fr;
+    }
+}

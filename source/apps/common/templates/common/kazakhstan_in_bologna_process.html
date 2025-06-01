@@ -1,0 +1,434 @@
+{% extends "base.html" %}
+{% load lang_tags %}
+{% load static %}
+
+{% block extra_head %}
+    <link rel="stylesheet" href="{% static 'css/base/kazakhstan_in_bologna_process.css' %}">
+{% endblock %}
+
+{% block content %}
+    <!-- Хлебные крошки -->
+    <div class="breadcrumbs">
+        <div class="container">
+            <ul class="breadcrumbs-list">
+                <li class="breadcrumbs-item">
+                    <a href="{% url 'home' %}" class="breadcrumbs-link">{% tr "Главная" %}</a>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                         class="icon">
+                        <polyline points="9 18 15 12 9 6"></polyline>
+                    </svg>
+                </li>
+                <li class="breadcrumbs-item">
+                    <span class="breadcrumbs-current">{% tr "Сопредседательство Казахстана в Болонском процессе" %}</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Заголовок страницы -->
+    <section class="page-header">
+        <div class="container">
+            <div class="header-content">
+                <div class="header-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none"
+                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                         class="icon">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <path d="M2 12h20"></path>
+                        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                    </svg>
+                </div>
+                <h1 class="page-title">{% tr "Сопредседательство Казахстана в Болонском процессе" %}</h1>
+                <p class="page-subtitle">{% tr "Первая страна Центральной Азии в Европейском пространстве высшего образования" %}</p>
+                <div class="header-badges">
+                    <span class="badge primary">{% tr "Полноправный член ЕПВО" %}</span>
+                    <span class="badge secondary">{% tr "Международное признание" %}</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ключевые достижения -->
+    <section class="achievements">
+        <div class="container">
+            <h2 class="section-title">{% tr "Ключевые вехи" %}</h2>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-marker">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                             class="icon">
+                            <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">{% tr "10+ лет назад" %}</div>
+                        <h3>{% tr "Подписание Болонской декларации" %}</h3>
+                        <p>{% tr "Казахстан стал первой страной Центральной Азии, присоединившейся к ЕПВО" %}</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                             class="icon">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="9" cy="7" r="4"></circle>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                        </svg>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">{% tr "2014 год" %}</div>
+                        <h3>{% tr "Первое сопредседательство с Грецией" %}</h3>
+                        <p>{% tr "Новый импульс модернизации национальной системы высшего образования" %}</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item active">
+                    <div class="timeline-marker">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                             class="icon">
+                            <path d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                        </svg>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">{% tr "2022 год" %}</div>
+                        <h3>{% tr "Сопредседательство BFUG с Чехией" %}</h3>
+                        <p>{% tr "Июль - декабрь 2022, участие в Управляющем совете BFUG" %}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Текущее сопредседательство -->
+    <section class="current-presidency">
+        <div class="container">
+            <div class="presidency-grid">
+                <div class="presidency-info">
+                    <h2 class="section-title">{% tr "Сопредседательство 2022" %}</h2>
+                    <div class="info-cards">
+                        <div class="info-card">
+                            <div class="info-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                     stroke-linejoin="round" class="icon">
+                                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                    <circle cx="9" cy="7" r="4"></circle>
+                                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                                </svg>
+                            </div>
+                            <h4>{% tr "Партнер" %}</h4>
+                            <p>{% tr "Чехия" %}</p>
+                        </div>
+
+                        <div class="info-card">
+                            <div class="info-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                     stroke-linejoin="round" class="icon">
+                                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                                    <line x1="16" y1="2" x2="16" y2="6"></line>
+                                    <line x1="8" y1="2" x2="8" y2="6"></line>
+                                    <line x1="3" y1="10" x2="21" y2="10"></line>
+                                </svg>
+                            </div>
+                            <h4>{% tr "Период" %}</h4>
+                            <p>{% tr "1 июля - 31 декабря 2022" %}</p>
+                        </div>
+
+                        <div class="info-card">
+                            <div class="info-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                     stroke-linejoin="round" class="icon">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                    <circle cx="12" cy="10" r="3"></circle>
+                                </svg>
+                            </div>
+                            <h4>{% tr "Заседание в Казахстане" %}</h4>
+                            <p>{% tr "5 октября 2022 г." %}</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="priorities-card">
+                    <h3>{% tr "Приоритетные направления" %}</h3>
+                    <div class="priorities-grid">
+                        <div class="priority-item">
+                            <div class="priority-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                     stroke-linejoin="round" class="icon">
+                                    <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                            </div>
+                            <span>{% tr "Качество образования" %}</span>
+                        </div>
+                        <div class="priority-item">
+                            <div class="priority-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                     stroke-linejoin="round" class="icon">
+                                    <path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                                </svg>
+                            </div>
+                            <span>{% tr "Неформальное обучение" %}</span>
+                        </div>
+                        <div class="priority-item">
+                            <div class="priority-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                     stroke-linejoin="round" class="icon">
+                                    <path d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+                                </svg>
+                            </div>
+                            <span>{% tr "Педагогическое образование" %}</span>
+                        </div>
+                        <div class="priority-item">
+                            <div class="priority-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                     stroke-linejoin="round" class="icon">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <path d="M2 12h20"></path>
+                                    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                                </svg>
+                            </div>
+                            <span>{% tr "Интернационализация" %}</span>
+                        </div>
+                        <div class="priority-item">
+                            <div class="priority-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                     stroke-linejoin="round" class="icon">
+                                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+                                </svg>
+                            </div>
+                            <span>{% tr "Доступность образования" %}</span>
+                        </div>
+                        <div class="priority-item">
+                            <div class="priority-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                     stroke-linejoin="round" class="icon">
+                                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                                </svg>
+                            </div>
+                            <span>{% tr "Полиязычное образование" %}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Центрально-азиатская инициатива -->
+    <section class="ca-initiative">
+        <div class="container">
+            <div class="initiative-card">
+                <div class="initiative-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none"
+                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                         class="icon">
+                        <path d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                    </svg>
+                </div>
+                <div class="initiative-content">
+                    <h2 class="section-title">{% tr "Инициатива Казахстана" %}</h2>
+                    <h3>{% tr "Центрально-азиатское пространство высшего образования" %}</h3>
+                    <p>{% tr "Объединение образовательного пространства Центральной Азии на основе параметров Болонского процесса для взаимовыгодного развития региона" %}</p>
+                    <div class="initiative-goals">
+                        <div class="goal-item">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                 stroke-linejoin="round" class="icon">
+                                <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                            <span>{% tr "Единые принципы образования" %}</span>
+                        </div>
+                        <div class="goal-item">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                 stroke-linejoin="round" class="icon">
+                                <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                            <span>{% tr "Взаимовыгодное сотрудничество" %}</span>
+                        </div>
+                        <div class="goal-item">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                 stroke-linejoin="round" class="icon">
+                                <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                            <span>{% tr "Региональная интеграция" %}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Документы и материалы -->
+    <section class="documents">
+        <div class="container">
+            <h2 class="section-title">{% tr "Документы и материалы" %}</h2>
+            <p class="section-subtitle">{% tr "Официальные документы сопредседательства" %}</p>
+
+            <div class="documents-grid">
+                <div class="document-card">
+                    <div class="document-header">
+                        <div class="document-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                 stroke-linejoin="round" class="icon">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                <polyline points="14 2 14 8 20 8"></polyline>
+                                <line x1="16" y1="13" x2="8" y2="13"></line>
+                                <line x1="16" y1="17" x2="8" y2="17"></line>
+                            </svg>
+                        </div>
+                        <span class="document-type">PDF</span>
+                    </div>
+                    <div class="document-content">
+                        <h3>{% tr "План мероприятий" %}</h3>
+                        <p>{% tr "Официальный план мероприятий в рамках сопредседательства Казахстана в Болонском процессе" %}</p>
+                        <a href="https://docs.google.com/viewer?url=https%3A%2F%2Fenic-kazakhstan.edu.kz%2F%2Fuploads%2Fadditional_files_items%2F103%2Ffile%2Fplan-meropriyatiy.pdf%3Fcache%3D1656932162&embedded=false"
+                           class="document-link" target="_blank">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                 stroke-linejoin="round" class="icon">
+                                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                <polyline points="15 3 21 3 21 9"></polyline>
+                                <line x1="10" y1="14" x2="21" y2="3"></line>
+                            </svg>
+                            {% tr "Открыть документ" %}
+                        </a>
+                    </div>
+                </div>
+
+                <div class="document-card">
+                    <div class="document-header">
+                        <div class="document-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                 stroke-linejoin="round" class="icon">
+                                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                                <line x1="8" y1="21" x2="16" y2="21"></line>
+                                <line x1="12" y1="17" x2="12" y2="21"></line>
+                            </svg>
+                        </div>
+                        <span class="document-type">PDF</span>
+                    </div>
+                    <div class="document-content">
+                        <h3>{% tr "Презентация вице-министра" %}</h3>
+                        <p>{% tr "Презентация в Страсбурге на заседании BFUG, 11-12 апреля 2022 года" %}</p>
+                        <a href="https://docs.google.com/viewer?url=https%3A%2F%2Fenic-kazakhstan.edu.kz%2F%2Fuploads%2Fadditional_files_items%2F115%2Ffile%2Fprezentaciya-vice-ministr-strasburg-russkiy-yazyk.pdf%3Fcache%3D1661149076&embedded=false"
+                           class="document-link" target="_blank">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                 stroke-linejoin="round" class="icon">
+                                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                <polyline points="15 3 21 3 21 9"></polyline>
+                                <line x1="10" y1="14" x2="21" y2="3"></line>
+                            </svg>
+                            {% tr "Открыть документ" %}
+                        </a>
+                    </div>
+                </div>
+
+                <div class="document-card">
+                    <div class="document-header">
+                        <div class="document-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                 stroke-linejoin="round" class="icon">
+                                <path d="M8 7V3a4 4 0 1 1 8 0v4m-4 8a2 2 0 1 1-4 0 2 2 0 0 1 4 0z"></path>
+                            </svg>
+                        </div>
+                        <span class="document-type">PDF</span>
+                    </div>
+                    <div class="document-content">
+                        <h3>{% tr "Мероприятия сопредседательства" %}</h3>
+                        <p>{% tr "Полный перечень мероприятий в рамках сопредседательства Казахстана в Болонском процессе" %}</p>
+                        <a href="https://docs.google.com/viewer?url=https%3A%2F%2Fenic-kazakhstan.edu.kz%2F%2Fuploads%2Fadditional_files_items%2F116%2Ffile%2Fmeropriyatiya-v-ramkah-sopredsedatelstva-kazahstana-v-bolonskom-processe.pdf%3Fcache%3D1661149628&embedded=false"
+                           class="document-link" target="_blank">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                 stroke-linejoin="round" class="icon">
+                                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                <polyline points="15 3 21 3 21 9"></polyline>
+                                <line x1="10" y1="14" x2="21" y2="3"></line>
+                            </svg>
+                            {% tr "Открыть документ" %}
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Значение для Казахстана -->
+    <section class="significance">
+        <div class="container">
+            <div class="significance-card">
+                <div class="significance-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                         class="icon">
+                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                        <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                    </svg>
+                </div>
+                <div class="significance-content">
+                    <h2 class="section-title">{% tr "Значение сопредседательства" %}</h2>
+                    <div class="benefits-grid">
+                        <div class="benefit-item">
+                            <div class="benefit-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                     stroke-linejoin="round" class="icon">
+                                    <path d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                                </svg>
+                            </div>
+                            <h4>{% tr "Рост имиджа" %}</h4>
+                            <p>{% tr "Повышение узнаваемости казахстанской системы высшего образования в Европе" %}</p>
+                        </div>
+
+                        <div class="benefit-item">
+                            <div class="benefit-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                     stroke-linejoin="round" class="icon">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <path d="M2 12h20"></path>
+                                    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                                </svg>
+                            </div>
+                            <h4>{% tr "Международное признание" %}</h4>
+                            <p>{% tr "Подтверждение статуса Казахстана как важного партнера в международном образовательном пространстве" %}</p>
+                        </div>
+
+                        <div class="benefit-item">
+                            <div class="benefit-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                     stroke-linejoin="round" class="icon">
+                                    <path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                                </svg>
+                            </div>
+                            <h4>{% tr "Развитие образования" %}</h4>
+                            <p>{% tr "Совершенствование национальной системы высшего образования и реализация принципов ЕПВО" %}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock content %}

@@ -1,0 +1,790 @@
+{% extends "base.html" %}
+{% load lang_tags %}
+{% load static %}
+
+{% block extra_head %}
+    <link rel="stylesheet" href="{% static 'css/base/research.css' %}">
+{% endblock %}
+
+{% block content %}
+    <!-- Хлебные крошки -->
+    <div class="breadcrumbs">
+        <div class="container">
+            <ul class="breadcrumbs-list">
+                <li class="breadcrumbs-item">
+                    <a href="{% url 'home' %}" class="breadcrumbs-link">{% tr "Главная" %}</a>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                         class="icon">
+                        <polyline points="9 18 15 12 9 6"></polyline>
+                    </svg>
+                </li>
+                <li class="breadcrumbs-item">
+                    <span class="breadcrumbs-current">{% tr "Научные исследования" %}</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Заголовок страницы -->
+    <section class="page-header">
+        <div class="container">
+            <div class="header-content">
+                <div class="header-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none"
+                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                         class="icon">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                        <polyline points="14 2 14 8 20 8"></polyline>
+                        <line x1="16" y1="13" x2="8" y2="13"></line>
+                        <line x1="16" y1="17" x2="8" y2="17"></line>
+                        <polyline points="10 9 9 9 8 9"></polyline>
+                    </svg>
+                </div>
+                <h1 class="page-title">{% tr "Научные исследования" %}</h1>
+                <p class="page-subtitle">{% tr "Повышение конкурентоспособности вузов Казахстана через реинжиниринг национальной системы обеспечения качества высшего образования" %}</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Основная информация о проекте -->
+    <section class="project-overview">
+        <div class="container">
+            <div class="overview-grid">
+                <div class="project-info">
+                    <div class="info-card">
+                        <div class="info-header">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                 stroke-linejoin="round" class="icon">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <polyline points="12 6 12 12 16 14"></polyline>
+                            </svg>
+                            <h3>{% tr "Цель проекта" %}</h3>
+                        </div>
+                        <p>{% tr "Проведение комплексного исследования, направле��ного на повышение конкурентоспособности вузов Казахстана через реинжиниринг национальной системы обеспечения качества высшего образования как катализатора улучшения качества человеческого капитала в условиях реализации концепции непрерывного образования." %}</p>
+                    </div>
+                </div>
+
+                <div class="project-stats">
+                    <div class="stat-item">
+                        <div class="stat-number">10</div>
+                        <div class="stat-label">{% tr "Задач проекта" %}</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">2</div>
+                        <div class="stat-label">{% tr "Этапа реализации" %}</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">28</div>
+                        <div class="stat-label">{% tr "Участников команды" %}</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">3</div>
+                        <div class="stat-label">{% tr "Научные лаборатории" %}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Задачи проекта -->
+    <section class="project-tasks">
+        <div class="container">
+            <h2 class="section-title">{% tr "Задачи проекта" %}</h2>
+
+            <div class="tasks-grid">
+                <div class="task-card" data-task="1">
+                    <div class="task-number">01</div>
+                    <div class="task-content">
+                        <h4>{% tr "Кластеризация факторов" %}</h4>
+                        <p>{% tr "Определить и провести кластеризацию факторов, оказывающих прямое и косвенное влияние на качество высшего образования" %}</p>
+                    </div>
+                </div>
+
+                <div class="task-card" data-task="2">
+                    <div class="task-number">02</div>
+                    <div class="task-content">
+                        <h4>{% tr "Когортное исследование" %}</h4>
+                        <p>{% tr "Провести когортное исследование текущего уровня качества системы высшего образования на основе кластеризованных факторов влияния" %}</p>
+                    </div>
+                </div>
+
+                <div class="task-card" data-task="3">
+                    <div class="task-number">03</div>
+                    <div class="task-content">
+                        <h4>{% tr "Концепция обеспечения качества" %}</h4>
+                        <p>{% tr "Разработать концепцию обеспечения качества высшего образования на основе анализа отечественной и зарубежных систем" %}</p>
+                    </div>
+                </div>
+
+                <div class="task-card" data-task="4">
+                    <div class="task-number">04</div>
+                    <div class="task-content">
+                        <h4>{% tr "Национальная модель" %}</h4>
+                        <p>{% tr "Разработать усовершенствованную национальную модель системы обеспечения качества высшего образования" %}</p>
+                    </div>
+                </div>
+
+                <div class="task-card" data-task="5">
+                    <div class="task-number">05</div>
+                    <div class="task-content">
+                        <h4>{% tr "Апробация модели" %}</h4>
+                        <p>{% tr "Апробировать национальную модель с проведением корреляции между ожидаемым и текущим уровнями качества" %}</p>
+                    </div>
+                </div>
+
+                <div class="task-card" data-task="6">
+                    <div class="task-number">06</div>
+                    <div class="task-content">
+                        <h4>{% tr "Методическая документация" %}</h4>
+                        <p>{% tr "Разработать методическую и нормативную документацию конструктов национальной системы обеспечения качества" %}</p>
+                    </div>
+                </div>
+
+                <div class="task-card" data-task="7">
+                    <div class="task-number">07</div>
+                    <div class="task-content">
+                        <h4>{% tr "Модернизация Реестра ОП" %}</h4>
+                        <p>{% tr "Модернизировать Реестр образовательных программ высшего и послевузовского образования" %}</p>
+                    </div>
+                </div>
+
+                <div class="task-card" data-task="8">
+                    <div class="task-number">08</div>
+                    <div class="task-content">
+                        <h4>{% tr "Прикладной бакалавриат" %}</h4>
+                        <p>{% tr "Разработать методологическую концепцию встраивания прикладного бакалавриата в систему высшего образования" %}</p>
+                    </div>
+                </div>
+
+                <div class="task-card" data-task="9">
+                    <div class="task-number">09</div>
+                    <div class="task-content">
+                        <h4>{% tr "Нормативное обеспечение" %}</h4>
+                        <p>{% tr "Разработать нормативное и методическое обеспечение системы послесреднего образования" %}</p>
+                    </div>
+                </div>
+
+                <div class="task-card" data-task="10">
+                    <div class="task-number">10</div>
+                    <div class="task-content">
+                        <h4>{% tr "Экспериментальная апробация" %}</h4>
+                        <p>{% tr "Экспериментально апробировать модель развития прикладного бакалавриата и технологию ее интеграции" %}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Этапы реализации -->
+    <section class="project-stages">
+        <div class="container">
+            <h2 class="section-title">{% tr "Этапы реализации проекта" %}</h2>
+
+            <div class="stages-timeline">
+                <div class="stage-item">
+                    <div class="stage-marker">
+                        <span class="stage-year">2023</span>
+                    </div>
+                    <div class="stage-content">
+                        <h3>{% tr "1-й этап" %}</h3>
+                        <div class="stage-objectives">
+                            <div class="objective-item">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                     stroke-linejoin="round" class="icon">
+                                    <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                                <span>{% tr "Разработка теоретико-методологических основ обеспечения качества высшего образования" %}</span>
+                            </div>
+                            <div class="objective-item">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                     stroke-linejoin="round" class="icon">
+                                    <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                                <span>{% tr "Разработка и внедрение цифровой архитектуры системы обеспечения качества" %}</span>
+                            </div>
+                            <div class="objective-item">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                     stroke-linejoin="round" class="icon">
+                                    <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                                <span>{% tr "Научно-методологическое обоснование интеграции прикладного бакалавриата" %}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="stage-item">
+                    <div class="stage-marker">
+                        <span class="stage-year">2024</span>
+                    </div>
+                    <div class="stage-content">
+                        <h3>{% tr "2-й этап" %}</h3>
+                        <div class="stage-objectives">
+                            <div class="objective-item">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                     stroke-linejoin="round" class="icon">
+                                    <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                                <span>{% tr "Разработка методических основ обеспечения качества высшего образования" %}</span>
+                            </div>
+                            <div class="objective-item">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                     stroke-linejoin="round" class="icon">
+                                    <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                                <span>{% tr "Внедрение цифровой архитектуры и модернизация Реестра ОП ВПО" %}</span>
+                            </div>
+                            <div class="objective-item">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                     stroke-linejoin="round" class="icon">
+                                    <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                                <span>{% tr "Интеграция прикладного бакалавриата в систему высшего образования" %}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Команда проекта -->
+    <section class="project-team">
+        <div class="container">
+            <h2 class="section-title">{% tr "Команда проекта" %}</h2>
+
+            <!-- Поиск по команде -->
+            <div class="team-search">
+                <div class="search-container">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                         class="search-icon">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.35-4.35"></path>
+                    </svg>
+                    <input type="text" id="teamSearch" placeholder="{% tr 'Поиск по имени или должности...' %}"
+                           class="search-input">
+                </div>
+            </div>
+
+            <!-- Руководство проекта -->
+            <div class="team-section">
+                <h3 class="team-section-title">{% tr "Руководство проекта" %}</h3>
+                <div class="team-grid">
+                    <div class="team-member" data-name="Мухатаев А.А." data-position="Научный руководитель проекта">
+                        <div class="member-avatar">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                 stroke-linejoin="round" class="icon">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="12" cy="7" r="4"></circle>
+                            </svg>
+                        </div>
+                        <h4>{% tr "Мухатаев А.А." %}</h4>
+                        <p>{% tr "Научный руководитель проекта, к.п.н., доцент" %}</p>
+                    </div>
+                    <div class="team-member" data-name="Оспанова Р.Ж." data-position="Бухгалтер">
+                        <div class="member-avatar">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                 stroke-linejoin="round" class="icon">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="12" cy="7" r="4"></circle>
+                            </svg>
+                        </div>
+                        <h4>{% tr "Оспанова Р.Ж." %}</h4>
+                        <p>{% tr "Бухгалтер" %}</p>
+                    </div>
+                    <div class="team-member" data-name="Макымбаева М.Б." data-position="Юрист">
+                        <div class="member-avatar">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                 stroke-linejoin="round" class="icon">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="12" cy="7" r="4"></circle>
+                            </svg>
+                        </div>
+                        <h4>{% tr "Макымбаева М.Б." %}</h4>
+                        <p>{% tr "Юрист" %}</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Лаборатория обеспечения качества -->
+            <div class="team-section">
+                <h3 class="team-section-title">{% tr "Научно-инновационная лаборатория обеспечения качества высшего образования" %}</h3>
+                <div class="team-grid">
+                    <div class="team-member" data-name="Омирбаев С.М." data-position="Заведующий НИЛ">
+                        <div class="member-avatar lab-head">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                 stroke-linejoin="round" class="icon">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="12" cy="7" r="4"></circle>
+                            </svg>
+                        </div>
+                        <h4>{% tr "Омирбаев С.М." %}</h4>
+                        <p>{% tr "Заведующий НИЛ, ведущий научный сотрудник" %}</p>
+                    </div>
+                    <div class="team-member" data-name="Акыбаева Г.С." data-position="Ведущий научный сотрудник">
+                        <div class="member-avatar">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                 stroke-linejoin="round" class="icon">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="12" cy="7" r="4"></circle>
+                            </svg>
+                        </div>
+                        <h4>{% tr "Акыбаева Г.С." %}</h4>
+                        <p>{% tr "Ведущий научный сотрудник" %}</p>
+                    </div>
+                    <div class="team-member" data-name="Жетписбаева Б.А." data-position="Ведущий научный сотрудник">
+                        <div class="member-avatar">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                 stroke-linejoin="round" class="icon">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="12" cy="7" r="4"></circle>
+                            </svg>
+                        </div>
+                        <h4>{% tr "Жетписбаева Б.А." %}</h4>
+                        <p>{% tr "Ведущий научный сотрудник" %}</p>
+                    </div>
+                    <div class="team-member" data-name="Муканова С.Д." data-position="Ведущий научный сотрудник">
+                        <div class="member-avatar">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                 stroke-linejoin="round" class="icon">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="12" cy="7" r="4"></circle>
+                            </svg>
+                        </div>
+                        <h4>{% tr "Муканова С.Д." %}</h4>
+                        <p>{% tr "Ведущий научный сотрудник" %}</p>
+                    </div>
+                    <div class="team-member" data-name="Куангалиева Т.К." data-position="Старший научный сотрудник">
+                        <div class="member-avatar">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                 stroke-linejoin="round" class="icon">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="12" cy="7" r="4"></circle>
+                            </svg>
+                        </div>
+                        <h4>{% tr "Куангалиева Т.К." %}</h4>
+                        <p>{% tr "Старший научный сотрудник" %}</p>
+                    </div>
+                    <div class="team-member" data-name="Касенов Х.Н." data-position="Старший научный сотрудник">
+                        <div class="member-avatar">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                 stroke-linejoin="round" class="icon">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="12" cy="7" r="4"></circle>
+                            </svg>
+                        </div>
+                        <h4>{% tr "Касенов Х.Н." %}</h4>
+                        <p>{% tr "Старший научный сотрудник" %}</p>
+                    </div>
+                    <div class="team-member" data-name="Файзуллин А.Р." data-position="Научный сотрудник">
+                        <div class="member-avatar">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                 stroke-linejoin="round" class="icon">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="12" cy="7" r="4"></circle>
+                            </svg>
+                        </div>
+                        <h4>{% tr "Файзуллин А.Р." %}</h4>
+                        <p>{% tr "Научный сотрудник" %}</p>
+                    </div>
+                    <div class="team-member" data-name="Бурбекова С.Ж." data-position="Научный сотрудник">
+                        <div class="member-avatar">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                 stroke-linejoin="round" class="icon">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="12" cy="7" r="4"></circle>
+                            </svg>
+                        </div>
+                        <h4>{% tr "Бурбекова С.Ж." %}</h4>
+                        <p>{% tr "Научный сотрудник" %}</p>
+                    </div>
+                    <div class="team-member" data-name="Сулейменова Ш.К." data-position="Младший научный сотрудник">
+                        <div class="member-avatar">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                 stroke-linejoin="round" class="icon">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="12" cy="7" r="4"></circle>
+                            </svg>
+                        </div>
+                        <h4>{% tr "Сулейменова Ш.К." %}</h4>
+                        <p>{% tr "Младший научный сотрудник" %}</p>
+                    </div>
+                    <div class="team-member" data-name="Акижанова А.М." data-position="Младший научный сотрудник">
+                        <div class="member-avatar">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                 stroke-linejoin="round" class="icon">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="12" cy="7" r="4"></circle>
+                            </svg>
+                        </div>
+                        <h4>{% tr "Акижанова А.М." %}</h4>
+                        <p>{% tr "Младший научный сотрудник" %}</p>
+                    </div>
+                    <div class="team-member" data-name="Омарова С.К." data-position="Младший научный сотрудник">
+                        <div class="member-avatar">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                 stroke-linejoin="round" class="icon">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="12" cy="7" r="4"></circle>
+                            </svg>
+                        </div>
+                        <h4>{% tr "Омарова С.К." %}</h4>
+                        <p>{% tr "Младший научный сотрудник" %}</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Лаборатория цифровых решений -->
+            <div class="team-section">
+                <h3 class="team-section-title">{% tr "Научно-инновационная лаборатория цифровых решений обеспечения качества ВО" %}</h3>
+                <div class="team-grid">
+                    <div class="team-member" data-name="Белощицкий А.А." data-position="Заведующий НИЛ">
+                        <div class="member-avatar lab-head">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                 stroke-linejoin="round" class="icon">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="12" cy="7" r="4"></circle>
+                            </svg>
+                        </div>
+                        <h4>{% tr "Белощицкий А.А." %}</h4>
+                        <p>{% tr "Заведующий НИЛ, ведущий научный сотрудник" %}</p>
+                    </div>
+                    <div class="team-member" data-name="Белощицкая С.В." data-position="Старший научный сотрудник">
+                        <div class="member-avatar">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                 stroke-linejoin="round" class="icon">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="12" cy="7" r="4"></circle>
+                            </svg>
+                        </div>
+                        <h4>{% tr "Белощицкая С.В." %}</h4>
+                        <p>{% tr "Старший научный сотрудник" %}</p>
+                    </div>
+                    <div class="team-member" data-name="Мусабаев Н.Б." data-position="Старший научный сотрудник">
+                        <div class="member-avatar">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                 stroke-linejoin="round" class="icon">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="12" cy="7" r="4"></circle>
+                            </svg>
+                        </div>
+                        <h4>{% tr "Мусабаев Н.Б." %}</h4>
+                        <p>{% tr "Старший научный сотрудник" %}</p>
+                    </div>
+                    <div class="team-member" data-name="Мухамбетова А.А." data-position="Научный сотрудник">
+                        <div class="member-avatar">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                 stroke-linejoin="round" class="icon">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="12" cy="7" r="4"></circle>
+                            </svg>
+                        </div>
+                        <h4>{% tr "Мухамбетова А.А." %}</h4>
+                        <p>{% tr "Научный сотрудник" %}</p>
+                    </div>
+                    <div class="team-member" data-name="Токсанов С.Н." data-position="Научный сотрудник">
+                        <div class="member-avatar">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                 stroke-linejoin="round" class="icon">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="12" cy="7" r="4"></circle>
+                            </svg>
+                        </div>
+                        <h4>{% tr "Токсанов С.Н." %}</h4>
+                        <p>{% tr "Научный сотрудник" %}</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Лаборатория прикладного бакалавриата -->
+            <div class="team-section">
+                <h3 class="team-section-title">{% tr "Научно-инновационная лаборатория проблем прикладного бакалавриата" %}</h3>
+                <div class="team-grid">
+                    <div class="team-member" data-name="Нурмагамбетов А.А." data-position="Заведующий НИЛ">
+                        <div class="member-avatar lab-head">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                 stroke-linejoin="round" class="icon">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="12" cy="7" r="4"></circle>
+                            </svg>
+                        </div>
+                        <h4>{% tr "Нурмагамбетов А.А." %}</h4>
+                        <p>{% tr "Заведующий НИЛ, ведущий научный сотрудник" %}</p>
+                    </div>
+                    <div class="team-member" data-name="Сакенова К.Ж." data-position="Старший научный сотрудник">
+                        <div class="member-avatar">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                 stroke-linejoin="round" class="icon">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="12" cy="7" r="4"></circle>
+                            </svg>
+                        </div>
+                        <h4>{% tr "Сакенова К.Ж." %}</h4>
+                        <p>{% tr "Старший научный сотрудник" %}</p>
+                    </div>
+                    <div class="team-member" data-name="Иргебаев Е.Т." data-position="Старший научный сотрудник">
+                        <div class="member-avatar">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                 stroke-linejoin="round" class="icon">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="12" cy="7" r="4"></circle>
+                            </svg>
+                        </div>
+                        <h4>{% tr "Иргебаев Е.Т." %}</h4>
+                        <p>{% tr "Старший научный сотрудник" %}</p>
+                    </div>
+                    <div class="team-member" data-name="Идиятова Ю.М." data-position="Научный сотрудник">
+                        <div class="member-avatar">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                 stroke-linejoin="round" class="icon">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="12" cy="7" r="4"></circle>
+                            </svg>
+                        </div>
+                        <h4>{% tr "Идиятова Ю.М." %}</h4>
+                        <p>{% tr "Научный сотрудник" %}</p>
+                    </div>
+                    <div class="team-member" data-name="Кулумжанова А.М." data-position="Научный сотрудник">
+                        <div class="member-avatar">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                 stroke-linejoin="round" class="icon">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="12" cy="7" r="4"></circle>
+                            </svg>
+                        </div>
+                        <h4>{% tr "Кулумжанова А.М." %}</h4>
+                        <p>{% tr "Научный сотрудник" %}</p>
+                    </div>
+                    <div class="team-member" data-name="Артыкбай А.Н." data-position="Младший научный сотрудник">
+                        <div class="member-avatar">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                 stroke-linejoin="round" class="icon">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="12" cy="7" r="4"></circle>
+                            </svg>
+                        </div>
+                        <h4>{% tr "Артыкбай А.Н." %}</h4>
+                        <p>{% tr "Младший научный сотрудник" %}</p>
+                    </div>
+                    <div class="team-member" data-name="Альшурина А.С." data-position="Младший научный сотрудник">
+                        <div class="member-avatar">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                 stroke-linejoin="round" class="icon">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="12" cy="7" r="4"></circle>
+                            </svg>
+                        </div>
+                        <h4>{% tr "Альшурина А.С." %}</h4>
+                        <p>{% tr "Младший научный сотрудник" %}</p>
+                    </div>
+                    <div class="team-member" data-name="Ислам А." data-position="Младший научный сотрудник">
+                        <div class="member-avatar">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                 stroke-linejoin="round" class="icon">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="12" cy="7" r="4"></circle>
+                            </svg>
+                        </div>
+                        <h4>{% tr "Ислам А." %}</h4>
+                        <p>{% tr "Младший научный сотрудник" %}</p>
+                    </div>
+                    <div class="team-member" data-name="Каратабанов Р." data-position="Младший научный сотрудник">
+                        <div class="member-avatar">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                 stroke-linejoin="round" class="icon">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="12" cy="7" r="4"></circle>
+                            </svg>
+                        </div>
+                        <h4>{% tr "Каратабанов Р." %}</h4>
+                        <p>{% tr "Младший научный сотрудник" %}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ожидаемые результаты -->
+    <section class="expected-results">
+        <div class="container">
+            <h2 class="section-title">{% tr "Ожидаемые результаты" %}</h2>
+
+            <div class="results-grid">
+                <div class="result-card">
+                    <div class="result-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                             class="icon">
+                            <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                    <h4>{% tr "Кластеризация факторов" %}</h4>
+                    <p>{% tr "Научно-обоснованы и кластеризованы факторы, оказывающие прямое и косвенное влияние на качество высшего образования" %}</p>
+                </div>
+
+                <div class="result-card">
+                    <div class="result-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                             class="icon">
+                            <path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                        </svg>
+                    </div>
+                    <h4>{% tr "Методологические основы" %}</h4>
+                    <p>{% tr "Разработаны методологические основы обеспечения качества высшего образования на основе анализа отечественной и зарубежных систем" %}</p>
+                </div>
+
+                <div class="result-card">
+                    <div class="result-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                             class="icon">
+                            <path d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+                        </svg>
+                    </div>
+                    <h4>{% tr "Национальная модель" %}</h4>
+                    <p>{% tr "Теоретически обоснована, разработана и экспериментально апробирована модернизированная национальная модель системы обеспечения качества" %}</p>
+                </div>
+
+                <div class="result-card">
+                    <div class="result-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                             class="icon">
+                            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                            <line x1="8" y1="21" x2="16" y2="21"></line>
+                            <line x1="12" y1="17" x2="12" y2="21"></line>
+                        </svg>
+                    </div>
+                    <h4>{% tr "Модернизация Реестра" %}</h4>
+                    <p>{% tr "Модернизирован Реестр образовательных программ высшего и послевузовского образования" %}</p>
+                </div>
+
+                <div class="result-card">
+                    <div class="result-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                             class="icon">
+                            <path d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                        </svg>
+                    </div>
+                    <h4>{% tr "Прикладной бакалавриат" %}</h4>
+                    <p>{% tr "Разработана методологическая концепция имплементации прикладного бакалавриата в систему высшего образования" %}</p>
+                </div>
+
+                <div class="result-card">
+                    <div class="result-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                             class="icon">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                            <polyline points="14 2 14 8 20 8"></polyline>
+                            <line x1="16" y1="13" x2="8" y2="13"></line>
+                            <line x1="16" y1="17" x2="8" y2="17"></line>
+                        </svg>
+                    </div>
+                    <h4>{% tr "Публикации" %}</h4>
+                    <p>{% tr "Не менее 4 статей в Q1-Q3 журналах Web of Science/Scopus, 4 публикации в рекомендованных журналах, монография" %}</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Результаты проекта -->
+    <section class="project-results">
+        <div class="container">
+            <h2 class="section-title">{% tr "Результаты проекта" %}</h2>
+
+            <div class="publication-card">
+                <div class="publication-header">
+                    <div class="publication-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+                             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                             class="icon">
+                            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+                        </svg>
+                    </div>
+                    <div class="publication-info">
+                        <h3>{% tr "Монография" %}</h3>
+                        <h4>{% tr "Система обеспечения качества высшего образования: реинжиниринг национальной модели" %}</h4>
+                        <p class="authors">{% tr "С. Омирбаев, А. Мухатаев, С. Бурбекова, Х. Касенов, Ш. Сулейменова" %}</p>
+                    </div>
+                </div>
+                <div class="publication-actions">
+                    <a href="https://docs.google.com/viewer?url=https%3A%2F%2Fenic-kazakhstan.edu.kz%2F%2Fuploads%2Fadditional_files_items%2F218%2Ffile%2Fmonografiya.pdf%3Fcache%3D1705484310&embedded=false"
+                       class="publication-link" target="_blank">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                             class="icon">
+                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                            <polyline points="15 3 21 3 21 9"></polyline>
+                            <line x1="10" y1="14" x2="21" y2="3"></line>
+                        </svg>
+                        {% tr "Читать монографию" %}
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Поиск по команде
+        document.addEventListener('DOMContentLoaded', function () {
+            const searchInput = document.getElementById('teamSearch');
+            const teamMembers = document.querySelectorAll('.team-member');
+
+            searchInput.addEventListener('input', function () {
+                const searchTerm = this.value.toLowerCase();
+
+                teamMembers.forEach(member => {
+                    const name = member.getAttribute('data-name').toLowerCase();
+                    const position = member.getAttribute('data-position').toLowerCase();
+
+                    if (name.includes(searchTerm) || position.includes(searchTerm)) {
+                        member.style.display = 'block';
+                    } else {
+                        member.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
+{% endblock content %}

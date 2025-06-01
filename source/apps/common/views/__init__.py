@@ -11,3 +11,5 @@ from .op_po import OpPoView
 from .faq import FaqView
 from .quality import QualityView
 from .academic_integrity import AcademicIntegrityView
+from .kazakhstan_in_bologna_process import KazakhstanInBolognaProcessView
+from .research import ResearchView

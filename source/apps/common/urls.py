@@ -33,4 +33,11 @@ urlpatterns = [
 
     # Academic Integrity
     path('academic_integrity/', view.AcademicIntegrityView.as_view(), name='academic_integrity'),
+
+    # Kazakhstan In Bologna Process
+    path('kazakhstan_in_bologna_process/', view.KazakhstanInBolognaProcessView.as_view(),
+         name='kazakhstan_in_bologna_process'),
+
+    # Research
+    path('research/', view.ResearchView.as_view(), name='research'),
 ]
