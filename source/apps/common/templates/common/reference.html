@@ -12,13 +12,13 @@
     <div class="container">
         <ul class="breadcrumbs-list">
             <li class="breadcrumbs-item">
-                <a href="{% url 'home' %}" class="breadcrumbs-link">Главная</a>
+                <a href="{% url 'home' %}" class="breadcrumbs-link">{% tr "Главная" %}</a>
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon">
                     <polyline points="9 18 15 12 9 6"></polyline>
                 </svg>
             </li>
             <li class="breadcrumbs-item">
-                <span class="breadcrumbs-current">Справочная информация</span>
+                <span class="breadcrumbs-current">{% tr "Справочная информация" %}</span>
             </li>
         </ul>
     </div>
@@ -27,8 +27,8 @@
 <!-- Заголовок страницы -->
 <section class="page-header">
     <div class="container">
-        <h1 class="page-title">Справочная информация</h1>
-        <p class="page-subtitle">Полезные документы, аналитика и ресурсы от Центра</p>
+        <h1 class="page-title">{% tr "Справочная информация" %}</h1>
+        <p class="page-subtitle">{% tr "Полезные документы, аналитика и ресурсы от Центра" %}</p>
     </div>
 </section>
 
