@@ -1,0 +1,356 @@
+{% extends 'base.html' %}
+
+{% load lang_tags %}
+{% load static %}
+
+{% block extra_head %}
+    <link rel="stylesheet" href="{% static 'css/base/faq.css' %}">
+{% endblock %}
+
+{% block content %}
+    <!-- Хлебные крошки -->
+    <div class="breadcrumbs">
+        <div class="container">
+            <ul class="breadcrumbs-list">
+                <li class="breadcrumbs-item">
+                    <a href="#" class="breadcrumbs-link">{% tr "Главная" %}</a>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="9 18 15 12 9 6"></polyline>
+                    </svg>
+                </li>
+                <li class="breadcrumbs-item">
+                    <span class="breadcrumbs-current">{% tr "Перечень вопросов" %}</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Заголовок страницы -->
+    <section class="page-header">
+        <div class="container">
+            <div class="page-header-content">
+                <div class="page-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none"
+                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                        <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                    </svg>
+                </div>
+                <h1 class="page-title">{% tr "Перечень вопросов" %}</h1>
+                <p class="page-subtitle">{% tr "Часто задаваемые вопросы о признании документов об образовании" %}</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Основной контент -->
+    <section class="main-content">
+        <div class="container">
+            <div class="content-wrapper">
+                <!-- Статистика -->
+                <div class="stats-section">
+                    <div class="stat-card">
+                        <div class="stat-icon questions">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                 stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                                <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                            </svg>
+                        </div>
+                        <div class="stat-number">4</div>
+                        <div class="stat-label">{% tr "Основных вопроса" %}</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon time">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                 stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <polyline points="12,6 12,12 16,14"></polyline>
+                            </svg>
+                        </div>
+                        <div class="stat-number">15-45</div>
+                        <div class="stat-label">{% tr "Рабочих дней" %}</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon docs">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                 stroke-linejoin="round">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                <polyline points="14,2 14,8 20,8"></polyline>
+                                <line x1="16" y1="13" x2="8" y2="13"></line>
+                                <line x1="16" y1="17" x2="8" y2="17"></line>
+                                <polyline points="10,9 9,9 8,9"></polyline>
+                            </svg>
+                        </div>
+                        <div class="stat-number">{% tr "Все" %}</div>
+                        <div class="stat-label">{% tr "Типы документов" %}</div>
+                    </div>
+                </div>
+
+                <!-- Поиск -->
+                <div class="search-section">
+                    <div class="search-box">
+                        <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                             viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                             stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <path d="M21 21l-4.35-4.35"></path>
+                        </svg>
+                        <input type="text" class="search-input" placeholder="{% tr 'Поиск по вопросам...' %}"
+                               id="searchInput">
+                    </div>
+                </div>
+
+                <!-- FAQ Секция -->
+                <div class="faq-section">
+                    <div class="faq-header">
+                        <h2 class="faq-title">{% tr 'Часто задаваемые вопросы' %}</h2>
+                        <p class="faq-description">{% tr 'Найдите ответы на самые популярные вопросы о признании документов об образовании' %}</p>
+                    </div>
+
+                    <ul class="faq-list" id="faqList">
+                        <!-- Вопрос 1 -->
+                        <li class="faq-item">
+                            <button class="faq-question" onclick="toggleFAQ(this)">
+                                <span class="question-number">1</span>
+                                <span class="question-text">{% tr 'Что такое признание документов об образовании?' %}</span>
+                                <svg class="question-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                     viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                     stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="6 9 12 15 18 9"></polyline>
+                                </svg>
+                            </button>
+                            <div class="faq-answer">
+                                <div class="faq-answer-content">
+                                    <p><span class="highlight">{% tr 'Признание документов об образовании' %}</span> – {% tr 'официальное подтверждение документов об образовании, выданных зарубежными организациями образования, в том числе их филиалами, а также научными центрами и лабораториями.' %}</p>
+
+                                    <p>{% tr 'Признание документов об образовании производится в соответствии с действующим законодательством Республики Казахстан и осуществляется путем установления подлинности документа об образовании, установления наличия у организации образования (научного центра, лаборатории), выдавшей документ об образовании, права на осуществление соответствующей образовательной деятельности на момент его выдачи, проведения экспертной оценки при необходимости.' %}</p>
+
+                                    <div class="important-note">
+                                        <strong>{% tr 'Нормативные документы:' %}</strong>
+                                        <ul>
+                                            <li>{% tr 'Процедура признания документов о высшем и послевузовском образовании регулируются Приказом Министра науки и высшего образования Республики Казахстан от 12 июня 2023 года № 268 «Об утверждении Правил признания документов об образовании».' %}
+                                            </li>
+                                            <li>
+                                                {% tr 'Процедура признания документов о среднем, техническом и профессиональном, послесреднем образовании регулируются Приказом Министра просвещения Республики Казахстан от 28 июля 2023 года № 230 «Об утверждении Правил признания документов о среднем, техническом и профессиональном, послесреднем образовании».' %}
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+
+                        <!-- Вопрос 2 -->
+                        <li class="faq-item">
+                            <button class="faq-question" onclick="toggleFAQ(this)">
+                                <span class="question-number">2</span>
+                                <span class="question-text">{% tr 'Какие документы подлежат признанию?' %}</span>
+                                <svg class="question-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                     viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                     stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="6 9 12 15 18 9"></polyline>
+                                </svg>
+                            </button>
+                            <div class="faq-answer">
+                                <div class="faq-answer-content">
+                                    <p><span class="highlight">{% tr 'Признанию подлежат документы об образовании' %}</span>
+                                        {% tr 'физических лиц, получивших образование в других государствах и в международных или иностранных учебных заведениях (их филиалах):' %}</p>
+
+                                    <ul>
+                                        <li>{% tr 'Документы об основном среднем образовании' %}</li>
+                                        <li>{% tr 'Документы об общем среднем образовании' %}</li>
+                                        <li>{% tr 'Документы о техническом и профессиональном образовании' %}</li>
+                                        <li>{% tr 'Документы о послесреднем образовании' %}</li>
+                                        <li>{% tr 'Документы о высшем образовании' %}</li>
+                                        <li>{% tr 'Документы о послевузовском образовании' %}</li>
+                                    </ul>
+
+                                    <div class="important-note">
+                                        <strong>{% tr 'Обязательное признание требуется для:' %}</strong>
+                                        <ul>
+                                            <li>{% tr 'Лиц, имеющих документы об ученых степенях и ученых званиях' %}</li>
+                                            <li>{% tr 'Лиц, пожелавших продолжить обучение' %}</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+
+                        <!-- Вопрос 3 -->
+                        <li class="faq-item">
+                            <button class="faq-question" onclick="toggleFAQ(this)">
+                                <span class="question-number">3</span>
+                                <span class="question-text">{% tr 'Как долго рассматривается заявление о признании документов об образовании?' %}</span>
+                                <svg class="question-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                     viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                     stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="6 9 12 15 18 9"></polyline>
+                                </svg>
+                            </button>
+                            <div class="faq-answer">
+                                <div class="faq-answer-content">
+                                    <p>{% tr 'Срок рассмотрения заявления зависит от типа документов и способа подачи заявления:' %}</p>
+
+                                    <div class="important-note">
+                                        <strong>{% tr 'Для легализованных или апостилированных документов:' %}</strong>
+                                        <ul>
+                                            <li>{% tr 'При обращении через портал –' %} <span
+                                                    class="highlight">{% tr '15 рабочих дней' %}</span></li>
+                                            <li>{% tr 'При обращении в подразделения Государственной корпорации –' %} <span
+                                                    class="highlight">{% tr '25 рабочих дней' %}</span></li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="contact-info">
+                                        <strong>{% tr 'Для не легализованных и не апостилированных документов:' %}</strong>
+                                        <ul>
+                                            <li>{% tr 'При обращении через портал –' %} <span
+                                                    class="highlight">{% tr '35 рабочих дней' %}</span></li>
+                                            <li>{% tr 'При обращении в подразделения Государственной корпорации –' %} <span
+                                                    class="highlight">{% tr '45 рабочих дней' %}</span></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+
+                        <!-- Вопрос 4 -->
+                        <li class="faq-item">
+                            <button class="faq-question" onclick="toggleFAQ(this)">
+                                <span class="question-number">4</span>
+                                <span class="question-text">{% tr 'Куда обращаться для признания документа?' %}</span>
+                                <svg class="question-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                     viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                     stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="6 9 12 15 18 9"></polyline>
+                                </svg>
+                            </button>
+                            <div class="faq-answer">
+                                <div class="faq-answer-content">
+                                    <p>{% tr 'Для получения услуги по признанию документов об образовании необходимо направить заявление с приложением документов одним из следующих способов:' %}</p>
+
+                                    <div class="contact-info">
+                                        <strong>{% tr 'Способы подачи заявления:' %}</strong>
+                                        <ul>
+                                            <li><span
+                                                    class="highlight">{% tr 'Через веб-портал «электронного правительства»' %}</span>
+                                                {% tr '– наиболее быстрый и удобный способ' %}
+                                            </li>
+                                            <li><span class="highlight">{% tr 'Через некоммерческое акционерное общество «Государственная корпорация «Правительство для граждан»' %}</span>
+                                               {% tr '– личное обращение в офисы корпорации' %}
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                    <p>
+                                        {% tr 'Рекомендуется использовать электронный способ подачи заявления через портал, так как это значительно сокращает сроки рассмотрения и обеспечивает удобство отслеживания статуса заявления.' %}
+                                    </p>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <!-- Сообщение об отсутствии результатов -->
+                    <div class="no-results" id="noResults">
+                        <div class="no-results-icon">🔍</div>
+                        <h3>{% tr 'Ничего не найдено' %}</h3>
+                        <p>{% tr 'Попробуйте изменить поисковый запрос или просмотрите все вопросы' %}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function toggleFAQ(button) {
+            const answer = button.nextElementSibling;
+            const isActive = button.classList.contains('active');
+
+            // Закрыть все открытые FAQ
+            document.querySelectorAll('.faq-question.active').forEach(activeButton => {
+                activeButton.classList.remove('active');
+                activeButton.nextElementSibling.classList.remove('active');
+            });
+
+            // Если текущий FAQ не был активен, открыть его
+            if (!isActive) {
+                button.classList.add('active');
+                answer.classList.add('active');
+            }
+        }
+
+        // Функция поиска
+        function searchFAQ() {
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            const faqItems = document.querySelectorAll('.faq-item');
+            const noResults = document.getElementById('noResults');
+            let hasResults = false;
+
+            faqItems.forEach(item => {
+                const questionText = item.querySelector('.question-text').textContent.toLowerCase();
+                const answerText = item.querySelector('.faq-answer-content').textContent.toLowerCase();
+
+                if (questionText.includes(searchTerm) || answerText.includes(searchTerm)) {
+                    item.classList.remove('hidden');
+                    hasResults = true;
+                } else {
+                    item.classList.add('hidden');
+                }
+            });
+
+            // Показать/скрыть сообщение об отсутствии результатов
+            if (hasResults || searchTerm === '') {
+                noResults.classList.remove('show');
+            } else {
+                noResults.classList.add('show');
+            }
+        }
+
+        // Добавить обработчик события для поиска
+        document.getElementById('searchInput').addEventListener('input', searchFAQ);
+
+        // Инициализация: открыть первый вопрос по умолчанию
+        document.addEventListener('DOMContentLoaded', function () {
+            const firstQuestion = document.querySelector('.faq-question');
+            if (firstQuestion) {
+                toggleFAQ(firstQuestion);
+            }
+        });
+
+        // Добавить плавную прокрутку при открытии FAQ
+        function smoothScrollToElement(element) {
+            element.scrollIntoView({
+                behavior: 'smooth',
+                block: 'nearest'
+            });
+        }
+
+        // Обновленная функция toggleFAQ с прокруткой
+        function toggleFAQ(button) {
+            const answer = button.nextElementSibling;
+            const isActive = button.classList.contains('active');
+
+            // Закрыть все открытые FAQ
+            document.querySelectorAll('.faq-question.active').forEach(activeButton => {
+                activeButton.classList.remove('active');
+                activeButton.nextElementSibling.classList.remove('active');
+            });
+
+            // Если текущий FAQ не был активен, открыть его
+            if (!isActive) {
+                button.classList.add('active');
+                answer.classList.add('active');
+
+                // Плавная прокрутка к открытому элементу
+                setTimeout(() => {
+                    smoothScrollToElement(button);
+                }, 100);
+            }
+        }
+    </script>
+{% endblock %}
