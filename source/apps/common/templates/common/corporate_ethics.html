@@ -1,0 +1,319 @@
+{% extends "base.html" %}
+{% load lang_tags %}
+{% load static %}
+
+{% block extra_head %}
+    <link rel="stylesheet" href="{% static 'css/base/corporate_ethics.css' %}">
+{% endblock %}
+
+{% block content %}
+    <!-- Хлебные крошки -->
+    <div class="breadcrumbs">
+        <div class="container">
+            <ul class="breadcrumbs-list">
+                <li class="breadcrumbs-item">
+                    <a href="{% url 'home' %}" class="breadcrumbs-link">{% tr "Главная" %}</a>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                         class="icon">
+                        <polyline points="9 18 15 12 9 6"></polyline>
+                    </svg>
+                </li>
+                <li class="breadcrumbs-item">
+                    <span class="breadcrumbs-current">{% tr "Корпоративная этика и противодействие коррупционным рискам" %}</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Заголовок страницы -->
+    <section class="page-header">
+        <div class="container">
+            <div class="header-content">
+                <div class="header-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none"
+                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                         class="icon">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                        <path d="M9 12l2 2 4-4"></path>
+                    </svg>
+                </div>
+                <h1 class="page-title">{% tr "Корпоративная этика и противодействие коррупционным рискам" %}</h1>
+                <p class="page-subtitle">{% tr "Обеспечение прозрачности и этичности в деятельности организации" %}</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Уполномоченный по этике -->
+    <section class="ethics-officer">
+        <div class="container">
+            <h2 class="section-title">{% tr "Сведения об уполномоченном по этике и противодействию коррупционным рискам" %}</h2>
+
+            <div class="officer-card">
+                <div class="officer-photo">
+                    <img src="https://enic-kazakhstan.edu.kz/files/1636430743/img_9016_minified.png"
+                         alt="{% tr 'Иргебаев Ержан Турсынханулы' %}" class="photo">
+                </div>
+                <div class="officer-info">
+                    <h3 class="officer-name">{% tr "Иргебаев Ержан Турсынханулы" %}</h3>
+                    <p class="officer-position">{% tr "Уполномоченный по этике и противодействию коррупционным рискам" %}</p>
+
+                    <div class="contact-section">
+                        <h4>{% tr "Контактные данные:" %}</h4>
+                        <div class="contact-list">
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                         stroke-linejoin="round" class="icon">
+                                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                                    </svg>
+                                </div>
+                                <div class="contact-details">
+                                    <span class="contact-label">{% tr "Рабочий телефон:" %}</span>
+                                    <span class="contact-value">28-75-22</span>
+                                </div>
+                            </div>
+
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                         stroke-linejoin="round" class="icon">
+                                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                        <polyline points="22,6 12,13 2,6"></polyline>
+                                    </svg>
+                                </div>
+                                <div class="contact-details">
+                                    <span class="contact-label">{% tr "Email:" %}</span>
+                                    <a href="mailto:y.irgebayev@n-k.kz" class="contact-value email-link">y.irgebayev@n-k.kz</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="responsibilities">
+                        <h4>{% tr "Основные функции:" %}</h4>
+                        <ul class="responsibilities-list">
+                            <li>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                     stroke-linejoin="round" class="icon">
+                                    <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                                {% tr "Консультирование по вопросам этики и противодействия коррупции" %}
+                            </li>
+                            <li>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                     stroke-linejoin="round" class="icon">
+                                    <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                                {% tr "Прием и рассмотрение обращений о нарушениях" %}
+                            </li>
+                            <li>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                     stroke-linejoin="round" class="icon">
+                                    <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                                {% tr "Проведение профилактических мероприятий" %}
+                            </li>
+                            <li>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                     stroke-linejoin="round" class="icon">
+                                    <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                                {% tr "Мониторинг соблюдения этических норм" %}
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Нормативные документы -->
+    <section class="legal-documents">
+        <div class="container">
+            <h2 class="section-title">{% tr "Нормативно-правовые документы" %}</h2>
+
+            <div class="documents-grid">
+                <!-- Закон о противодействии коррупции -->
+                <div class="document-card">
+                    <div class="document-header">
+                        <div class="document-icon law">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
+                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                 stroke-linejoin="round" class="icon">
+                                <path d="M22 12h-6l-2 3h-4l-2-3H2"></path>
+                                <path d="M5.45 5.11L2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"></path>
+                            </svg>
+                        </div>
+                        <div class="document-badge">{% tr "Закон РК" %}</div>
+                    </div>
+                    <div class="document-content">
+                        <h3>{% tr "Нормативно-правовые акты ЗРК «О противодействии коррупции»" %}</h3>
+                        <p>{% tr "Основной законодательный акт Республики Казахстан, регулирующий вопросы противодействия коррупции и обеспечения прозрачности государственного управления." %}</p>
+                        <div class="document-actions">
+                            <button class="view-btn"
+                                    onclick="window.open('http://adilet.zan.kz/rus/docs/Z180000410_', '_blank')">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                     stroke-linejoin="round" class="icon">
+                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                    <circle cx="12" cy="12" r="3"></circle>
+                                </svg>
+                                {% tr "Посмотреть" %}
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Антикоррупционный стандарт -->
+                <div class="document-card">
+                    <div class="document-header">
+                        <div class="document-icon standard">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
+                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                 stroke-linejoin="round" class="icon">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                <polyline points="14 2 14 8 20 8"></polyline>
+                                <line x1="16" y1="13" x2="8" y2="13"></line>
+                                <line x1="16" y1="17" x2="8" y2="17"></line>
+                                <polyline points="10 9 9 9 8 9"></polyline>
+                            </svg>
+                        </div>
+                        <div class="document-badge">{% tr "Стандарт" %}</div>
+                    </div>
+                    <div class="document-content">
+                        <h3>{% tr "Антикоррупционный стандарт Болонского Центра" %}</h3>
+                        <p>{% tr "Внутренний документ организации, определяющий принципы и процедуры обеспечения этичности и прозрачности в деятельности Центра развития высшего образования." %}</p>
+                        <div class="document-actions">
+                            <button class="view-btn"
+                                    onclick="window.open('https://docs.google.com/viewer?url=https%3A%2F%2Fenic-kazakhstan.edu.kz%2F%2Fuploads%2Fadditional_files_items%2F86%2Ffile%2Fantikorrupcionnyy-standart-bolonskogo-centra.pdf%3Fcache%3D1597317450&embedded=false', '_blank')">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                     stroke-linejoin="round" class="icon">
+                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                    <circle cx="12" cy="12" r="3"></circle>
+                                </svg>
+                                {% tr "Посмотреть" %}
+                            </button>
+                            <button class="download-btn"
+                                    onclick="window.open('https://enic-kazakhstan.edu.kz/uploads/additional_files_items/86/file/antikorrupcionnyy-standart-bolonskogo-centra.pdf', '_blank')">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                     stroke-linejoin="round" class="icon">
+                                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                    <polyline points="7 10 12 15 17 10"></polyline>
+                                    <line x1="12" y1="15" x2="12" y2="3"></line>
+                                </svg>
+                                {% tr "Скачать" %}
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Принципы этики -->
+    <section class="ethics-principles">
+        <div class="container">
+            <h2 class="section-title">{% tr "Принципы корпоративной этики" %}</h2>
+
+            <div class="principles-grid">
+                <div class="principle-card">
+                    <div class="principle-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                             class="icon">
+                            <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                    <h3>{% tr "Честность" %}</h3>
+                    <p>{% tr "Открытость и честность во всех аспектах деятельности организации" %}</p>
+                </div>
+
+                <div class="principle-card">
+                    <div class="principle-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                             class="icon">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                        </svg>
+                    </div>
+                    <h3>{% tr "Прозрачность" %}</h3>
+                    <p>{% tr "Обеспечение открытости процессов принятия решений и их исполнения" %}</p>
+                </div>
+
+                <div class="principle-card">
+                    <div class="principle-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                             class="icon">
+                            <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="8.5" cy="7" r="4"></circle>
+                            <polyline points="17 11 19 13 23 9"></polyline>
+                        </svg>
+                    </div>
+                    <h3>{% tr "Ответственность" %}</h3>
+                    <p>{% tr "Персональная ответственность каждого сотрудника за соблюдение этических норм" %}</p>
+                </div>
+
+                <div class="principle-card">
+                    <div class="principle-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                             class="icon">
+                            <path d="M22 12h-6l-2 3h-4l-2-3H2"></path>
+                            <path d="M5.45 5.11L2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"></path>
+                        </svg>
+                    </div>
+                    <h3>{% tr "Справедливость" %}</h3>
+                    <p>{% tr "Равное отношение ко всем участникам образовательного процесса" %}</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{#    <!-- Обращения и жалобы -->#}
+{#    <section class="complaints-section">#}
+{#        <div class="container">#}
+{#            <div class="complaints-card">#}
+{#                <div class="complaints-icon">#}
+{#                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"#}
+{#                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"#}
+{#                         class="icon">#}
+{#                        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>#}
+{#                    </svg>#}
+{#                </div>#}
+{#                <div class="complaints-content">#}
+{#                    <h3>{% tr "Сообщить о нарушении" %}</h3>#}
+{#                    <p>{% tr "Если вы стали свидетелем нарушения этических норм или коррупционных действий, вы можете обратиться к уполномоченному по этике. Все обращения рассматриваются конфиденциально." %}</p>#}
+{#                    <div class="complaints-actions">#}
+{#                        <a href="tel:28-75-22" class="contact-btn">#}
+{#                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"#}
+{#                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"#}
+{#                                 stroke-linejoin="round" class="icon">#}
+{#                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>#}
+{#                            </svg>#}
+{#                            {% tr "Позвонить" %}#}
+{#                        </a>#}
+{#                        <a href="mailto:y.irgebayev@n-k.kz" class="contact-btn">#}
+{#                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"#}
+{#                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"#}
+{#                                 stroke-linejoin="round" class="icon">#}
+{#                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>#}
+{#                                <polyline points="22,6 12,13 2,6"></polyline>#}
+{#                            </svg>#}
+{#                            {% tr "Написать" %}#}
+{#                        </a>#}
+{#                    </div>#}
+{#                </div>#}
+{#            </div>#}
+{#        </div>#}
+{#    </section>#}
+{% endblock content %}

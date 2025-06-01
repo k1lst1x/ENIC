@@ -16,3 +16,5 @@ from .research import ResearchView
 from .reviews import ReviewsView
 from .accreditation import AccreditationView
 from .sitemap import SiteMapView
+from .open_access import OpenAccessView
+from .corporate_ethics import CorporateEthicsView

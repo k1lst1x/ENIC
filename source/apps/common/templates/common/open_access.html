@@ -1,0 +1,468 @@
+{% extends "base.html" %}
+{% load lang_tags %}
+{% load static %}
+
+{% block extra_head %}
+    <link rel="stylesheet" href="{% static 'css/base/open_access.css' %}">
+{% endblock %}
+
+{% block content %}
+    <!-- Хлебные крошки -->
+    <div class="breadcrumbs">
+        <div class="container">
+            <ul class="breadcrumbs-list">
+                <li class="breadcrumbs-item">
+                    <a href="{% url 'home' %}" class="breadcrumbs-link">{% tr "Главная" %}</a>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                         class="icon">
+                        <polyline points="9 18 15 12 9 6"></polyline>
+                    </svg>
+                </li>
+                <li class="breadcrumbs-item">
+                    <span class="breadcrumbs-current">{% tr "Открытый доступ к высшему образованию" %}</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Заголовок страницы -->
+     <section class="page-header">
+        <div class="container">
+            <h1 class="page-title">{% tr "Открытый доступ к высшему образованию" %}</h1>
+            <p class="page-subtitle">{% tr "Информация о вузах, образовательных программах и нормативно-правовых актах" %}</p>
+        </div>
+    </section>
+
+    <!-- Основные блоки -->
+    <section class="main-blocks">
+        <div class="container">
+            <div class="blocks-grid">
+                <!-- Блок Вузы -->
+                <div class="info-block">
+                    <div class="block-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+                             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                             class="icon">
+                            <path d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+                        </svg>
+                    </div>
+                    <h2 class="block-title">{% tr "Вузы" %}</h2>
+                    <p class="block-description">{% tr "Реестр аккредитованных организаций высшего и послевузовского образования Республики Казахстан" %}</p>
+                    <div class="block-actions">
+                        <button class="toggle-btn" data-target="universities">
+                            {% tr "Подробнее" %}
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                 stroke-linejoin="round" class="icon">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </button>
+                        <a href="https://enic-kazakhstan.kz/ru/accreditation/organizacii-vysshego-i-poslevuzovskogo-obrazovaniya"
+                           class="external-link" target="_blank">
+                            {% tr "Перейти" %}
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                 stroke-linejoin="round" class="icon">
+                                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                <polyline points="15 3 21 3 21 9"></polyline>
+                                <line x1="10" y1="14" x2="21" y2="3"></line>
+                            </svg>
+                        </a>
+                    </div>
+                    <div id="universities" class="block-content">
+                        <div class="content-card">
+                            <h3>{% tr "Реестр аккредитованных вузов" %}</h3>
+                            <p>{% tr "В реестре представлена информация о вузах, прошедших процедуру аккредитации и соответствующих международным стандартам качества образования." %}</p>
+                            <ul class="feature-list">
+                                <li>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                         stroke-linejoin="round" class="icon">
+                                        <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                    </svg>
+                                    {% tr "Полная информация о вузах" %}
+                                </li>
+                                <li>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                         stroke-linejoin="round" class="icon">
+                                        <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                    </svg>
+                                    {% tr "Контактные данные" %}
+                                </li>
+                                <li>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                         stroke-linejoin="round" class="icon">
+                                        <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                    </svg>
+                                    {% tr "Статус аккредитации" %}
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Блок Образовательные программы -->
+                <div class="info-block">
+                    <div class="block-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+                             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                             class="icon">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                            <polyline points="14 2 14 8 20 8"></polyline>
+                            <line x1="16" y1="13" x2="8" y2="13"></line>
+                            <line x1="16" y1="17" x2="8" y2="17"></line>
+                            <polyline points="10 9 9 9 8 9"></polyline>
+                        </svg>
+                    </div>
+                    <h2 class="block-title">{% tr "Образовательные программы" %}</h2>
+                    <p class="block-description">{% tr "Реестр образовательных программ высшего и послевузовского образования" %}</p>
+                    <div class="block-actions">
+                        <button class="toggle-btn" data-target="programs">
+                            {% tr "Подробнее" %}
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                 stroke-linejoin="round" class="icon">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </button>
+                        <a href="http://esuvo.platonus.kz/#/register/education_program" class="external-link"
+                           target="_blank">
+                            {% tr "Перейти" %}
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                 stroke-linejoin="round" class="icon">
+                                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                <polyline points="15 3 21 3 21 9"></polyline>
+                                <line x1="10" y1="14" x2="21" y2="3"></line>
+                            </svg>
+                        </a>
+                    </div>
+                    <div id="programs" class="block-content">
+                        <div class="content-card">
+                            <h3>{% tr "Реестр образовательных программ" %}</h3>
+                            <p>{% tr "Единая база данных всех образовательных программ, реализуемых вузами Казахстана. Реестр содержит информацию о содержании программ, результатах обучения и квалификациях." %}</p>
+                            <ul class="feature-list">
+                                <li>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                         stroke-linejoin="round" class="icon">
+                                        <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                    </svg>
+                                    {% tr "Поиск по направлениям подготовки" %}
+                                </li>
+                                <li>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                         stroke-linejoin="round" class="icon">
+                                        <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                    </svg>
+                                    {% tr "Описание программ" %}
+                                </li>
+                                <li>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                         stroke-linejoin="round" class="icon">
+                                        <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                    </svg>
+                                    {% tr "Информация о вузах, реализующих программы" %}
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Блок НПА -->
+                <div class="info-block">
+                    <div class="block-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+                             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                             class="icon">
+                            <path d="M22 12h-6l-2 3h-4l-2-3H2"></path>
+                            <path d="M5.45 5.11L2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"></path>
+                        </svg>
+                    </div>
+                    <h2 class="block-title">{% tr "НПА" %}</h2>
+                    <p class="block-description">{% tr "Нормативно-правовые акты в сфере высшего и послевузовского образования" %}</p>
+                    <div class="block-actions">
+                        <button class="toggle-btn" data-target="regulations">
+                            {% tr "Подробнее" %}
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                 stroke-linejoin="round" class="icon">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </button>
+                    </div>
+                    <div id="regulations" class="block-content">
+                        <div class="content-card">
+                            <h3>{% tr "Нормативно-правовые акты" %}</h3>
+                            <p>{% tr "Законы и нормативные документы, регулирующие сферу высшего и послевузовского образования в Республике Казахстан." %}</p>
+
+                            <div class="regulations-list">
+                                <!-- Документ 1 -->
+                                <div class="regulation-item">
+                                    <div class="regulation-header">
+                                        <h4>{% tr "Закон Республики Казахстан от 27 июля 2007 года № 319-III «Об образовании»" %}</h4>
+                                        <button class="regulation-toggle">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                                 viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                 stroke-linecap="round" stroke-linejoin="round" class="icon">
+                                                <polyline points="6 9 12 15 18 9"></polyline>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                    <div class="regulation-content">
+                                        <a href="http://adilet.zan.kz/rus/docs/Z070000319_" class="regulation-link"
+                                           target="_blank">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                 viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                 stroke-linecap="round" stroke-linejoin="round" class="icon">
+                                                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                                <polyline points="15 3 21 3 21 9"></polyline>
+                                                <line x1="10" y1="14" x2="21" y2="3"></line>
+                                            </svg>
+                                            {% tr "Открыть документ" %}
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <!-- Документ 2 -->
+                                <div class="regulation-item">
+                                    <div class="regulation-header">
+                                        <h4>{% tr "Об утверждении Классификатора направлений подготовки кадров с высшим и послевузовским образованием" %}</h4>
+                                        <button class="regulation-toggle">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                                 viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                 stroke-linecap="round" stroke-linejoin="round" class="icon">
+                                                <polyline points="6 9 12 15 18 9"></polyline>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                    <div class="regulation-content">
+                                        <a href="http://adilet.zan.kz/rus/docs/V1800017565" class="regulation-link"
+                                           target="_blank">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                 viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                 stroke-linecap="round" stroke-linejoin="round" class="icon">
+                                                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                                <polyline points="15 3 21 3 21 9"></polyline>
+                                                <line x1="10" y1="14" x2="21" y2="3"></line>
+                                            </svg>
+                                            {% tr "Открыть документ" %}
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <!-- Документ 3 -->
+                                <div class="regulation-item">
+                                    <div class="regulation-header">
+                                        <h4>{% tr "Об утверждении государственных общеобязательных стандартов образования всех уровней образования" %}</h4>
+                                        <button class="regulation-toggle">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                                 viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                 stroke-linecap="round" stroke-linejoin="round" class="icon">
+                                                <polyline points="6 9 12 15 18 9"></polyline>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                    <div class="regulation-content">
+                                        <a href="http://adilet.zan.kz/rus/docs/V1800017669" class="regulation-link"
+                                           target="_blank">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                 viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                 stroke-linecap="round" stroke-linejoin="round" class="icon">
+                                                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                                <polyline points="15 3 21 3 21 9"></polyline>
+                                                <line x1="10" y1="14" x2="21" y2="3"></line>
+                                            </svg>
+                                            {% tr "Открыть документ" %}
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <!-- Документ 4 -->
+                                <div class="regulation-item">
+                                    <div class="regulation-header">
+                                        <h4>{% tr "Приказ Министра образования и науки Республики Казахстан от 4 декабря 2018 года № 665 Об утверждении Алгоритма включения и исключения образовательных программ в Реестр" %}</h4>
+                                        <button class="regulation-toggle">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                                 viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                 stroke-linecap="round" stroke-linejoin="round" class="icon">
+                                                <polyline points="6 9 12 15 18 9"></polyline>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                    <div class="regulation-content">
+                                        <a href="https://online.zakon.kz/Document/?doc_id=36844838"
+                                           class="regulation-link" target="_blank">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                 viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                 stroke-linecap="round" stroke-linejoin="round" class="icon">
+                                                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                                <polyline points="15 3 21 3 21 9"></polyline>
+                                                <line x1="10" y1="14" x2="21" y2="3"></line>
+                                            </svg>
+                                            {% tr "Открыть документ" %}
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <!-- Документ 5 -->
+                                <div class="regulation-item">
+                                    <div class="regulation-header">
+                                        <h4>{% tr "ЗАКОН РЕСПУБЛИКИ КАЗАХСТАН О внесении изменений и дополнений в некоторые законодательные акты Республики Казахстан по вопросам расширения академической и управленческой самостоятельности высших учебных заведений" %}</h4>
+                                        <button class="regulation-toggle">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                                 viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                 stroke-linecap="round" stroke-linejoin="round" class="icon">
+                                                <polyline points="6 9 12 15 18 9"></polyline>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                    <div class="regulation-content">
+                                        <a href="https://online.zakon.kz/Document/?doc_id=39633866"
+                                           class="regulation-link" target="_blank">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                 viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                 stroke-linecap="round" stroke-linejoin="round" class="icon">
+                                                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                                <polyline points="15 3 21 3 21 9"></polyline>
+                                                <line x1="10" y1="14" x2="21" y2="3"></line>
+                                            </svg>
+                                            {% tr "Открыть документ" %}
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <!-- Документ 6 -->
+                                <div class="regulation-item">
+                                    <div class="regulation-header">
+                                        <h4>{% tr "Об утверждении Типовых правил деятельности организаций образования соответствующих типов" %}</h4>
+                                        <button class="regulation-toggle">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                                 viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                 stroke-linecap="round" stroke-linejoin="round" class="icon">
+                                                <polyline points="6 9 12 15 18 9"></polyline>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                    <div class="regulation-content">
+                                        <a href="http://adilet.zan.kz/rus/docs/V1800017657" class="regulation-link"
+                                           target="_blank">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                 viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                 stroke-linecap="round" stroke-linejoin="round" class="icon">
+                                                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                                <polyline points="15 3 21 3 21 9"></polyline>
+                                                <line x1="10" y1="14" x2="21" y2="3"></line>
+                                            </svg>
+                                            {% tr "Открыть документ" %}
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <!-- Документ 7 -->
+                                <div class="regulation-item">
+                                    <div class="regulation-header">
+                                        <h4>{% tr "Об утверждении Типовых правил приема на обучение в организации образования, реализующие образовательные программы высшего и послевузовского образования" %}</h4>
+                                        <button class="regulation-toggle">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                                 viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                 stroke-linecap="round" stroke-linejoin="round" class="icon">
+                                                <polyline points="6 9 12 15 18 9"></polyline>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                    <div class="regulation-content">
+                                        <a href="http://adilet.zan.kz/rus/docs/V1800017650" class="regulation-link"
+                                           target="_blank">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                 viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                 stroke-linecap="round" stroke-linejoin="round" class="icon">
+                                                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                                <polyline points="15 3 21 3 21 9"></polyline>
+                                                <line x1="10" y1="14" x2="21" y2="3"></line>
+                                            </svg>
+                                            {% tr "Открыть документ" %}
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <!-- Документ 8 -->
+                                <div class="regulation-item">
+                                    <div class="regulation-header">
+                                        <h4>{% tr "Об утверждении Правил назначения, выплаты и размеров государственных стипендий обучающимся в организациях образования" %}</h4>
+                                        <button class="regulation-toggle">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                                 viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                 stroke-linecap="round" stroke-linejoin="round" class="icon">
+                                                <polyline points="6 9 12 15 18 9"></polyline>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                    <div class="regulation-content">
+                                        <a href="http://adilet.zan.kz/rus/docs/P080000116_" class="regulation-link"
+                                           target="_blank">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                 viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                 stroke-linecap="round" stroke-linejoin="round" class="icon">
+                                                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                                <polyline points="15 3 21 3 21 9"></polyline>
+                                                <line x1="10" y1="14" x2="21" y2="3"></line>
+                                            </svg>
+                                            {% tr "Открыть документ" %}
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Обработчик для кнопок "Подробнее"
+            const toggleButtons = document.querySelectorAll('.toggle-btn');
+            toggleButtons.forEach(button => {
+                button.addEventListener('click', function () {
+                    const targetId = this.getAttribute('data-target');
+                    const targetContent = document.getElementById(targetId);
+
+                    // Переключаем класс active для содержимого
+                    targetContent.classList.toggle('active');
+
+                    // Меняем иконку на кнопке
+                    const icon = this.querySelector('.icon');
+                    if (targetContent.classList.contains('active')) {
+                        icon.innerHTML = '<polyline points="18 15 12 9 6 15"></polyline>';
+                    } else {
+                        icon.innerHTML = '<polyline points="6 9 12 15 18 9"></polyline>';
+                    }
+                });
+            });
+
+            // Обработчик для элементов НПА
+            const regulationToggles = document.querySelectorAll('.regulation-toggle');
+            regulationToggles.forEach(toggle => {
+                toggle.addEventListener('click', function () {
+                    const regulationItem = this.closest('.regulation-item');
+                    regulationItem.classList.toggle('active');
+
+                    // Меняем иконку
+                    const icon = this.querySelector('.icon');
+                    if (regulationItem.classList.contains('active')) {
+                        icon.innerHTML = '<polyline points="18 15 12 9 6 15"></polyline>';
+                    } else {
+                        icon.innerHTML = '<polyline points="6 9 12 15 18 9"></polyline>';
+                    }
+                });
+            });
+        });
+    </script>
+{% endblock content %}

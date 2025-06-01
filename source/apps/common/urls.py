@@ -48,4 +48,10 @@ urlpatterns = [
 
     # Site Map
     path('sitemap/', view.SiteMapView.as_view(), name='sitemap'),
+
+    # Open Access
+    path('open_access/', view.OpenAccessView.as_view(), name='open_access'),
+
+    # Corporate Ethics
+    path('corporate_ethics/', view.CorporateEthicsView.as_view(), name='corporate_ethics'),
 ]
