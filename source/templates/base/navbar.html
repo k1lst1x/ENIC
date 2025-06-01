@@ -14,7 +14,7 @@
                 <li><a href="{% url 'bologna' %}" class="nav-link">{% tr "Болонский процесс" %}</a></li>
                 <li><a href="{% url 'publications' %}" class="nav-link">{% tr "Периодические издания" %}</a></li>
                 <li><a href="{% url 'reference' %}" class="nav-link">{% tr "Справочная информация" %}</a></li>
-                <li><a href="#" class="nav-link">{% tr "Реестр ОП" %}</a></li>
+                <li><a href="https://enic-kazakhstan.edu.kz/reestr-op/reestr-op-1" class="nav-link">{% tr "Реестр ОП" %}</a></li>
                 <li><a href="{% url 'activities' %}" class="nav-link">{% tr "Деятельность" %}</a></li>
                 <!-- <li><a href="#" class="nav-link">{% tr "Вопрос-ответ" %}</a></li>
                 <li><a href="#" class="nav-link">{% tr "Вакансии" %}</a></li> -->
@@ -94,20 +94,46 @@
                     <li><a href="{% url 'publications' %}" class="mobile-nav-link">{% tr "Периодические издания" %}</a>
                     </li>
                     <li><a href="{% url 'reference' %}" class="mobile-nav-link">{% tr "Справочная информация" %}</a></li>
-                    <li><a href="#" class="mobile-nav-link">{% tr "Реестр ОП" %}</a></li>
+                    <li><a href="https://enic-kazakhstan.edu.kz/reestr-op/reestr-op-1" class="mobile-nav-link">{% tr "Реестр ОП" %}</a></li>
                     <li><a href="{% url 'activities' %}" class="mobile-nav-link">{% tr "Деятельность" %}</a></li>
-                    <li><a href="#" class="mobile-nav-link">{% tr "Вопрос-ответ" %}</a></li>
-                    <li><a href="#" class="mobile-nav-link">{% tr "Вакансии" %}</a></li>
+                    <!-- <li><a href="#" class="mobile-nav-link">{% tr "Вопрос-ответ" %}</a></li>
+                    <li><a href="#" class="mobile-nav-link">{% tr "Вакансии" %}</a></li> -->
                 </ul>
                 <div class="mobile-language">
-                    <button class="mobile-language-button">{% tr "RU" %}</button>
+                    <button class="mobile-language-button language-button">{{ current_lang_code }}</button>
                     <div class="mobile-language-dropdown">
-                        <a href="#" class="mobile-language-option">{% tr "KZ" %}</a>
-                        <a href="#" class="mobile-language-option">{% tr "RU" %}</a>
-                        <a href="#" class="mobile-language-option">{% tr "EN" %}</a>
+                        <a href="/kk{{ current_path_without_lang }}" class="mobile-language-option">{% tr "KZ" %}</a>
+                        <a href="/ru{{ current_path_without_lang }}" class="mobile-language-option">{% tr "RU" %}</a>
+                        <a href="/en{{ current_path_without_lang }}" class="mobile-language-option">{% tr "EN" %}</a>
                     </div>
                 </div>
             </nav>
         </div>
     </div>
 </header>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    // Языковой дропдаун в хедере (десктоп+мобайл)
+    document.querySelectorAll('.language-button, .mobile-language-button').forEach(function (btn) {
+      btn.addEventListener('click', function (e) {
+        e.stopPropagation();
+        // Определяем какой дропдаун открывать
+        var dropdown = btn.nextElementSibling;
+        // Скрываем все открытые дропдауны перед открытием нового
+        document.querySelectorAll('.language-dropdown, .mobile-language-dropdown').forEach(function (d) {
+          if (d !== dropdown) d.style.display = 'none';
+        });
+        // Переключаем видимость
+        dropdown.style.display = (dropdown.style.display === 'block') ? 'none' : 'block';
+      });
+    });
+
+    // Клик вне дропдауна — закрывает дропдауны
+    document.addEventListener('click', function () {
+      document.querySelectorAll('.language-dropdown, .mobile-language-dropdown').forEach(function (d) {
+        d.style.display = 'none';
+      });
+    });
+  });
+</script>
