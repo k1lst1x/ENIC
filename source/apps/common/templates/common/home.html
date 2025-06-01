@@ -13,7 +13,7 @@
                         <img src="{{ slide.banner_image.url }}"
                              alt="
                                 {% if current_lang_code == "kk" and slide.title_kz %}
-                                    {{ slide.title_kz }}current_lang_code
+                                    {{ slide.title_kz }}
                                 {% elif current_lang_code == "en" and slide.title_en %}
                                     {{ slide.title_en }}
                                 {% else %}
@@ -111,7 +111,7 @@
                 </a>
 
                 <!-- Service 3 -->
-                <a href="https://enic-kazakhstan.edu.kz/sistema-vnutrennego-obespecheniya-kachestva-vysshego-obrazovaniya-vzglyad-so-vseh-storon/sistema-vnutrennego-obespecheniya-kachestva-vysshego-obrazovaniya-vzglyad-so-vseh-storon" class="service-card" target="_blank">
+                <a href="{% url 'quality' %}" class="service-card" target="_blank">
                     <div class="service-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
                              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -125,7 +125,7 @@
                 </a>
 
                 <!-- Service 4 -->
-                <a href="https://enic-kazakhstan.edu.kz/akademicheskaya-chestnost-kak-faktor-obespecheniya-kachestva-vysshego-obrazovaniya/akademicheskaya-chestnost-kak-faktor-obespecheniya-kachestva-vysshego-obrazovaniya-1" class="service-card" target="_blank">
+                <a href="{% url 'academic_integrity' %}" class="service-card" target="_blank">
                     <div class="service-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
                              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"

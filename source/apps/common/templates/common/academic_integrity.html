@@ -1,0 +1,448 @@
+{% extends "base.html" %}
+{% load lang_tags %}
+{% load static %}
+
+{% block extra_head %}
+    <link rel="stylesheet" href="{% static 'css/base/academic_integrity.css' %}">
+{% endblock %}
+
+{% block content %}
+    <!-- Хлебные крошки -->
+    <div class="breadcrumbs">
+        <div class="container">
+            <ul class="breadcrumbs-list">
+                <li class="breadcrumbs-item">
+                    <a href="{% url 'home' %}" class="breadcrumbs-link">{% tr "Главная" %}</a>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                         class="icon">
+                        <polyline points="9 18 15 12 9 6"></polyline>
+                    </svg>
+                </li>
+                <li class="breadcrumbs-item">
+                    <span class="breadcrumbs-current">{% tr "Академическая честность как фактор обеспечения качества высшего образования" %}</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Заголовок страницы -->
+    <section class="page-header">
+        <div class="container">
+            <h1 class="page-title">{% tr "Академическая честность как фактор обеспечения качества высшего образования" %}</h1>
+            <p class="page-subtitle">{% tr "Семинар по продвижению принципа «Закон и Порядок» в высшем образовании" %}</p>
+        </div>
+    </section>
+
+    <!-- Основная информация о семинаре -->
+    <section class="seminar-overview">
+        <div class="container">
+            <div class="overview-grid">
+                <div class="seminar-info-card">
+                    <div class="info-header">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                             class="icon">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <polyline points="12 6 12 12 16 14"></polyline>
+                        </svg>
+                        <h3>{% tr "Информация о семинаре" %}</h3>
+                    </div>
+                    <div class="info-details">
+                        <div class="detail-item">
+                            <span class="detail-label">{% tr "Дата:" %}</span>
+                            <span class="detail-value">{% tr "15 марта 2024 года" %}</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">{% tr "Место:" %}</span>
+                            <span class="detail-value">{% tr "ЕНУ им. Л.Н. Гумилева" %}</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">{% tr "Участники:" %}</span>
+                            <span class="detail-value">{% tr "300+ вузов" %}</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">{% tr "Формат:" %}</span>
+                            <span class="detail-value">{% tr "Гибридный" %}</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="principle-card">
+                    <div class="principle-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+                             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                             class="icon">
+                            <path d="M14 9V5a3 3 0 0 0-6 0v4"></path>
+                            <rect x="2" y="9" width="20" height="11" rx="2" ry="2"></rect>
+                        </svg>
+                    </div>
+                    <h3>{% tr "Принцип «Закон и Порядок»" %}</h3>
+                    <p>{% tr "Семинар направлен на продвижение принципов академической честности и укрепление правовой культуры в системе высшего образования" %}</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ключевые участники -->
+    <section class="key-speakers">
+        <div class="container">
+            <h2 class="section-title">{% tr "Ключевые участники" %}</h2>
+
+            <div class="speakers-grid">
+                <div class="speaker-card moderator">
+                    <div class="speaker-role">{% tr "Модератор" %}</div>
+                    <div class="speaker-avatar">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                             class="icon">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="12" cy="7" r="4"></circle>
+                        </svg>
+                    </div>
+                    <h4>{% tr "Айдос Мухатаев" %}</h4>
+                    <p>{% tr "Научный руководитель проекта программно-целевого финансирования" %}</p>
+                </div>
+
+                <div class="speaker-card opening">
+                    <div class="speaker-role">{% tr "Открытие" %}</div>
+                    <div class="speaker-avatar">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                             class="icon">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="12" cy="7" r="4"></circle>
+                        </svg>
+                    </div>
+                    <h4>{% tr "Жанна Есинбаева" %}</h4>
+                    <p>{% tr "Заместитель председателя Комитета высшего и послевузовского образования МНВО РК" %}</p>
+                </div>
+
+                <div class="speaker-card keynote">
+                    <div class="speaker-role">{% tr "Основной доклад" %}</div>
+                    <div class="speaker-avatar">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                             class="icon">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="12" cy="7" r="4"></circle>
+                        </svg>
+                    </div>
+                    <h4>{% tr "Карлыгаш Сакенова" %}</h4>
+                    <p>{% tr "Руководитель управления внешней оценки и анализа КОКСНВО МНВО РК" %}</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Программа семинара -->
+    <section class="seminar-program">
+        <div class="container">
+            <h2 class="section-title">{% tr "Программа семинара" %}</h2>
+
+            <div class="program-timeline">
+                <div class="timeline-item" data-speaker="1">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <h4>{% tr "Нормативное обеспечение академической честности" %}</h4>
+                            <span class="speaker-name">{% tr "Карлыгаш Сакенова" %}</span>
+                        </div>
+                        <p>{% tr "Аспекты нормативного обеспечения академической честности в системе высшего образования" %}</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item" data-speaker="2">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <h4>{% tr "Принципы академической честности обучающихся" %}</h4>
+                            <span class="speaker-name">{% tr "Сергей Пен" %}</span>
+                        </div>
+                        <p>{% tr "Провост Университета КазГЮУ им. М. Нарикбаева" %}</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item" data-speaker="3">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <h4>{% tr "Культура качества и академической честности" %}</h4>
+                            <span class="speaker-name">{% tr "Ольга Яновская" %}</span>
+                        </div>
+                        <p>{% tr "Советник генерального директора IAAR" %}</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item" data-speaker="4">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <h4>{% tr "Современные подходы к академической честности" %}</h4>
+                            <span class="speaker-name">{% tr "Гульмира Бекманова" %}</span>
+                        </div>
+                        <p>{% tr "Директор департамента цифрового развития ЕНУ им. Л.Н. Гумилева" %}</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item" data-speaker="5">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <h4>{% tr "Академическая честность в век ИИ" %}</h4>
+                            <span class="speaker-name">{% tr "Бейбит Абдикенов" %}</span>
+                        </div>
+                        <p>{% tr "Ассистент профессора Astana IT University" %}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Результаты и рекомендации -->
+    <section class="seminar-results">
+        <div class="container">
+            <div class="results-card">
+                <div class="results-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                         class="icon">
+                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                        <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                    </svg>
+                </div>
+                <div class="results-content">
+                    <h2 class="section-title">{% tr "Результаты семинара" %}</h2>
+                    <div class="recommendations-grid">
+                        <div class="recommendation-item">
+                            <div class="rec-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                     stroke-linejoin="round" class="icon">
+                                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                    <circle cx="9" cy="7" r="4"></circle>
+                                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                                </svg>
+                            </div>
+                            <h4>{% tr "Формирование культуры" %}</h4>
+                            <p>{% tr "Развитие непримиримого отношения к правонарушениям у обучающихся и ППС" %}</p>
+                        </div>
+
+                        <div class="recommendation-item">
+                            <div class="rec-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                     stroke-linejoin="round" class="icon">
+                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                    <polyline points="14 2 14 8 20 8"></polyline>
+                                    <line x1="16" y1="13" x2="8" y2="13"></line>
+                                    <line x1="16" y1="17" x2="8" y2="17"></line>
+                                </svg>
+                            </div>
+                            <h4>{% tr "Соблюдение кодекса" %}</h4>
+                            <p>{% tr "Строгое следование принципам Кодекса академической честности" %}</p>
+                        </div>
+
+                        <div class="recommendation-item">
+                            <div class="rec-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                     stroke-linejoin="round" class="icon">
+                                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                                </svg>
+                            </div>
+                            <h4>{% tr "Укрепление принципа" %}</h4>
+                            <p>{% tr "Развитие принципа «Закон и порядок» в системе высшего образования" %}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Материалы семинара -->
+    <section class="seminar-materials">
+        <div class="container">
+            <h2 class="section-title">{% tr "Материалы семинара" %}</h2>
+            <p class="section-subtitle">{% tr "Презентации и доклады участников семинара" %}</p>
+
+            <div class="materials-grid">
+                <div class="material-card">
+                    <div class="material-header">
+                        <div class="material-icon pdf">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                 stroke-linejoin="round" class="icon">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                <polyline points="14 2 14 8 20 8"></polyline>
+                            </svg>
+                        </div>
+                        <span class="material-number">01</span>
+                    </div>
+                    <div class="material-content">
+                        <h4>{% tr "Сакенова К.Ж." %}</h4>
+                        <h3>{% tr "Академическая честность - аспекты нормативного обеспечения" %}</h3>
+                        <a href="https://enic-kazakhstan.edu.kz/files/1710503123/1-sakenova-k-zh-akademicheskaya-chestnost---aspekty-normativnogo-obespechen.pdf"
+                           class="download-btn" target="_blank">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                 stroke-linejoin="round" class="icon">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                <polyline points="7 10 12 15 17 10"></polyline>
+                                <line x1="12" y1="15" x2="12" y2="3"></line>
+                            </svg>
+                            {% tr "Скачать" %}
+                        </a>
+                    </div>
+                </div>
+
+                <div class="material-card">
+                    <div class="material-header">
+                        <div class="material-icon pdf">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                 stroke-linejoin="round" class="icon">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                <polyline points="14 2 14 8 20 8"></polyline>
+                            </svg>
+                        </div>
+                        <span class="material-number">02</span>
+                    </div>
+                    <div class="material-content">
+                        <h4>{% tr "Пен С.Г." %}</h4>
+                        <h3>{% tr "Внедрение принципов академической честности в системе ВО" %}</h3>
+                        <a href="https://enic-kazakhstan.edu.kz/files/1710503151/2-pen-s-g-vnedrenie-principov-akademicheskoy-chestnosti-v-sisteme-vo.pdf"
+                           class="download-btn" target="_blank">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                 stroke-linejoin="round" class="icon">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                <polyline points="7 10 12 15 17 10"></polyline>
+                                <line x1="12" y1="15" x2="12" y2="3"></line>
+                            </svg>
+                            {% tr "Скачать" %}
+                        </a>
+                    </div>
+                </div>
+
+                <div class="material-card">
+                    <div class="material-header">
+                        <div class="material-icon pdf">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                 stroke-linejoin="round" class="icon">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                <polyline points="14 2 14 8 20 8"></polyline>
+                            </svg>
+                        </div>
+                        <span class="material-number">03</span>
+                    </div>
+                    <div class="material-content">
+                        <h4>{% tr "Яновская О.А." %}</h4>
+                        <h3>{% tr "Продвижение культуры качества и академической честности в вузе" %}</h3>
+                        <a href="https://enic-kazakhstan.edu.kz/files/1710503188/3-iaar-yanovskaya-o-a-prodvizhenie-kultury-kachestva-i-akademicheskoy-chest.pdf"
+                           class="download-btn" target="_blank">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                 stroke-linejoin="round" class="icon">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                <polyline points="7 10 12 15 17 10"></polyline>
+                                <line x1="12" y1="15" x2="12" y2="3"></line>
+                            </svg>
+                            {% tr "Скачать" %}
+                        </a>
+                    </div>
+                </div>
+
+                <div class="material-card">
+                    <div class="material-header">
+                        <div class="material-icon pdf">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                 stroke-linejoin="round" class="icon">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                <polyline points="14 2 14 8 20 8"></polyline>
+                            </svg>
+                        </div>
+                        <span class="material-number">04</span>
+                    </div>
+                    <div class="material-content">
+                        <h4>{% tr "Бекманова Г.Т." %}</h4>
+                        <h3>{% tr "Академическая честность: современные подходы, методология и инструменты" %}</h3>
+                        <a href="https://enic-kazakhstan.edu.kz/files/1710503291/4-bekmanova-g-t-akademicheskaya-chestnost-sovremennye-podhody-metodologiya-.pdf"
+                           class="download-btn" target="_blank">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                 stroke-linejoin="round" class="icon">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                <polyline points="7 10 12 15 17 10"></polyline>
+                                <line x1="12" y1="15" x2="12" y2="3"></line>
+                            </svg>
+                            {% tr "Скачать" %}
+                        </a>
+                    </div>
+                </div>
+
+                <div class="material-card">
+                    <div class="material-header">
+                        <div class="material-icon pdf">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                 stroke-linejoin="round" class="icon">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                <polyline points="14 2 14 8 20 8"></polyline>
+                            </svg>
+                        </div>
+                        <span class="material-number">05</span>
+                    </div>
+                    <div class="material-content">
+                        <h4>{% tr "Абдикенов Б.Б." %}</h4>
+                        <h3>{% tr "Академическая честность в век ИИ" %}</h3>
+                        <a href="https://enic-kazakhstan.edu.kz/files/1710503412/5-abdikenov-b-b-akademicheskaya-chestnost-v-vek-ii.pdf"
+                           class="download-btn" target="_blank">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                 stroke-linejoin="round" class="icon">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                <polyline points="7 10 12 15 17 10"></polyline>
+                                <line x1="12" y1="15" x2="12" y2="3"></line>
+                            </svg>
+                            {% tr "Скачать" %}
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Лига академической честности -->
+    <section class="academic-league">
+        <div class="container">
+            <div class="league-card">
+                <div class="league-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none"
+                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                         class="icon">
+                        <circle cx="12" cy="8" r="7"></circle>
+                        <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+                    </svg>
+                </div>
+                <div class="league-content">
+                    <h3>{% tr "Лига академической честности" %}</h3>
+                    <p>{% tr "В Лигу академической честности входят 18 высших учебных заведений Казахстана, работающих над продвижением принципов честности и качества в образовании" %}</p>
+                    <a href="#" class="league-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                             class="icon">
+                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                            <polyline points="15 3 21 3 21 9"></polyline>
+                            <line x1="10" y1="14" x2="21" y2="3"></line>
+                        </svg>
+                        {% tr "Узнать больше" %}
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock content %}

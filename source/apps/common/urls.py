@@ -27,4 +27,10 @@ urlpatterns = [
 
     # Faq
     path('faq/', view.FaqView.as_view(), name='faq'),
+
+    # Quality
+    path('quality/', view.QualityView.as_view(), name='quality'),
+
+    # Academic Integrity
+    path('academic_integrity/', view.AcademicIntegrityView.as_view(), name='academic_integrity'),
 ]
