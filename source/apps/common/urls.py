@@ -8,7 +8,6 @@ urlpatterns = [
     path('publications/', view.publications_view, name='publications'),
     path('reference/', view.reference_view, name='reference'),
     path('activities/', view.activities_view, name='activities'),
-    path('test/', view.HomeView.as_view(), name='test'),
 
     # News
     path("news/<int:pk>/", view.NewsDetailView.as_view(), name="news_detail"),
@@ -46,4 +45,7 @@ urlpatterns = [
 
     # Accreditation
     path('accreditation/', view.AccreditationView.as_view(), name='accreditation'),
+
+    # Site Map
+    path('sitemap/', view.SiteMapView.as_view(), name='sitemap'),
 ]
