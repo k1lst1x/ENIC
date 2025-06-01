@@ -13,14 +13,14 @@
         <div class="container">
             <ul class="breadcrumbs-list">
                 <li class="breadcrumbs-item">
-                    <a href="#" class="breadcrumbs-link">Главная</a>
+                    <a href="#" class="breadcrumbs-link">{% tr "Главная" %}</a>
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
                          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <polyline points="9 18 15 12 9 6"></polyline>
                     </svg>
                 </li>
                 <li class="breadcrumbs-item">
-                    <span class="breadcrumbs-current">30 ОП ПО</span>
+                    <span class="breadcrumbs-current">{% tr "30 ОП ПО" %}</span>
                 </li>
             </ul>
         </div>
@@ -29,8 +29,8 @@
     <!-- Заголовок страницы -->
     <section class="page-header">
         <div class="container">
-            <h1 class="page-title">30 ОП ПО</h1>
-            <p class="page-subtitle">Проект развития педагогического образования в Казахстане</p>
+            <h1 class="page-title">{% tr "30 ОП ПО" %}</h1>
+            <p class="page-subtitle">{% tr "Проект развития педагогического образования в Казахстане" %}</p>
         </div>
     </section>
 
@@ -40,31 +40,23 @@
             <!-- Мобильное выпадающее меню -->
             <div class="mobile-dropdown">
                 <button class="dropdown-button" onclick="toggleDropdown()">
-                    <span>Общие сведения</span>
+                    <span>{% tr "Общие сведения" %}</span>
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
                          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <polyline points="6 9 12 15 18 9"></polyline>
                     </svg>
                 </button>
                 <div class="dropdown-menu" id="dropdownMenu">
-                    <div class="dropdown-item active" onclick="showSection('general', this)">Общие сведения</div>
-                    <div class="dropdown-item" onclick="showSection('model', this)">Новая модель ПО</div>
-                    <div class="dropdown-item" onclick="showSection('curriculum', this)">Базовый куррикулум</div>
-                    <div class="dropdown-item" onclick="showSection('realization', this)">Реализация образовательной
-                        программы
-                    </div>
-                    <div class="dropdown-item" onclick="showSection('development', this)">Разработка образовательной
-                        программы
-                    </div>
-                    <div class="dropdown-item" onclick="showSection('syllabus', this)">Силлабусы</div>
-                    <div class="dropdown-item" onclick="showSection('participants', this)">Список участников повышения
-                        квалификации по обучению
-                    </div>
-                    <div class="dropdown-item" onclick="showSection('events', this)">Предстоящие события</div>
-                    <div class="dropdown-item" onclick="showSection('faq', this)">Часто задаваемые вопросы</div>
-                    <div class="dropdown-item" onclick="showSection('video', this)">Видеоролики отношения к
-                        педагогическим принципам и связанным темам
-                    </div>
+                    <div class="dropdown-item active" onclick="showSection('general', this)">{% tr "Общие сведения" %}</div>
+                    <div class="dropdown-item" onclick="showSection('model', this)">{% tr "Новая модель ПО" %}</div>
+                    <div class="dropdown-item" onclick="showSection('curriculum', this)">{% tr "Базовый куррикулум" %}</div>
+                    <div class="dropdown-item" onclick="showSection('realization', this)">{% tr "Реализация образовательной программы" %}</div>
+                    <div class="dropdown-item" onclick="showSection('development', this)">{% tr "Разработка образовательной программы" %}</div>
+                    <div class="dropdown-item" onclick="showSection('syllabus', this)">{% tr "Силлабусы" %}</div>
+                    <div class="dropdown-item" onclick="showSection('participants', this)">{% tr "Список участников повышения квалификации по обучению" %}</div>
+                    <div class="dropdown-item" onclick="showSection('events', this)">{% tr "Предстоящие события" %}</div>
+                    <div class="dropdown-item" onclick="showSection('faq', this)">{% tr "Часто задаваемые вопросы" %}</div>
+                    <div class="dropdown-item" onclick="showSection('video', this)">{% tr "Видеоролики отношения к педагогическим принципам и связанным темам" %}</div>
                 </div>
             </div>
 
@@ -72,57 +64,57 @@
                 <!-- Навигация по разделам -->
                 <aside class="sections-nav">
                     <div class="nav-header">
-                        30 ОП ПО
+                        {% tr "30 ОП ПО" %}
                     </div>
                     <ul class="nav-list-op">
                         <li class="nav-item">
                             <button class="nav-button active" onclick="showSection('general', this)">
-                                ОБЩИЕ СВЕДЕНИЯ
+                                {% tr "ОБЩИЕ СВЕДЕНИЯ" %}
                             </button>
                         </li>
                         <li class="nav-item">
                             <button class="nav-button" onclick="showSection('model', this)">
-                                НОВАЯ МОДЕЛЬ ПО
+                                {% tr "НОВАЯ МОДЕЛЬ ПО" %}
                             </button>
                         </li>
                         <li class="nav-item">
                             <button class="nav-button" onclick="showSection('curriculum', this)">
-                                БАЗОВЫЙ КУРРИКУЛУМ
+                                {% tr "БАЗОВЫЙ КУРРИКУЛУМ" %}
                             </button>
                         </li>
                         <li class="nav-item">
                             <button class="nav-button" onclick="showSection('realization', this)">
-                                РЕАЛИЗАЦИЯ ОБРАЗОВАТЕЛЬНОЙ ПРОГРАММЫ
+                                {% tr "РЕАЛИЗАЦИЯ ОБРАЗОВАТЕЛЬНОЙ ПРОГРАММЫ" %}
                             </button>
                         </li>
                         <li class="nav-item">
                             <button class="nav-button" onclick="showSection('development', this)">
-                                РАЗРАБОТКА ОБРАЗОВАТЕЛЬНОЙ ПРОГРАММЫ
+                                {% tr "РАЗРАБОТКА ОБРАЗОВАТЕЛЬНОЙ ПРОГРАММЫ" %}
                             </button>
                         </li>
                         <li class="nav-item">
                             <button class="nav-button" onclick="showSection('syllabus', this)">
-                                Силлабусы
+                                {% tr "Силлабусы" %}
                             </button>
                         </li>
                         <li class="nav-item">
                             <button class="nav-button" onclick="showSection('participants', this)">
-                                СПИСОК УЧАСТНИКОВ ПОВЫШЕНИЯ КВАЛИФИКАЦИИ ПО ОБУЧЕНИЮ
+                                {% tr "СПИСОК УЧАСТНИКОВ ПОВЫШЕНИЯ КВАЛИФИКАЦИИ ПО ОБУЧЕНИЮ" %}
                             </button>
                         </li>
                         <li class="nav-item">
                             <button class="nav-button" onclick="showSection('events', this)">
-                                ПРЕДСТОЯЩИЕ СОБЫТИЯ
+                                {% tr "ПРЕДСТОЯЩИЕ СОБЫТИЯ" %}
                             </button>
                         </li>
                         <li class="nav-item">
                             <button class="nav-button" onclick="showSection('faq', this)">
-                                ЧАСТО ЗАДАВАЕМЫЕ ВОПРОСЫ
+                                {% tr "ЧАСТО ЗАДАВАЕМЫЕ ВОПРОСЫ" %}
                             </button>
                         </li>
                         <li class="nav-item">
                             <button class="nav-button" onclick="showSection('video', this)">
-                                Видеоролики отношения к педагогическим принципам и связанным темам
+                                {% tr "Видеоролики отношения к педагогическим принципам и связанным темам" %}
                             </button>
                         </li>
                     </ul>
@@ -380,7 +372,7 @@
                         <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
                         <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
                     </svg>
-                    Контактная информация проекта
+                    {% tr "Контактная информация проекта" %}
                 </h3>
                 <div class="contact-info">
                     <div class="contact-item">
