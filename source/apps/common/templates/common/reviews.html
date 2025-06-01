@@ -1,0 +1,466 @@
+{% extends "base.html" %}
+{% load lang_tags %}
+{% load static %}
+
+{% block extra_head %}
+    <link rel="stylesheet" href="{% static 'css/base/reviews.css' %}">
+{% endblock %}
+
+{% block content %}
+    <!-- Хлебные крошки -->
+    <div class="breadcrumbs">
+        <div class="container">
+            <ul class="breadcrumbs-list">
+                <li class="breadcrumbs-item">
+                    <a href="{% url 'home' %}" class="breadcrumbs-link">{% tr "Главная" %}</a>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                         class="icon">
+                        <polyline points="9 18 15 12 9 6"></polyline>
+                    </svg>
+                </li>
+                <li class="breadcrumbs-item">
+                    <span class="breadcrumbs-current">{% tr "Отзывы о деятельности Центра" %}</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Заголовок страницы -->
+    <section class="page-header">
+        <div class="container">
+            <div class="header-content">
+                <div class="header-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none"
+                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                         class="icon">
+                        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                    </svg>
+                </div>
+                <h1 class="page-title">{% tr "Отзывы о деятельности Центра" %}</h1>
+                <p class="page-subtitle">{% tr "Мнения и благодарности от наших партнеров и клиентов" %}</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Статистика отзывов -->
+    <section class="reviews-stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                             class="icon">
+                            <polygon
+                                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                        </svg>
+                    </div>
+                    <div class="stat-number">5</div>
+                    <div class="stat-label">{% tr "Средняя оценка" %}</div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                             class="icon">
+                            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                        </svg>
+                    </div>
+                    <div class="stat-number">4</div>
+                    <div class="stat-label">{% tr "Отзывов получено" %}</div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                             class="icon">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="9" cy="7" r="4"></circle>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                        </svg>
+                    </div>
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">{% tr "Довольных клиентов" %}</div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                             class="icon">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <polyline points="12 6 12 12 16 14"></polyline>
+                        </svg>
+                    </div>
+                    <div class="stat-number">24ч</div>
+                    <div class="stat-label">{% tr "Среднее время ответа" %}</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Фильтры отзывов -->
+    <section class="reviews-filters">
+        <div class="container">
+            <div class="filters-container">
+                <h3>{% tr "Фильтровать отзывы:" %}</h3>
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-year="all">{% tr "Все годы" %}</button>
+                    <button class="filter-btn" data-year="2023">2023</button>
+                    <button class="filter-btn" data-year="2022">2022</button>
+                    <button class="filter-btn" data-year="2021">2021</button>
+                    <button class="filter-btn" data-year="2020">2020</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Отзывы -->
+    <section class="reviews-section">
+        <div class="container">
+            <div class="reviews-grid">
+                <!-- Отзыв 1 -->
+                <div class="review-card" data-year="2023">
+                    <div class="review-header">
+                        <div class="reviewer-info">
+                            <div class="reviewer-avatar">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                     stroke-linejoin="round" class="icon">
+                                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                    <circle cx="12" cy="7" r="4"></circle>
+                                </svg>
+                            </div>
+                            <div class="reviewer-details">
+                                <h4 class="reviewer-name">{% tr "Наталья Штейнбрейнер" %}</h4>
+                                <div class="review-date">16.05.2023 г.</div>
+                            </div>
+                        </div>
+                        <div class="review-rating">
+                            <div class="stars">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                     fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                     stroke-linejoin="round" class="star">
+                                    <polygon
+                                            points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                     fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                     stroke-linejoin="round" class="star">
+                                    <polygon
+                                            points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                     fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                     stroke-linejoin="round" class="star">
+                                    <polygon
+                                            points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                     fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                     stroke-linejoin="round" class="star">
+                                    <polygon
+                                            points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                     fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                     stroke-linejoin="round" class="star">
+                                    <polygon
+                                            points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="review-content">
+                        <div class="quote-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                 stroke-linejoin="round" class="icon">
+                                <path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"></path>
+                                <path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z"></path>
+                            </svg>
+                        </div>
+                        <p>{% tr "У меня не совсем вопрос! Я хотела поблагодарить весь состав центра развития высшего образования!!! Все работают быстро четко организовано!!! Отвечают на запросы в кратчайшие сроки, спасибо огромное за ваш труд и терпение!" %}</p>
+                    </div>
+                    <div class="review-tags">
+                        <span class="tag">{% tr "Быстрое обслуживание" %}</span>
+                        <span class="tag">{% tr "Профессионализм" %}</span>
+                    </div>
+                </div>
+
+                <!-- Отзыв 2 -->
+                <div class="review-card" data-year="2022">
+                    <div class="review-header">
+                        <div class="reviewer-info">
+                            <div class="reviewer-avatar">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                     stroke-linejoin="round" class="icon">
+                                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                    <circle cx="12" cy="7" r="4"></circle>
+                                </svg>
+                            </div>
+                            <div class="reviewer-details">
+                                <h4 class="reviewer-name">Azamat</h4>
+                                <div class="review-date">06.10.2022 жыл</div>
+                            </div>
+                        </div>
+                        <div class="review-rating">
+                            <div class="stars">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                     fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                     stroke-linejoin="round" class="star">
+                                    <polygon
+                                            points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                     fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                     stroke-linejoin="round" class="star">
+                                    <polygon
+                                            points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                     fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                     stroke-linejoin="round" class="star">
+                                    <polygon
+                                            points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                     fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                     stroke-linejoin="round" class="star">
+                                    <polygon
+                                            points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                     fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                     stroke-linejoin="round" class="star">
+                                    <polygon
+                                            points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="review-content">
+                        <div class="quote-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                 stroke-linejoin="round" class="icon">
+                                <path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"></path>
+                                <path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z"></path>
+                            </svg>
+                        </div>
+                        <p>{% tr "Ешқандай сұрақ жоқ. Жай ғана жұмыстарыңызға сәттілік тілей отыра, стипендиалды бағдарлама байқауын ұйымдастыру аясында үлкен жұмыс атқарғандарыңыз үшін алғысымды білдіргім келеді." %}</p>
+                    </div>
+                    <div class="review-tags">
+                        <span class="tag">{% tr "Стипендиальные программы" %}</span>
+                        <span class="tag">{% tr "Организация конкурсов" %}</span>
+                    </div>
+                </div>
+
+                <!-- Отзыв 3 -->
+                <div class="review-card" data-year="2021">
+                    <div class="review-header">
+                        <div class="reviewer-info">
+                            <div class="reviewer-avatar">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                     stroke-linejoin="round" class="icon">
+                                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                    <circle cx="12" cy="7" r="4"></circle>
+                                </svg>
+                            </div>
+                            <div class="reviewer-details">
+                                <h4 class="reviewer-name">{% tr "Эльвира" %}</h4>
+                                <div class="review-date">09.07.2021 г.</div>
+                            </div>
+                        </div>
+                        <div class="review-rating">
+                            <div class="stars">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                     fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                     stroke-linejoin="round" class="star">
+                                    <polygon
+                                            points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                     fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                     stroke-linejoin="round" class="star">
+                                    <polygon
+                                            points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                     fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                     stroke-linejoin="round" class="star">
+                                    <polygon
+                                            points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                     fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                     stroke-linejoin="round" class="star">
+                                    <polygon
+                                            points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                     fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                     stroke-linejoin="round" class="star">
+                                    <polygon
+                                            points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="review-content">
+                        <div class="quote-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                 stroke-linejoin="round" class="icon">
+                                <path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"></path>
+                                <path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z"></path>
+                            </svg>
+                        </div>
+                        <p>{% tr "Добрый день, хотела поблагодарить вашу команду, Жаслан Вам огромное спасибо!!! Получила документы за 4 дня, просто супер!!!" %}</p>
+                    </div>
+                    <div class="review-tags">
+                        <span class="tag">{% tr "Быстрое оформление" %}</span>
+                        <span class="tag">{% tr "Документооборот" %}</span>
+                    </div>
+                </div>
+
+                <!-- Отзыв 4 -->
+                <div class="review-card" data-year="2020">
+                    <div class="review-header">
+                        <div class="reviewer-info">
+                            <div class="reviewer-avatar">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                     stroke-linejoin="round" class="icon">
+                                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                    <circle cx="12" cy="7" r="4"></circle>
+                                </svg>
+                            </div>
+                            <div class="reviewer-details">
+                                <h4 class="reviewer-name">{% tr "Гр. Халил" %}</h4>
+                                <div class="review-date">08.09.2020 г.</div>
+                            </div>
+                        </div>
+                        <div class="review-rating">
+                            <div class="stars">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                     fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                     stroke-linejoin="round" class="star">
+                                    <polygon
+                                            points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                     fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                     stroke-linejoin="round" class="star">
+                                    <polygon
+                                            points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                     fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                     stroke-linejoin="round" class="star">
+                                    <polygon
+                                            points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                     fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                     stroke-linejoin="round" class="star">
+                                    <polygon
+                                            points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                     fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                     stroke-linejoin="round" class="star">
+                                    <polygon
+                                            points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="review-content">
+                        <div class="quote-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                 stroke-linejoin="round" class="icon">
+                                <path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"></path>
+                                <path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z"></path>
+                            </svg>
+                        </div>
+                        <p>{% tr "Здравствуйте. Я очень благодарен Вам за ваш высокий профессионализм, внимательное отношение к населению их проблемам в области образования. Спасибо вам большое за все ваши компетентные, содержательные, конкретные ответы на мои вопросы (а их было несколько), за ваше оперативное реагирование на запросы. С уважением и признанием Халил." %}</p>
+                    </div>
+                    <div class="review-tags">
+                        <span class="tag">{% tr "Профессионализм" %}</span>
+                        <span class="tag">{% tr "Консультации" %}</span>
+                        <span class="tag">{% tr "Оперативность" %}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Призыв к действию (На будущее) -->
+{#    <section class="cta-section">#}
+{#        <div class="container">#}
+{#            <div class="cta-card">#}
+{#                <div class="cta-icon">#}
+{#                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"#}
+{#                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"#}
+{#                         class="icon">#}
+{#                        <path d="M14 9V5a3 3 0 0 0-6 0v4"></path>#}
+{#                        <rect x="2" y="9" width="20" height="11" rx="2" ry="2"></rect>#}
+{#                    </svg>#}
+{#                </div>#}
+{#                <div class="cta-content">#}
+{#                    <h3>{% tr "Поделитесь своим мнением" %}</h3>#}
+{#                    <p>{% tr "Ваш отзыв поможет нам стать лучше и улучшить качество наших услуг" %}</p>#}
+{#                    <a href="#" class="cta-button">#}
+{#                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"#}
+{#                             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"#}
+{#                             class="icon">#}
+{#                            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>#}
+{#                        </svg>#}
+{#                        {% tr "Оставить отзыв" %}#}
+{#                    </a>#}
+{#                </div>#}
+{#            </div>#}
+{#        </div>#}
+{#    </section>#}
+
+    <script>
+        // Фильтрация отзывов по годам
+        document.addEventListener('DOMContentLoaded', function () {
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const reviewCards = document.querySelectorAll('.review-card');
+
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function () {
+                    // Удаляем активный класс у всех кнопок
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    // Добавляем активный класс к нажатой кнопке
+                    this.classList.add('active');
+
+                    const selectedYear = this.getAttribute('data-year');
+
+                    reviewCards.forEach(card => {
+                        if (selectedYear === 'all' || card.getAttribute('data-year') === selectedYear) {
+                            card.style.display = 'block';
+                            card.style.animation = 'fadeInUp 0.5s ease-out';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                });
+            });
+
+            // Анимация появления карточек при загрузке
+            reviewCards.forEach((card, index) => {
+                card.style.animationDelay = `${index * 0.1}s`;
+            });
+        });
+    </script>
+{% endblock content %}

@@ -13,3 +13,5 @@ from .quality import QualityView
 from .academic_integrity import AcademicIntegrityView
 from .kazakhstan_in_bologna_process import KazakhstanInBolognaProcessView
 from .research import ResearchView
+from .reviews import ReviewsView
+from .accreditation import AccreditationView

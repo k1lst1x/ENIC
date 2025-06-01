@@ -40,4 +40,10 @@ urlpatterns = [
 
     # Research
     path('research/', view.ResearchView.as_view(), name='research'),
+
+    # Reviews
+    path('reviews/', view.ReviewsView.as_view(), name='reviews'),
+
+    # Accreditation
+    path('accreditation/', view.AccreditationView.as_view(), name='accreditation'),
 ]

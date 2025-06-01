@@ -1,0 +1,703 @@
+{% extends "base.html" %}
+{% load lang_tags %}
+{% load static %}
+
+{% block extra_head %}
+    <link rel="stylesheet" href="{% static 'css/base/accreditation.css' %}">
+{% endblock %}
+
+{% block content %}
+    <!-- Хлебные крошки -->
+    <div class="breadcrumbs">
+        <div class="container">
+            <ul class="breadcrumbs-list">
+                <li class="breadcrumbs-item">
+                    <a href="{% url 'home' %}" class="breadcrumbs-link">{% tr "Главная" %}</a>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                         class="icon">
+                        <polyline points="9 18 15 12 9 6"></polyline>
+                    </svg>
+                </li>
+                <li class="breadcrumbs-item">
+                    <span class="breadcrumbs-current">{% tr "Аккредитация" %}</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Заголовок страницы -->
+    <section class="page-header">
+        <div class="container">
+            <div class="header-content">
+                <div class="header-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none"
+                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                         class="icon">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                        <path d="M9 12l2 2 4-4"></path>
+                    </svg>
+                </div>
+                <h1 class="page-title">{% tr "Аккредитация" %}</h1>
+                <p class="page-subtitle">{% tr "Реестры признанных аккредитационных органов и аккредитованных организаций образования" %}</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Навигация по разделам -->
+    <section class="section-navigation">
+        <div class="container">
+            <div class="nav-tabs">
+                <button class="nav-tab active" data-section="documents">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                         class="icon">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                        <polyline points="14 2 14 8 20 8"></polyline>
+                    </svg>
+                    {% tr "Нормативные документы" %}
+                </button>
+                <button class="nav-tab" data-section="agencies">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                         class="icon">
+                        <path d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+                    </svg>
+                    {% tr "Аккредитационные органы" %}
+                </button>
+                <button class="nav-tab" data-section="research">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                         class="icon">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.35-4.35"></path>
+                    </svg>
+                    {% tr "НИО" %}
+                </button>
+                <button class="nav-tab" data-section="bachelor">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                         class="icon">
+                        <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+                        <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
+                    </svg>
+                    {% tr "Бакалавриат" %}
+                </button>
+                <button class="nav-tab" data-section="master">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                         class="icon">
+                        <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+                        <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
+                    </svg>
+                    {% tr "Магистратура" %}
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Нормативные документы -->
+    <section id="documents" class="content-section active">
+        <div class="container">
+            <h2 class="section-title">{% tr "Нормативные документы" %}</h2>
+
+            <div class="document-card">
+                <div class="document-header">
+                    <div class="document-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                             class="icon">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                            <polyline points="14 2 14 8 20 8"></polyline>
+                            <line x1="16" y1="13" x2="8" y2="13"></line>
+                            <line x1="16" y1="17" x2="8" y2="17"></line>
+                        </svg>
+                    </div>
+                    <div class="document-info">
+                        <h3>{% tr "Правила признания аккредитационных органов" %}</h3>
+                        <p>{% tr "Правила признания аккредитационных органов, в том числе зарубежных, и формирования реестров признанных аккредитационных органов, аккредитованных организаций образования и образовательных программ" %}</p>
+                    </div>
+                </div>
+                <div class="document-actions">
+                    <a href="http://adilet.zan.kz/rus/docs/V1600014438" class="document-link" target="_blank">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                             class="icon">
+                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                            <polyline points="15 3 21 3 21 9"></polyline>
+                            <line x1="10" y1="14" x2="21" y2="3"></line>
+                        </svg>
+                        {% tr "Открыть документ" %}
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Реестр аккредитационных органов -->
+    <section id="agencies" class="content-section">
+        <div class="container">
+            <h2 class="section-title">{% tr "Реестр признанных аккредитационных органов" %}</h2>
+
+            <!-- Поиск и фильтры -->
+            <div class="search-filters">
+                <div class="search-container">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                         class="search-icon">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.35-4.35"></path>
+                    </svg>
+                    <input type="text" id="agencySearch" placeholder="{% tr 'Поиск по названию или стране...' %}"
+                           class="search-input">
+                </div>
+                <div class="filter-container">
+                    <select id="countryFilter" class="filter-select">
+                        <option value="">{% tr "Все страны" %}</option>
+                        <option value="Казахстан">{% tr "Казахстан" %}</option>
+                        <option value="Германия">{% tr "Германия" %}</option>
+                        <option value="США">{% tr "США" %}</option>
+                        <option value="Бельгия">{% tr "Бельгия" %}</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Таблица аккредитационных органов -->
+            <div class="table-container">
+                <table class="data-table" id="agenciesTable">
+                    <thead>
+                    <tr>
+                        <th>№</th>
+                        <th>{% tr "Наименование" %}</th>
+                        <th>{% tr "Страна" %}</th>
+                        <th>{% tr "Срок действия" %}</th>
+                        <th>{% tr "Контакты" %}</th>
+                        <th>{% tr "Членство" %}</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr data-country="Казахстан">
+                        <td>1</td>
+                        <td>
+                            <div class="agency-name">
+                                <strong>IAAR</strong>
+                                <span>{% tr "Независимое агентство аккредитации и рейтинга" %}</span>
+                            </div>
+                        </td>
+                        <td><span class="country-badge kz">{% tr "Казахстан" %}</span></td>
+                        <td>27.10.2022 - 20.05.2027</td>
+                        <td>
+                            <div class="contact-info">
+                                <div>{% tr "Астана, пр. Б.Момышулы 2, ВП 4Г" %}</div>
+                                <div>+7 7172 768 559</div>
+                                <div><a href="http://iaar.kz/" target="_blank">iaar.kz</a></div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="membership-tags">
+                                <span class="membership-tag">EQAR</span>
+                                <span class="membership-tag">ENQA</span>
+                                <span class="membership-tag">CEENQA</span>
+                                <span class="membership-tag">INQAAHE</span>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr data-country="Германия">
+                        <td>2</td>
+                        <td>
+                            <div class="agency-name">
+                                <strong>FIBAA</strong>
+                                <span>{% tr "Foundation for International Business Administration Accreditation" %}</span>
+                            </div>
+                        </td>
+                        <td><span class="country-badge de">{% tr "Германия" %}</span></td>
+                        <td>27.10.2022 - 20.05.2027</td>
+                        <td>
+                            <div class="contact-info">
+                                <div>Berliner Freiheit 20-24, Bonn</div>
+                                <div>+49 228 - 280 356 0</div>
+                                <div><a href="http://www.fibaa.org" target="_blank">fibaa.org</a></div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="membership-tags">
+                                <span class="membership-tag">EQAR</span>
+                                <span class="membership-tag">ENQA</span>
+                                <span class="membership-tag">CEENQA</span>
+                                <span class="membership-tag">INQAAHE</span>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr data-country="Казахстан">
+                        <td>3</td>
+                        <td>
+                            <div class="agency-name">
+                                <strong>IQAA</strong>
+                                <span>{% tr "Независимое агентство по обеспечению качества в образовании" %}</span>
+                            </div>
+                        </td>
+                        <td><span class="country-badge kz">{% tr "Казахстан" %}</span></td>
+                        <td>27.10.2022 - 20.05.2027</td>
+                        <td>
+                            <div class="contact-info">
+                                <div>{% tr "Астана, ул. Достык, 20, офис 801" %}</div>
+                                <div>+7 7172 273 820</div>
+                                <div><a href="https://iqaa.kz/" target="_blank">iqaa.kz</a></div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="membership-tags">
+                                <span class="membership-tag">EQAR</span>
+                                <span class="membership-tag">ENQA</span>
+                                <span class="membership-tag">CEENQA</span>
+                                <span class="membership-tag">INQAAHE</span>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr data-country="Германия">
+                        <td>4</td>
+                        <td>
+                            <div class="agency-name">
+                                <strong>ASIIN</strong>
+                                <span>{% tr "Агентство по аккредитации образовательных программ в области инженерии" %}</span>
+                            </div>
+                        </td>
+                        <td><span class="country-badge de">{% tr "Германия" %}</span></td>
+                        <td>27.10.2022 - 20.05.2027</td>
+                        <td>
+                            <div class="contact-info">
+                                <div>Mörsenbroicher Weg 200, Düsseldorf</div>
+                                <div>+49 211 900977-0</div>
+                                <div><a href="http://www.asiin.de" target="_blank">asiin.de</a></div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="membership-tags">
+                                <span class="membership-tag">EQAR</span>
+                                <span class="membership-tag">ENQA</span>
+                                <span class="membership-tag">CEENQA</span>
+                                <span class="membership-tag">INQAAHE</span>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr data-country="США">
+                        <td>5</td>
+                        <td>
+                            <div class="agency-name">
+                                <strong>ABET</strong>
+                                <span>{% tr "Совет по аккредитации программ в области техники и технологий" %}</span>
+                            </div>
+                        </td>
+                        <td><span class="country-badge us">{% tr "США" %}</span></td>
+                        <td>{% tr "с 20.05.2022 года продлен" %}</td>
+                        <td>
+                            <div class="contact-info">
+                                <div>415 North Charles St. Baltimore, MD</div>
+                                <div>+1.410.347.7700</div>
+                                <div><a href="https://www.abet.org/" target="_blank">abet.org</a></div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="membership-tags">
+                                <span class="membership-tag">ISO 9001:2015</span>
+                            </div>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Научно-исследовательские организации -->
+    <section id="research" class="content-section">
+        <div class="container">
+            <h2 class="section-title">{% tr "Научно-исследовательские организации" %}</h2>
+
+            <div class="search-container">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                     class="search-icon">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <path d="m21 21-4.35-4.35"></path>
+                </svg>
+                <input type="text" id="researchSearch" placeholder="{% tr 'Поиск по названию организации...' %}"
+                       class="search-input">
+            </div>
+
+            <div class="table-container">
+                <table class="data-table" id="researchTable">
+                    <thead>
+                    <tr>
+                        <th>№</th>
+                        <th>{% tr "Организация образования" %}</th>
+                        <th>{% tr "Местонахождение" %}</th>
+                        <th>{% tr "Аккредитационный орган" %}</th>
+                        <th>{% tr "Период аккредитации" %}</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>
+                            <div class="org-name">
+                                <strong>{% tr "Национальный научный кардиохирургический центр" %}</strong>
+                                <a href="http://www.heartcenter.kz" target="_blank"
+                                   class="website-link">heartcenter.kz</a>
+                            </div>
+                        </td>
+                        <td>{% tr "Астана" %}</td>
+                        <td><span class="agency-badge">IQAA</span></td>
+                        <td>24.12.2022 - 23.12.2027</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>
+                            <div class="org-name">
+                                <strong>{% tr "Научный центр акушерства, гинекологии и перинатологии" %}</strong>
+                                <a href="https://ncagip.kz" target="_blank" class="website-link">ncagip.kz</a>
+                            </div>
+                        </td>
+                        <td>{% tr "Алматы" %}</td>
+                        <td><span class="agency-badge">IQAA</span></td>
+                        <td>05.12.2021 - 04.12.2026</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>
+                            <div class="org-name">
+                                <strong>{% tr "НИИ кардиологии и внутренних болезней" %}</strong>
+                                <a href="http://www.ncvb.kz" target="_blank" class="website-link">ncvb.kz</a>
+                            </div>
+                        </td>
+                        <td>{% tr "Алматы" %}</td>
+                        <td><span class="agency-badge">IQAA</span></td>
+                        <td>05.06.2021 - 04.06.2026</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>
+                            <div class="org-name">
+                                <strong>{% tr "Казахский научный центр дерматологии и инфекционных заболеваний" %}</strong>
+                                <a href="http://www.kncdiz.kz" target="_blank" class="website-link">kncdiz.kz</a>
+                            </div>
+                        </td>
+                        <td>{% tr "Алматы" %}</td>
+                        <td><span class="agency-badge">ECAQA</span></td>
+                        <td>20.12.2022 - 19.12.2027</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>
+                            <div class="org-name">
+                                <strong>{% tr "Национальный научный центр травматологии и ортопедии им. академика Батпенова Н.Д." %}</strong>
+                                <a href="https://niito.kz" target="_blank" class="website-link">niito.kz</a>
+                            </div>
+                        </td>
+                        <td>{% tr "Астана" %}</td>
+                        <td><span class="agency-badge">IAAR</span></td>
+                        <td>11.06.2021 - 10.06.2026</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Программы бакалавриата -->
+    <section id="bachelor" class="content-section">
+        <div class="container">
+            <h2 class="section-title">{% tr "Аккредитованные программы бакалавриата" %}</h2>
+
+            <div class="search-filters">
+                <div class="search-container">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                         class="search-icon">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.35-4.35"></path>
+                    </svg>
+                    <input type="text" id="bachelorSearch"
+                           placeholder="{% tr 'Поиск по программе или университету...' %}" class="search-input">
+                </div>
+                <div class="filter-container">
+                    <select id="bachelorAgencyFilter" class="filter-select">
+                        <option value="">{% tr "Все агентства" %}</option>
+                        <option value="IAAR">IAAR</option>
+                        <option value="FIBAA">FIBAA</option>
+                        <option value="ASIIN">ASIIN</option>
+                        <option value="KAZSEE">KAZSEE</option>
+                        <option value="ARQA">ARQA</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="programs-grid" id="bachelorPrograms">
+                <div class="program-card" data-agency="IAAR">
+                    <div class="program-header">
+                        <div class="university-name">{% tr "Казахский национальный университет имени аль-Фараби" %}</div>
+                        <span class="agency-badge">IAAR</span>
+                    </div>
+                    <div class="program-list">
+                        <div class="program-item">
+                            <span class="program-code">6B10105</span>
+                            <span class="program-name">{% tr "Общественное здоровье" %}</span>
+                            <span class="program-period">21.06.2024 - 20.06.2029</span>
+                        </div>
+                        <div class="program-item">
+                            <span class="program-code">6B01401</span>
+                            <span class="program-name">{% tr "Физическая культура и спорт" %}</span>
+                            <span class="program-period">21.06.2024 - 20.06.2029</span>
+                        </div>
+                        <div class="program-item">
+                            <span class="program-code">6B05310</span>
+                            <span class="program-name">{% tr "Ядерная медицина" %}</span>
+                            <span class="program-period">16.06.2023 - 15.06.2028</span>
+                        </div>
+                        <div class="program-item">
+                            <span class="program-code">6B10104</span>
+                            <span class="program-name">{% tr "Стоматология" %}</span>
+                            <span class="program-period">16.06.2023 - 15.06.2028</span>
+                        </div>
+                        <div class="program-item">
+                            <span class="program-code">6B10102</span>
+                            <span class="program-name">{% tr "Фармация" %}</span>
+                            <span class="program-period">16.06.2023 - 15.06.2028</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="program-card" data-agency="FIBAA">
+                    <div class="program-header">
+                        <div class="university-name">{% tr "Казахский национальный университет имени аль-Фараби" %}</div>
+                        <span class="agency-badge">FIBAA</span>
+                    </div>
+                    <div class="program-list">
+                        <div class="program-item">
+                            <span class="program-code">6B03201</span>
+                            <span class="program-name">{% tr "Журналистика" %}</span>
+                            <span class="program-period">24.11.2017 - 2022/2025</span>
+                        </div>
+                        <div class="program-item">
+                            <span class="program-code">6В03202</span>
+                            <span class="program-name">{% tr "Связь с общественностью" %}</span>
+                            <span class="program-period">24.11.2017 - 2022/2026</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="program-card" data-agency="ASIIN">
+                    <div class="program-header">
+                        <div class="university-name">{% tr "Казахский национальный университет имени аль-Фараби" %}</div>
+                        <span class="agency-badge">ASIIN</span>
+                    </div>
+                    <div class="program-list">
+                        <div class="program-item">
+                            <span class="program-code">6В05105</span>
+                            <span class="program-name">{% tr "Генетика" %}</span>
+                            <span class="program-period">23.06.2023 - 30.09.2028</span>
+                        </div>
+                        <div class="program-item">
+                            <span class="program-code">6В05102</span>
+                            <span class="program-name">{% tr "Биология" %}</span>
+                            <span class="program-period">23.06.2023 - 30.09.2030</span>
+                        </div>
+                        <div class="program-item">
+                            <span class="program-code">6В05301</span>
+                            <span class="program-name">{% tr "Химия" %}</span>
+                            <span class="program-period">23.06.2023 - 30.09.2029</span>
+                        </div>
+                        <div class="program-item">
+                            <span class="program-code">6B07201</span>
+                            <span class="program-name">{% tr "Технология фармацевтического производства" %}</span>
+                            <span class="program-period">23.06.2023 - 30.09.2028</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Программы магистратуры -->
+    <section id="master" class="content-section">
+        <div class="container">
+            <h2 class="section-title">{% tr "Аккредитованные программы магистратуры" %}</h2>
+
+            <div class="search-container">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                     class="search-icon">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <path d="m21 21-4.35-4.35"></path>
+                </svg>
+                <input type="text" id="masterSearch" placeholder="{% tr 'Поиск по программе магистратуры...' %}"
+                       class="search-input">
+            </div>
+
+            <div class="programs-grid" id="masterPrograms">
+                <div class="program-card" data-agency="ASIIN">
+                    <div class="program-header">
+                        <div class="university-name">{% tr "Казахский национальный университет имени аль-Фараби" %}</div>
+                        <span class="agency-badge">ASIIN</span>
+                    </div>
+                    <div class="program-list">
+                        <div class="program-item">
+                            <span class="program-code">7М07304</span>
+                            <span class="program-name">{% tr "Землеустройство" %}</span>
+                            <span class="program-period">23.06.2023 - 30.09.2028</span>
+                        </div>
+                        <div class="program-item">
+                            <span class="program-code">7М07305</span>
+                            <span class="program-name">{% tr "Кадастр" %}</span>
+                            <span class="program-period">23.06.2023 - 30.09.2028</span>
+                        </div>
+                        <div class="program-item">
+                            <span class="program-code">7М05204</span>
+                            <span class="program-name">{% tr "Геопространственное управление окружающей средой" %}</span>
+                            <span class="program-period">23.06.2023 - 30.09.2028</span>
+                        </div>
+                        <div class="program-item">
+                            <span class="program-code">7М05210</span>
+                            <span class="program-name">{% tr "Природно-техногенные риски" %}</span>
+                            <span class="program-period">23.06.2023 - 30.09.2028</span>
+                        </div>
+                        <div class="program-item">
+                            <span class="program-code">7М05113</span>
+                            <span class="program-name">{% tr "Нейронаука" %}</span>
+                            <span class="program-period">23.06.2023 - 30.09.2028</span>
+                        </div>
+                        <div class="program-item">
+                            <span class="program-code">7М05101</span>
+                            <span class="program-name">{% tr "Биология" %}</span>
+                            <span class="program-period">23.06.2023 - 30.09.2030</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Навигация по разделам
+            const navTabs = document.querySelectorAll('.nav-tab');
+            const contentSections = document.querySelectorAll('.content-section');
+
+            navTabs.forEach(tab => {
+                tab.addEventListener('click', function () {
+                    const targetSection = this.getAttribute('data-section');
+
+                    // Удаляем активные классы
+                    navTabs.forEach(t => t.classList.remove('active'));
+                    contentSections.forEach(s => s.classList.remove('active'));
+
+                    // Добавляем активные классы
+                    this.classList.add('active');
+                    document.getElementById(targetSection).classList.add('active');
+                });
+            });
+
+            // Поиск по аккредитационным органам
+            const agencySearch = document.getElementById('agencySearch');
+            const countryFilter = document.getElementById('countryFilter');
+            const agenciesTable = document.getElementById('agenciesTable');
+
+            function filterAgencies() {
+                const searchTerm = agencySearch.value.toLowerCase();
+                const selectedCountry = countryFilter.value;
+                const rows = agenciesTable.querySelectorAll('tbody tr');
+
+                rows.forEach(row => {
+                    const name = row.querySelector('.agency-name').textContent.toLowerCase();
+                    const country = row.getAttribute('data-country');
+
+                    const matchesSearch = name.includes(searchTerm);
+                    const matchesCountry = !selectedCountry || country === selectedCountry;
+
+                    if (matchesSearch && matchesCountry) {
+                        row.style.display = '';
+                    } else {
+                        row.style.display = 'none';
+                    }
+                });
+            }
+
+            if (agencySearch) agencySearch.addEventListener('input', filterAgencies);
+            if (countryFilter) countryFilter.addEventListener('change', filterAgencies);
+
+            // Поиск по НИО
+            const researchSearch = document.getElementById('researchSearch');
+            const researchTable = document.getElementById('researchTable');
+
+            if (researchSearch) {
+                researchSearch.addEventListener('input', function () {
+                    const searchTerm = this.value.toLowerCase();
+                    const rows = researchTable.querySelectorAll('tbody tr');
+
+                    rows.forEach(row => {
+                        const orgName = row.querySelector('.org-name strong').textContent.toLowerCase();
+
+                        if (orgName.includes(searchTerm)) {
+                            row.style.display = '';
+                        } else {
+                            row.style.display = 'none';
+                        }
+                    });
+                });
+            }
+
+            // Поиск по программам бакалавриата
+            const bachelorSearch = document.getElementById('bachelorSearch');
+            const bachelorAgencyFilter = document.getElementById('bachelorAgencyFilter');
+            const bachelorPrograms = document.getElementById('bachelorPrograms');
+
+            function filterBachelorPrograms() {
+                const searchTerm = bachelorSearch.value.toLowerCase();
+                const selectedAgency = bachelorAgencyFilter.value;
+                const cards = bachelorPrograms.querySelectorAll('.program-card');
+
+                cards.forEach(card => {
+                    const university = card.querySelector('.university-name').textContent.toLowerCase();
+                    const programs = Array.from(card.querySelectorAll('.program-name')).map(p => p.textContent.toLowerCase());
+                    const agency = card.getAttribute('data-agency');
+
+                    const matchesSearch = university.includes(searchTerm) || programs.some(p => p.includes(searchTerm));
+                    const matchesAgency = !selectedAgency || agency === selectedAgency;
+
+                    if (matchesSearch && matchesAgency) {
+                        card.style.display = '';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            }
+
+            if (bachelorSearch) bachelorSearch.addEventListener('input', filterBachelorPrograms);
+            if (bachelorAgencyFilter) bachelorAgencyFilter.addEventListener('change', filterBachelorPrograms);
+
+            // Поиск по программам магистратуры
+            const masterSearch = document.getElementById('masterSearch');
+            const masterPrograms = document.getElementById('masterPrograms');
+
+            if (masterSearch) {
+                masterSearch.addEventListener('input', function () {
+                    const searchTerm = this.value.toLowerCase();
+                    const cards = masterPrograms.querySelectorAll('.program-card');
+
+                    cards.forEach(card => {
+                        const university = card.querySelector('.university-name').textContent.toLowerCase();
+                        const programs = Array.from(card.querySelectorAll('.program-name')).map(p => p.textContent.toLowerCase());
+
+                        const matchesSearch = university.includes(searchTerm) || programs.some(p => p.includes(searchTerm));
+
+                        if (matchesSearch) {
+                            card.style.display = '';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                });
+            }
+        });
+    </script>
+{% endblock content %}
