@@ -1,0 +1,1183 @@
+{% extends "base_registryop.html" %}
+{% load lang_tags %}
+{% load static %}
+
+{% block extra_head %}
+    <link rel="stylesheet" href="{% static 'css/base/registryop.css' %}">
+{% endblock %}
+
+{% block content %}
+    <!-- Хлебные крошки -->
+    <div class="breadcrumbs">
+        <div class="container">
+            <ul class="breadcrumbs-list">
+                <li class="breadcrumbs-item">
+                    <a href="/" class="breadcrumbs-link">Главная</a>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                         class="icon">
+                        <polyline points="9 18 15 12 9 6"></polyline>
+                    </svg>
+                </li>
+                <li class="breadcrumbs-item">
+                    <span class="breadcrumbs-current">Реестр ОП</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Заголовок страницы -->
+    <section class="registry-hero">
+        <div class="container">
+            <h1 class="registry-title">Реестр ОП</h1>
+            <p class="registry-subtitle">
+                Информационная система учёта и контроля образовательных программ ОВПО Республики Казахстан
+            </p>
+        </div>
+    </section>
+
+    <!-- Вступительный блок -->
+    <section class="intro-section">
+        <div class="container">
+            <div class="intro-card">
+                <div class="intro-icon">
+                    <i class="fas fa-database"></i>
+                </div>
+                <p class="intro-text">
+                    Национальный центр развития высшего образования является администратором информационной системы "Реестр ОП", 
+                    которая обеспечивает централизованный учет и контроль образовательных программ организаций высшего 
+                    и послевузовского образования Республики Казахстан.
+                </p>
+                <a href="https://epvo.kz/#/" target="_blank" class="registry-link-button">
+                    <i class="fas fa-external-link-alt"></i>
+                    Перейти в Реестр ОП
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Основной контент -->
+    <section class="content-section">
+        <div class="container">
+            <!-- Навигация по вкладкам -->
+            <div class="tabs-navigation">
+                <button class="tab-button active" data-tab="npa">НПА</button>
+                <button class="tab-button" data-tab="ovpo">ОВПО</button>
+                <button class="tab-button" data-tab="expert">Эксперту ОП</button>
+                <button class="tab-button" data-tab="seminars">Семинары и тренинги</button>
+            </div>
+
+            <!-- Раздел НПА -->
+            <div class="tab-content active" id="npa">
+                <h2 class="section-title">Нормативно-правовые акты</h2>
+                
+                <!-- <div class="npa-list">
+                    <div class="npa-item">
+                        <div class="npa-header">
+                            <div class="npa-icon">
+                                <i class="fas fa-file-alt"></i>
+                            </div>
+                            <div class="npa-content">
+                                <h3 class="npa-title">Государственные общеобязательные стандарты высшего и послевузовского образования</h3>
+                                <p class="npa-description">
+                                    Основные требования к содержанию, структуре и условиям реализации образовательных программ
+                                </p>
+                            </div>
+                        </div>
+                        <div class="npa-actions">
+                            <a href="#" class="npa-button primary">
+                                <i class="fas fa-eye"></i>
+                                Посмотреть
+                            </a>
+                            <a href="#" class="npa-button secondary">
+                                <i class="fas fa-download"></i>
+                                Скачать
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="npa-item">
+                        <div class="npa-header">
+                            <div class="npa-icon">
+                                <i class="fas fa-file-alt"></i>
+                            </div>
+                            <div class="npa-content">
+                                <h3 class="npa-title">Правила организации учебного процесса по кредитной технологии обучения</h3>
+                                <p class="npa-description">
+                                    Регламентация организации образовательного процесса в высших учебных заведениях
+                                </p>
+                            </div>
+                        </div>
+                        <div class="npa-actions">
+                            <a href="#" class="npa-button primary">
+                                <i class="fas fa-eye"></i>
+                                Посмотреть
+                            </a>
+                            <a href="#" class="npa-button secondary">
+                                <i class="fas fa-download"></i>
+                                Скачать
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="npa-item">
+                        <div class="npa-header">
+                            <div class="npa-icon">
+                                <i class="fas fa-file-alt"></i>
+                            </div>
+                            <div class="npa-content">
+                                <h3 class="npa-title">Типовые правила деятельности организаций высшего и послевузовского образования</h3>
+                                <p class="npa-description">
+                                    Основные принципы и требования к деятельности образовательных организаций
+                                </p>
+                            </div>
+                        </div>
+                        <div class="npa-actions">
+                            <a href="#" class="npa-button primary">
+                                <i class="fas fa-eye"></i>
+                                Посмотреть
+                            </a>
+                            <a href="#" class="npa-button secondary">
+                                <i class="fas fa-download"></i>
+                                Скачать
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="npa-item">
+                        <div class="npa-header">
+                            <div class="npa-icon">
+                                <i class="fas fa-file-alt"></i>
+                            </div>
+                            <div class="npa-content">
+                                <h3 class="npa-title">Классификатор направлений подготовки кадров с высшим и послевузовским образованием</h3>
+                                <p class="npa-description">
+                                    Систематизированный перечень направлений подготовки специалистов
+                                </p>
+                            </div>
+                        </div>
+                        <div class="npa-actions">
+                            <a href="#" class="npa-button primary">
+                                <i class="fas fa-eye"></i>
+                                Посмотреть
+                            </a>
+                            <a href="#" class="npa-button secondary">
+                                <i class="fas fa-download"></i>
+                                Скачать
+                            </a>
+                        </div>
+                    </div>
+                </div> -->
+                <div class="npa-list">
+
+                    <!-- 1 -->
+                    <div class="npa-item">
+                        <div class="npa-header">
+                            <div class="npa-icon"><i class="fas fa-file-alt"></i></div>
+                            <div class="npa-content">
+                                <h3 class="npa-title">Закон об образовании</h3>
+                            </div>
+                        </div>
+                        <div class="npa-actions">
+                            <a href="http://adilet.zan.kz/rus/docs/Z070000319_" target="_blank" class="npa-button primary">
+                                <i class="fas fa-eye"></i> Посмотреть
+                            </a>
+                        </div>
+                    </div>
+                
+                    <!-- 2 -->
+                    <div class="npa-item">
+                        <div class="npa-header">
+                            <div class="npa-icon"><i class="fas fa-file-alt"></i></div>
+                            <div class="npa-content">
+                                <h3 class="npa-title">
+                                    Правила ведения реестра образовательных программ&nbsp;ОВПО
+                                </h3>
+                            </div>
+                        </div>
+                        <div class="npa-actions">
+                            <a href="https://adilet.zan.kz/rus/docs/V2200030139" target="_blank" class="npa-button primary">
+                                <i class="fas fa-eye"></i> Посмотреть
+                            </a>
+                        </div>
+                    </div>
+                
+                    <!-- 3 -->
+                    <div class="npa-item">
+                        <div class="npa-header">
+                            <div class="npa-icon"><i class="fas fa-file-alt"></i></div>
+                            <div class="npa-content">
+                                <h3 class="npa-title">Государственные общеобязательные стандарты образования</h3>
+                            </div>
+                        </div>
+                        <div class="npa-actions">
+                            <a href="https://adilet.zan.kz/rus/docs/V2200028916" target="_blank" class="npa-button primary">
+                                <i class="fas fa-eye"></i> Посмотреть&nbsp;№1
+                            </a>
+                            <a href="https://adilet.zan.kz/rus/docs/V2200028716" target="_blank" class="npa-button primary">
+                                <i class="fas fa-eye"></i> Посмотреть&nbsp;№2
+                            </a>
+                        </div>
+                    </div>
+                
+                    <!-- 4 -->
+                    <div class="npa-item">
+                        <div class="npa-header">
+                            <div class="npa-icon"><i class="fas fa-file-alt"></i></div>
+                            <div class="npa-content">
+                                <h3 class="npa-title">
+                                    Типовые учебные программы цикла общеобразовательных дисциплин
+                                </h3>
+                            </div>
+                        </div>
+                        <div class="npa-actions">
+                            <a href="https://adilet.zan.kz/rus/docs/V1800017651" target="_blank" class="npa-button primary">
+                                <i class="fas fa-eye"></i> Посмотреть
+                            </a>
+                        </div>
+                    </div>
+                
+                    <!-- 5 -->
+                    <div class="npa-item">
+                        <div class="npa-header">
+                            <div class="npa-icon"><i class="fas fa-file-alt"></i></div>
+                            <div class="npa-content">
+                                <h3 class="npa-title">
+                                    Классификатор направлений подготовки кадров с&nbsp;ВО&nbsp;и&nbsp;ПВО
+                                </h3>
+                            </div>
+                        </div>
+                        <div class="npa-actions">
+                            <a href="https://adilet.zan.kz/rus/docs/V1800017565" target="_blank" class="npa-button primary">
+                                <i class="fas fa-eye"></i> Посмотреть
+                            </a>
+                        </div>
+                    </div>
+                
+                    <!-- 6 -->
+                    <div class="npa-item">
+                        <div class="npa-header">
+                            <div class="npa-icon"><i class="fas fa-file-alt"></i></div>
+                            <div class="npa-content">
+                                <h3 class="npa-title">Международный стандарт классификации образования (ISCED-2013)</h3>
+                            </div>
+                        </div>
+                        <div class="npa-actions">
+                            <a href="/files/1610964105/international-standard-classification-of-education_2013.pdf" target="_blank" class="npa-button primary">
+                                <i class="fas fa-eye"></i> Посмотреть
+                            </a>
+                        </div>
+                    </div>
+                
+                    <!-- 7 -->
+                    <div class="npa-item">
+                        <div class="npa-header">
+                            <div class="npa-icon"><i class="fas fa-file-alt"></i></div>
+                            <div class="npa-content">
+                                <h3 class="npa-title">
+                                    Типовые правила приёма на обучение в&nbsp;ОВПО
+                                </h3>
+                            </div>
+                        </div>
+                        <div class="npa-actions">
+                            <a href="http://adilet.zan.kz/rus/docs/V2000020841" target="_blank" class="npa-button primary">
+                                <i class="fas fa-eye"></i> Посмотреть
+                            </a>
+                        </div>
+                    </div>
+                
+                    <!-- 8 -->
+                    <div class="npa-item">
+                        <div class="npa-header">
+                            <div class="npa-icon"><i class="fas fa-file-alt"></i></div>
+                            <div class="npa-content">
+                                <h3 class="npa-title">Национальная рамка квалификаций</h3>
+                            </div>
+                        </div>
+                        <div class="npa-actions">
+                            <a href="https://enic-kazakhstan.kz/ru/analytical_materials/nacionalnaya-ramka-kvalifikaciy" target="_blank" class="npa-button primary">
+                                <i class="fas fa-eye"></i> Посмотреть
+                            </a>
+                        </div>
+                    </div>
+                
+                    <!-- 9 -->
+                    <div class="npa-item">
+                        <div class="npa-header">
+                            <div class="npa-icon"><i class="fas fa-file-alt"></i></div>
+                            <div class="npa-content">
+                                <h3 class="npa-title">Профессиональные стандарты</h3>
+                            </div>
+                        </div>
+                        <div class="npa-actions">
+                            <a href="http://adilet.zan.kz/rus/docs/V2200031149" target="_blank" class="npa-button primary">
+                                <i class="fas fa-eye"></i> ПС&nbsp;«Педагог»
+                            </a>
+                            <a href="https://adilet.zan.kz/rus/docs/G23HN000591" target="_blank" class="npa-button primary">
+                                <i class="fas fa-eye"></i> ПС&nbsp;ППС&nbsp;ОВПО
+                            </a>
+                            <a href="https://atameken.kz/ru/services/16" target="_blank" class="npa-button primary">
+                                <i class="fas fa-eye"></i> Атameken
+                            </a>
+                        </div>
+                    </div>
+                
+                    <!-- 10 -->
+                    <div class="npa-item">
+                        <div class="npa-header">
+                            <div class="npa-icon"><i class="fas fa-file-alt"></i></div>
+                            <div class="npa-content">
+                                <h3 class="npa-title">
+                                    Выдача лицензии на занятие образовательной деятельностью
+                                </h3>
+                            </div>
+                        </div>
+                        <div class="npa-actions">
+                            <a href="https://adilet.zan.kz/rus/docs/V2200030832" target="_blank" class="npa-button primary">
+                                <i class="fas fa-eye"></i> Посмотреть
+                            </a>
+                        </div>
+                    </div>
+                
+                    <!-- 11 -->
+                    <div class="npa-item">
+                        <div class="npa-header">
+                            <div class="npa-icon"><i class="fas fa-file-alt"></i></div>
+                            <div class="npa-content">
+                                <h3 class="npa-title">
+                                    Квалификационные требования к&nbsp;образовательной деятельности
+                                </h3>
+                            </div>
+                        </div>
+                        <div class="npa-actions">
+                            <a href="https://adilet.zan.kz/rus/docs/V2400033892#z94" target="_blank" class="npa-button primary">
+                                <i class="fas fa-eye"></i> Посмотреть
+                            </a>
+                        </div>
+                    </div>
+                
+                    <!-- 12 -->
+                    <div class="npa-item">
+                        <div class="npa-header">
+                            <div class="npa-icon"><i class="fas fa-file-alt"></i></div>
+                            <div class="npa-content">
+                                <h3 class="npa-title">
+                                    Правила признания аккредитационных органов
+                                </h3>
+                            </div>
+                        </div>
+                        <div class="npa-actions">
+                            <a href="http://adilet.zan.kz/rus/docs/V1600014438" target="_blank" class="npa-button primary">
+                                <i class="fas fa-eye"></i> Посмотреть
+                            </a>
+                        </div>
+                    </div>
+                
+                    <!-- 13 -->
+                    <div class="npa-item">
+                        <div class="npa-header">
+                            <div class="npa-icon"><i class="fas fa-file-alt"></i></div>
+                            <div class="npa-content">
+                                <h3 class="npa-title">
+                                    Методические рекомендации по&nbsp;соответствию классификаторов
+                                </h3>
+                            </div>
+                        </div>
+                        <div class="npa-actions">
+                            <a href="/files/1611896597/template_application_ru.pdf" target="_blank" class="npa-button primary">
+                                <i class="fas fa-eye"></i> Посмотреть
+                            </a>
+                        </div>
+                    </div>
+                
+                    <!-- 14 -->
+                    <div class="npa-item">
+                        <div class="npa-header">
+                            <div class="npa-icon"><i class="fas fa-file-alt"></i></div>
+                            <div class="npa-content">
+                                <h3 class="npa-title">
+                                    Правила размещения гособраззаказа (ТиПО, ССО, ВО, ПВО)
+                                </h3>
+                            </div>
+                        </div>
+                        <div class="npa-actions">
+                            <a href="http://adilet.zan.kz/rus/docs/V1600013418#z159" target="_blank" class="npa-button primary">
+                                <i class="fas fa-eye"></i> Посмотреть
+                            </a>
+                        </div>
+                    </div>
+                
+                    <!-- 15 -->
+                    <div class="npa-item">
+                        <div class="npa-header">
+                            <div class="npa-icon"><i class="fas fa-file-alt"></i></div>
+                            <div class="npa-content">
+                                <h3 class="npa-title">
+                                    Правила формирования и&nbsp;распределения гособраззаказа (ВО&nbsp;/ ПВО)
+                                </h3>
+                            </div>
+                        </div>
+                        <div class="npa-actions">
+                            <a href="http://adilet.zan.kz/rus/docs/V1800017550" target="_blank" class="npa-button primary">
+                                <i class="fas fa-eye"></i> Посмотреть
+                            </a>
+                        </div>
+                    </div>
+                
+                    <!-- 16 -->
+                    <div class="npa-item">
+                        <div class="npa-header">
+                            <div class="npa-icon"><i class="fas fa-file-alt"></i></div>
+                            <div class="npa-content">
+                                <h3 class="npa-title">
+                                    Распределение гособраззаказа (2021–2024&nbsp;гг.)
+                                </h3>
+                            </div>
+                        </div>
+                        <div class="npa-actions">
+                            <a href="https://adilet.zan.kz/rus/docs/V2100023268" target="_blank" class="npa-button primary">
+                                <i class="fas fa-eye"></i> Посмотреть
+                            </a>
+                        </div>
+                    </div>
+                
+                    <!-- 17 -->
+                    <div class="npa-item">
+                        <div class="npa-header">
+                            <div class="npa-icon"><i class="fas fa-file-alt"></i></div>
+                            <div class="npa-content">
+                                <h3 class="npa-title">
+                                    Правила учебного процесса по&nbsp;кредитной технологии
+                                </h3>
+                            </div>
+                        </div>
+                        <div class="npa-actions">
+                            <a href="https://adilet.zan.kz/rus/docs/V1800017554" target="_blank" class="npa-button primary">
+                                <i class="fas fa-eye"></i> Посмотреть
+                            </a>
+                        </div>
+                    </div>
+                
+                    <!-- 18 -->
+                    <div class="npa-item">
+                        <div class="npa-header">
+                            <div class="npa-icon"><i class="fas fa-file-alt"></i></div>
+                            <div class="npa-content">
+                                <h3 class="npa-title">
+                                    Правила учебного процесса по&nbsp;дистанционным технологиям
+                                </h3>
+                            </div>
+                        </div>
+                        <div class="npa-actions">
+                            <a href="https://adilet.zan.kz/rus/docs/V2000021147#z6" target="_blank" class="npa-button primary">
+                                <i class="fas fa-eye"></i> Посмотреть
+                            </a>
+                        </div>
+                    </div>
+                
+                </div>                
+            </div>
+
+            <!-- Раздел ОВПО -->
+            <div class="tab-content" id="ovpo">
+                <h2 class="section-title">Руководства и документы для ОВПО</h2>
+                
+                <div class="ovpo-grid">
+                    <!-- <div class="ovpo-card">
+                        <div class="ovpo-icon">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <h3 class="ovpo-title">Руководство по включению ОП в Реестр</h3>
+                        <div class="ovpo-actions">
+                            <a href="#" class="npa-button primary">
+                                <i class="fas fa-eye"></i>
+                                Посмотреть
+                            </a>
+                            <a href="#" class="npa-button secondary">
+                                <i class="fas fa-download"></i>
+                                Скачать
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="ovpo-card">
+                        <div class="ovpo-icon">
+                            <i class="fas fa-sync-alt"></i>
+                        </div>
+                        <h3 class="ovpo-title">Руководство по обновлению ОП</h3>
+                        <div class="ovpo-actions">
+                            <a href="#" class="npa-button primary">
+                                <i class="fas fa-eye"></i>
+                                Посмотреть
+                            </a>
+                            <a href="#" class="npa-button secondary">
+                                <i class="fas fa-download"></i>
+                                Скачать
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="ovpo-card">
+                        <div class="ovpo-icon">
+                            <i class="fas fa-cogs"></i>
+                        </div>
+                        <h3 class="ovpo-title">Руководство по разработке ОП</h3>
+                        <div class="ovpo-actions">
+                            <a href="#" class="npa-button primary">
+                                <i class="fas fa-eye"></i>
+                                Посмотреть
+                            </a>
+                            <a href="#" class="npa-button secondary">
+                                <i class="fas fa-download"></i>
+                                Скачать
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="ovpo-card">
+                        <div class="ovpo-icon">
+                            <i class="fas fa-clipboard-check"></i>
+                        </div>
+                        <h3 class="ovpo-title">Методические рекомендации по составлению паспорта ОП</h3>
+                        <div class="ovpo-actions">
+                            <a href="#" class="npa-button primary">
+                                <i class="fas fa-eye"></i>
+                                Посмотреть
+                            </a>
+                            <a href="#" class="npa-button secondary">
+                                <i class="fas fa-download"></i>
+                                Скачать
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="ovpo-card">
+                        <div class="ovpo-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3 class="ovpo-title">Руководство по мониторингу ОП</h3>
+                        <div class="ovpo-actions">
+                            <a href="#" class="npa-button primary">
+                                <i class="fas fa-eye"></i>
+                                Посмотреть
+                            </a>
+                            <a href="#" class="npa-button secondary">
+                                <i class="fas fa-download"></i>
+                                Скачать
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="ovpo-card">
+                        <div class="ovpo-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <h3 class="ovpo-title">Требования к результатам обучения</h3>
+                        <div class="ovpo-actions">
+                            <a href="#" class="npa-button primary">
+                                <i class="fas fa-eye"></i>
+                                Посмотреть
+                            </a>
+                            <a href="#" class="npa-button secondary">
+                                <i class="fas fa-download"></i>
+                                Скачать
+                            </a>
+                        </div>
+                    </div> -->
+
+                    <!-- 1. Включение ОП в Реестр -->
+                    <div class="ovpo-card">
+                        <div class="ovpo-icon"><i class="fas fa-book"></i></div>
+                        <h3 class="ovpo-title">
+                            Руководство по включению ОП в&nbsp;Реестр
+                        </h3>
+                        <div class="ovpo-actions">
+                            <a href="https://docs.google.com/viewer?url=https%3A%2F%2Fenic-kazakhstan.edu.kz%2F%2Fuploads%2Fadditional_files_items%2F165%2Ffile%2F2025_rukov-po-vklyucheniyu-op-v-reestr-dlya-predstavitelya-ovpo.pdf%3Fcache%3D1744809492&embedded=false"
+                            target="_blank" class="npa-button primary">
+                                <i class="fas fa-eye"></i> Посмотреть
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- 2. Обновление ОП -->
+                    <div class="ovpo-card">
+                        <div class="ovpo-icon"><i class="fas fa-sync-alt"></i></div>
+                        <h3 class="ovpo-title">
+                            Руководство по обновлению ОП
+                        </h3>
+                        <div class="ovpo-actions">
+                            <a href="https://docs.google.com/viewer?url=https%3A%2F%2Fenic-kazakhstan.edu.kz%2F%2Fuploads%2Fadditional_files_items%2F164%2Ffile%2F2025_rukov-po-obnovleniyu-op-v-reestr-dlya-predstavitelya-ovpo.pdf%3Fcache%3D1744809526&embedded=false"
+                            target="_blank" class="npa-button primary">
+                                <i class="fas fa-eye"></i> Посмотреть
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- 3. Разработка ОП -->
+                    <div class="ovpo-card">
+                        <div class="ovpo-icon"><i class="fas fa-cogs"></i></div>
+                        <h3 class="ovpo-title">
+                            Руководство по разработке ОП
+                        </h3>
+                        <div class="ovpo-actions">
+                            <a href="https://docs.google.com/viewer?url=https%3A%2F%2Fenic-kazakhstan.edu.kz%2F%2Fuploads%2Fadditional_files_items%2F100%2Ffile%2Frukovodstvo-po-razrabotke-obrazovatelnyh-programm-vysshego-i-poslevuzovskog.pdf%3Fcache%3D1683267750&embedded=false"
+                            target="_blank" class="npa-button primary">
+                                <i class="fas fa-eye"></i> Посмотреть
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Раздел Эксперту ОП -->
+            <div class="tab-content" id="expert">
+                <h2 class="section-title">Инструменты и инструкции для экспертов</h2>
+                
+                <div class="expert-content">
+                    <!-- <div class="video-section">
+                        <div class="video-placeholder">
+                            <i class="fas fa-play-circle"></i>
+                        </div>
+                        <h3 class="video-title">Видеоинструкция по экспертизе ОП</h3>
+                        <p class="video-description">
+                            Подробное руководство по процедуре экспертизы образовательных программ
+                        </p>
+                        <button class="play-button">
+                            <i class="fab fa-youtube"></i>
+                            Смотреть видео
+                        </button>
+                    </div> -->
+                    <div class="video-section" style="text-align: center; margin-bottom: 40px;">
+                        <h3 class="video-title" style="font-size: 24px; margin-bottom: 16px;">
+                            Видеоинструкция по экспертизе ОП
+                        </h3>
+                        <p class="video-description" style="margin-bottom: 24px; color: #555;">
+                            Подробное руководство по процедуре экспертизы образовательных программ
+                        </p>
+                        <div class="video-responsive" style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; border-radius: 12px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
+                            <iframe src="https://www.youtube.com/embed/nD_HJnB7KTQ"
+                                    title="Видеоинструкция по экспертизе ОП"
+                                    frameborder="0"
+                                    allowfullscreen
+                                    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
+                            </iframe>
+                        </div>
+                    </div>                    
+
+                    <div class="documents-section">
+                        <div class="npa-item">
+                            <div class="npa-header">
+                                <div class="npa-icon">
+                                    <i class="fas fa-file-pdf"></i>
+                                </div>
+                                <div class="npa-content">
+                                    <h3 class="npa-title">Инструкция по экспертизе паспортов образовательных программ</h3>
+                                    <p class="npa-description">
+                                        Детальное руководство для экспертов по оценке качества образовательных программ
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="npa-actions">
+                                <a href="https://enic-kazakhstan.edu.kz/uploads/additional_files_items/167/file/2025_instrukciya-po-ekspertize-op.pdf" target="_blank" class="npa-button primary">
+                                    <i class="fas fa-eye"></i>
+                                    Посмотреть
+                                </a>
+                                <!-- <a href="#" class="npa-button secondary">
+                                    <i class="fas fa-download"></i>
+                                    Скачать
+                                </a> -->
+                            </div>
+                        </div>
+
+                        <!-- <div class="npa-item">
+                            <div class="npa-header">
+                                <div class="npa-icon">
+                                    <i class="fas fa-clipboard-list"></i>
+                                </div>
+                                <div class="npa-content">
+                                    <h3 class="npa-title">Критерии оценки образовательных программ</h3>
+                                    <p class="npa-description">
+                                        Стандартизированные критерии для объективной оценки ОП
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="npa-actions">
+                                <a href="#" class="npa-button primary">
+                                    <i class="fas fa-eye"></i>
+                                    Посмотреть
+                                </a>
+                                <a href="#" class="npa-button secondary">
+                                    <i class="fas fa-download"></i>
+                                    Скачать
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="npa-item">
+                            <div class="npa-header">
+                                <div class="npa-icon">
+                                    <i class="fas fa-user-check"></i>
+                                </div>
+                                <div class="npa-content">
+                                    <h3 class="npa-title">Требования к экспертам ОП</h3>
+                                    <p class="npa-description">
+                                        Квалификационные требования и компетенции экспертов
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="npa-actions">
+                                <a href="#" class="npa-button primary">
+                                    <i class="fas fa-eye"></i>
+                                    Посмотреть
+                                </a>
+                                <a href="#" class="npa-button secondary">
+                                    <i class="fas fa-download"></i>
+                                    Скачать
+                                </a>
+                            </div>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Раздел Семинары и тренинги -->
+            <div class="tab-content" id="seminars">
+                <h2 class="section-title">Материалы прошедших семинаров</h2>
+                
+                <div class="seminars-list">
+                    <!-- 14 марта 2025 – Модель инклюзивного образования -->
+                    <div class="seminar-item">
+                        <div class="seminar-header" onclick="toggleSeminar(this)">
+                            <div class="seminar-info">
+                                <h3 class="seminar-title">Модель инклюзивного образования, пути её внедрения</h3>
+                                <p class="seminar-date">14 марта 2025</p>
+                            </div>
+                            <div class="seminar-toggle"><i class="fas fa-chevron-down"></i></div>
+                        </div>
+                        <div class="seminar-content">
+                            <div class="seminar-materials">
+                                <div class="material-group">
+                                    <h4>Программа</h4>
+                                    <div class="material-list">
+                                        <div class="material-item">
+                                            <i class="fas fa-file-pdf"></i>
+                                            <a href="https://enic-kazakhstan.edu.kz/files/1743579851/programma-seminara-model-inkl-obrazovaniya.pdf" class="material-link" target="_blank">Скачать программу</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="material-group">
+                                    <h4>Презентации</h4>
+                                    <div class="material-list">
+                                        <div class="material-item"><i class="fas fa-file-powerpoint"></i> <a href="https://enic-kazakhstan.edu.kz/files/1743579889/geleverya-o-gotovnost-k-inklyuzii-neobhodimost-vnedreniya-modeli-inklyuzivn.pdf" class="material-link" target="_blank">Гелеверя О.</a></div>
+                                        <div class="material-item"><i class="fas fa-file-powerpoint"></i> <a href="https://enic-kazakhstan.edu.kz/files/1743579909/zholdasova-k-model-io.pdf" class="material-link" target="_blank">Жолдасова К.</a></div>
+                                        <div class="material-item"><i class="fas fa-file-powerpoint"></i> <a href="https://enic-kazakhstan.edu.kz/files/1743579937/ospanbaeva-minklyuzivt-b-l-m-eru-r-s-ndeg-psihologiyaly-atynas-ma-yzy.pdf" class="material-link" target="_blank">Оспанбаева М.</a></div>
+                                        <div class="material-item"><i class="fas fa-file-powerpoint"></i> <a href="https://enic-kazakhstan.edu.kz/files/1743579955/shayahmetova-a-o-vnedrenii-inklyuzivnyh-praktik-v-sistemu-vysshego-i-poslev.pdf" class="material-link" target="_blank">Шаяхметова А.</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 27 марта 2024 – Национальная система квалификаций -->
+                    <div class="seminar-item">
+                        <div class="seminar-header" onclick="toggleSeminar(this)">
+                            <div class="seminar-info">
+                                <h3 class="seminar-title">Национальная система квалификаций</h3>
+                                <p class="seminar-date">27 марта 2024</p>
+                            </div>
+                            <div class="seminar-toggle"><i class="fas fa-chevron-down"></i></div>
+                        </div>
+                        <div class="seminar-content">
+                            <div class="seminar-materials">
+                                <div class="material-group">
+                                    <h4>Программа</h4>
+                                    <div class="material-list">
+                                        <div class="material-item">
+                                            <i class="fas fa-file-pdf"></i>
+                                            <a href="https://enic-kazakhstan.edu.kz/files/1712817801/seminar-ba-darlamasy-programma-seminara-nacionalnaya-sistema-kvalifikaciy-2.pdf" class="material-link" target="_blank">Скачать программу</a>
+                                        </div>
+                                        <div class="material-item">
+                                            <i class="fas fa-file-pdf"></i>
+                                            <a href="https://enic-kazakhstan.edu.kz/files/1712818122/skrinshoty.pdf" class="material-link" target="_blank">Скриншоты</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="material-group">
+                                    <h4>Презентации</h4>
+                                    <div class="material-list">
+                                        <div class="material-item"><i class="fas fa-file-powerpoint"></i> <a href="https://enic-kazakhstan.edu.kz/files/1712818005/domalatov-e-b-primenenie-professionalnyh-standartov-pri-razrabotke-obrazova.pdf" class="material-link" target="_blank">Домалатов&nbsp;Е.Б.</a></div>
+                                        <div class="material-item"><i class="fas fa-file-powerpoint"></i> <a href="https://enic-kazakhstan.edu.kz/files/1712818024/o-voprosah-razrabotki-op-s-uchetom-professionalnyh-standartov.pdf" class="material-link" target="_blank">Учёт профстандартов</a></div>
+                                        <div class="material-item"><i class="fas fa-file-powerpoint"></i> <a href="https://enic-kazakhstan.edu.kz/files/1712818045/proekt-metodicheskih-rekomendaciy-po-ispolzovaniyu-professionalnyh-standart.pdf" class="material-link" target="_blank">Методические рекомендации</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 15 марта 2024 – Академическая честность -->
+                    <div class="seminar-item">
+                        <div class="seminar-header" onclick="toggleSeminar(this)">
+                            <div class="seminar-info">
+                                <h3 class="seminar-title">Академическая честность как фактор качества</h3>
+                                <p class="seminar-date">15 марта 2024</p>
+                            </div>
+                            <div class="seminar-toggle"><i class="fas fa-chevron-down"></i></div>
+                        </div>
+                        <div class="seminar-content">
+                            <div class="seminar-materials">
+                                <div class="material-group">
+                                    <h4>Программа</h4>
+                                    <div class="material-list">
+                                        <div class="material-item">
+                                            <i class="fas fa-file-pdf"></i>
+                                            <a href="https://enic-kazakhstan.edu.kz/files/1712816230/programma-seminara-akademicheskaya-chestnost.pdf" class="material-link" target="_blank">Скачать программу</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="material-group">
+                                    <h4>Презентации</h4>
+                                    <div class="material-list">
+                                        <div class="material-item"><i class="fas fa-file-powerpoint"></i> <a href="https://enic-kazakhstan.edu.kz/files/1712816337/sakenova-k-zh-akademicheskaya-chestnost---aspekty-normativnogo-obespecheniy.pdf" target="_blank" class="material-link">Сакенова&nbsp;К.Ж.</a></div>
+                                        <div class="material-item"><i class="fas fa-file-powerpoint"></i> <a href="https://enic-kazakhstan.edu.kz/files/1712816357/iaar-yanovskaya-o-a-prodvizhenie-kultury-kachestva-i-akademicheskoy-chestno.pdf" target="_blank" class="material-link">Яновская&nbsp;О.А.</a></div>
+                                        <div class="material-item"><i class="fas fa-file-powerpoint"></i> <a href="https://enic-kazakhstan.edu.kz/files/1712816447/abdikenov-b-b-akademicheskaya-chestnost-v-vek-ii.pdf" target="_blank" class="material-link">Абдикенов&nbsp;Б.Б.</a></div>
+                                        <div class="material-item"><i class="fas fa-file-powerpoint"></i> <a href="https://enic-kazakhstan.edu.kz/files/1712816610/pen-s-g-vnedrenie-principov-akademicheskoy-chestnosti-v-sisteme-vo.pdf" target="_blank" class="material-link">Пен&nbsp;С.Г.</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 23 октября 2023 – Подготовка кадров АПК -->
+                    <div class="seminar-item">
+                        <div class="seminar-header" onclick="toggleSeminar(this)">
+                            <div class="seminar-info">
+                                <h3 class="seminar-title">Подготовка кадров для&nbsp;АПК</h3>
+                                <p class="seminar-date">23 октября 2023</p>
+                            </div>
+                            <div class="seminar-toggle"><i class="fas fa-chevron-down"></i></div>
+                        </div>
+                        <div class="seminar-content">
+                            <div class="seminar-materials">
+                                <div class="material-group">
+                                    <h4>Программа</h4>
+                                    <div class="material-list">
+                                        <div class="material-item"><i class="fas fa-file-pdf"></i> <a href="https://enic-kazakhstan.edu.kz/files/1698410064/programma-seminara-na-23-10-2023-goda-dlya-razrabotchikov-op-v-oblasti-apk-.pdf" target="_blank" class="material-link">Скачать программу</a></div>
+                                    </div>
+                                </div>
+                                <div class="material-group">
+                                    <h4>Презентации</h4>
+                                    <div class="material-list">
+                                        <div class="material-item"><i class="fas fa-file-powerpoint"></i> <a href="https://enic-kazakhstan.edu.kz/files/1698410167/analiz-op-po-podgotovke-kadrov-dlya-apk.pdf" target="_blank" class="material-link">Анализ ОП для АПК</a></div>
+                                        <div class="material-item"><i class="fas fa-file-powerpoint"></i> <a href="https://enic-kazakhstan.edu.kz/files/1698410180/zamanbekov-n-a-ps-veterinariya.pdf" target="_blank" class="material-link">Заманбеков&nbsp;Н.А.</a></div>
+                                        <div class="material-item"><i class="fas fa-file-powerpoint"></i> <a href="https://enic-kazakhstan.edu.kz/files/1698410191/kiseleva-o-p-professionalnyy-standart-platforma-career-enbek.pdf" target="_blank" class="material-link">Киселёва&nbsp;О.П.</a></div>
+                                        <div class="material-item"><i class="fas fa-file-powerpoint"></i> <a href="https://enic-kazakhstan.edu.kz/files/1698410201/kusainova-g-zh-ps-selskoe-hozyaystvo.pdf" target="_blank" class="material-link">Кусаинова&nbsp;Г.Ж.</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 16 октября 2023 – Подготовка кадров в IT -->
+                    <div class="seminar-item">
+                        <div class="seminar-header" onclick="toggleSeminar(this)">
+                            <div class="seminar-info">
+                                <h3 class="seminar-title">Подготовка кадров в области&nbsp;IT-технологий</h3>
+                                <p class="seminar-date">16 октября 2023</p>
+                            </div>
+                            <div class="seminar-toggle"><i class="fas fa-chevron-down"></i></div>
+                        </div>
+                        <div class="seminar-content">
+                            <div class="seminar-materials">
+                                <div class="material-group">
+                                    <h4>Программа</h4>
+                                    <div class="material-list">
+                                        <div class="material-item"><i class="fas fa-file-pdf"></i> <a href="https://enic-kazakhstan.edu.kz/files/1697624420/programma-seminara-na-16-10-2023-goda-russkiy-yazyk.pdf" target="_blank" class="material-link">Скачать программу</a></div>
+                                    </div>
+                                </div>
+                                <div class="material-group">
+                                    <h4>Презентации</h4>
+                                    <div class="material-list">
+                                        <div class="material-item"><i class="fas fa-file-powerpoint"></i> <a href="https://enic-kazakhstan.edu.kz/files/1697624697/madibekov-a-s-analiz-op-v-oblasti-it.pdf" target="_blank" class="material-link">Мадибеков&nbsp;А.С.</a></div>
+                                        <div class="material-item"><i class="fas fa-file-powerpoint"></i> <a href="https://enic-kazakhstan.edu.kz/files/1697624710/eskendirova-d-m-obrazovatelnaya-programma-i-professionalnyy-standart.pdf" target="_blank" class="material-link">Ескендирова&nbsp;Д.М.</a></div>
+                                        <div class="material-item"><i class="fas fa-file-powerpoint"></i> <a href="https://enic-kazakhstan.edu.kz/files/1697624724/kiseleva-o-p-professionalnyy-standart-platforma-career-enbek.pdf" target="_blank" class="material-link">Киселёва&nbsp;О.П.</a></div>
+                                        <div class="material-item"><i class="fas fa-file-powerpoint"></i> <a href="https://enic-kazakhstan.edu.kz/files/1697624737/sudnikov-n-n-professionalnyy-standart-biznes-analitik-i-sa.pdf" target="_blank" class="material-link">Судников&nbsp;Н.Н.</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 26 мая 2023 – НСК: материалы (презентации) -->
+                    <div class="seminar-item">
+                        <div class="seminar-header" onclick="toggleSeminar(this)">
+                            <div class="seminar-info">
+                                <h3 class="seminar-title">Национальная система квалификаций</h3>
+                                <p class="seminar-date">26 мая 2023</p>
+                            </div>
+                            <div class="seminar-toggle"><i class="fas fa-chevron-down"></i></div>
+                        </div>
+                        <div class="seminar-content">
+                            <div class="seminar-materials">
+                                <div class="material-group">
+                                    <h4>Презентации</h4>
+                                    <div class="material-list">
+                                        <div class="material-item"><i class="fas fa-file-powerpoint"></i> <a href="https://enic-kazakhstan.edu.kz/files/1685535790/1-obschaya-struktura-nacionalnoy-sistemy-kvalifikaciy-zhumanbaev-erasyl-tem.pdf" target="_blank" class="material-link">Жуманбаев&nbsp;Е.Т.</a></div>
+                                        <div class="material-item"><i class="fas fa-file-powerpoint"></i> <a href="https://enic-kazakhstan.edu.kz/files/1685535813/2-o-zakone-rk-o-professionalnyh-kvalifikaciyah-sabitova-galiya-kenesovna-gl.pdf" target="_blank" class="material-link">Сабитова&nbsp;Г.К.</a></div>
+                                        <div class="material-item"><i class="fas fa-file-powerpoint"></i> <a href="https://enic-kazakhstan.edu.kz/files/1685535840/3-nacionalnaya-i-otraslevye-ramki-kvalifikaciy-kiseleva-olga-pavlovna-uprav.pdf" target="_blank" class="material-link">Киселёва&nbsp;О.П.</a></div>
+                                        <div class="material-item"><i class="fas fa-file-powerpoint"></i> <a href="https://enic-kazakhstan.edu.kz/files/1685535867/4-professionalnyy-standart-tanasheva-dinara-bekbolovna-ekspert-proektnogo-o.pdf" target="_blank" class="material-link">Танашева&nbsp;Д.Б.</a></div>
+                                        <div class="material-item"><i class="fas fa-file-powerpoint"></i> <a href="https://enic-kazakhstan.edu.kz/files/1685535773/poryadok-vklyucheniya-i-obnovleniya-obrazovatelnyh-programm-v-reestr-s-uche.pdf" target="_blank" class="material-link">Мухамбетова&nbsp;А.А.</a></div>
+                                        <div class="material-item"><i class="fas fa-file-powerpoint"></i> <a href="https://enic-kazakhstan.edu.kz/files/1685535883/6-prezentaciya-struktury-cifrovoy-platformy-nacionalnoy-sistemy-kvalifikaci.pdf" target="_blank" class="material-link">Капитонова&nbsp;Д.М.</a></div>
+                                        <div class="material-item"><i class="fas fa-file-powerpoint"></i> <a href="https://enic-kazakhstan.edu.kz/files/1685535917/7-prezentaciya-platformy-professionalnogo-obucheniya-skills-enbek-adepbaeva.pdf" target="_blank" class="material-link">Адепбаева&nbsp;К.К.</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div class="seminar-item">
+                        <div class="seminar-header" onclick="toggleSeminar(this)">
+                            <div class="seminar-info">
+                                <h3 class="seminar-title">Национальная система квалификаций</h3>
+                                <p class="seminar-date">27 марта 2024</p>
+                            </div>
+                            <div class="seminar-toggle">
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                        </div>
+                        <div class="seminar-content">
+                            <div class="seminar-materials">
+                                <div class="material-group">
+                                    <h4>Программа</h4>
+                                    <div class="material-list">
+                                        <div class="material-item">
+                                            <i class="fas fa-file-pdf"></i>
+                                            <a href="#" class="material-link">Программа семинара</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="material-group">
+                                    <h4>Презентации</h4>
+                                    <div class="material-list">
+                                        <div class="material-item">
+                                            <i class="fas fa-file-powerpoint"></i>
+                                            <a href="#" class="material-link">НСК в контексте развития ОП (А. Иванов)</a>
+                                        </div>
+                                        <div class="material-item">
+                                            <i class="fas fa-file-powerpoint"></i>
+                                            <a href="#" class="material-link">Профессиональные стандарты (Б. Петров)</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="material-group">
+                                    <h4>Видеозапись</h4>
+                                    <div class="material-list">
+                                        <div class="material-item">
+                                            <i class="fab fa-youtube"></i>
+                                            <a href="#" class="material-link">Запись семинара</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="seminar-item">
+                        <div class="seminar-header" onclick="toggleSeminar(this)">
+                            <div class="seminar-info">
+                                <h3 class="seminar-title">Академическая честность в образовательных программах</h3>
+                                <p class="seminar-date">15 марта 2024</p>
+                            </div>
+                            <div class="seminar-toggle">
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                        </div>
+                        <div class="seminar-content">
+                            <div class="seminar-materials">
+                                <div class="material-group">
+                                    <h4>Программа</h4>
+                                    <div class="material-list">
+                                        <div class="material-item">
+                                            <i class="fas fa-file-pdf"></i>
+                                            <a href="#" class="material-link">Программа семинара</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="material-group">
+                                    <h4>Презентации</h4>
+                                    <div class="material-list">
+                                        <div class="material-item">
+                                            <i class="fas fa-file-powerpoint"></i>
+                                            <a href="#" class="material-link">Принципы академической честности (В. Сидоров)</a>
+                                        </div>
+                                        <div class="material-item">
+                                            <i class="fas fa-file-powerpoint"></i>
+                                            <a href="#" class="material-link">Внедрение в ОП (Г. Козлов)</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="seminar-item">
+                        <div class="seminar-header" onclick="toggleSeminar(this)">
+                            <div class="seminar-info">
+                                <h3 class="seminar-title">Подготовка кадров для АПК и IT</h3>
+                                <p class="seminar-date">28 февраля 2024</p>
+                            </div>
+                            <div class="seminar-toggle">
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                        </div>
+                        <div class="seminar-content">
+                            <div class="seminar-materials">
+                                <div class="material-group">
+                                    <h4>Программа</h4>
+                                    <div class="material-list">
+                                        <div class="material-item">
+                                            <i class="fas fa-file-pdf"></i>
+                                            <a href="#" class="material-link">Программа семинара</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="material-group">
+                                    <h4>Презентации</h4>
+                                    <div class="material-list">
+                                        <div class="material-item">
+                                            <i class="fas fa-file-powerpoint"></i>
+                                            <a href="#" class="material-link">Современные требования АПК (Д. Морозов)</a>
+                                        </div>
+                                        <div class="material-item">
+                                            <i class="fas fa-file-powerpoint"></i>
+                                            <a href="#" class="material-link">IT-компетенции в образовании (Е. Волков)</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="material-group">
+                                    <h4>Видеозапись</h4>
+                                    <div class="material-list">
+                                        <div class="material-item">
+                                            <i class="fab fa-youtube"></i>
+                                            <a href="#" class="material-link">Запись семинара</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="seminar-item">
+                        <div class="seminar-header" onclick="toggleSeminar(this)">
+                            <div class="seminar-info">
+                                <h3 class="seminar-title">Методология оценки образовательных программ</h3>
+                                <p class="seminar-date">2021-2023 годы</p>
+                            </div>
+                            <div class="seminar-toggle">
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                        </div>
+                        <div class="seminar-content">
+                            <div class="seminar-materials">
+                                <div class="material-group">
+                                    <h4>Архивные материалы</h4>
+                                    <div class="material-list">
+                                        <div class="material-item">
+                                            <i class="fas fa-archive"></i>
+                                            <a href="#" class="material-link">Материалы 2023 года</a>
+                                        </div>
+                                        <div class="material-item">
+                                            <i class="fas fa-archive"></i>
+                                            <a href="#" class="material-link">Материалы 2022 года</a>
+                                        </div>
+                                        <div class="material-item">
+                                            <i class="fas fa-archive"></i>
+                                            <a href="#" class="material-link">Материалы 2021 года</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Завершающий блок -->
+    <section class="footer-section">
+        <div class="container">
+            <div class="footer-content">
+                <a href="https://epvo.kz/#/" target="_blank" class="registry-link-button">
+                    <i class="fas fa-external-link-alt"></i>
+                    Перейти в официальный Реестр ОП
+                </a>
+                
+                <div class="support-info">
+                    <h3 class="support-title">Техническая поддержка</h3>
+                    <p class="support-text">
+                        По вопросам работы с системой "Реестр ОП" обращайтесь по адресу: 
+                        <a href="mailto:registry@enic-kazakhstan.edu.kz" class="support-email">registry@enic-kazakhstan.edu.kz</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Переключение вкладок
+        document.addEventListener('DOMContentLoaded', function() {
+            const tabButtons = document.querySelectorAll('.tab-button');
+            const tabContents = document.querySelectorAll('.tab-content');
+
+            tabButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const targetTab = this.getAttribute('data-tab');
+
+                    // Убираем активный класс со всех кнопок и контента
+                    tabButtons.forEach(btn => btn.classList.remove('active'));
+                    tabContents.forEach(content => content.classList.remove('active'));
+
+                    // Добавляем активный класс к выбранной кнопке и контенту
+                    this.classList.add('active');
+                    document.getElementById(targetTab).classList.add('active');
+                });
+            });
+        });
+
+        // Переключение семинаров (аккордеон)
+        function toggleSeminar(header) {
+            const content = header.nextElementSibling;
+            const toggle = header.querySelector('.seminar-toggle i');
+            
+            if (content.classList.contains('active')) {
+                content.classList.remove('active');
+                toggle.style.transform = 'rotate(0deg)';
+            } else {
+                // Закрываем все остальные семинары
+                document.querySelectorAll('.seminar-content.active').forEach(item => {
+                    item.classList.remove('active');
+                });
+                document.querySelectorAll('.seminar-toggle i').forEach(icon => {
+                    icon.style.transform = 'rotate(0deg)';
+                });
+                
+                // Открываем выбранный семинар
+                content.classList.add('active');
+                toggle.style.transform = 'rotate(180deg)';
+            }
+        }
+
+        // Плавная прокрутка для якорных ссылок
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+{% endblock content %}
