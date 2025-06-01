@@ -22,6 +22,9 @@ urlpatterns = [
     # Search
     path('search/', view.SearchView.as_view(), name='search'),
 
-    #30 Op Po
+    # 30 Op Po
     path('30_op_po/', view.OpPoView.as_view(), name='op_po'),
+
+    # Faq
+    path('faq/', view.FaqView.as_view(), name='faq'),
 ]

@@ -8,3 +8,4 @@ from .news import NewsDetailView, NewsListView
 from .event import EventsByMonthAPIView, EventDetailView, EventListView
 from .search import SearchView
 from .op_po import OpPoView
+from .faq import FaqView
