@@ -3,8 +3,8 @@ from . import views as view
 
 urlpatterns = [
     path('', view.HomeView.as_view(), name='home'),
-    path('about/', view.about_view, name='about'),
-    path('bologna/', view.bologna_view, name='bologna'),
+    path('about/', view.AboutView.as_view(), name='about'),
+    path('bologna/', view.BolognaView.as_view(), name='bologna'),
     path('publications/', view.publications_view, name='publications'),
     path('reference/', view.reference_view, name='reference'),
     path('activities/', view.activities_view, name='activities'),
@@ -21,4 +21,7 @@ urlpatterns = [
 
     # Search
     path('search/', view.SearchView.as_view(), name='search'),
+
+    #30 Op Po
+    path('30_op_po/', view.OpPoView.as_view(), name='op_po'),
 ]

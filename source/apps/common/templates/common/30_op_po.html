@@ -1,0 +1,379 @@
+{% extends 'base.html' %}
+
+{% load lang_tags %}
+{% load static %}
+
+{% block extra_head %}
+    <link rel="stylesheet" href="{% static 'css/base/30_op_po.css' %}">
+{% endblock %}
+
+{% block content %}
+    !-- Хлебные крошки -->
+    <div class="breadcrumbs">
+        <div class="container">
+            <ul class="breadcrumbs-list">
+                <li class="breadcrumbs-item">
+                    <a href="#" class="breadcrumbs-link">Главная</a>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="9 18 15 12 9 6"></polyline>
+                    </svg>
+                </li>
+                <li class="breadcrumbs-item">
+                    <span class="breadcrumbs-current">30 ОП ПО</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Заголовок страницы -->
+    <section class="page-header">
+        <div class="container">
+            <h1 class="page-title">30 ОП ПО</h1>
+            <p class="page-subtitle">Проект развития педагогического образования в Казахстане</p>
+        </div>
+    </section>
+
+    <!-- Основной контент -->
+    <section class="main-content">
+        <div class="container">
+            <!-- Мобильное выпадающее меню -->
+            <div class="mobile-dropdown">
+                <button class="dropdown-button" onclick="toggleDropdown()">
+                    <span>Выберите раздел</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </button>
+                <div class="dropdown-menu" id="dropdownMenu">
+                    <div class="dropdown-item active" onclick="showSection('general', this)">Общие сведения</div>
+                    <div class="dropdown-item" onclick="showSection('recommendations', this)">Рекомендации по
+                        улучшению
+                    </div>
+                    <div class="dropdown-item" onclick="showSection('contacts', this)">Контакты</div>
+                </div>
+            </div>
+
+            <div class="content-layout">
+                <!-- Навигация по разделам -->
+                <aside class="sections-nav">
+                    <div class="nav-header">
+                        Разделы проекта
+                    </div>
+                    <ul class="nav-list">
+                        <li class="nav-item">
+                            <button class="nav-button active" onclick="showSection('general', this)">
+                                <span>Общие сведения</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                     stroke-linejoin="round">
+                                    <polyline points="9 18 15 12 9 6"></polyline>
+                                </svg>
+                            </button>
+                        </li>
+                        <li class="nav-item">
+                            <button class="nav-button" onclick="showSection('recommendations', this)">
+                                <span>Рекомендации по улучшению</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                     stroke-linejoin="round">
+                                    <polyline points="9 18 15 12 9 6"></polyline>
+                                </svg>
+                            </button>
+                        </li>
+                        <li class="nav-item">
+                            <button class="nav-button" onclick="showSection('contacts', this)">
+                                <span>Контакты</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                     stroke-linejoin="round">
+                                    <polyline points="9 18 15 12 9 6"></polyline>
+                                </svg>
+                            </button>
+                        </li>
+                    </ul>
+                </aside>
+
+                <!-- Область контента -->
+                <main class="content-area">
+                    <!-- Общие сведения -->
+                    <div id="general" class="section-content active">
+                        <h2 class="section-title">Общие сведения о проекте KZEMP/QCBS-03</h2>
+
+                        <p class="section-text">
+                            Проект <span class="highlight">KZEMP/QCBS-03 "30 ОП ПО"</span> представляет собой масштабную
+                            инициативу по развитию и модернизации педагогического образования в Республике Казахстан.
+                            Данный проект направлен на создание современной системы подготовки педагогических кадров,
+                            отвечающей международным стандартам качества образования.
+                        </p>
+
+                        <p class="section-text">
+                            Основной целью проекта является разработка и внедрение 30 образовательных программ
+                            профессионального обучения (ОП ПО) для педагогических специальностей, которые будут
+                            соответствовать требованиям современного образовательного процесса и потребностям рынка
+                            труда.
+                        </p>
+
+                        <h3 style="font-size: 1.25rem; font-weight: 600; margin: 2rem 0 1rem; color: var(--text-color);">
+                            Ключевые направления проекта:</h3>
+                        <ul class="section-list">
+                            <li>Модернизация содержания педагогического образования</li>
+                            <li>Внедрение инновационных методов обучения и оценивания</li>
+                            <li>Развитие цифровых компетенций у будущих педагогов</li>
+                            <li>Укрепление связи между теорией и практикой в педагогическом образовании</li>
+                            <li>Повышение качества подготовки педагогических кадров</li>
+                            <li>Создание системы непрерывного профессионального развития</li>
+                        </ul>
+
+                        <h3 style="font-size: 1.25rem; font-weight: 600; margin: 2rem 0 1rem; color: var(--text-color);">
+                            Участники проекта:</h3>
+                        <p class="section-text">
+                            В реализации проекта принимают участие ведущие университеты Казахстана, международные
+                            эксперты в области педагогического образования, а также представители Министерства
+                            образования и науки РК. Особое внимание уделяется сотрудничеству с <a
+                                href="https://www.hamk.fi" class="contact-link" target="_blank">Университетом прикладных
+                            наук Хяме (HAMK)</a> и <a href="https://nu.edu.kz" class="contact-link" target="_blank">Назарбаев
+                            Университетом</a>.
+                        </p>
+
+                        <h3 style="font-size: 1.25rem; font-weight: 600; margin: 2rem 0 1rem; color: var(--text-color);">
+                            Ожидаемые результаты:</h3>
+                        <p class="section-text">
+                            По завершении проекта планируется получить комплексную систему педагогического образования,
+                            которая обеспечит подготовку высококвалифицированных педагогических кадров, способных
+                            эффективно работать в условиях современной образовательной среды и внедрять инновационные
+                            подходы в обучении.
+                        </p>
+                    </div>
+
+                    <!-- Рекомендации по улучшению -->
+                    <div id="recommendations" class="section-content">
+                        <h2 class="section-title">Рекомендации по улучшению педагогического образования</h2>
+
+                        <p class="section-text">
+                            На основе проведенного анализа современного состояния педагогического образования в
+                            Казахстане и международного опыта, экспертная группа проекта разработала комплекс
+                            рекомендаций по совершенствованию системы подготовки педагогических кадров.
+                        </p>
+
+                        <h3 style="font-size: 1.25rem; font-weight: 600; margin: 2rem 0 1rem; color: var(--text-color);">
+                            Структурные изменения:</h3>
+                        <ul class="section-list">
+                            <li>Пересмотр учебных планов с увеличением доли практической подготовки до 60%</li>
+                            <li>Внедрение модульной системы обучения для повышения гибкости образовательных программ
+                            </li>
+                            <li>Создание междисциплинарных курсов, объединяющих педагогику, психологию и предметные
+                                методики
+                            </li>
+                            <li>Развитие системы наставничества и менторства в педагогических вузах</li>
+                        </ul>
+
+                        <h3 style="font-size: 1.25rem; font-weight: 600; margin: 2rem 0 1rem; color: var(--text-color);">
+                            Технологические инновации:</h3>
+                        <ul class="section-list">
+                            <li>Интеграция цифровых технологий в образовательный процесс</li>
+                            <li>Использование виртуальной и дополненной реальности для практических занятий</li>
+                            <li>Развитие онлайн-платформ для дистанционного обучения</li>
+                            <li>Внедрение систем искусственного интеллекта для персонализации обучения</li>
+                        </ul>
+
+                        <h3 style="font-size: 1.25rem; font-weight: 600; margin: 2rem 0 1rem; color: var(--text-color);">
+                            Качество преподавания:</h3>
+                        <p class="section-text">
+                            Особое внимание следует уделить повышению квалификации преподавательского состава
+                            педагогических вузов. Рекомендуется организация регулярных стажировок в ведущих
+                            международных университетах, проведение мастер-классов с участием признанных экспертов в
+                            области образования.
+                        </p>
+
+                        <h3 style="font-size: 1.25rem; font-weight: 600; margin: 2rem 0 1rem; color: var(--text-color);">
+                            Международное сотрудничество:</h3>
+                        <p class="section-text">
+                            Развитие партнерских отношений с ведущими зарубежными университетами позволит обеспечить
+                            обмен опытом, реализацию совместных образовательных программ и повышение международного
+                            признания казахстанского педагогического образования.
+                        </p>
+                    </div>
+
+                    <!-- Контакты -->
+                    <div id="contacts" class="section-content">
+                        <h2 class="section-title">Контактная информация</h2>
+
+                        <p class="section-text">
+                            Для получения дополнительной информации о проекте "30 ОП ПО" и возможностях участия в его
+                            реализации, обращайтесь к координаторам проекта и экспертам.
+                        </p>
+
+                        <div class="contact-card">
+                            <h3 class="contact-title">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                     stroke-linejoin="round">
+                                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                    <circle cx="9" cy="7" r="4"></circle>
+                                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                                </svg>
+                                Руководитель проекта
+                            </h3>
+                            <div class="contact-info">
+                                <div class="contact-item">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                         stroke-linejoin="round">
+                                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                        <polyline points="22,6 12,13 2,6"></polyline>
+                                    </svg>
+                                    <span class="expert-name">Маарет Вискари</span>
+                                </div>
+                                <div class="contact-item">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                         stroke-linejoin="round">
+                                        <path d="M3 21h18"></path>
+                                        <path d="M5 21V7l8-4v18"></path>
+                                        <path d="M19 21V11l-6-4"></path>
+                                    </svg>
+                                    <span class="organization">Университет прикладных наук Хяме (HAMK)</span>
+                                </div>
+                                <div class="contact-item">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                         stroke-linejoin="round">
+                                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                        <polyline points="22,6 12,13 2,6"></polyline>
+                                    </svg>
+                                    <a href="mailto:maaret.viskari@hamk.fi"
+                                       class="contact-link">maaret.viskari@hamk.fi</a>
+                                </div>
+                                <div class="contact-item">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                         stroke-linejoin="round">
+                                        <circle cx="12" cy="12" r="10"></circle>
+                                        <line x1="2" y1="12" x2="22" y2="12"></line>
+                                        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                                    </svg>
+                                    <a href="https://www.hamk.fi" class="contact-link" target="_blank">www.hamk.fi</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="contact-card">
+                            <h3 class="contact-title">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                     stroke-linejoin="round">
+                                    <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+                                    <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
+                                </svg>
+                                Партнерская организация
+                            </h3>
+                            <div class="contact-info">
+                                <div class="contact-item">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                         stroke-linejoin="round">
+                                        <path d="M3 21h18"></path>
+                                        <path d="M5 21V7l8-4v18"></path>
+                                        <path d="M19 21V11l-6-4"></path>
+                                    </svg>
+                                    <span class="organization">Назарбаев Университет</span>
+                                </div>
+                                <div class="contact-item">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                         stroke-linejoin="round">
+                                        <circle cx="12" cy="12" r="10"></circle>
+                                        <line x1="2" y1="12" x2="22" y2="12"></line>
+                                        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                                    </svg>
+                                    <a href="https://nu.edu.kz" class="contact-link" target="_blank">nu.edu.kz</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <h3 style="font-size: 1.25rem; font-weight: 600; margin: 2rem 0 1rem; color: var(--text-color);">
+                            Экспертная группа проекта:</h3>
+                        <p class="section-text">
+                            В состав экспертной группы входят ведущие специалисты в области педагогического образования
+                            из Казахстана, Финляндии и других стран. Эксперты обладают многолетним опытом в разработке
+                            образовательных программ, проведении научных исследований и внедрении инновационных подходов
+                            в образовании.
+                        </p>
+
+                        <p class="section-text">
+                            Для связи с экспертами и получения консультаций по вопросам педагогического образования,
+                            пожалуйста, используйте указанные выше контактные данные или обращайтесь через официальные
+                            каналы связи партнерских организаций.
+                        </p>
+                    </div>
+                </main>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function showSection(sectionId, button) {
+            // Скрыть все секции
+            const sections = document.querySelectorAll('.section-content');
+            sections.forEach(section => {
+                section.classList.remove('active');
+            });
+
+            // Показать выбранную секцию
+            document.getElementById(sectionId).classList.add('active');
+
+            // Обновить активную кнопку в десктопной навигации
+            const navButtons = document.querySelectorAll('.nav-button');
+            navButtons.forEach(btn => {
+                btn.classList.remove('active');
+            });
+
+            // Обновить активную кнопку в мобильном меню
+            const dropdownItems = document.querySelectorAll('.dropdown-item');
+            dropdownItems.forEach(item => {
+                item.classList.remove('active');
+            });
+
+            if (button) {
+                button.classList.add('active');
+
+                // Обновить текст кнопки мобильного меню
+                if (button.classList.contains('dropdown-item')) {
+                    document.querySelector('.dropdown-button span').textContent = button.textContent;
+                    toggleDropdown(); // Закрыть меню после выбора
+                }
+            }
+        }
+
+        function toggleDropdown() {
+            const dropdownMenu = document.getElementById('dropdownMenu');
+            const dropdownButton = document.querySelector('.dropdown-button svg');
+
+            dropdownMenu.classList.toggle('active');
+
+            if (dropdownMenu.classList.contains('active')) {
+                dropdownButton.style.transform = 'rotate(180deg)';
+            } else {
+                dropdownButton.style.transform = 'rotate(0deg)';
+            }
+        }
+
+        // Закрыть выпадающее меню при клике вне его
+        document.addEventListener('click', function (event) {
+            const dropdown = document.querySelector('.mobile-dropdown');
+            const dropdownMenu = document.getElementById('dropdownMenu');
+
+            if (!dropdown.contains(event.target) && dropdownMenu.classList.contains('active')) {
+                toggleDropdown();
+            }
+        });
+
+        // Инициализация: показать первый раздел
+        document.addEventListener('DOMContentLoaded', function () {
+            showSection('general', document.querySelector('.nav-button.active'));
+        });
+    </script>
+{% endblock %}

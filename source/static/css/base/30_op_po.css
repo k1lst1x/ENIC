@@ -1,0 +1,351 @@
+
+.breadcrumbs {
+    padding: 1rem 0;
+    background-color: var(--white);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.breadcrumbs-list {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    list-style: none;
+}
+
+.breadcrumbs-item {
+    display: flex;
+    align-items: center;
+    font-size: 0.875rem;
+    color: var(--text-lighter);
+}
+
+.breadcrumbs-link {
+    color: var(--text-light);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.breadcrumbs-link:hover {
+    color: var(--primary-color);
+}
+
+.breadcrumbs-item svg {
+    margin: 0 0.5rem;
+}
+
+.breadcrumbs-current {
+    color: var(--text-color);
+    font-weight: 500;
+}
+
+/* Заголовок страницы */
+.page-header {
+    padding: 2rem 0;
+    background-color: var(--secondary-color);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.page-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--text-color);
+    margin-bottom: 0.5rem;
+}
+
+.page-subtitle {
+    font-size: 1.25rem;
+    color: var(--text-light);
+}
+
+/* Основной контент */
+.main-content {
+    padding: 3rem 0;
+    background-color: var(--white);
+}
+
+.content-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+
+/* Навигация по разделам */
+.sections-nav {
+    background-color: var(--white);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+}
+
+.nav-header {
+    padding: 1rem 1.5rem;
+    background-color: var(--primary-color);
+    color: var(--white);
+    font-weight: 600;
+}
+
+.nav-list {
+    list-style: none;
+}
+
+.nav-item {
+    border-bottom: 1px solid var(--border-color);
+}
+
+.nav-item:last-child {
+    border-bottom: none;
+}
+
+.nav-button {
+    width: 100%;
+    padding: 1rem 1.5rem;
+    text-align: left;
+    background: none;
+    border: none;
+    color: var(--text-color);
+    font-size: 1rem;
+    cursor: pointer;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav-button:hover {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+}
+
+.nav-button.active {
+    background-color: rgba(0, 102, 204, 0.1);
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.nav-button svg {
+    transition: var(--transition);
+}
+
+.nav-button.active svg {
+    transform: rotate(90deg);
+}
+
+/* Контент разделов */
+.content-area {
+    background-color: var(--white);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+}
+
+.section-content {
+    display: none;
+    padding: 2rem;
+    animation: fadeIn 0.3s ease;
+}
+
+.section-content.active {
+    display: block;
+}
+
+.section-title {
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: var(--text-color);
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--primary-color);
+}
+
+.section-text {
+    color: var(--text-color);
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+    text-align: justify;
+}
+
+.section-list {
+    margin: 1rem 0 1.5rem 1.5rem;
+    list-style-type: disc;
+}
+
+.section-list li {
+    margin-bottom: 0.5rem;
+    color: var(--text-light);
+}
+
+/* Контактная карточка */
+.contact-card {
+    background-color: var(--secondary-color);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    margin-top: 2rem;
+}
+
+.contact-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--text-color);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.contact-info {
+    display: grid;
+    gap: 1rem;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: var(--text-light);
+}
+
+.contact-item svg {
+    color: var(--primary-color);
+    flex-shrink: 0;
+}
+
+.contact-link {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.contact-link:hover {
+    text-decoration: underline;
+}
+
+/* Выпадающее меню для мобильных */
+.mobile-dropdown {
+    display: none;
+    margin-bottom: 2rem;
+}
+
+.dropdown-button {
+    width: 100%;
+    padding: 1rem;
+    background-color: var(--primary-color);
+    color: var(--white);
+    border: none;
+    border-radius: var(--radius);
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: var(--transition);
+}
+
+.dropdown-button:hover {
+    background-color: #0052a3;
+}
+
+.dropdown-menu {
+    display: none;
+    background-color: var(--white);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+    margin-top: 0.5rem;
+    box-shadow: var(--shadow);
+}
+
+.dropdown-menu.active {
+    display: block;
+}
+
+.dropdown-item {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid var(--border-color);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.dropdown-item:last-child {
+    border-bottom: none;
+}
+
+.dropdown-item:hover {
+    background-color: var(--secondary-color);
+}
+
+.dropdown-item.active {
+    background-color: rgba(0, 102, 204, 0.1);
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+/* Анимации */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Медиа-запросы */
+@media (min-width: 768px) {
+    .page-title {
+        font-size: 3rem;
+    }
+
+    .content-layout {
+        grid-template-columns: 300px 1fr;
+        gap: 3rem;
+    }
+
+    .contact-info {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 767px) {
+    .sections-nav {
+        display: none;
+    }
+
+    .mobile-dropdown {
+        display: block;
+    }
+
+    .page-title {
+        font-size: 2rem;
+    }
+
+    .section-title {
+        font-size: 1.5rem;
+    }
+
+    .contact-info {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Улучшенная типографика */
+.highlight {
+    background-color: rgba(0, 102, 204, 0.1);
+    padding: 0.125rem 0.25rem;
+    border-radius: 3px;
+    font-weight: 500;
+}
+
+.expert-name {
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+.organization {
+    font-style: italic;
+    color: var(--text-light);
+}

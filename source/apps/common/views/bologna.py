@@ -1,6 +1,6 @@
-from urllib import request
-from django.shortcuts import render
+from django.views.generic import TemplateView
 
 
-def bologna_view(request):
-    return render(request, "common/bologna.html")
+class BolognaView(TemplateView):
+    template_name = "common/bologna.html"
+

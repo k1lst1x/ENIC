@@ -1,5 +1,5 @@
-from urllib import request
-from django.shortcuts import render
+from django.views.generic import TemplateView
 
-def about_view(request):
-    return render(request,"common/about.html")
+
+class AboutView(TemplateView):
+    template_name = "common/about.html"
