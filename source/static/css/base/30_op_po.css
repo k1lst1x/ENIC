@@ -1,4 +1,4 @@
-
+/* Хлебные крошки */
 .breadcrumbs {
     padding: 1rem 0;
     background-color: var(--white);
@@ -67,15 +67,18 @@
     display: grid;
     grid-template-columns: 1fr;
     gap: 2rem;
+    align-items: start;
 }
 
-/* Навигация по разделам */
+/* Навигация по разделам - ИСПРАВЛЕННАЯ */
 .sections-nav {
     background-color: var(--white);
     border: 1px solid var(--border-color);
     border-radius: var(--radius);
     box-shadow: var(--shadow);
     overflow: hidden;
+    position: sticky;
+    top: 2rem;
 }
 
 .nav-header {
@@ -83,9 +86,10 @@
     background-color: var(--primary-color);
     color: var(--white);
     font-weight: 600;
+    font-size: 1rem;
 }
 
-.nav-list {
+.nav-list-op {
     list-style: none;
 }
 
@@ -104,12 +108,11 @@
     background: none;
     border: none;
     color: var(--text-color);
-    font-size: 1rem;
+    font-size: 0.9rem;
     cursor: pointer;
     transition: var(--transition);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    display: block;
+    line-height: 1.4;
 }
 
 .nav-button:hover {
@@ -121,14 +124,6 @@
     background-color: rgba(0, 102, 204, 0.1);
     color: var(--primary-color);
     font-weight: 600;
-}
-
-.nav-button svg {
-    transition: var(--transition);
-}
-
-.nav-button.active svg {
-    transform: rotate(90deg);
 }
 
 /* Контент разделов */
@@ -173,7 +168,7 @@
 
 .section-list li {
     margin-bottom: 0.5rem;
-    color: var(--text-light);
+    color: var(--text-color);
 }
 
 /* Контактная карточка */
@@ -266,6 +261,7 @@
     border-bottom: 1px solid var(--border-color);
     cursor: pointer;
     transition: var(--transition);
+    font-size: 0.9rem;
 }
 
 .dropdown-item:last-child {
@@ -301,7 +297,7 @@
     }
 
     .content-layout {
-        grid-template-columns: 300px 1fr;
+        grid-template-columns: 280px 1fr;
         gap: 3rem;
     }
 
@@ -348,4 +344,14 @@
 .organization {
     font-style: italic;
     color: var(--text-light);
+}
+
+.university-link {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.university-link:hover {
+    text-decoration: underline;
 }
