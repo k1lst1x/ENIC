@@ -1,0 +1,569 @@
+{% extends "base.html" %}
+{% load lang_tags %}
+{% load static %}
+
+{% block extra_head %}
+    <link rel="stylesheet" href="{% static 'css/base/foreign_specialists.css' %}">
+{% endblock %}
+
+{% block content %}
+    <!-- Хлебные крошки -->
+    <div class="breadcrumbs">
+        <div class="container">
+            <ul class="breadcrumbs-list">
+                <li class="breadcrumbs-item">
+                    <a href="{% url 'home' %}" class="breadcrumbs-link">{% tr "Главная" %}</a>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                         class="icon">
+                        <polyline points="9 18 15 12 9 6"></polyline>
+                    </svg>
+                </li>
+                <li class="breadcrumbs-item">
+                    <span class="breadcrumbs-current">{% tr "Привлечение зарубежных специалистов" %}</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Заголовок страницы -->
+    <section class="page-header">
+        <div class="container">
+            <h1 class="page-title">{% tr "Привлечение зарубежных специалистов" %}</h1>
+            <p class="page-subtitle">{% tr "Программа привлечения зарубежных ученых в преподавательскую деятельность вузов Республики Казахстан" %}</p>
+        </div>
+    </section>
+
+    <!-- Навигация по разделам -->
+    <section class="section-navigation">
+        <div class="container">
+            <div class="nav-tabs">
+                <button class="nav-tab active" data-section="documents">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                         class="icon">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                        <polyline points="14 2 14 8 20 8"></polyline>
+                    </svg>
+                    {% tr "Нормативные документы" %}
+                </button>
+                <button class="nav-tab" data-section="regulation">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                         class="icon">
+                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                        <circle cx="12" cy="12" r="3"></circle>
+                    </svg>
+                    {% tr "Анимированный регламент" %}
+                </button>
+                <button class="nav-tab" data-section="information">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                         class="icon">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <line x1="12" y1="16" x2="12" y2="12"></line>
+                        <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                    </svg>
+                    {% tr "Оперативная информация" %}
+                </button>
+                <button class="nav-tab" data-section="database">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                         class="icon">
+                        <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+                        <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
+                        <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
+                    </svg>
+                    {% tr "База данных специалистов" %}
+                </button>
+                <button class="nav-tab" data-section="statistics">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                         class="icon">
+                        <line x1="18" y1="20" x2="18" y2="10"></line>
+                        <line x1="12" y1="20" x2="12" y2="4"></line>
+                        <line x1="6" y1="20" x2="6" y2="14"></line>
+                    </svg>
+                    {% tr "Статистика" %}
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Нормативные документы -->
+    <section id="documents" class="content-section active">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">{% tr "Нормативные документы" %}</h2>
+                <button class="application-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                         class="icon">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                        <polyline points="14 2 14 8 20 8"></polyline>
+                        <line x1="16" y1="13" x2="8" y2="13"></line>
+                        <line x1="16" y1="17" x2="8" y2="17"></line>
+                    </svg>
+                    {% tr "Форма для претендентов" %}
+                </button>
+            </div>
+
+            <div class="documents-list">
+                <!-- Документ 1 -->
+                <div class="document-item">
+                    <div class="document-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+                             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                             class="icon">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                            <polyline points="14 2 14 8 20 8"></polyline>
+                            <line x1="16" y1="13" x2="8" y2="13"></line>
+                            <line x1="16" y1="17" x2="8" y2="17"></line>
+                        </svg>
+                    </div>
+                    <div class="document-content">
+                        <h3>{% tr "Инструкция по пребыванию иностранного гражданина в вузе Республики Казахстан" %}</h3>
+                        <p class="document-author">{% tr "Министерство образования и науки Республики Казахстан" %}<br>{% tr "Центр Болонского процесса и академической мобильности" %}
+                        </p>
+                    </div>
+                    <div class="document-actions">
+                        <a href="https://docs.google.com/viewer?url=https%3A%2F%2Fenic-kazakhstan.edu.kz%2F%2Fuploads%2Fattraction_of_foreign_scientists_files%2F6%2Ffile%2Finstrukciya-po-prebyvaniyu-inostrannogo-grazhdanina-v-vuze-respubliki-kazah.pdf%3Fcache%3D1591174690&embedded=false"
+                           class="view-btn" target="_blank">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                 stroke-linejoin="round" class="icon">
+                                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                <circle cx="12" cy="12" r="3"></circle>
+                            </svg>
+                            {% tr "Посмотреть" %}
+                        </a>
+                        <a href="/uploads/attraction_of_foreign_scientists_files/6/file/instrukciya-po-prebyvaniyu-inostrannogo-grazhdanina-v-vuze-respubliki-kazah.pdf?cache=1591174690"
+                           class="download-btn" download>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                 stroke-linejoin="round" class="icon">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                <polyline points="7 10 12 15 17 10"></polyline>
+                                <line x1="12" y1="15" x2="12" y2="3"></line>
+                            </svg>
+                            {% tr "Скачать" %}
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Документ 2 -->
+                <div class="document-item">
+                    <div class="document-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+                             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                             class="icon">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                            <polyline points="14 2 14 8 20 8"></polyline>
+                            <line x1="16" y1="13" x2="8" y2="13"></line>
+                            <line x1="16" y1="17" x2="8" y2="17"></line>
+                        </svg>
+                    </div>
+                    <div class="document-content">
+                        <h3>{% tr "Об утверждении Плана распределения количества зарубежных ученых в преподавательскую деятельность организаций высшего и послевузовского образования" %}</h3>
+                        <p class="document-author">{% tr "Согласно Приказа №72 от 24 февраля 2020 года утверждены следующие вузы для привлечения зарубежных ученых за счет бюджетных средств" %}</p>
+                    </div>
+                    <div class="document-actions">
+                        <a href="https://docs.google.com/viewer?url=https%3A%2F%2Fenic-kazakhstan.edu.kz%2F%2Fuploads%2Fattraction_of_foreign_scientists_files%2F5%2Ffile%2Fprikaz-i-obyavlenie.pdf%3Fcache%3D1585302855&embedded=false"
+                           class="view-btn" target="_blank">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                 stroke-linejoin="round" class="icon">
+                                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                <circle cx="12" cy="12" r="3"></circle>
+                            </svg>
+                            {% tr "Посмотреть" %}
+                        </a>
+                        <a href="/uploads/attraction_of_foreign_scientists_files/5/file/prikaz-i-obyavlenie.pdf?cache=1585302855"
+                           class="download-btn" download>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                 stroke-linejoin="round" class="icon">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                <polyline points="7 10 12 15 17 10"></polyline>
+                                <line x1="12" y1="15" x2="12" y2="3"></line>
+                            </svg>
+                            {% tr "Скачать" %}
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Документ 3 -->
+                <div class="document-item">
+                    <div class="document-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+                             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                             class="icon">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                            <polyline points="14 2 14 8 20 8"></polyline>
+                            <line x1="16" y1="13" x2="8" y2="13"></line>
+                            <line x1="16" y1="17" x2="8" y2="17"></line>
+                        </svg>
+                    </div>
+                    <div class="document-content">
+                        <h3>{% tr "Приказ МОН РК № 20 от 17 января 2019 года «Об утверждении Плана распределения количества зарубежных специалистов и бюджетных средств для привлечения в преподавательскую деятельность высших учебных заведений»" %}</h3>
+                        <p class="document-author">{% tr "Данный внутренний документ МОН РК направлен в вузы" %}</p>
+                    </div>
+                    <div class="document-actions">
+                        <span class="internal-doc">{% tr "Внутренний документ" %}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Анимированный регламент -->
+    <section id="regulation" class="content-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">{% tr "Анимированный регламент" %}</h2>
+                <button class="application-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                         class="icon">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                        <polyline points="14 2 14 8 20 8"></polyline>
+                        <line x1="16" y1="13" x2="8" y2="13"></line>
+                        <line x1="16" y1="17" x2="8" y2="17"></line>
+                    </svg>
+                    {% tr "Форма для претендентов" %}
+                </button>
+            </div>
+
+            <div class="regulation-container">
+                <div class="regulation-image">
+                    <img src="https://enic-kazakhstan.edu.kz/files/1553837977/reglament.jpg"
+                         alt="{% tr 'Регламент привлечения зарубежных специалистов' %}" class="regulation-img">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Оперативная информация -->
+    <section id="information" class="content-section">
+        <div class="container">
+            <h2 class="section-title">{% tr "Оперативная информация" %}</h2>
+
+            <div class="info-card">
+                <div class="info-header">
+                    <h3>{% tr "О привлечении зарубежных специалистов в преподавательскую деятельность вузов РК" %}</h3>
+                    <p class="greeting">{% tr "Уважаемые коллеги!" %}</p>
+                </div>
+
+                <div class="info-content">
+                    <p>{% tr "В Республике Казахстан реализуется ежегодная программа по привлечению зарубежных специалистов в преподавательскую деятельность вузов. Если Вы готовы поделиться своим опытом в формате лекции, мастер-классов или семинаров, познакомиться с культурой Казахстана просим заполнить заявку претендентов." %}</p>
+
+                    <div class="criteria-section">
+                        <h4>{% tr "Критерии для претендентов:" %}</h4>
+                        <ul class="criteria-list">
+                            <li>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                     stroke-linejoin="round" class="icon">
+                                    <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                                {% tr "Иностранный гражданин (из стран СНГ допускается в случае, если они являются признанными учеными в международном научном сообществе (высокий индекс, совместная работа с известными учеными, патенты, участие в международных научных проектах)." %}
+                            </li>
+                            <li>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                     stroke-linejoin="round" class="icon">
+                                    <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                                {% tr "Степень PhD или доктора наук (IT- технологии, менеджмент, бизнес допускается степень магистра)." %}
+                            </li>
+                            <li>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                     stroke-linejoin="round" class="icon">
+                                    <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                                {% tr "Преподавательский опыт не менее 5 лет." %}
+                            </li>
+                            <li>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                     stroke-linejoin="round" class="icon">
+                                    <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                                {% tr "Публикации за последние три года в научных и профессиональных журналах с импакт- фактором." %}
+                            </li>
+                            <li>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                     stroke-linejoin="round" class="icon">
+                                    <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                                {% tr "Период пребывания не менее 4-х недель." %}
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- База данных специалистов -->
+    <section id="database" class="content-section">
+        <div class="container">
+            <h2 class="section-title">{% tr "База данных зарубежных специалистов претендующих на преподавательскую деятельность в вузах РК" %}</h2>
+
+            <!-- Поиск и фильтры -->
+            <div class="database-controls">
+                <div class="search-container">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                         class="search-icon">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.35-4.35"></path>
+                    </svg>
+                    <input type="text" id="specialistSearch" placeholder="{% tr 'Поиск по имени или организации...' %}"
+                           class="search-input">
+                </div>
+                <div class="filter-container">
+                    <select id="countryFilter" class="filter-select">
+                        <option value="">{% tr "Все страны" %}</option>
+                        <option value="Турция">{% tr "Турция" %}</option>
+                        <option value="Россия">{% tr "Россия" %}</option>
+                        <option value="США">{% tr "США" %}</option>
+                        <option value="Германия">{% tr "Германия" %}</option>
+                        <option value="Польша">{% tr "Польша" %}</option>
+                        <option value="Украина">{% tr "Украина" %}</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Таблица специалистов -->
+            <div class="table-container">
+                <table class="specialists-table" id="specialistsTable">
+                    <thead>
+                    <tr>
+                        <th>{% tr "Ф.И.О." %}</th>
+                        <th>{% tr "Основное место работы" %}</th>
+                        <th>{% tr "Страна" %}</th>
+                        <th>{% tr "Специализация" %}</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr data-country="Турция">
+                        <td><strong>Abdul Razaque</strong></td>
+                        <td>Университет Гази</td>
+                        <td><span class="country-badge tr">Турция</span></td>
+                        <td>Информационные технологии</td>
+                    </tr>
+                    <tr data-country="Турция">
+                        <td><strong>Abdullah Kok</strong></td>
+                        <td>Университет Анадолу</td>
+                        <td><span class="country-badge tr">Турция</span></td>
+                        <td>Инженерия</td>
+                    </tr>
+                    <tr data-country="Турция">
+                        <td><strong>Abdülhamit Sinanoğlu</strong></td>
+                        <td>Средне-Восточный технический университет</td>
+                        <td><span class="country-badge tr">Турция</span></td>
+                        <td>Технические науки</td>
+                    </tr>
+                    <tr data-country="США">
+                        <td><strong>Abigail Sophie Newsome</strong></td>
+                        <td>Техасский университет в Остине</td>
+                        <td><span class="country-badge us">США</span></td>
+                        <td>Лингвистика</td>
+                    </tr>
+                    <tr data-country="Россия">
+                        <td><strong>Ablazhey Natalya</strong></td>
+                        <td>Новосибирский государственный университет</td>
+                        <td><span class="country-badge ru">Россия</span></td>
+                        <td>Физика</td>
+                    </tr>
+                    <tr data-country="Азербайджан">
+                        <td><strong>Abulfaz Suleymanov</strong></td>
+                        <td>Исламский университет Азад</td>
+                        <td><span class="country-badge az">Азербайджан</span></td>
+                        <td>Экономика</td>
+                    </tr>
+                    <tr data-country="Непал">
+                        <td><strong>Achyut Adhikari</strong></td>
+                        <td>Университет Катманду</td>
+                        <td><span class="country-badge np">Непал</span></td>
+                        <td>Математика</td>
+                    </tr>
+                    <tr data-country="Польша">
+                        <td><strong>Adam Wojtaszek</strong></td>
+                        <td>AGH Научно-технический университет</td>
+                        <td><span class="country-badge pl">Польша</span></td>
+                        <td>Горное дело</td>
+                    </tr>
+                    <tr data-country="Турция">
+                        <td><strong>Adnan Cevik</strong></td>
+                        <td>Университет Газиосманпаша</td>
+                        <td><span class="country-badge tr">Турция</span></td>
+                        <td>Сельское хозяйство</td>
+                    </tr>
+                    <tr data-country="Польша">
+                        <td><strong>Agata Branowska</strong></td>
+                        <td>Варминско-Мазурский университет</td>
+                        <td><span class="country-badge pl">Польша</span></td>
+                        <td>Социология</td>
+                    </tr>
+                    <tr data-country="Турция">
+                        <td><strong>Ahmet Kala</strong></td>
+                        <td>Университет Кастамону</td>
+                        <td><span class="country-badge tr">Турция</span></td>
+                        <td>Педагогика</td>
+                    </tr>
+                    <tr data-country="Турция">
+                        <td><strong>Ahmet Zıya Balta</strong></td>
+                        <td>Стамбульский университет</td>
+                        <td><span class="country-badge tr">Турция</span></td>
+                        <td>История</td>
+                    </tr>
+                    <tr data-country="Германия">
+                        <td><strong>Christian Bauer</strong></td>
+                        <td>Гиссенский университет им. Ю.Либиха</td>
+                        <td><span class="country-badge de">Германия</span></td>
+                        <td>Химия</td>
+                    </tr>
+                    <tr data-country="США">
+                        <td><strong>David Houghton</strong></td>
+                        <td>Мичиганский государственый университет</td>
+                        <td><span class="country-badge us">США</span></td>
+                        <td>Политология</td>
+                    </tr>
+                    <tr data-country="Россия">
+                        <td><strong>Igor Milshteyn</strong></td>
+                        <td>МГУ М.В. Ломоносова</td>
+                        <td><span class="country-badge ru">Россия</span></td>
+                        <td>Физика</td>
+                    </tr>
+                    <tr data-country="Украина">
+                        <td><strong>Ivakhnenko Olexander</strong></td>
+                        <td>Национальный технический университет "Харьковский политехнический институт"</td>
+                        <td><span class="country-badge ua">Украина</span></td>
+                        <td>Инженерия</td>
+                    </tr>
+                    <tr data-country="Польша">
+                        <td><strong>Jacek Cieslik</strong></td>
+                        <td>Познанский политехнический университет</td>
+                        <td><span class="country-badge pl">Польша</span></td>
+                        <td>Предпринимательство</td>
+                    </tr>
+                    <tr data-country="США">
+                        <td><strong>James Robert Simons</strong></td>
+                        <td>Нью-Йоркский Технологический институт (NYIT)</td>
+                        <td><span class="country-badge us">США</span></td>
+                        <td>Математика</td>
+                    </tr>
+                    <tr data-country="Германия">
+                        <td><strong>Julia Grossklaus</strong></td>
+                        <td>Западно-Саксонский университет Цвикау прикладных наук</td>
+                        <td><span class="country-badge de">Германия</span></td>
+                        <td>Экономика</td>
+                    </tr>
+                    <tr data-country="Малайзия">
+                        <td><strong>Nur Izura Binti Udzir</strong></td>
+                        <td>Universiti Teknologi Malaysia</td>
+                        <td><span class="country-badge my">Малайзия</span></td>
+                        <td>Компьютерные науки</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Статистика -->
+    <section id="statistics" class="content-section">
+        <div class="container">
+            <h2 class="section-title">{% tr "Информационная статистика" %}</h2>
+
+            <div class="statistics-container">
+                <div class="statistics-image">
+                    <img src="https://enic-kazakhstan.edu.kz/files/1552650748/3_minified.png"
+                         alt="{% tr 'Статистика привлечения зарубежных специалистов' %}" class="stats-img">
+                </div>
+
+                <div class="stats-summary">
+                    <div class="stat-card">
+                        <div class="stat-number">200+</div>
+                        <div class="stat-label">{% tr "Зарубежных специалистов" %}</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">50+</div>
+                        <div class="stat-label">{% tr "Стран-участниц" %}</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">100+</div>
+                        <div class="stat-label">{% tr "Вузов-партнеров" %}</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">5+</div>
+                        <div class="stat-label">{% tr "Лет программы" %}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Навигация по разделам
+            const navTabs = document.querySelectorAll('.nav-tab');
+            const contentSections = document.querySelectorAll('.content-section');
+
+            navTabs.forEach(tab => {
+                tab.addEventListener('click', function () {
+                    const targetSection = this.getAttribute('data-section');
+
+                    // Удаляем активные классы
+                    navTabs.forEach(t => t.classList.remove('active'));
+                    contentSections.forEach(s => s.classList.remove('active'));
+
+                    // Добавляем активные классы
+                    this.classList.add('active');
+                    document.getElementById(targetSection).classList.add('active');
+                });
+            });
+
+            // Поиск и фильтрация специалистов
+            const specialistSearch = document.getElementById('specialistSearch');
+            const countryFilter = document.getElementById('countryFilter');
+            const specialistsTable = document.getElementById('specialistsTable');
+
+            function filterSpecialists() {
+                const searchTerm = specialistSearch.value.toLowerCase();
+                const selectedCountry = countryFilter.value;
+                const rows = specialistsTable.querySelectorAll('tbody tr');
+
+                rows.forEach(row => {
+                    const name = row.querySelector('td:first-child').textContent.toLowerCase();
+                    const organization = row.querySelector('td:nth-child(2)').textContent.toLowerCase();
+                    const country = row.getAttribute('data-country');
+
+                    const matchesSearch = name.includes(searchTerm) || organization.includes(searchTerm);
+                    const matchesCountry = !selectedCountry || country === selectedCountry;
+
+                    if (matchesSearch && matchesCountry) {
+                        row.style.display = '';
+                    } else {
+                        row.style.display = 'none';
+                    }
+                });
+            }
+
+            if (specialistSearch) specialistSearch.addEventListener('input', filterSpecialists);
+            if (countryFilter) countryFilter.addEventListener('change', filterSpecialists);
+
+            // Обработчик для кнопки "Форма для претендентов"
+            const applicationBtns = document.querySelectorAll('.application-btn');
+            applicationBtns.forEach(btn => {
+                btn.addEventListener('click', function () {
+                    alert('{% tr "Форма для претендентов будет доступна в ближайшее время" %}');
+                });
+            });
+        });
+    </script>
+{% endblock content %}

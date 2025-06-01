@@ -18,3 +18,4 @@ from .accreditation import AccreditationView
 from .sitemap import SiteMapView
 from .open_access import OpenAccessView
 from .corporate_ethics import CorporateEthicsView
+from .foreign_specialists import ForeignSpecialistsView

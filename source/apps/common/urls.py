@@ -54,4 +54,7 @@ urlpatterns = [
 
     # Corporate Ethics
     path('corporate_ethics/', view.CorporateEthicsView.as_view(), name='corporate_ethics'),
+
+    # Foreign Specialists
+    path('foreign_specialists/', view.ForeignSpecialistsView.as_view(), name='foreign_specialists'),
 ]
