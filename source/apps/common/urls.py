@@ -7,6 +7,7 @@ urlpatterns = [
     path('bologna/', view.BolognaView.as_view(), name='bologna'),
     path('publications/', view.publications_view, name='publications'),
     path('reference/', view.reference_view, name='reference'),
+    path('registryop/', view.registryop_view, name='registryop'),
     path('activities/', view.activities_view, name='activities'),
 
     # News

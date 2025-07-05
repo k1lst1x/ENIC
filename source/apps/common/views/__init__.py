@@ -2,6 +2,7 @@ from .home import HomeView
 from .bologna import BolognaView
 from .publications import publications_view
 from .reference import reference_view
+from .registryop import registryop_view
 from .activities import activities_view
 from .about import AboutView
 from .news import NewsDetailView, NewsListView
