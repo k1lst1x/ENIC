@@ -1,0 +1,613 @@
+{% extends "base.html" %}
+{% load lang_tags %}
+{% load static %}
+
+{% block extra_head %}
+    <link rel="stylesheet" href="{% static 'css/base/mamandigim_bolashagim.css' %}">
+{% endblock %}
+
+{% block content %}
+    <!-- Хлебные крошки -->
+    <div class="breadcrumbs">
+        <div class="container">
+            <ul class="breadcrumbs-list">
+                <li class="breadcrumbs-item">
+                    <a href="{% url 'home' %}" class="breadcrumbs-link">{% tr "Главная" %}</a>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                         class="icon">
+                        <polyline points="9 18 15 12 9 6"></polyline>
+                    </svg>
+                </li>
+                <li class="breadcrumbs-item">
+                    <span class="breadcrumbs-current">{% tr "Программа «Мамандығым-болашағым»" %}</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Заголовок страницы -->
+    <section class="activities-hero">
+        <div class="container">
+            <h1 class="activities-title">{% tr "Программа «Мамандығым-болашағым»" %}</h1>
+            <p class="activities-subtitle">
+                {% tr "Переформатирование системы подготовки кадров с учетом актуальных запросов региональных рынков труда" %}
+            </p>
+        </div>
+    </section>
+
+    <!-- Навигация по якорям -->
+    <div class="anchor-navigation">
+        <div>
+            <div class="anchor-container">
+                <a href="#overview" class="anchor-link">{% tr "Обзор программы" %}</a>
+                <a href="#directions" class="anchor-link">{% tr "Направления работы" %}</a>
+                <a href="#video" class="anchor-link">{% tr "Видеоматериал" %}</a>
+                <a href="#atlases" class="anchor-link">{% tr "Атласы" %}</a>
+                <a href="#results" class="anchor-link">{% tr "Результаты" %}</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Раздел: Обзор программы -->
+    <section class="section-container" id="overview">
+        <div class="container">
+            <h2 class="section-title">{% tr "Обзор программы" %}</h2>
+            <p class="section-subtitle">
+                {% tr "Проект «Мамандығым-болашағым» реализуется в рамках Программы повышения доходов населения до 2029 г." %}
+            </p>
+
+            <div class="project-card highlight">
+                <h3 class="project-title">
+                    <i class="fas fa-target"></i>
+                    {% tr "Основная цель проекта" %}
+                </h3>
+                <p class="project-description">
+                    {% tr "Переформатирование системы подготовки кадров с учетом актуальных запросов региональных рынков труда в Республике Казахстан." %}
+                </p>
+
+                <div class="benefits-grid">
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="fas fa-map-marked-alt"></i>
+                        </div>
+                        <div class="benefit-content">
+                            <h4>{% tr "Региональный подход" %}</h4>
+                            <p>{% tr "Учет специфики и потребностей каждого региона Казахстана" %}</p>
+                        </div>
+                    </div>
+
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="fas fa-users-cog"></i>
+                        </div>
+                        <div class="benefit-content">
+                            <h4>{% tr "Подготовка кадров" %}</h4>
+                            <p>{% tr "Современная система подготовки специалистов для рынка труда" %}</p>
+                        </div>
+                    </div>
+
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="benefit-content">
+                            <h4>{% tr "Повышение доходов" %}</h4>
+                            <p>{% tr "Содействие росту доходов населения через качественное образование" %}</p>
+                        </div>
+                    </div>
+
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <div class="benefit-content">
+                            <h4>{% tr "Инновационные решения" %}</h4>
+                            <p>{% tr "Внедрение передовых методов профориентации и обучения" %}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Раздел: Направления работы -->
+    <section class="section-container" id="directions">
+        <div class="container">
+            <h2 class="section-title">{% tr "Направления работы" %}</h2>
+            <p class="section-subtitle">
+                {% tr "Ключевые направления реализации программы «Мамандығым-болашағым»" %}
+            </p>
+
+            <div class="timeline-container">
+                <h3 class="timeline-title">{% tr "Основные направления деятельности" %}</h3>
+                <div class="timeline">
+                    <div class="timeline-step">
+                        <div class="timeline-step-number">1</div>
+                        <p class="timeline-step-text">{% tr "Региональные карты потребности в кадрах" %}</p>
+                    </div>
+                    <div class="timeline-step">
+                        <div class="timeline-step-number">2</div>
+                        <p class="timeline-step-text">{% tr "Профессиональная диагностика" %}</p>
+                    </div>
+                    <div class="timeline-step">
+                        <div class="timeline-step-number">3</div>
+                        <p class="timeline-step-text">{% tr "Обновление образовательных программ" %}</p>
+                    </div>
+                    <div class="timeline-step">
+                        <div class="timeline-step-number">4</div>
+                        <p class="timeline-step-text">{% tr "Обучение проектных команд" %}</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-container">
+                <div class="accordion-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <h3 class="accordion-title">{% tr "Разработка региональных карт потребности в кадрах" %}</h3>
+                        <div class="accordion-toggle">
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                    </div>
+                    <div class="accordion-content">
+                        <p class="accordion-text">
+                            {% tr "Разработаны региональные карты потребности в кадрах (Атласы новых профессий и компетенций) в 9 регионах:" %}
+                        </p>
+                        <ul class="accordion-list">
+                            <li>{% tr "Павлодарская область" %}</li>
+                            <li>{% tr "Мангистауская область" %}</li>
+                            <li>{% tr "Карагандинская область" %}</li>
+                            <li>{% tr "Акмолинская область" %}</li>
+                            <li>{% tr "Актюбинская область" %}</li>
+                            <li>{% tr "Жамбылская область" %}</li>
+                            <li>{% tr "Жетісу область" %}</li>
+                            <li>{% tr "город Астана" %}</li>
+                            <li>{% tr "город Алматы" %}</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <h3 class="accordion-title">{% tr "Профессиональная диагностика обучающихся" %}</h3>
+                        <div class="accordion-toggle">
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                    </div>
+                    <div class="accordion-content">
+                        <p class="accordion-text">
+                            {% tr "Проводится профессиональная диагностика обучающихся на базе платформы EduNavigator.kz. Платформа позволяет:" %}
+                        </p>
+                        <ul class="accordion-list">
+                            <li>{% tr "Определить профессиональные склонности и способности" %}</li>
+                            <li>{% tr "Получить рекомендации по выбору специальности" %}</li>
+                            <li>{% tr "Ознакомиться с требованиями рынка труда" %}</li>
+                            <li>{% tr "Построить индивидуальную образовательную траекторию" %}</li>
+                        </ul>
+                        <a href="https://edunavigator.kz" target="_blank" class="document-button primary"
+                           style="display: inline-flex; margin-top: 1rem;">
+                            <i class="fas fa-external-link-alt"></i>
+                            {% tr "Перейти на EduNavigator.kz" %}
+                        </a>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <h3 class="accordion-title">{% tr "Обновление образовательных программ" %}</h3>
+                        <div class="accordion-toggle">
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                    </div>
+                    <div class="accordion-content">
+                        <p class="accordion-text">
+                            {% tr "Обновлены образовательные программы в соответствии с потребностями рынка труда. Всего 91 ОВПО внедрили 902 новых образовательных программ." %}
+                        </p>
+                        <div class="benefits-grid" style="margin-top: 1.5rem;">
+                            <div class="benefit-item">
+                                <div class="benefit-icon">
+                                    <i class="fas fa-university"></i>
+                                </div>
+                                <div class="benefit-content">
+                                    <h4>91 ОВПО</h4>
+                                    <p>{% tr "Организаций высшего и послевузовского образования" %}</p>
+                                </div>
+                            </div>
+                            <div class="benefit-item">
+                                <div class="benefit-icon">
+                                    <i class="fas fa-graduation-cap"></i>
+                                </div>
+                                <div class="benefit-content">
+                                    <h4>902 программы</h4>
+                                    <p>{% tr "Новых образовательных программ внедрено" %}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <h3 class="accordion-title">{% tr "Обучение команд региональных проектных офисов" %}</h3>
+                        <div class="accordion-toggle">
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                    </div>
+                    <div class="accordion-content">
+                        <p class="accordion-text">
+                            {% tr "Обучены команды 17 региональных проектных офисов (методологическая подготовка к разработке региональных карт потребности в кадрах согласно методологии Skills Technology Foresight)." %}
+                        </p>
+                        <ul class="accordion-list">
+                            <li>{% tr "Методологическая подготовка специалистов" %}</li>
+                            <li>{% tr "Изучение методологии Skills Technology Foresight" %}</li>
+                            <li>{% tr "Практические навыки разработки карт потребности в кадрах" %}</li>
+                            <li>{% tr "Координация работы между регионами" %}</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Раздел: Видеоматериал -->
+    <section class="section-container" id="video">
+        <div class="container">
+            <h2 class="section-title">{% tr "Видеоматериал о программе" %}</h2>
+            <p class="section-subtitle">
+                {% tr "Подробный обзор программы «Мамандығым-болашағым» и ее реализации" %}
+            </p>
+
+            <div class="program-section">
+                <div class="program-content">
+                    <p>
+                        {% tr "Данный видеоматериал представляет комплексный обзор программы «Мамандығым-болашағым», включая ее цели, задачи, основные направления работы и достигнутые результаты." %}
+                    </p>
+                    <p>
+                        {% tr "В видео освещаются:" %}
+                    </p>
+                    <ul class="accordion-list">
+                        <li>{% tr "Концепция и цели программы" %}</li>
+                        <li>{% tr "Методология разработки региональных карт" %}</li>
+                        <li>{% tr "Примеры успешной реализации в регионах" %}</li>
+                        <li>{% tr "Перспективы развития программы" %}</li>
+                    </ul>
+                </div>
+
+                <div class="video-container" style="max-width: 560px; width: 100%;">
+                    <iframe
+                            width="100%"
+                            height="315"
+                            src="https://www.youtube.com/embed/8h6zXqzHKEI?start=1"
+                            title="{% tr 'Программа Мамандығым-болашағым' %}"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen
+                            style="border-radius: 14px; width: 100%;"
+                    ></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Раздел: Атласы -->
+    <section class="section-container" id="atlases">
+        <div class="container">
+            <h2 class="section-title">{% tr "Атласы новых профессий и компетенций" %}</h2>
+            <p class="section-subtitle">
+                {% tr "Региональные атласы, разработанные в рамках программы" %}
+            </p>
+
+            <div class="atlas-grid">
+                <div class="atlas-card">
+                    <div class="atlas-preview">
+                        <i class="fas fa-map"></i>
+                    </div>
+                    <div class="atlas-content">
+                        <h3 class="atlas-title">{% tr "Атлас Акмолинская область" %}</h3>
+                        <div class="atlas-actions">
+                            <a href="https://enic-kazakhstan.edu.kz/uploads/additional_files_items/298/file/atlas-akmolinskaya-oblast.pdf"
+                               target="_blank" class="document-button primary">
+                                <i class="fas fa-eye"></i>
+                                {% tr "Посмотреть" %}
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="atlas-card">
+                    <div class="atlas-preview">
+                        <i class="fas fa-map"></i>
+                    </div>
+                    <div class="atlas-content">
+                        <h3 class="atlas-title">{% tr "Атлас области Жетісу" %}</h3>
+                        <div class="atlas-actions">
+                            <a href="https://enic-kazakhstan.edu.kz/uploads/additional_files_items/299/file/atlas-oblasti-zhet-su.pdf"
+                               target="_blank" class="document-button primary">
+                                <i class="fas fa-eye"></i>
+                                {% tr "Посмотреть" %}
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="atlas-card">
+                    <div class="atlas-preview">
+                        <i class="fas fa-map"></i>
+                    </div>
+                    <div class="atlas-content">
+                        <h3 class="atlas-title">{% tr "Атлас Павлодарская область" %}</h3>
+                        <div class="atlas-actions">
+                            <a href="https://enic-kazakhstan.edu.kz/uploads/additional_files_items/292/file/atlas-pavlodarskaya-oblast.pdf"
+                               target="_blank" class="document-button primary">
+                                <i class="fas fa-eye"></i>
+                                {% tr "Посмотреть" %}
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="atlas-card">
+                    <div class="atlas-preview">
+                        <i class="fas fa-map"></i>
+                    </div>
+                    <div class="atlas-content">
+                        <h3 class="atlas-title">{% tr "Атлас Мангистауская область" %}</h3>
+                        <div class="atlas-actions">
+                            <a href="https://enic-kazakhstan.edu.kz/uploads/additional_files_items/293/file/atlas-mangistauskaya-oblast.pdf"
+                               target="_blank" class="document-button primary">
+                                <i class="fas fa-eye"></i>
+                                {% tr "Посмотреть" %}
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="atlas-card">
+                    <div class="atlas-preview">
+                        <i class="fas fa-map"></i>
+                    </div>
+                    <div class="atlas-content">
+                        <h3 class="atlas-title">{% tr "Атлас Карагандинская область" %}</h3>
+                        <div class="atlas-actions">
+                            <a href="https://enic-kazakhstan.edu.kz/uploads/additional_files_items/294/file/atlas-karagandinskaya-oblast.pdf"
+                               target="_blank" class="document-button primary">
+                                <i class="fas fa-eye"></i>
+                                {% tr "Посмотреть" %}
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="atlas-card">
+                    <div class="atlas-preview">
+                        <i class="fas fa-map"></i>
+                    </div>
+                    <div class="atlas-content">
+                        <h3 class="atlas-title">{% tr "Атлас Актюбинская область" %}</h3>
+                        <div class="atlas-actions">
+                            <a href="https://enic-kazakhstan.edu.kz/uploads/additional_files_items/297/file/atlas-aktyubinskaya-oblast.pdf"
+                               target="_blank" class="document-button primary">
+                                <i class="fas fa-eye"></i>
+                                {% tr "Посмотреть" %}
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="atlas-card">
+                    <div class="atlas-preview">
+                        <i class="fas fa-map"></i>
+                    </div>
+                    <div class="atlas-content">
+                        <h3 class="atlas-title">{% tr "Атлас города Алматы" %}</h3>
+                        <div class="atlas-actions">
+                            <a href="https://enic-kazakhstan.edu.kz/uploads/additional_files_items/295/file/atlas-goroda-almaty.pdf"
+                               target="_blank" class="document-button primary">
+                                <i class="fas fa-eye"></i>
+                                {% tr "Посмотреть" %}
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="atlas-card">
+                    <div class="atlas-preview">
+                        <i class="fas fa-map"></i>
+                    </div>
+                    <div class="atlas-content">
+                        <h3 class="atlas-title">{% tr "Атлас города Астана" %}</h3>
+                        <div class="atlas-actions">
+                            <a href="https://enic-kazakhstan.edu.kz/uploads/additional_files_items/296/file/atlas-goroda-astana.pdf"
+                               target="_blank" class="document-button primary">
+                                <i class="fas fa-eye"></i>
+                                {% tr "Посмотреть" %}
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="atlas-card">
+                    <div class="atlas-preview">
+                        <i class="fas fa-map"></i>
+                    </div>
+                    <div class="atlas-content">
+                        <h3 class="atlas-title">{% tr "Атлас Жамбылская область" %}</h3>
+                        <div class="atlas-actions">
+                            <a href="#" target="_blank" class="document-button primary">
+                                <i class="fas fa-eye"></i>
+                                {% tr "Посмотреть" %}
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Раздел: Результаты -->
+    <section class="section-container" id="results">
+        <div class="container">
+            <h2 class="section-title">{% tr "Достигнутые результаты" %}</h2>
+            <p class="section-subtitle">
+                {% tr "Ключевые достижения программы «Мамандығым-болашағым»" %}
+            </p>
+
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i class="fas fa-map-marked-alt"></i>
+                    </div>
+                    <div class="benefit-content">
+                        <h4>{% tr "9 региональных карт" %}</h4>
+                        <p>{% tr "Разработаны атласы новых профессий и компетенций для 9 регионов Казахстана" %}</p>
+                    </div>
+                </div>
+
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <div class="benefit-content">
+                        <h4>{% tr "Платформа EduNavigator.kz" %}</h4>
+                        <p>{% tr "Запущена система профессиональной диагностики обучающихся" %}</p>
+                    </div>
+                </div>
+
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <div class="benefit-content">
+                        <h4>{% tr "902 новые программы" %}</h4>
+                        <p>{% tr "Образовательные программы внедрены в 91 организации образования" %}</p>
+                    </div>
+                </div>
+
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i class="fas fa-users-cog"></i>
+                    </div>
+                    <div class="benefit-content">
+                        <h4>{% tr "17 проектных офисов" %}</h4>
+                        <p>{% tr "Обучены команды региональных проектных офисов по методологии Skills Technology Foresight" %}</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card" style="margin-top: 2rem;">
+                <h3 class="project-title">
+                    <i class="fas fa-rocket"></i>
+                    {% tr "Перспективы развития" %}
+                </h3>
+                <p class="project-description">
+                    {% tr "Программа «Мамандығым-болашағым» продолжает развиваться и расширяться, охватывая новые регионы и направления. Планируется дальнейшее совершенствование системы профориентации, расширение функционала платформы EduNavigator.kz и углубление сотрудничества с работодателями для обеспечения максимального соответствия подготовки кадров потребностям рынка труда." %}
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Функция для переключения аккордеонов
+        function toggleAccordion(header) {
+            const content = header.nextElementSibling;
+            const toggle = header.querySelector('.accordion-toggle i');
+
+            if (content.classList.contains('active')) {
+                content.classList.remove('active');
+                toggle.style.transform = 'rotate(0deg)';
+            } else {
+                // Закрываем все остальные аккордеоны
+                document.querySelectorAll('.accordion-content.active').forEach(item => {
+                    item.classList.remove('active');
+                });
+                document.querySelectorAll('.accordion-toggle i').forEach(icon => {
+                    icon.style.transform = 'rotate(0deg)';
+                });
+
+                // Открываем выбранный аккордеон
+                content.classList.add('active');
+                toggle.style.transform = 'rotate(180deg)';
+            }
+        }
+
+        // Активация якорных ссылок
+        document.addEventListener('DOMContentLoaded', function () {
+            const anchorLinks = document.querySelectorAll('.anchor-link');
+
+            // Функция для определения активного раздела при прокрутке
+            function setActiveSection() {
+                const sections = document.querySelectorAll('.section-container');
+                let currentSection = '';
+
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.clientHeight;
+
+                    if (window.pageYOffset >= sectionTop - 200 &&
+                        window.pageYOffset < sectionTop + sectionHeight - 200) {
+                        currentSection = section.getAttribute('id');
+                    }
+                });
+
+                anchorLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === '#' + currentSection) {
+                        link.classList.add('active');
+                    }
+                });
+            }
+
+            // Плавная прокрутка для якорных ссылок
+            anchorLinks.forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 100,
+                            behavior: 'smooth'
+                        });
+
+                        // Обновление URL без перезагрузки страницы
+                        history.pushState(null, null, targetId);
+
+                        // Обновление активной ссылки
+                        anchorLinks.forEach(link => link.classList.remove('active'));
+                        this.classList.add('active');
+                    }
+                });
+            });
+
+            // Отслеживание прокрутки для обновления активной ссылки
+            window.addEventListener('scroll', setActiveSection);
+
+            // Инициализация активной ссылки при загрузке страницы
+            setActiveSection();
+        });
+
+        // Анимация появления элементов при прокрутке
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function (entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Применяем анимацию к карточкам
+        document.querySelectorAll('.atlas-card, .project-card, .benefit-item').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(card);
+        });
+    </script>
+{% endblock content %}

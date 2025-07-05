@@ -19,3 +19,5 @@ from .sitemap import SiteMapView
 from .open_access import OpenAccessView
 from .corporate_ethics import CorporateEthicsView
 from .foreign_specialists import ForeignSpecialistsView
+from .mamandigim_bolashagim import MamandigimBolashagimView
+from .projects import ProjectsView

@@ -1,0 +1,659 @@
+/* Стили для страницы "Программа «Мамандығым-болашағым»" */
+
+:root {
+    --primary-color: #0066cc;
+    --primary-hover: #0052a3;
+    --secondary-color: #f8f9fa;
+    --accent-color: #ffc107;
+    --text-color: #333333;
+    --text-light: #666666;
+    --text-lighter: #999999;
+    --white: #ffffff;
+    --border-color: #e0e0e0;
+    --shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    --shadow-hover: 0 4px 8px rgba(0, 0, 0, 0.15);
+    --radius: 8px;
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--white);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* Хлебные крошки */
+.breadcrumbs {
+    padding: 1rem 0;
+    background-color: var(--white);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.breadcrumbs-list {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    list-style: none;
+}
+
+.breadcrumbs-item {
+    display: flex;
+    align-items: center;
+    font-size: 0.875rem;
+    color: var(--text-lighter);
+}
+
+.breadcrumbs-link {
+    color: var(--text-light);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.breadcrumbs-link:hover {
+    color: var(--primary-color);
+}
+
+.breadcrumbs-item .icon {
+    margin: 0 0.5rem;
+    font-size: 0.75rem;
+}
+
+.breadcrumbs-current {
+    color: var(--text-color);
+    font-weight: 500;
+}
+
+/* Заголовок страницы */
+.activities-hero {
+    padding: 3rem 0;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-hover) 100%);
+    color: var(--white);
+    text-align: center;
+}
+
+.activities-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+.activities-subtitle {
+    font-size: 1.25rem;
+    opacity: 0.9;
+    line-height: 1.5;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Якорная навигация */
+.anchor-navigation {
+    background-color: var(--white);
+    border-bottom: 1px solid var(--border-color);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.anchor-container {
+    display: flex;
+    gap: 1rem;
+    overflow-x: auto;
+    padding: 0.5rem 0;
+}
+
+.anchor-link {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    text-decoration: none;
+    border-radius: var(--radius);
+    font-size: 0.875rem;
+    font-weight: 500;
+    white-space: nowrap;
+    transition: var(--transition);
+}
+
+.anchor-link:hover,
+.anchor-link.active {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+/* Основные разделы */
+.section-container {
+    padding: 3rem 0;
+}
+
+.section-container:nth-child(even) {
+    background-color: var(--secondary-color);
+}
+
+.section-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text-color);
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.section-subtitle {
+    font-size: 1.125rem;
+    color: var(--text-light);
+    margin-bottom: 2rem;
+    text-align: center;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Карточки проектов */
+.project-card {
+    background-color: var(--white);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 2rem;
+    margin-bottom: 2rem;
+    transition: var(--transition);
+}
+
+.project-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-hover);
+}
+
+.project-card.highlight {
+    border-left: 4px solid var(--primary-color);
+    background: linear-gradient(135deg, rgba(0, 102, 204, 0.05) 0%, rgba(0, 102, 204, 0.02) 100%);
+}
+
+.project-title {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text-color);
+    margin-bottom: 1rem;
+}
+
+.project-title i {
+    color: var(--primary-color);
+    font-size: 1.25rem;
+}
+
+.project-description {
+    color: var(--text-light);
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    text-align: justify;
+}
+
+/* Сетка преимуществ */
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.benefit-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1.5rem;
+    background-color: var(--white);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+.benefit-item:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-hover);
+}
+
+.benefit-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    background-color: rgba(0, 102, 204, 0.1);
+    border-radius: 50%;
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    flex-shrink: 0;
+}
+
+.benefit-content h4 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--text-color);
+    margin-bottom: 0.5rem;
+}
+
+.benefit-content p {
+    color: var(--text-light);
+    line-height: 1.5;
+    font-size: 0.9rem;
+}
+
+/* Таймлайн */
+.timeline-container {
+    margin: 2rem 0;
+}
+
+.timeline-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--text-color);
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.timeline {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    margin: 2rem 0;
+    padding: 1rem 0;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background-color: var(--border-color);
+    z-index: 1;
+}
+
+.timeline-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+    background-color: var(--white);
+    padding: 0 1rem;
+}
+
+.timeline-step-number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: var(--primary-color);
+    color: var(--white);
+    border-radius: 50%;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.timeline-step-text {
+    font-size: 0.875rem;
+    color: var(--text-color);
+    font-weight: 500;
+    max-width: 120px;
+}
+
+/* Аккордеоны */
+.accordion-container {
+    margin: 2rem 0;
+}
+
+.accordion-item {
+    background-color: var(--white);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    margin-bottom: 1rem;
+    overflow: hidden;
+}
+
+.accordion-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.accordion-header:hover {
+    background-color: var(--secondary-color);
+}
+
+.accordion-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--text-color);
+    margin: 0;
+}
+
+.accordion-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    background-color: var(--primary-color);
+    color: var(--white);
+    border-radius: 50%;
+}
+
+.accordion-toggle i {
+    transition: transform 0.3s ease;
+}
+
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+}
+
+.accordion-content.active {
+    max-height: 1000px;
+}
+
+.accordion-text {
+    padding: 0 1.5rem 1rem;
+    color: var(--text-light);
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.accordion-list {
+    padding: 0 1.5rem 1.5rem;
+    margin: 0;
+    list-style: none;
+}
+
+.accordion-list li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-light);
+    line-height: 1.5;
+}
+
+.accordion-list li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+/* Программная секция */
+.program-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: start;
+    margin: 2rem 0;
+}
+
+.program-content {
+    padding: 1rem 0;
+}
+
+.video-container {
+    position: relative;
+    width: 100%;
+    max-width: 560px;
+    margin: 0 auto;
+}
+
+.video-container iframe {
+    width: 100%;
+    height: 315px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+/* Сетка атласов */
+.atlas-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.atlas-card {
+    background-color: var(--white);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.atlas-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-hover);
+}
+
+.atlas-preview {
+    height: 120px;
+    background-color: var(--secondary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.atlas-preview i {
+    font-size: 3rem;
+    color: var(--primary-color);
+}
+
+.atlas-content {
+    padding: 1.5rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.atlas-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--text-color);
+    margin-bottom: 1rem;
+    text-align: center;
+    flex: 1;
+}
+
+.atlas-actions {
+    display: flex;
+    gap: 0.75rem;
+    margin-top: auto;
+}
+
+/* Кнопки документов */
+.document-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    border-radius: var(--radius);
+    text-decoration: none;
+    transition: var(--transition);
+    flex: 1;
+    text-align: center;
+}
+
+.document-button.primary {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+.document-button.primary:hover {
+    background-color: var(--primary-hover);
+}
+
+.document-button.secondary {
+    background-color: transparent;
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+}
+
+.document-button.secondary:hover {
+    background-color: var(--secondary-color);
+}
+
+/* Медиа-запросы */
+@media (max-width: 768px) {
+    .activities-title {
+        font-size: 2rem;
+    }
+
+    .section-title {
+        font-size: 1.5rem;
+    }
+
+    .anchor-container {
+        justify-content: flex-start;
+    }
+
+    .benefits-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .timeline {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .timeline::before {
+        display: none;
+    }
+
+    .timeline-step {
+        flex-direction: row;
+        text-align: left;
+        padding: 1rem;
+        background-color: var(--secondary-color);
+        border-radius: var(--radius);
+        width: 100%;
+    }
+
+    .timeline-step-number {
+        margin-bottom: 0;
+        margin-right: 1rem;
+    }
+
+    .timeline-step-text {
+        max-width: none;
+    }
+
+    .program-section {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .atlas-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .atlas-actions {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 0.5rem;
+    }
+
+    .activities-title {
+        font-size: 1.75rem;
+    }
+
+    .project-card,
+    .benefit-item {
+        padding: 1rem;
+    }
+
+    .benefit-item {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .benefit-icon {
+        margin: 0 auto 1rem;
+    }
+}
+
+/* Анимации */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.atlas-card,
+.project-card,
+.benefit-item {
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+/* Дополнительные стили для улучшения UX */
+.accordion-content a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.accordion-content a:hover {
+    text-decoration: underline;
+}
+
+/* Стили для скролла в якорной навигации */
+.anchor-container::-webkit-scrollbar {
+    height: 4px;
+}
+
+.anchor-container::-webkit-scrollbar-track {
+    background: var(--secondary-color);
+    border-radius: 2px;
+}
+
+.anchor-container::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 2px;
+}
+
+.anchor-container::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-hover);
+}

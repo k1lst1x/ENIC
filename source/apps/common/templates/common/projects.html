@@ -1,0 +1,490 @@
+{% extends "base.html" %}
+{% load lang_tags %}
+{% load static %}
+
+{% block extra_head %}
+    <link rel="stylesheet" href="{% static 'css/base/projects.css' %}">
+{% endblock %}
+
+{% block content %}
+    <!-- Хлебные крошки -->
+    <div class="breadcrumbs">
+        <div class="container">
+            <ul class="breadcrumbs-list">
+                <li class="breadcrumbs-item">
+                    <a href="{% url 'home' %}" class="breadcrumbs-link">{% tr "Главная" %}</a>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                         class="icon">
+                        <polyline points="9 18 15 12 9 6"></polyline>
+                    </svg>
+                </li>
+                <li class="breadcrumbs-item">
+                    <span class="breadcrumbs-current">{% tr "Реализация проектов" %}</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Заголовок страницы -->
+    <section class="activities-hero">
+        <div class="container">
+            <h1 class="activities-title">{% tr "Реализация проектов" %}</h1>
+            <p class="activities-subtitle">
+                {% tr "Научные проекты и исследования в области обеспечения качества высшего образования" %}
+            </p>
+        </div>
+    </section>
+
+    <!-- Навигация по якорям -->
+    <div class="anchor-navigation">
+        <div class="container">
+            <div class="anchor-container">
+                <a href="#project-overview" class="anchor-link">{% tr "Обзор проекта" %}</a>
+                <a href="#project-tasks" class="anchor-link">{% tr "Задачи" %}</a>
+                <a href="#project-stages" class="anchor-link">{% tr "Этапы" %}</a>
+                <a href="#project-results" class="anchor-link">{% tr "Результаты" %}</a>
+                <a href="#project-team" class="anchor-link">{% tr "Команда" %}</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Основной проект -->
+    <section class="section-container" id="project-overview">
+        <div class="container">
+            <div class="project-main-card">
+                <div class="project-header">
+                    <div class="project-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <div class="project-header-content">
+                        <h2 class="project-main-title">
+                            {% tr "Повышение конкурентоспособности вузов Казахстана через реинжиниринг национальной системы обеспечения качества высшего образования" %}
+                        </h2>
+                        <div class="project-meta">
+                            <span class="project-status active">{% tr "Активный проект" %}</span>
+                            <span class="project-period">2023-2024</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-goal-section">
+                    <h3 class="section-subtitle-small">
+                        <i class="fas fa-bullseye"></i>
+                        {% tr "Цель проекта" %}
+                    </h3>
+                    <p class="project-goal-text">
+                        {% tr "Проведение комплексного исследования, направленного на повышение конкурентоспособности вузов Казахстана через реинжиниринг национальной системы обеспечения качества высшего образования как катализатора улучшения качества человеческого капитала в условиях реализации концепции непрерывного образования." %}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Задачи проекта -->
+    <section class="section-container" id="project-tasks">
+        <div class="container">
+            <h2 class="section-title">{% tr "Задачи проекта" %}</h2>
+            <p class="section-subtitle">
+                {% tr "Основные задачи и мероприятия по их реализации" %}
+            </p>
+
+            <div class="tasks-grid">
+                <div class="task-card">
+                    <div class="task-number">1</div>
+                    <div class="task-content">
+                        <h4 class="task-title">{% tr "Кластеризация факторов влияния" %}</h4>
+                        <p class="task-description">
+                            {% tr "Определить и провести кластеризацию факторов, оказывающие прямое и косвенное влияние на качество высшего образования" %}
+                        </p>
+                    </div>
+                </div>
+
+                <div class="task-card">
+                    <div class="task-number">2</div>
+                    <div class="task-content">
+                        <h4 class="task-title">{% tr "Когортное исследование" %}</h4>
+                        <p class="task-description">
+                            {% tr "Провести когортное исследование текущего уровня качества системы высшего образования на основе кластеризованных факторов влияния" %}
+                        </p>
+                    </div>
+                </div>
+
+                <div class="task-card">
+                    <div class="task-number">3</div>
+                    <div class="task-content">
+                        <h4 class="task-title">{% tr "Концепция обеспечения качества" %}</h4>
+                        <p class="task-description">
+                            {% tr "Разработать концепцию обеспечения качества высшего образования на основе анализа отечественной и зарубежных систем" %}
+                        </p>
+                    </div>
+                </div>
+
+                <div class="task-card">
+                    <div class="task-number">4</div>
+                    <div class="task-content">
+                        <h4 class="task-title">{% tr "Национальная модель системы" %}</h4>
+                        <p class="task-description">
+                            {% tr "Разработать усовершенствованную национальную модель системы обеспечения качества высшего образования" %}
+                        </p>
+                    </div>
+                </div>
+
+                <div class="task-card">
+                    <div class="task-number">5</div>
+                    <div class="task-content">
+                        <h4 class="task-title">{% tr "Апробация модели" %}</h4>
+                        <p class="task-description">
+                            {% tr "Апробировать национальную модель системы обеспечения качества высшего образования с проведением корреляции" %}
+                        </p>
+                    </div>
+                </div>
+
+                <div class="task-card">
+                    <div class="task-number">6</div>
+                    <div class="task-content">
+                        <h4 class="task-title">{% tr "Методическая документация" %}</h4>
+                        <p class="task-description">
+                            {% tr "Разработать методическую и нормативную документацию конструктов национальной системы обеспечения качества" %}
+                        </p>
+                    </div>
+                </div>
+
+                <div class="task-card">
+                    <div class="task-number">7</div>
+                    <div class="task-content">
+                        <h4 class="task-title">{% tr "Модернизация Реестра" %}</h4>
+                        <p class="task-description">
+                            {% tr "Модернизировать Реестр образовательных программ высшего и послевузовского образования" %}
+                        </p>
+                    </div>
+                </div>
+
+                <div class="task-card">
+                    <div class="task-number">8</div>
+                    <div class="task-content">
+                        <h4 class="task-title">{% tr "Прикладной бакалавриат" %}</h4>
+                        <p class="task-description">
+                            {% tr "Разработать методологическую концепцию встраивания прикладного бакалавриата в систему высшего образования" %}
+                        </p>
+                    </div>
+                </div>
+
+                <div class="task-card">
+                    <div class="task-number">9</div>
+                    <div class="task-content">
+                        <h4 class="task-title">{% tr "Нормативное обеспечение" %}</h4>
+                        <p class="task-description">
+                            {% tr "Разработать нормативное и методическое обеспечение системы послесреднего образования" %}
+                        </p>
+                    </div>
+                </div>
+
+                <div class="task-card">
+                    <div class="task-number">10</div>
+                    <div class="task-content">
+                        <h4 class="task-title">{% tr "Экспериментальная апробация" %}</h4>
+                        <p class="task-description">
+                            {% tr "Экспериментально апробировать модель развития прикладного бакалавриата и технологию ее интеграции" %}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Этапы реализации -->
+    <section class="section-container" id="project-stages">
+        <div class="container">
+            <h2 class="section-title">{% tr "Этапы реализации проекта" %}</h2>
+            <p class="section-subtitle">
+                {% tr "Поэтапная реализация научного проекта" %}
+            </p>
+
+            <div class="stages-timeline">
+                <div class="stage-item">
+                    <div class="stage-marker">
+                        <div class="stage-number">1</div>
+                        <div class="stage-year">2023</div>
+                    </div>
+                    <div class="stage-content">
+                        <h3 class="stage-title">{% tr "Первый этап" %}</h3>
+                        <div class="stage-description">
+                            <ul class="stage-list">
+                                <li>{% tr "Разработка теоретико-методологических основ обеспечения качества высшего образования" %}</li>
+                                <li>{% tr "Разработка и внедрение цифровой архитектуры системы обеспечения качества высшего образования" %}</li>
+                                <li>{% tr "Научно-методологическое и нормативное обоснование интеграции прикладного бакалавриата в систему высшего образования" %}</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="stage-item">
+                    <div class="stage-marker">
+                        <div class="stage-number">2</div>
+                        <div class="stage-year">2024</div>
+                    </div>
+                    <div class="stage-content">
+                        <h3 class="stage-title">{% tr "Второй этап" %}</h3>
+                        <div class="stage-description">
+                            <ul class="stage-list">
+                                <li>{% tr "Разработка методических основ обеспечения качества высшего образования" %}</li>
+                                <li>{% tr "Внедрение цифровой архитектуры системы обеспечения качества высшего образования и модернизация Реестра ОП ВПО" %}</li>
+                                <li>{% tr "Интеграция прикладного бакалавриата в систему высшего образования в качестве короткого цикла" %}</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ожидаемые результаты -->
+    <section class="section-container" id="project-results">
+        <div class="container">
+            <h2 class="section-title">{% tr "Ожидаемые результаты" %}</h2>
+            <p class="section-subtitle">
+                {% tr "Планируемые достижения по итогам реализации проекта" %}
+            </p>
+
+            <div class="results-accordion">
+                <div class="accordion-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <h3 class="accordion-title">{% tr "Научные результаты" %}</h3>
+                        <div class="accordion-toggle">
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                    </div>
+                    <div class="accordion-content">
+                        <ul class="results-list">
+                            <li>{% tr "Научно-обоснованы и кластеризованы факторы, оказывающие влияние на качество высшего образования" %}</li>
+                            <li>{% tr "Разработаны методологические основы обеспечения качества высшего образования" %}</li>
+                            <li>{% tr "Разработана методика когортного исследования в определении текущего уровня качества системы высшего образования" %}</li>
+                            <li>{% tr "Теоретически обоснована и экспериментально апробирована модернизированная национальная модель системы обеспечения качества" %}</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <h3 class="accordion-title">{% tr "Практические результаты" %}</h3>
+                        <div class="accordion-toggle">
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                    </div>
+                    <div class="accordion-content">
+                        <ul class="results-list">
+                            <li>{% tr "Модернизирован Реестр образовательных программ высшего и послевузовского образования" %}</li>
+                            <li>{% tr "Разработана методологическая концепция имплементации прикладного бакалавриата" %}</li>
+                            <li>{% tr "Разработана и апробирована модель развития прикладного бакалавриата" %}</li>
+                            <li>{% tr "Разработана технология интеграции прикладного бакалавриата в качестве короткого цикла" %}</li>
+                            <li>{% tr "Разработано нормативное и методическое обеспечение системы послесреднего образования" %}</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <h3 class="accordion-title">{% tr "Публикации" %}</h3>
+                        <div class="accordion-toggle">
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="publications-grid">
+                            <div class="publication-item">
+                                <div class="publication-icon">
+                                    <i class="fas fa-file-alt"></i>
+                                </div>
+                                <div class="publication-content">
+                                    <h4>{% tr "Статьи в международных журналах" %}</h4>
+                                    <p>{% tr "Не менее 4 статей в рецензируемых научных изданиях Web of Science и Scopus" %}</p>
+                                </div>
+                            </div>
+                            <div class="publication-item">
+                                <div class="publication-icon">
+                                    <i class="fas fa-newspaper"></i>
+                                </div>
+                                <div class="publication-content">
+                                    <h4>{% tr "Публикации в национальных журналах" %}</h4>
+                                    <p>{% tr "Не менее 4 публикаций в журналах, рекомендованных уполномоченным органом" %}</p>
+                                </div>
+                            </div>
+                            <div class="publication-item">
+                                <div class="publication-icon">
+                                    <i class="fas fa-book"></i>
+                                </div>
+                                <div class="publication-content">
+                                    <h4>{% tr "Монография" %}</h4>
+                                    <p>{% tr "Комплексное научное исследование по теме проекта" %}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Команда проекта -->
+    <section class="section-container" id="project-team">
+        <div class="container">
+            <h2 class="section-title">{% tr "Команда проекта" %}</h2>
+            <p class="section-subtitle">
+                {% tr "Специалисты, участвующие в реализации научного проекта" %}
+            </p>
+
+            <div class="team-table-container">
+                <table class="team-table">
+                    <thead>
+                        <tr>
+                            <th>№</th>
+                            <th>{% tr "Ф.И.О." %}</th>
+                            <th>{% tr "Позиция в проекте, должность, ученая степень, ученое звание" %}</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td class="team-name">{% tr "Мухатаев А.А." %}</td>
+                            <td>{% tr "Научный руководитель проекта, к.п.н., доцент" %}</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td class="team-name">{% tr "Оспанова Р.Ж." %}</td>
+                            <td>{% tr "Бухгалтер" %}</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td class="team-name">{% tr "Макымбаева М.Б." %}</td>
+                            <td>{% tr "Юрист" %}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="laboratory-info">
+                <div class="lab-card">
+                    <div class="lab-icon">
+                        <i class="fas fa-flask"></i>
+                    </div>
+                    <div class="lab-content">
+                        <h3 class="lab-title">{% tr "Научно-инновационная лаборатория обеспечения качества высшего образования" %}</h3>
+                        <p class="lab-description">
+                            {% tr "Специализированная лаборатория, осуществляющая научные исследования в области обеспечения качества высшего образования" %}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Результаты проекта -->
+    <section class="section-container">
+        <div class="container">
+            <h2 class="section-title">{% tr "Результаты проекта" %}</h2>
+            <p class="section-subtitle">
+                {% tr "Опубликованные материалы и документы проекта" %}
+            </p>
+
+            <div class="project-results-card">
+                <div class="result-publication">
+                    <div class="publication-cover">
+                        <i class="fas fa-book-open"></i>
+                    </div>
+                    <div class="publication-details">
+                        <h3 class="publication-title">
+                            {% tr "Система обеспечения качества высшего образования: реинжиринг национальной модели" %}
+                        </h3>
+                        <p class="publication-authors">
+                            {% tr "С. Омирбаев, А. Мухатаев, С. Бурбекова, Х. Касенов, Ш. Сулейменова" %}
+                        </p>
+                        <div class="publication-actions">
+                            <a href="https://docs.google.com/viewer?url=https%3A%2F%2Fenic-kazakhstan.edu.kz%2F%2Fuploads%2Fadditional_files_items%2F218%2Ffile%2Fmonografiya.pdf%3Fcache%3D1705484310&embedded=false" class="document-button primary">
+                                <i class="fas fa-eye"></i>
+                                {% tr "Посмотреть" %}
+                            </a>
+                            <a href="https://docs.google.com/viewer?url=https%3A%2F%2Fenic-kazakhstan.edu.kz%2F%2Fuploads%2Fadditional_files_items%2F218%2Ffile%2Fmonografiya.pdf%3Fcache%3D1705484310&embedded=false" class="document-button secondary">
+                                <i class="fas fa-download"></i>
+                                {% tr "Скачать" %}
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Функция для переключения аккордеонов
+        function toggleAccordion(header) {
+            const content = header.nextElementSibling;
+            const toggle = header.querySelector('.accordion-toggle i');
+
+            if (content.classList.contains('active')) {
+                content.classList.remove('active');
+                toggle.style.transform = 'rotate(0deg)';
+            } else {
+                // Закрываем все остальные аккордеоны
+                document.querySelectorAll('.accordion-content.active').forEach(item => {
+                    item.classList.remove('active');
+                });
+                document.querySelectorAll('.accordion-toggle i').forEach(icon => {
+                    icon.style.transform = 'rotate(0deg)';
+                });
+
+                // Открываем выбранный аккордеон
+                content.classList.add('active');
+                toggle.style.transform = 'rotate(180deg)';
+            }
+        }
+
+        // Активация якорных ссылок
+        document.addEventListener('DOMContentLoaded', function() {
+            const anchorLinks = document.querySelectorAll('.anchor-link');
+
+            // Плавная прокрутка для якорных ссылок
+            anchorLinks.forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 100,
+                            behavior: 'smooth'
+                        });
+
+                        // Обновление активной ссылки
+                        anchorLinks.forEach(link => link.classList.remove('active'));
+                        this.classList.add('active');
+                    }
+                });
+            });
+
+            // Анимация появления элементов
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+
+            // Применяем анимацию к карточкам
+            document.querySelectorAll('.task-card, .stage-item, .lab-card').forEach(card => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(card);
+            });
+        });
+    </script>
+{% endblock content %}

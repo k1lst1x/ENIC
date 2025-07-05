@@ -57,4 +57,10 @@ urlpatterns = [
 
     # Foreign Specialists
     path('foreign_specialists/', view.ForeignSpecialistsView.as_view(), name='foreign_specialists'),
+
+    # Mamandigim Bolashagim
+    path('mamandigim_bolashagim/', view.MamandigimBolashagimView.as_view(), name='mamandigim_bolashagim'),
+
+    # Projects
+    path('projects/', view.ProjectsView.as_view(), name='projects'),
 ]
