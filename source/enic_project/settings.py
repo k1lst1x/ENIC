@@ -22,7 +22,7 @@ if not SECRET_KEY:
 
 DEBUG = os.getenv("DEBUG", "False").lower() == "true"
 
-ALLOWED_HOSTS = ["enic.duckdns.org", "127.0.0.1"]
+ALLOWED_HOSTS = ["enic.oyustudio.kz", "127.0.0.1"]
 
 # =============================
 # Security Settings
