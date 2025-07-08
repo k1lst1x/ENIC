@@ -1,0 +1,622 @@
+{% extends "base.html" %}
+{% load lang_tags %}
+{% load static %}
+
+{% block extra_head %}
+<link rel="stylesheet" href="{% static 'css/base/recognition.css' %}">
+{% endblock %}
+
+{% block content %}
+  <!-- Хлебные крошки -->
+  <div class="breadcrumbs">
+	<div class="container">
+	  <ul class="breadcrumbs-list">
+		<li class="breadcrumbs-item">
+		  <a href="{% url 'home' %}" class="breadcrumbs-link">{% tr "Главная" %}</a>
+		  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon">
+			<polyline points="9 18 15 12 9 6"></polyline>
+		  </svg>
+		</li>
+		<li class="breadcrumbs-item">
+		  <span class="breadcrumbs-current">{% tr "Признание степеней и квалификаций" %}</span>
+		</li>
+	  </ul>
+	</div>
+  </div>
+
+  <!-- Заголовок страницы -->
+  <section class="page-header">
+	<div class="container">
+	  <h1 class="page-title">{% tr "Признание степеней и квалификаций" %}</h1>
+	  <p class="page-subtitle">{% tr "Механизмы признания иностранных документов об образовании и квалификаций в рамках ENIC-NARIC и Болонского процесса" %}</p>
+	</div>
+  </section>
+
+  <!-- Навигация по странице -->
+  <nav class="page-navigation" id="pageNavigation">
+	<div class="container">
+	  <ul class="page-nav-list">
+		<li><a href="#introduction" class="page-nav-link">{% tr "Введение" %}</a></li>
+		<li><a href="#guidelines" class="page-nav-link">{% tr "Руководство" %}</a></li>
+		<li><a href="#glossary" class="page-nav-link">{% tr "Глоссарий" %}</a></li>
+		<li><a href="#materials" class="page-nav-link">{% tr "Материалы" %}</a></li>
+		<li><a href="#contact" class="page-nav-link">{% tr "Контакты" %}</a></li>
+	  </ul>
+	</div>
+  </nav>
+
+  <!-- Вступительный блок -->
+  <section id="introduction" class="introduction-section">
+	<div class="container">
+	  <div class="intro-content">
+		<div class="intro-text">
+		  <h2 class="section-title">{% tr "Европейское руководство по признанию" %}</h2>
+		  <p class="intro-paragraph">
+			{% tr "Европейское руководство по признанию квалификаций является основополагающим документом для процедур признания в рамках сети ENIC-NARIC. Руководство основано на принципах Лиссабонской конвенции о признании квалификаций высшего образования в европейском регионе и целях Болонского процесса." %}
+		  </p>
+		  <p class="intro-paragraph">
+			<strong>Лиссабонская конвенция</strong> устанавливает правовую основу для справедливого признания квалификаций, полученных в одной стране-участнице, в других странах-участницах. Конвенция основана на принципе взаимного доверия между системами образования.
+		  </p>
+		  <p class="intro-paragraph">
+			<strong>Болонский процесс</strong> направлен на создание Европейского пространства высшего образования (EHEA), где студенты и выпускники могут свободно перемещаться между странами для продолжения образования или трудоустройства.
+		  </p>
+		</div>
+		<div class="intro-visual">
+		  <div class="process-diagram">
+			<div class="process-step">
+			  <div class="step-icon">
+				<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+				  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+				  <polyline points="14 2 14 8 20 8"></polyline>
+				</svg>
+			  </div>
+			  <h4>{% tr "Подача документов" %}</h4>
+			</div>
+			<div class="process-arrow">→</div>
+			<div class="process-step">
+			  <div class="step-icon">
+				<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+				  <circle cx="12" cy="12" r="3"></circle>
+				  <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+				</svg>
+			  </div>
+			  <h4>{% tr "Экспертиза" %}</h4>
+			</div>
+			<div class="process-arrow">→</div>
+			<div class="process-step">
+			  <div class="step-icon">
+				<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+				  <path d="M9 12l2 2 4-4"></path>
+				  <path d="M21 12c-1 0-3-1-3-3s2-3 3-3 3 1 3 3-2 3-3 3"></path>
+				  <path d="M3 12c1 0 3-1 3-3s-2-3-3-3-3 1-3 3 2 3 3 3"></path>
+				</svg>
+			  </div>
+			  <h4>{% tr "Признание" %}</h4>
+			</div>
+		  </div>
+		</div>
+	  </div>
+	</div>
+  </section>
+
+  <!-- Европейское руководство -->
+  <section id="guidelines" class="guidelines-section">
+	<div class="container">
+	  <h2 class="section-title">{% tr "Европейское руководство по признанию" %}</h2>
+	  <p class="section-subtitle">{% tr "Основные принципы и процедуры признания квалификаций" %}</p>
+	  
+	  <div class="guidelines-grid">
+		<!-- Процедура признания -->
+		<div class="guideline-card">
+		  <div class="card-header" data-toggle="collapse" data-target="#procedure">
+			<div class="card-icon">
+			  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+				<path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+			  </svg>
+			</div>
+			<h3 class="card-title">{% tr "Процедура признания" %}</h3>
+			<div class="card-toggle">
+			  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+				<polyline points="6 9 12 15 18 9"></polyline>
+			  </svg>
+			</div>
+		  </div>
+		  <div class="card-content" id="procedure">
+			<p>{% tr "Процедура признания включает несколько этапов:" %}</p>
+			<ul>
+			  <li><strong>Подача заявления</strong> - предоставление необходимых документов</li>
+			  <li><strong>Предварительная оценка</strong> - проверка полноты документов</li>
+			  <li><strong>Экспертная оценка</strong> - анализ содержания и уровня квалификации</li>
+			  <li><strong>Принятие решения</strong> - выдача заключения о признании</li>
+			  <li><strong>Апелляция</strong> - возможность обжалования решения</li>
+			</ul>
+			<p>{% tr "Процедура должна быть прозрачной, справедливой и основанной на объективных критериях." %}</p>
+		  </div>
+		</div>
+
+		<!-- Прозрачность процесса -->
+		<div class="guideline-card">
+		  <div class="card-header" data-toggle="collapse" data-target="#transparency">
+			<div class="card-icon">
+			  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+				<path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+				<circle cx="12" cy="12" r="3"></circle>
+			  </svg>
+			</div>
+			<h3 class="card-title">{% tr "Прозрачность процесса" %}</h3>
+			<div class="card-toggle">
+			  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+				<polyline points="6 9 12 15 18 9"></polyline>
+			  </svg>
+			</div>
+		  </div>
+		  <div class="card-content" id="transparency">
+			<p>Принцип прозрачности обеспечивает:</p>
+			<ul>
+			  <li>Четкую информацию о процедурах и критериях оценки</li>
+			  <li>Доступность информации о сроках рассмотрения</li>
+			  <li>Понятное обоснование принятых решений</li>
+			  <li>Возможность получения консультаций на всех этапах</li>
+			</ul>
+			<p>Заявители должны иметь доступ к полной информации о процессе признания до подачи документов.</p>
+		  </div>
+		</div>
+
+		<!-- Статус учреждения -->
+		<div class="guideline-card">
+		  <div class="card-header" data-toggle="collapse" data-target="#institution">
+			<div class="card-icon">
+			  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+				<path d="M3 21h18"></path>
+				<path d="M5 21V7l8-4v18"></path>
+				<path d="M19 21V11l-6-4"></path>
+			  </svg>
+			</div>
+			<h3 class="card-title">Статус учреждения</h3>
+			<div class="card-toggle">
+			  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+				<polyline points="6 9 12 15 18 9"></polyline>
+			  </svg>
+			</div>
+		  </div>
+		  <div class="card-content" id="institution">
+			<p>При оценке квалификации учитывается статус выдавшего учреждения:</p>
+			<ul>
+			  <li><strong>Лицензирование</strong> - наличие официального разрешения на образовательную деятельность</li>
+			  <li><strong>Аккредитация</strong> - подтверждение соответствия стандартам качества</li>
+			  <li><strong>Признание</strong> - официальный статус в национальной системе образования</li>
+			  <li><strong>Репутация</strong> - международное признание и рейтинги</li>
+			</ul>
+			<p>Учреждение должно иметь право выдавать квалификации соответствующего уровня.</p>
+		  </div>
+		</div>
+
+		<!-- Проверка подлинности -->
+		<div class="guideline-card">
+		  <div class="card-header" data-toggle="collapse" data-target="#authenticity">
+			<div class="card-icon">
+			  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+				<path d="M9 12l2 2 4-4"></path>
+				<path d="M21 12c-1 0-3-1-3-3s2-3 3-3 3 1 3 3-2 3-3 3"></path>
+				<path d="M3 12c1 0 3-1 3-3s-2-3-3-3-3 1-3 3 2 3 3 3"></path>
+			  </svg>
+			</div>
+			<h3 class="card-title">Проверка подлинности документов</h3>
+			<div class="card-toggle">
+			  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+				<polyline points="6 9 12 15 18 9"></polyline>
+			  </svg>
+			</div>
+		  </div>
+		  <div class="card-content" id="authenticity">
+			<p>Проверка подлинности включает:</p>
+			<ul>
+			  <li>Верификацию документов через официальные каналы</li>
+			  <li>Проверку подписей и печатей</li>
+			  <li>Сопоставление с базами данных выпускников</li>
+			  <li>Консультации с учреждениями-эмитентами</li>
+			</ul>
+			<p>Использование поддельных документов влечет отказ в признании и может иметь правовые последствия.</p>
+		  </div>
+		</div>
+
+		<!-- Цели признания -->
+		<div class="guideline-card">
+		  <div class="card-header" data-toggle="collapse" data-target="#purposes">
+			<div class="card-icon">
+			  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+				<circle cx="12" cy="12" r="10"></circle>
+				<polyline points="12 6 12 12 16 14"></polyline>
+			  </svg>
+			</div>
+			<h3 class="card-title">Цели признания</h3>
+			<div class="card-toggle">
+			  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+				<polyline points="6 9 12 15 18 9"></polyline>
+			  </svg>
+			</div>
+		  </div>
+		  <div class="card-content" id="purposes">
+			<p>Признание может осуществляться для различных целей:</p>
+			<ul>
+			  <li><strong>Академическое признание</strong> - для продолжения образования</li>
+			  <li><strong>Профессиональное признание</strong> - для трудоустройства</li>
+			  <li><strong>Общее признание</strong> - для подтверждения уровня образования</li>
+			</ul>
+			<p>Цель признания определяет критерии оценки и требования к документам.</p>
+		  </div>
+		</div>
+
+		<!-- Приложение к диплому -->
+		<div class="guideline-card">
+		  <div class="card-header" data-toggle="collapse" data-target="#supplement">
+			<div class="card-icon">
+			  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+				<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+				<polyline points="14 2 14 8 20 8"></polyline>
+				<line x1="16" y1="13" x2="8" y2="13"></line>
+				<line x1="16" y1="17" x2="8" y2="17"></line>
+			  </svg>
+			</div>
+			<h3 class="card-title">Приложение к диплому</h3>
+			<div class="card-toggle">
+			  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+				<polyline points="6 9 12 15 18 9"></polyline>
+			  </svg>
+			</div>
+		  </div>
+		  <div class="card-content" id="supplement">
+			<p>Приложение к диплому (Diploma Supplement) содержит:</p>
+			<ul>
+			  <li>Информацию о владельце квалификации</li>
+			  <li>Описание квалификации и ее уровня</li>
+			  <li>Содержание и результаты обучения</li>
+			  <li>Функциональное назначение квалификации</li>
+			  <li>Дополнительную информацию</li>
+			  <li>Подтверждение приложения</li>
+			  <li>Информацию о национальной системе высшего образования</li>
+			</ul>
+			<p>Приложение значительно упрощает процесс признания квалификаций.</p>
+		  </div>
+		</div>
+	  </div>
+	</div>
+  </section>
+
+  <!-- Глоссарий -->
+  <section id="glossary" class="glossary-section">
+	<div class="container">
+	  <h2 class="section-title">Глоссарий терминов</h2>
+	  <p class="section-subtitle">Основные термины и определения в области признания квалификаций</p>
+	  
+	  <div class="glossary-grid">
+		<div class="glossary-item">
+		  <div class="glossary-header" data-toggle="collapse" data-target="#accreditation">
+			<h4 class="glossary-term">Аккредитация</h4>
+			<div class="glossary-toggle">
+			  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+				<polyline points="6 9 12 15 18 9"></polyline>
+			  </svg>
+			</div>
+		  </div>
+		  <div class="glossary-content" id="accreditation">
+			<p>Процедура официального признания компетентным органом образовательного учреждения или программы как соответствующих установленным стандартам качества.</p>
+		  </div>
+		</div>
+
+		<div class="glossary-item">
+		  <div class="glossary-header" data-toggle="collapse" data-target="#bologna">
+			<h4 class="glossary-term">Болонский процесс</h4>
+			<div class="glossary-toggle">
+			  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+				<polyline points="6 9 12 15 18 9"></polyline>
+			  </svg>
+			</div>
+		  </div>
+		  <div class="glossary-content" id="bologna">
+			<p>Процесс создания Европейского пространства высшего образования, начатый в 1999 году с подписания Болонской декларации. Направлен на повышение мобильности студентов и признание квалификаций.</p>
+		  </div>
+		</div>
+
+		<div class="glossary-item">
+		  <div class="glossary-header" data-toggle="collapse" data-target="#ects">
+			<h4 class="glossary-term">ECTS</h4>
+			<div class="glossary-toggle">
+			  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+				<polyline points="6 9 12 15 18 9"></polyline>
+			  </svg>
+			</div>
+		  </div>
+		  <div class="glossary-content" id="ects">
+			<p>Европейская система перевода и накопления кредитов (European Credit Transfer and Accumulation System) - система, облегчающая перевод и признание учебных достижений студентов.</p>
+		  </div>
+		</div>
+
+		<div class="glossary-item">
+		  <div class="glossary-header" data-toggle="collapse" data-target="#ehea">
+			<h4 class="glossary-term">EHEA</h4>
+			<div class="glossary-toggle">
+			  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+				<polyline points="6 9 12 15 18 9"></polyline>
+			  </svg>
+			</div>
+		  </div>
+		  <div class="glossary-content" id="ehea">
+			<p>Европейское пространство высшего образования (European Higher Education Area) - результат Болонского процесса, объединяющий системы высшего образования европейских стран.</p>
+		  </div>
+		</div>
+
+		<div class="glossary-item">
+		  <div class="glossary-header" data-toggle="collapse" data-target="#enic-naric">
+			<h4 class="glossary-term">ENIC-NARIC</h4>
+			<div class="glossary-toggle">
+			  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+				<polyline points="6 9 12 15 18 9"></polyline>
+			  </svg>
+			</div>
+		  </div>
+		  <div class="glossary-content" id="enic-naric">
+			<p>Сеть национальных информационных центров по академическому признанию и мобильности. ENIC - European Network of Information Centres, NARIC - National Academic Recognition Information Centres.</p>
+		  </div>
+		</div>
+
+		<div class="glossary-item">
+		  <div class="glossary-header" data-toggle="collapse" data-target="#eqf">
+			<h4 class="glossary-term">EQF</h4>
+			<div class="glossary-toggle">
+			  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+				<polyline points="6 9 12 15 18 9"></polyline>
+			  </svg>
+			</div>
+		  </div>
+		  <div class="glossary-content" id="eqf">
+			<p>Европейская рамка квалификаций (European Qualifications Framework) - инструмент для сопоставления квалификаций различных стран и систем образования.</p>
+		  </div>
+		</div>
+
+		<div class="glossary-item">
+		  <div class="glossary-header" data-toggle="collapse" data-target="#learning-outcomes">
+			<h4 class="glossary-term">Результаты обучения</h4>
+			<div class="glossary-toggle">
+			  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+				<polyline points="6 9 12 15 18 9"></polyline>
+			  </svg>
+			</div>
+		  </div>
+		  <div class="glossary-content" id="learning-outcomes">
+			<p>Формулировки того, что обучающийся знает, понимает и способен делать по завершении процесса обучения. Определяются в терминах знаний, умений и компетенций.</p>
+		  </div>
+		</div>
+
+		<div class="glossary-item">
+		  <div class="glossary-header" data-toggle="collapse" data-target="#substantial-differences">
+			<h4 class="glossary-term">Существенные различия</h4>
+			<div class="glossary-toggle">
+			  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+				<polyline points="6 9 12 15 18 9"></polyline>
+			  </svg>
+			</div>
+		  </div>
+		  <div class="glossary-content" id="substantial-differences">
+			<p>Значительные отличия в содержании, уровне или качестве образовательной программы, которые могут служить основанием для отказа в признании квалификации.</p>
+		  </div>
+		</div>
+	  </div>
+	</div>
+  </section>
+
+  <!-- Полезные материалы -->
+  <section id="materials" class="materials-section">
+	<div class="container">
+	  <h2 class="section-title">Полезные материалы</h2>
+	  <p class="section-subtitle">Документы и ресурсы для изучения процедур признания</p>
+	  
+	  <div class="materials-grid">
+		<div class="material-card">
+		  <div class="material-icon">
+			<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+			  <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+			  <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+			</svg>
+		  </div>
+		  <div class="material-content">
+			<h4 class="material-title">Европейское руководство по признанию</h4>
+			<p class="material-description">Полная версия руководства по признанию квалификаций в рамках ENIC-NARIC</p>
+			<div class="material-actions">
+			  <a href="https://enic-kazakhstan.edu.kz/files/1563594367/evropei-skoe-rukovodstvo-v-sfere-priznaniya.pdf" target="_blank" class="material-button primary">
+				<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+				  <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+				  <circle cx="12" cy="12" r="3"></circle>
+				</svg>
+				Читать онлайн
+			  </a>
+			  <a href="https://enic-kazakhstan.edu.kz/files/1563594367/evropei-skoe-rukovodstvo-v-sfere-priznaniya.pdf" class="material-button secondary">
+				<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+				  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+				  <polyline points="7 10 12 15 17 10"></polyline>
+				  <line x1="12" y1="15" x2="12" y2="3"></line>
+				</svg>
+				Скачать PDF
+			  </a>
+			</div>
+		  </div>
+		</div>
+
+		<div class="material-card">
+		  <div class="material-icon">
+			<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+			  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+			  <polyline points="14 2 14 8 20 8"></polyline>
+			  <line x1="16" y1="13" x2="8" y2="13"></line>
+			  <line x1="16" y1="17" x2="8" y2="17"></line>
+			</svg>
+		  </div>
+		  <div class="material-content">
+			<h4 class="material-title">Лиссабонская конвенция</h4>
+			<p class="material-description">Конвенция о признании квалификаций высшего образования в европейском регионе</p>
+			<div class="material-actions">
+			  <a href="https://rm.coe.int/168007f2c7" target="_blank" class="material-button primary">
+				<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+				  <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+				  <circle cx="12" cy="12" r="3"></circle>
+				</svg>
+				Читать онлайн
+			  </a>
+			  <a href="https://rm.coe.int/168007f2c7" class="material-button secondary">
+				<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+				  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+				  <polyline points="7 10 12 15 17 10"></polyline>
+				  <line x1="12" y1="15" x2="12" y2="3"></line>
+				</svg>
+				Скачать PDF
+			  </a>
+			</div>
+		  </div>
+		</div>
+
+		<div class="material-card">
+		  <div class="material-icon">
+			<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+			  <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+			  <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+			</svg>
+		  </div>
+		  <div class="material-content">
+			<h4 class="material-title">Национальная рамка квалификаций РК</h4>
+			<p class="material-description">Структура квалификаций системы образования Республики Казахстан</p>
+			<div class="material-actions">
+			  <a href="https://enic-kazakhstan.edu.kz/files/1685535840/3-nacionalnaya-i-otraslevye-ramki-kvalifikaciy-kiseleva-olga-pavlovna-uprav.pdf" target="_blank" class="material-button primary">
+				<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+				  <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+				  <circle cx="12" cy="12" r="3"></circle>
+				</svg>
+				Читать онлайн
+			  </a>
+			  <a href="https://enic-kazakhstan.edu.kz/files/1685535840/3-nacionalnaya-i-otraslevye-ramki-kvalifikaciy-kiseleva-olga-pavlovna-uprav.pdf" class="material-button secondary">
+				<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+				  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+				  <polyline points="7 10 12 15 17 10"></polyline>
+				  <line x1="12" y1="15" x2="12" y2="3"></line>
+				</svg>
+				Скачать PDF
+			  </a>
+			</div>
+		  </div>
+		</div>
+
+		<div class="material-card">
+		  <div class="material-icon">
+			<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+			  <circle cx="12" cy="12" r="10"></circle>
+			  <polygon points="10 8 16 12 10 16 10 8"></polygon>
+			</svg>
+		  </div>
+		  <div class="material-content">
+			<h4 class="material-title">Видеоруководство по подаче документов</h4>
+			<p class="material-description">Пошаговая инструкция по процедуре подачи документов на признание</p>
+			<div class="material-actions">
+			  <a href="https://youtu.be/xy5lZUYBkMo" target="_blank" class="material-button primary">
+				<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+				  <polygon points="5 3 19 12 5 21 5 3"></polygon>
+				</svg>
+				Смотреть видео
+			  </a>
+			</div>
+		  </div>
+		</div>
+	  </div>
+	</div>
+  </section>
+
+  <!-- Контактный блок -->
+  <section id="contact" class="contact-section">
+	<div class="container">
+	  <div class="contact-content">
+		<div class="contact-info">
+		  <h2 class="section-title">Нужна консультация?</h2>
+		  <p class="contact-description">
+			Наши специалисты готовы помочь вам с вопросами признания степеней и квалификаций. 
+			Обращайтесь к нам для получения подробной консультации.
+		  </p>
+		  <div class="contact-details">
+			<div class="contact-item">
+			  <div class="contact-icon">
+				<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+				  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+				  <polyline points="22,6 12,13 2,6"></polyline>
+				</svg>
+			  </div>
+			  <div class="contact-text">
+				<h4>Email</h4>
+				<p>recognition@enic-kazakhstan.kz</p>
+			  </div>
+			</div>
+			<div class="contact-item">
+			  <div class="contact-icon">
+				<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+				  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+				</svg>
+			  </div>
+			  <div class="contact-text">
+				<h4>Телефон</h4>
+				<p>+7 (7172) 28-75-20 (доб. 105)</p>
+			  </div>
+			</div>
+			<div class="contact-item">
+			  <div class="contact-icon">
+				<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+				  <circle cx="12" cy="12" r="10"></circle>
+				  <polyline points="12 6 12 12 16 14"></polyline>
+				</svg>
+			  </div>
+			  <div class="contact-text">
+				<h4>Часы работы</h4>
+				<p>Пн-Пт: 9:00-18:00<br>Сб-Вс: выходной</p>
+			  </div>
+			</div>
+		  </div>
+		</div>
+		<div class="contact-form">
+		  <h3>Задать вопрос</h3>
+		  <form class="question-form">
+			<div class="form-group">
+			  <label for="name">Имя *</label>
+			  <input type="text" id="name" name="name" required>
+			</div>
+			<div class="form-group">
+			  <label for="email">Email *</label>
+			  <input type="email" id="email" name="email" required>
+			</div>
+			<div class="form-group">
+			  <label for="subject">Тема вопроса</label>
+			  <select id="subject" name="subject">
+				<option value="">Выберите тему</option>
+				<option value="academic">Академическое признание</option>
+				<option value="professional">Профессиональное признание</option>
+				<option value="documents">Требования к документам</option>
+				<option value="procedure">Процедура признания</option>
+				<option value="other">Другое</option>
+			  </select>
+			</div>
+			<div class="form-group">
+			  <label for="message">Сообщение *</label>
+			  <textarea id="message" name="message" rows="5" required></textarea>
+			</div>
+			<button type="submit" class="submit-button">
+			  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+				<line x1="22" y1="2" x2="11" y2="13"></line>
+				<polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+			  </svg>
+			  Отправить вопрос
+			</button>
+		  </form>
+		</div>
+	  </div>
+	</div>
+  </section>
+
+{% endblock content %}
+
+{% block extra_js %}
+<script src="{% static 'js/base/recognition.js' %}"></script>
+{% endblock %}

@@ -9,6 +9,8 @@ urlpatterns = [
     path('reference/', view.reference_view, name='reference'),
     path('registryop/', view.registryop_view, name='registryop'),
     path('activities/', view.activities_view, name='activities'),
+    path('recognition/', view.recognition_view, name='recognition'),
+    path('tokyo_convention/', view.tokyo_convention_view, name='tokyo_convention'),
 
     # News
     path("news/<int:pk>/", view.NewsDetailView.as_view(), name="news_detail"),

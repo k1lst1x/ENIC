@@ -1,0 +1,709 @@
+/* Стили для страницы "Признание степеней и квалификаций" */
+
+/* Хлебные крошки */
+.breadcrumbs {
+  padding: 1rem 0;
+  background-color: var(--white);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.breadcrumbs-list {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.breadcrumbs-item {
+  display: flex;
+  align-items: center;
+  font-size: 0.875rem;
+  color: var(--text-lighter);
+}
+
+.breadcrumbs-link {
+  color: var(--text-light);
+  transition: var(--transition);
+}
+
+.breadcrumbs-link:hover {
+  color: var(--primary-color);
+}
+
+.breadcrumbs-item .icon {
+  margin: 0 0.5rem;
+}
+
+.breadcrumbs-current {
+  color: var(--text-color);
+  font-weight: 500;
+}
+
+/* Заголовок страницы */
+.page-header {
+  padding: 2rem 0;
+  background-color: var(--secondary-color);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.page-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--text-color);
+  margin-bottom: 0.5rem;
+}
+
+.page-subtitle {
+  font-size: 1.25rem;
+  color: var(--text-light);
+  line-height: 1.6;
+}
+
+/* Навигация по странице */
+.page-navigation {
+  position: sticky;
+  top: 64px;
+  z-index: 40;
+  background-color: var(--white);
+  border-bottom: 1px solid var(--border-color);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.page-nav-list {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding: 1rem 0;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.page-nav-list::-webkit-scrollbar {
+  display: none;
+}
+
+.page-nav-link {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-light);
+  white-space: nowrap;
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius);
+  transition: var(--transition);
+}
+
+.page-nav-link:hover,
+.page-nav-link.active {
+  color: var(--primary-color);
+  background-color: rgba(0, 102, 204, 0.1);
+}
+
+/* Вступительный блок */
+.introduction-section {
+  padding: 3rem 0;
+  background-color: var(--white);
+}
+
+.intro-content {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  align-items: center;
+}
+
+.intro-text {
+  max-width: none;
+}
+
+.intro-paragraph {
+  font-size: 1.125rem;
+  line-height: 1.7;
+  color: var(--text-color);
+  margin-bottom: 1.5rem;
+}
+
+.intro-paragraph strong {
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+.intro-visual {
+  display: flex;
+  justify-content: center;
+}
+
+.process-diagram {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.process-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  min-width: 120px;
+}
+
+.step-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  margin-bottom: 1rem;
+  color: var(--primary-color);
+  background-color: rgba(0, 102, 204, 0.1);
+  border-radius: 50%;
+  transition: var(--transition);
+}
+
+.process-step h4 {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+.process-arrow {
+  font-size: 1.5rem;
+  color: var(--primary-color);
+  font-weight: bold;
+}
+
+/* Секция руководства */
+.guidelines-section {
+  padding: 3rem 0;
+  background-color: var(--secondary-color);
+}
+
+.section-title {
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--text-color);
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.section-subtitle {
+  font-size: 1.125rem;
+  color: var(--text-light);
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.guidelines-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+.guideline-card {
+  background-color: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  transition: var(--transition);
+}
+
+.guideline-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  padding: 1.5rem;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.card-header:hover {
+  background-color: var(--secondary-color);
+}
+
+.card-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  margin-right: 1rem;
+  color: var(--primary-color);
+  background-color: rgba(0, 102, 204, 0.1);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.card-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-color);
+  flex: 1;
+}
+
+.card-toggle {
+  color: var(--text-light);
+  transition: var(--transition);
+}
+
+.card-header[aria-expanded="true"] .card-toggle {
+  transform: rotate(180deg);
+}
+
+.card-content {
+  padding: 0 1.5rem 1.5rem;
+  display: none;
+}
+
+.card-content.show {
+  display: block;
+}
+
+.card-content p {
+  color: var(--text-color);
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.card-content ul {
+  margin-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.card-content li {
+  color: var(--text-color);
+  line-height: 1.6;
+  margin-bottom: 0.5rem;
+}
+
+.card-content li strong {
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+/* Глоссарий */
+.glossary-section {
+  padding: 3rem 0;
+  background-color: var(--white);
+}
+
+.glossary-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.glossary-item {
+  background-color: var(--white);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition: var(--transition);
+}
+
+.glossary-item:hover {
+  border-color: var(--primary-color);
+}
+
+.glossary-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.5rem;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.glossary-header:hover {
+  background-color: var(--secondary-color);
+}
+
+.glossary-term {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+.glossary-toggle {
+  color: var(--text-light);
+  transition: var(--transition);
+}
+
+.glossary-header[aria-expanded="true"] .glossary-toggle {
+  transform: rotate(180deg);
+}
+
+.glossary-content {
+  padding: 0 1.5rem 1.5rem;
+  display: none;
+}
+
+.glossary-content.show {
+  display: block;
+}
+
+.glossary-content p {
+  color: var(--text-light);
+  line-height: 1.6;
+}
+
+/* Материалы */
+.materials-section {
+  padding: 3rem 0;
+  background-color: var(--secondary-color);
+}
+
+.materials-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+.material-card {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  background-color: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+  text-align: center;
+}
+
+.material-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.material-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 1.5rem;
+  color: var(--primary-color);
+  background-color: rgba(0, 102, 204, 0.1);
+  border-radius: 50%;
+}
+
+.material-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.material-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-color);
+  margin-bottom: 1rem;
+}
+
+.material-description {
+  color: var(--text-light);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  flex: 1;
+}
+
+.material-actions {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.material-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  border-radius: var(--radius);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.material-button.primary {
+  color: var(--white);
+  background-color: var(--primary-color);
+}
+
+.material-button.primary:hover {
+  background-color: var(--primary-hover);
+}
+
+.material-button.secondary {
+  color: var(--primary-color);
+  background-color: rgba(0, 102, 204, 0.1);
+  border: 1px solid var(--primary-color);
+}
+
+.material-button.secondary:hover {
+  background-color: var(--primary-color);
+  color: var(--white);
+}
+
+/* Контактная секция */
+.contact-section {
+  padding: 3rem 0;
+  background-color: var(--white);
+}
+
+.contact-content {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+}
+
+.contact-info .section-title {
+  text-align: left;
+  margin-bottom: 1rem;
+}
+
+.contact-description {
+  font-size: 1.125rem;
+  color: var(--text-light);
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.contact-details {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.contact-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  color: var(--primary-color);
+  background-color: rgba(0, 102, 204, 0.1);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.contact-text h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-color);
+  margin-bottom: 0.25rem;
+}
+
+.contact-text p {
+  color: var(--text-light);
+  line-height: 1.5;
+}
+
+/* Форма */
+.contact-form {
+  padding: 2rem;
+  background-color: var(--secondary-color);
+  border-radius: var(--radius);
+}
+
+.contact-form h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--text-color);
+  margin-bottom: 1.5rem;
+}
+
+.question-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-color);
+  margin-bottom: 0.5rem;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  padding: 0.75rem;
+  font-size: 1rem;
+  color: var(--text-color);
+  background-color: var(--white);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  transition: var(--transition);
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.1);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.submit-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--white);
+  background-color: var(--primary-color);
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.submit-button:hover {
+  background-color: var(--primary-hover);
+}
+
+.submit-button:focus {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}
+
+/* Активная ссылка в навигации */
+.nav-link.active,
+.mobile-nav-link.active {
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+/* Анимации */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.guideline-card,
+.glossary-item,
+.material-card {
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+/* Медиа-запросы */
+@media (min-width: 640px) {
+  .materials-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .glossary-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .process-diagram {
+    flex-wrap: nowrap;
+  }
+
+  .process-arrow {
+    display: block;
+  }
+}
+
+@media (min-width: 768px) {
+  .page-title {
+    font-size: 3rem;
+  }
+
+  .intro-content {
+    grid-template-columns: 2fr 1fr;
+    gap: 3rem;
+  }
+
+  .guidelines-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .contact-content {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .page-nav-list {
+    justify-content: center;
+  }
+}
+
+@media (min-width: 1024px) {
+  .materials-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .guidelines-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1200px) {
+  .materials-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Улучшения доступности */
+.card-header:focus,
+.glossary-header:focus {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}
+
+/* Состояния для скринридеров */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Печать */
+@media print {
+  .page-navigation,
+  .contact-form {
+    display: none;
+  }
+
+  .card-content,
+  .glossary-content {
+    display: block !important;
+  }
+}

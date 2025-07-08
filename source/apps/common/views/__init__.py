@@ -22,3 +22,5 @@ from .corporate_ethics import CorporateEthicsView
 from .foreign_specialists import ForeignSpecialistsView
 from .mamandigim_bolashagim import MamandigimBolashagimView
 from .projects import ProjectsView
+from .recognition import recognition_view
+from .tokyo_convention import tokyo_convention_view

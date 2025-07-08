@@ -12,7 +12,7 @@
         <div class="container">
             <ul class="breadcrumbs-list">
                 <li class="breadcrumbs-item">
-                    <a href="/" class="breadcrumbs-link">Главная</a>
+                    <a href="/" class="breadcrumbs-link">{% tr "Главная" %}</a>
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
                          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                          class="icon">
@@ -20,7 +20,7 @@
                     </svg>
                 </li>
                 <li class="breadcrumbs-item">
-                    <span class="breadcrumbs-current">Реестр ОП</span>
+                    <span class="breadcrumbs-current">{% tr "Реестр ОП" %}</span>
                 </li>
             </ul>
         </div>
@@ -29,9 +29,9 @@
     <!-- Заголовок страницы -->
     <section class="registry-hero">
         <div class="container">
-            <h1 class="registry-title">Реестр ОП</h1>
+            <h1 class="registry-title">{% tr "Реестр ОП" %}</h1>
             <p class="registry-subtitle">
-                Информационная система учёта и контроля образовательных программ ОВПО Республики Казахстан
+                    {% tr "Информационная система учёта и контроля образовательных программ ОВПО Республики Казахстан" %}
             </p>
         </div>
     </section>
@@ -50,7 +50,7 @@
                 </p>
                 <a href="https://epvo.kz/#/" target="_blank" class="registry-link-button">
                     <i class="fas fa-external-link-alt"></i>
-                    Перейти в Реестр ОП
+                    {% tr "Перейти в Реестр ОП" %}
                 </a>
             </div>
         </div>
@@ -61,15 +61,15 @@
         <div class="container">
             <!-- Навигация по вкладкам -->
             <div class="tabs-navigation">
-                <button class="tab-button active" data-tab="npa">НПА</button>
-                <button class="tab-button" data-tab="ovpo">ОВПО</button>
-                <button class="tab-button" data-tab="expert">Эксперту ОП</button>
-                <button class="tab-button" data-tab="seminars">Семинары и тренинги</button>
+                <button class="tab-button active" data-tab="npa">{% tr "НПА" %}</button>
+                <button class="tab-button" data-tab="ovpo">{% tr "ОВПО" %}</button>
+                <button class="tab-button" data-tab="expert">{% tr "Эксперту ОП" %}</button>
+                <button class="tab-button" data-tab="seminars">{% tr "Семинары и тренинги" %}</button>
             </div>
 
             <!-- Раздел НПА -->
             <div class="tab-content active" id="npa">
-                <h2 class="section-title">Нормативно-правовые акты</h2>
+                <h2 class="section-title">{% tr "Нормативно-правовые акты" %}</h2>
                 
                 <!-- <div class="npa-list">
                     <div class="npa-item">

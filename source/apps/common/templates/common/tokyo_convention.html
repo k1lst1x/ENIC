@@ -1,0 +1,430 @@
+{% extends "base.html" %}
+{% load lang_tags %}
+{% load static %}
+
+{% block extra_head %}
+<link rel="stylesheet" href="{% static 'css/base/tokyo_convention.css' %}">
+{% endblock %}
+
+{% block content %}
+<!-- Хлебные крошки -->
+<div class="breadcrumbs">
+	<div class="container">
+		<ul class="breadcrumbs-list">
+			<li class="breadcrumbs-item">
+				<a href="{% url 'home' %}" class="breadcrumbs-link">{% tr "Главная" %}</a>
+				<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon">
+				<polyline points="9 18 15 12 9 6"></polyline>
+				</svg>
+			</li>
+			<li class="breadcrumbs-item">
+				<span class="breadcrumbs-current">{% tr "Ратификация Токийской конвенции" %}</span>
+			</li>
+		</ul>
+	</div>
+</div>
+<!-- Заголовок страницы -->
+<section class="page-header">
+	<div class="container">
+		<div class="page-header-content">
+			<h1 class="page-title">{% tr "Ратификация Токийской конвенции" %}</h1>
+			<p class="page-subtitle">{% tr "Интеграция Казахстана в Азиатско-Тихоокеанское образовательное пространство" %}</p>
+		</div>
+	</div>
+</section>
+
+<!-- Справка о Токийской конвенции -->
+<section class="convention-info">
+	<div class="container">
+		<div class="info-content">
+			<div class="info-main">
+				<h2 class="section-title">{% tr "О Токийской конвенции" %}</h2>
+				
+				<div class="info-block">
+					<div class="info-item">
+						<div class="info-icon">📌</div>
+						<div class="info-text">
+							<h3>{% tr "Общая справка" %}</h3>
+							<p>{% tr "Токийская конвенция о признании квалификаций в сфере высшего образования в Азиатско-Тихоокеанском регионе была принята в 2011 году под эгидой ЮНЕСКО. Конвенция направлена на создание единого образовательного пространства в АТР и облегчение академической мобильности студентов и специалистов." %}</p>
+						</div>
+					</div>
+
+					<div class="info-item">
+						<div class="info-icon">🌐</div>
+						<div class="info-text">
+							<h3>{% tr "Важность для Казахстана" %}</h3>
+							<p>{% tr "Ратификация Токийской конвенции позволит Казахстану укрепить образовательные связи со странами Азиатско-Тихоокеанского региона, повысить международное признание казахстанских дипломов и квалификаций, а также привлечь больше иностранных студентов в казахстанские вузы." %}</p>
+						</div>
+					</div>
+
+					<div class="info-item">
+						<div class="info-icon">🎓</div>
+						<div class="info-text">
+							<h3>{% tr "Преимущества ратификации" %}</h3>
+							<ul>
+								<li>{% tr "Упрощение процедур признания дипломов в странах АТР" %}</li>
+								<li>{% tr "Повышение академической мобильности студентов и преподавателей" %}</li>
+								<li>{% tr "Укрепление международного сотрудничества в сфере образования" %}</li>
+								<li>{% tr "Развитие транснационального образования" %}</li>
+								<li>{% tr "Повышение конкурентоспособности казахстанского образования" %}</li>
+							</ul>
+						</div>
+					</div>
+
+					<div class="highlight-box">
+						<div class="highlight-icon">💡</div>
+						<div class="highlight-content">
+							<h4>{% tr "Важный факт" %}</h4>
+							<p><strong>«Ратификация не требует изменений во внутреннем законодательстве»</strong> — Токийская конвенция полностью совместима с действующей нормативно-правовой базой Республики Казахстан в сфере образования.</p>
+						</div>
+					</div>
+
+					<div class="info-item">
+						<div class="info-icon">⚖️</div>
+						<div class="info-text">
+							<h3>Аналогия с Лиссабонской конвенцией</h3>
+							<p>Подобно тому, как Лиссабонская конвенция способствует признанию квалификаций в Европейском регионе, Токийская конвенция выполняет аналогичную функцию для Азиатско-Тихоокеанского региона, создавая правовую основу для взаимного признания образовательных квалификаций.</p>
+						</div>
+					</div>
+
+					<div class="conclusion-box">
+						<h4>Заключение</h4>
+						<p>Ратификация Токийской конвенции является своевременным и реалистичным шагом, который позволит Казахстану более активно участвовать в международном образовательном сотрудничестве и повысить престиж национальной системы образования на региональном уровне.</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="info-sidebar">
+				<div class="stats-card">
+					<h4>Статистика</h4>
+					<div class="stat-item">
+						<span class="stat-number">26</span>
+						<span class="stat-label">стран-участниц АТР</span>
+					</div>
+					<div class="stat-item">
+						<span class="stat-number">2011</span>
+						<span class="stat-label">год принятия конвенции</span>
+					</div>
+					<div class="stat-item">
+						<span class="stat-number">15</span>
+						<span class="stat-label">стран уже ратифицировали</span>
+					</div>
+				</div>
+
+				<div class="quick-links">
+					<h4>Быстрые ссылки</h4>
+					<a href="#documents" class="quick-link">📄 Документы</a>
+					<a href="#videos" class="quick-link">🎥 Видеоматериалы</a>
+					<a href="#unesco-project" class="quick-link">🌐 Проект ЮНЕСКО</a>
+					<a href="#action-plan" class="quick-link">📋 План действий</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<!-- Документы и презентации -->
+<section id="documents" class="documents-section">
+	<div class="container">
+		<h2 class="section-title">Документы и презентации</h2>
+		<div class="documents-grid">
+			<!-- Документ: Справка о Токийской и Глобальной Конвенциях -->
+			<div class="document-card">
+				<div class="document-icon">📄</div>
+				<div class="document-content">
+					<h3 class="document-title">Справка о Токийской и Глобальной Конвенциях</h3>
+					<p class="document-description">Аналитический документ о возможностях ратификации конвенций</p>
+					<div class="document-meta">
+						<span class="document-size">PDF</span>
+						<span class="document-date">2024</span>
+					</div>
+				</div>
+				<div class="document-actions">
+					<a href="https://enic-kazakhstan.edu.kz/files/1696478703/spravka-o-tokiyskoy-i-globalnoy-konvenciyah.pdf" target="_blank" class="btn-outline">👁️ Просмотр</a>
+					<a href="https://enic-kazakhstan.edu.kz/files/1696478703/spravka-o-tokiyskoy-i-globalnoy-konvenciyah.pdf" download class="btn-primary">📥 Скачать</a>
+				</div>
+			</div>
+
+			<!-- Документ: Признание квалификаций в области высшего образования -->
+			<div class="document-card">
+				<div class="document-icon">📊</div>
+				<div class="document-content">
+					<h3 class="document-title">Презентация: Признание квалификаций в области высшего образования</h3>
+					<p class="document-description">Обзорная презентация о признании квалификаций и преимуществах для Казахстана</p>
+					<div class="document-meta">
+						<span class="document-size">PDF</span>
+						<span class="document-date">2024</span>
+					</div>
+				</div>
+				<div class="document-actions">
+					<a href="https://enic-kazakhstan.edu.kz/files/1696506007/priznanie-kvalifikaciy-v-oblasti-vysshego-obrazovaniya.pdf" target="_blank" class="btn-outline">👁️ Просмотр</a>
+					<a href="https://enic-kazakhstan.edu.kz/files/1696506007/priznanie-kvalifikaciy-v-oblasti-vysshego-obrazovaniya.pdf" download class="btn-primary">📥 Скачать</a>
+				</div>
+			</div>
+
+			<!-- Документ: Преимущества ратификации Казахстана Токийской и Глобальной конвенций -->
+			<div class="document-card">
+				<div class="document-icon">📋</div>
+				<div class="document-content">
+					<h3 class="document-title">Преимущества ратификации Казахстана Токийской и Глобальной конвенций</h3>
+					<p class="document-description">Документ о преимуществах присоединения Казахстана к конвенциям</p>
+					<div class="document-meta">
+						<span class="document-size">PDF</span>
+						<span class="document-date">2024</span>
+					</div>
+				</div>
+				<div class="document-actions">
+					<a href="https://enic-kazakhstan.edu.kz/files/1696840491/preimuschestva-ratifikacii-kazahstana-tokiyskoy-i-globalnoy-konvenciy.pdf" target="_blank" class="btn-outline">👁️ Просмотр</a>
+					<a href="https://enic-kazakhstan.edu.kz/files/1696840491/preimuschestva-ratifikacii-kazahstana-tokiyskoy-i-globalnoy-konvenciy.pdf" download class="btn-primary">📥 Скачать</a>
+				</div>
+			</div>
+
+			<!-- Документ: Казахстан интегрируется в образовательное пространство АТР -->
+			<div class="document-card">
+				<div class="document-icon">📈</div>
+				<div class="document-content">
+					<h3 class="document-title">Казахстан интегрируется в образовательное пространство АТР</h3>
+					<p class="document-description">Реализация проекта ЮНЕСКО – KFIT и интеграция Казахстана в АТР</p>
+					<div class="document-meta">
+						<span class="document-size">Статья</span>
+						<span class="document-date">2024</span>
+					</div>
+				</div>
+				<div class="document-actions">
+					<a href="https://t.me/gylym_jogary_bilim/3644" target="_blank" class="btn-outline">👁️ Читать</a>
+					<a href="https://t.me/gylym_jogary_bilim/3644" target="_blank" class="btn-primary">🔗 Перейти</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<!-- Видеоматериалы -->
+<section id="videos" class="videos-section">
+	<div class="container">
+		<h2 class="section-title">Видеоматериалы</h2>
+		<div class="videos-grid">
+			<div class="video-card">
+				<div class="video-thumbnail">
+					<img src="https://i.ytimg.com/vi/74ItiSaAt00/maxresdefault.jpg" alt="Видео-презентация о Токийской конвенции">
+					<div class="video-overlay">
+						<button class="play-button">▶️</button>
+					</div>
+					<div class="video-duration">1:51:47</div>
+				</div>
+				<div class="video-content">
+					<h3 class="video-title">Видео-презентация: Токийская конвенция и перспективы для Казахстана</h3>
+					<p class="video-description">Подробный обзор основных положений конвенции и преимуществ ее ратификации для развития казахстанского образования</p>
+					<div class="video-meta">
+						<span class="video-views">👁️ 1,247 просмотров</span>
+						<span class="video-date">📅 20.03.2024</span>
+					</div>
+				</div>
+			</div>
+
+			<div class="video-card">
+				<div class="video-thumbnail">
+					<img src="https://i.ytimg.com/vi/dBrU328Yazk/maxresdefault.jpg" alt="Интервью о развитии образования в АТР">
+					<div class="video-overlay">
+						<button class="play-button">▶️</button>
+					</div>
+					<div class="video-duration">1:00:28</div>
+				</div>
+				<div class="video-content">
+					<h3 class="video-title">Блиц-интервью: Токийская конвенция и развитие образования в АТР</h3>
+					<p class="video-description">Эксперты ENIC-KAZAKHSTAN рассказывают о значении конвенции для интеграции в азиатско-тихоокеанское образовательное пространство</p>
+					<div class="video-meta">
+						<span class="video-views">👁️ 892 просмотра</span>
+						<span class="video-date">📅 05.03.2024</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<!-- Проект ЮНЕСКО-KFIT -->
+<section id="unesco-project" class="unesco-section">
+	<div class="container">
+		<div class="unesco-content">
+			<div class="unesco-main">
+				<h2 class="section-title">Реализация проекта ЮНЕСКО – KFIT</h2>
+				<h3 class="unesco-subtitle">Казахстан интегрируется в образовательное пространство Азиатско-Тихоокеанского региона</h3>
+				
+				<div class="unesco-description">
+					<p>В рамках проекта ЮНЕСКО «Kazakhstan Framework for International Transparency» (KFIT) Национальный центр развития высшего образования активно работает над интеграцией Казахстана в образовательное пространство Азиатско-Тихоокеанского региона.</p>
+					
+					<div class="project-goals">
+						<h4>Основные цели проекта:</h4>
+						<ul>
+							<li>Повышение прозрачности казахстанской системы образования</li>
+							<li>Создание механизмов взаимного признания квалификаций</li>
+							<li>Развитие академической мобильности в регионе АТР</li>
+							<li>Укрепление международного сотрудничества в сфере образования</li>
+							<li>Подготовка к ратификации Токийской конвенции</li>
+						</ul>
+					</div>
+
+					<div class="project-results">
+						<h4>Достигнутые результаты:</h4>
+						<div class="results-grid">
+							<div class="result-item">
+								<div class="result-icon">📊</div>
+								<div class="result-text">
+									<strong>Анализ системы образования</strong>
+									<p>Проведен комплексный анализ совместимости казахстанской системы образования с требованиями Токийской конвенции</p>
+								</div>
+							</div>
+							<div class="result-item">
+								<div class="result-icon">🤝</div>
+								<div class="result-text">
+									<strong>Международные консультации</strong>
+									<p>Проведены консультации с экспертами из стран-участниц конвенции для обмена опытом</p>
+								</div>
+							</div>
+							<div class="result-item">
+								<div class="result-icon">📋</div>
+								<div class="result-text">
+									<strong>Подготовка документов</strong>
+									<p>Разработаны аналитические материалы и рекомендации по ратификации конвенции</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="unesco-sidebar">
+				<div class="project-info-card">
+					<h4>Информация о проекте</h4>
+					<div class="info-item">
+						<strong>Период реализации:</strong>
+						<span>2023-2024 гг.</span>
+					</div>
+					<div class="info-item">
+						<strong>Партнер:</strong>
+						<span>ЮНЕСКО</span>
+					</div>
+					<div class="info-item">
+						<strong>Статус:</strong>
+						<span class="status-active">Активный</span>
+					</div>
+				</div>
+
+				<div class="contact-card">
+					<h4>Контакты проекта</h4>
+					<p>📧 kfit@enic-kazakhstan.kz</p>
+					<p>📞 +7 (7172) 28-75-25</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="unesco-actions">
+			<a href="https://en.unesco.org/themes/education-higher-education/recognition-qualifications/tokyo-convention/kfit-project" target="_blank" class="btn-primary">🔗 Подробнее о проекте</a>
+			<a href="https://en.unesco.org/news/kazakhstan-strengthens-higher-education-through-tokyo-convention" target="_blank" class="btn-outline">📄 Читать статью</a>
+		</div>
+	</div>
+</section>
+
+<!-- Национальный план действий -->
+<section id="action-plan" class="action-plan-section">
+	<div class="container">
+		<div class="action-plan-content">
+			<div class="plan-header">
+				<div class="plan-icon">📅</div>
+				<div class="plan-title-block">
+					<h2 class="section-title">Национальный план действий</h2>
+					<p class="plan-subtitle">Подготовка к ратификации Токийской конвенции</p>
+				</div>
+			</div>
+
+			<div class="plan-description">
+				<p>Национальный центр развития высшего образования в настоящее время готовит <strong>Национальный план действий по ратификации Токийской конвенции</strong>, который будет включать поэтапные мероприятия по подготовке к присоединению Казахстана к данному международному соглашению.</p>
+			</div>
+
+			<div class="plan-stages">
+				<h3>Планируемые этапы:</h3>
+				<div class="stages-grid">
+					<div class="stage-card">
+						<div class="stage-number">1</div>
+						<div class="stage-content">
+							<h4>Анализ и подготовка</h4>
+							<p>Завершение анализа соответствия национального законодательства требованиям конвенции</p>
+							<span class="stage-timeline">Q2 2024</span>
+						</div>
+					</div>
+
+					<div class="stage-card">
+						<div class="stage-number">2</div>
+						<div class="stage-content">
+							<h4>Консультации</h4>
+							<p>Проведение консультаций с заинтересованными министерствами и ведомствами</p>
+							<span class="stage-timeline">Q3 2024</span>
+						</div>
+					</div>
+
+					<div class="stage-card">
+						<div class="stage-number">3</div>
+						<div class="stage-content">
+							<h4>Подготовка документов</h4>
+							<p>Разработка пакета документов для внесения в Правительство РК</p>
+							<span class="stage-timeline">Q4 2024</span>
+						</div>
+					</div>
+
+					<div class="stage-card">
+						<div class="stage-number">4</div>
+						<div class="stage-content">
+							<h4>Ратификация</h4>
+							<p>Прохождение процедуры ратификации в Парламенте РК</p>
+							<span class="stage-timeline">2025</span>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="plan-status">
+				<div class="status-indicator">
+					<div class="status-icon">🛠️</div>
+					<div class="status-text">
+						<strong>Текущий статус:</strong> В разработке
+					</div>
+				</div>
+				<p>План будет представлен для общественного обсуждения после завершения подготовительных работ.</p>
+			</div>
+		</div>
+	</div>
+</section>
+
+<!-- Дополнительная информация -->
+<section class="additional-info">
+	<div class="container">
+		<div class="info-cards-grid">
+			<div class="info-card">
+				<div class="card-icon">🌏</div>
+				<h3>Страны-участницы</h3>
+				<p>26 стран Азиатско-Тихоокеанского региона являются потенциальными участниками конвенции</p>
+				<a href="https://en.unesco.org/themes/education-higher-education/recognition-qualifications/tokyo-convention/parties" target="_blank" class="btn-link">Посмотреть список →</a>
+			</div>
+
+			<div class="info-card">
+				<div class="card-icon">📚</div>
+				<h3>Образовательные программы</h3>
+				<p>Конвенция охватывает все уровни высшего образования и профессиональные квалификации</p>
+				<a href="https://unesdoc.unesco.org/ark:/48223/pf0000248254" target="_blank" class="btn-link">Узнать больше →</a>
+			</div>
+
+			<div class="info-card">
+				<div class="card-icon">🎯</div>
+				<h3>Цели устойчивого развития</h3>
+				<p>Ратификация способствует достижению ЦУР 4 "Качественное образование"</p>
+				<a href="https://sdgs.un.org/goals/goal4" target="_blank" class="btn-link">Подробнее →</a>
+			</div>
+		</div>
+	</div>
+</section>
+{% endblock content %}
+
+{% block extra_js %}
+<script src="{% static 'js/base/tokyo_convention.js' %}"></script>
+{% endblock %}
